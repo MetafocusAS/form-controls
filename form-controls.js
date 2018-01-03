@@ -144,8 +144,8 @@ function initInputs() {
 
 	//Append attributes
 	$(".numeric-decimal").attr("step", "0.01");
-	$(".input-percentage").attr("min", "0");
-	$(".input-percentage").attr("max", "100");
+	$(".percentage").attr("min", "0");
+	$(".percentage").attr("max", "100");
 
 	//Sets a mask for some classes:
 	$("input.numeric-text:not(.account-mask, .vps-account-mask, .org-number-mask, .date-mask, input[type='tel'], .letteral-text)").mask('0#');
@@ -218,7 +218,7 @@ function initInputs() {
 	//Those are added added dynamically using AJAX which means
 	//that this parent function (initInputs) must be called again
 	//when a benifital owner is added
-  $(".input-percentage").on("change paste", function() {
+  $(".percentage").on("change paste", function() {
   	var val = parseFloat($(this).val());
   	var max = $(this).attr("max");
   	var min = $(this).attr("min");
