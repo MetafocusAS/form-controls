@@ -3,10 +3,10 @@
 Dette er et CSS/JS bibliotek for styling av checkboxer, radioknapper og inputfelter.
 Samt for å formattere og begrense hvilke tegn som skal tillates i inputfelter.
 
-Biblioteket bruker <a href="https://jquery.com" target="_blank">jQuery</a> og Igor Escobars jQuery Mask Plugin <a href="https://igorescobar.github.io/jQuery-Mask-Plugin" target="_blank">jQuery Mask Plugin</a>
+Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Plugin [jQuery Mask Plugin](https://igorescobar.github.io/jQuery-Mask-Plugin/)
 
 ## Demo
-<a href="https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo" target="_blank">https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo<a/>
+[https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo](https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo)
 
 ## Checkboxer og radioknapper
 * Groupbox må ha klassen **control-container**
