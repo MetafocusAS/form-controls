@@ -56,3 +56,9 @@ Og på **.input-field:focus** (inputfelter/dropdowns):
   ⋅⋅⋅border: 2px solid #f35b1c !important;⋅⋅
 
 }
+
+```css
+.focused {
+	border-color: #f35b1c !important;
+}
+```
