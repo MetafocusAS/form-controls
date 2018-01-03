@@ -1,0 +1,236 @@
+/****container-elements that has focus*****/
+.focused {
+	border-color: #f35b1c !important;
+}
+
+/********** Inputs and selects **********/
+.input-field {
+    padding: 12px !important;
+    width: 100% !important;
+    border: solid 1px #c3b5a7;
+    font-size: 1.2em !important;
+    font-family: inherit !important;
+    outline: none; /*Chrome override*/
+    border-radius: 2px;
+
+    /*Remove browser default style*/
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.input-field:focus {
+	padding: 11px !important;
+	border: 2px solid #f35b1c !important;
+}
+
+.input-field:disabled {
+    background-color: white;
+    color: transparent !important;
+    border-color: #c3b5a787;
+}
+
+/*Removes the spinner arrows in webkit browsers and firefox*/
+input[type=number] {-moz-appearance: textfield;}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/********** Animation for input that is loading data **********/
+.label_control.loading:before {
+    content: "";
+    position: absolute;
+    height: 1.2em;
+    width: 1.2em;
+    border-radius: 50%;
+    border-top: solid #257886 2px;
+    margin-top: 13px;
+    margin-left: 13px;
+    animation: spin 1s linear infinite;
+    -moz-animation: spin 1s linear infinite;
+    -webkit-animation: spin 1s linear infinite;
+    -o-animation: spin 1s linear infinite;
+    -ms-animation: spin 1s linear infinite;
+}
+
+select, option {
+	 font-family: inherit !important;
+}
+
+.select-container {
+	position: relative;
+}
+
+.select-container .label_control::after {
+	content: "";
+	display: block;
+	width: .7em;
+	height: 0.7em;
+	border: solid #512b2b;
+	border-width: 0 0.1em 0.1em 0;
+	transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	position: absolute;
+	right: 24px;
+	bottom: calc(12px + 0.6em);
+}
+
+select {
+	cursor: pointer;
+    text-indent: 1px;
+    text-overflow: '';
+    background-color: white !important;
+}
+
+/*Remove browser default arrow in IE*/
+select::-ms-expand {
+    display: none;
+}
+
+/********** Attachments **********/
+.attachment label.btn-primary {
+    margin-top: 21px;
+}
+
+.attachment > div {
+    font-size: inherit !important;
+}
+
+.attachment input[type="file"], .attachment #button_upload_updatexml {
+    position: absolute !important;
+    left: -999999999px !important;
+}
+
+.attachment .file-errors {
+    margin-top: 5px !important;
+}
+
+
+/********** Checkboxes and radio-buttons **********/
+.control-sub-section > fieldset > legend {
+	margin-bottom: 21px !important;
+}
+
+.control-container {
+	font-family: inherit;
+}
+
+.control-container-tight > fieldset {
+    width: calc(100% - 3em) !important;
+}
+
+.control-container-tight .control .label_text {
+    width: 2em !important;
+}
+
+.control input[type="checkbox"], .control input[type="radio"] {
+  cursor: pointer !important;
+  position: absolute;
+  left: -9999px;
+}
+
+.control {
+	position: relative;
+	padding-top: 12px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	border: solid 2px transparent;
+}
+
+.control .label_control {
+	vertical-align: top !important;
+}
+
+/*control text - digiforms*/
+.control .label_text {
+    width: 80% !important;
+    cursor: pointer !important;
+    margin-left: 1.5em;
+    margin-bottom: 1.2em;
+
+    /*Prevent user from accidentally selecting the text*/
+    -moz-user-select: none;
+    khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    font-family: inherit !important;
+}
+
+.control .label_text label {
+    cursor: pointer !important;
+    font-family: inherit !important;
+}
+
+/*Checkboxes and radio-buttons*/
+.control .label_text label::before {
+    width: 22px;
+    height: 22px;
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    border: solid #ab9f94 1px;
+    border-radius: 2px;
+}
+
+/*Checkbox/Radio checked*/
+/*Change these colors to change the look
+of a checked checkbox/radio*/
+.control .label_text.checked label::before {
+	border-color: #257886 !important;
+	background-color: #257886 !important;
+}
+
+.control .label_text.checked label::after {
+	content: "";
+	position: absolute;
+}
+
+/*Checkbox checked*/
+.checkbox .label_text.checked label::after {
+    width: 4px;
+    height: 12px;
+    border-style: solid;
+    border-width: 0 5px 5px 0;
+    transform: rotate(45deg);
+    -moz-transform: rotate(45deg) translate3d( 0, 0, 1px); /*Firefox boxing border*/
+	-webkit-transform: rotate(45deg) translate3d( 0, 0, 1px); /*Firefox boxing border*/
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+    left: 19.5px;
+    top: 13px;
+    border-color: white !important;
+}
+
+/*Radio*/
+.radio .label_text label::before {
+	border-radius: 50%;
+}
+
+/*Radio checked*/
+.radio .label_text.checked label:after {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    left: 18px;
+    top: 18px;
+    border: none;
+    background-color: white;
+}
+
+.specify {
+	margin-left: 12px;
+	font-family: inherit !important;
+}
+
+.specify textarea {
+	font-family: inherit !important;
+	max-width: calc(100% - 24px) !important
+}
