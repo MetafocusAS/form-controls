@@ -37,3 +37,16 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 * **prevent-select-on-tab** - hindrer at data i input-feltet markeres ved tab inn i feltet. Funker ikke i firefox.
 * **radio** - brukes i kombinasjon med **control** for å style radioknapper. Må ligge i en groupbox som har klassen **control-container**
 * **vps-account-mask** - gir et inputfelt formatet XXXXX XXXXXXX, f.eks. 12345 6789012
+
+## Tilpasse CSS
+### Endre farge på border på element som har fokus
+Endre farge på border-color i klassen **focused** (f.eks. checkboxer):
+.focused {
+	border-color: #f35b1c !important;
+}
+
+Og på **.input-field:focus** (inputfelter/dropdowns):
+.input-field:focus {
+	padding: 11px !important;
+	border: 2px solid #f35b1c !important;
+}
