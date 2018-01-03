@@ -21,9 +21,9 @@ https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo\
 * Bruk forskjellige klasser og kombinasjoner av klasser for å styre formatteringen og hvilke tegn som skal tillates (se demo)
 
 ## Klasser
-* .account-mask - gir et inputfelt formatet XXXX XX XXXXX, f.eks. 1234 56 78901
-* .checkbox - brukes i kombinasjon med .control for å style checkboxer. Må ligge i en groupbox som har klassen .control-container
-* .control - brukes for å style checkboxer og radio-knapper
+* .account-mask : gir et inputfelt formatet XXXX XX XXXXX, f.eks. 1234 56 78901
+* .checkbox : brukes i kombinasjon med .control for å style checkboxer. Må ligge i en groupbox som har klassen .control-container
+* .control : brukes for å style checkboxer og radio-knapper
 * .control-container - brukes på groupbox for å style checkboxer og radio-knapper inne i groupboxen
 * .date-mask - gir et inputfelt formatet DD.MM.YYYY, f.eks. 01.03.2018
 * .input-field - brukes for å style inputfelter og dropdowns (<input> og <select>)
