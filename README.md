@@ -44,7 +44,7 @@ Endre farge på border-color i klassen **focused** (f.eks. checkboxer):
 <br>
 **.focused** {
   <br>
-  &#9;border-color: #f35b1c !important;
+  border-color: #f35b1c !important;
   <br>
 }
 <br>
@@ -53,8 +53,8 @@ Og på **.input-field:focus** (inputfelter/dropdowns):
 <br>
 **.input-field:focus** {
   <br>
-	&#9;padding: 11px !important;
+	padding: 11px !important;
   <br>
-	&#9;border: 2px solid #f35b1c !important;
+	border: 2px solid #f35b1c !important;
   <br>
 }
