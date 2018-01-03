@@ -17,7 +17,7 @@ https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo\
 
 ## Inputfelter
 * Bruk klassen input-field (både for select og input)
-* <select> (dropdown) må ligge inne i en div med klassen: select-container
+* select (dropdown) må ligge inne i en div med klassen: select-container
 * Bruk forskjellige klasser og kombinasjoner av klasser for å styre formatteringen og hvilke tegn som skal tillates (se demo)
 
 ## Klasser
@@ -26,7 +26,7 @@ https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo\
 * .control - brukes for å style checkboxer og radio-knapper
 * .control-container - brukes på groupbox for å style checkboxer og radio-knapper inne i groupboxen
 * .date-mask - gir et inputfelt formatet DD.MM.YYYY, f.eks. 01.03.2018
-* .input-field - brukes for å style inputfelter og dropdowns (<input> og <select>)
+* .input-field - brukes for å style inputfelter og dropdowns (input og select)
 * .letteral-text - gjør at det kun er mulig å skrive inn tekst i inputfeltet
 * .numeric-decimal - gjør at det kun er mulig å skrive tall i inputfeltet, desimaler er tillatt. Type må være satt til "number"
 * .numeric-text - gjør at det kun går å skrive inn tall i input-feltet, og at numerisk keypad vises på iOS mobile
