@@ -52,7 +52,7 @@ Og på **.input-field:focus** (inputfelter/dropdowns):
 
 **.input-field:focus** {
 
-  ⋅⋅⋅padding: 11px !important;
-  border: 2px solid #f35b1c !important;
+  ⋅⋅⋅padding: 11px !important;⋅⋅
+  ⋅⋅⋅border: 2px solid #f35b1c !important;⋅⋅
 
 }
