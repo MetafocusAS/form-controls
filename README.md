@@ -40,17 +40,26 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 
 ## Tilpasse CSS
 ### Endre farge på border på element som har fokus
-Endre farge på border-color i klassen **focused** (f.eks. checkboxer):
+Endre farge på border-color her (checkboxer/radioknapper):
 ```css
 .focused {
 	border-color: #f35b1c !important;
 }
 ```
 
-Og på **.input-field:focus** (inputfelter/dropdowns):
+Og her (inputfelter/dropdowns):
 ```css
 .input-field:focus {
 	padding: 11px !important;
 	border: 2px solid #f35b1c !important;
+}
+```
+
+### Endre farge checkboxer/radioknapper som er "checked"
+Endre farge på border-color og background-color her:
+```css
+.control .label_text.checked label::before {
+	border-color: #257886 !important;
+	background-color: #257886 !important;
 }
 ```
