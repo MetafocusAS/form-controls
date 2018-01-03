@@ -1,7 +1,7 @@
 # form-controls
 
 Dette er et CSS/JS bibliotek for styling av checkboxer, radioknapper og inputfelter.
-Samt for å formattere og begrense hvilke tegn som skal tillates inputfelter.
+Samt for å formattere og begrense hvilke tegn som skal tillates i inputfelter.
 
 Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Plugin [jQuery Mask Plugin](https://igorescobar.github.io/jQuery-Mask-Plugin/)
 
