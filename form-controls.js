@@ -146,9 +146,9 @@ function initInputs() {
 	$(".numeric-decimal").attr("step", "0.01");
 	$(".input-percentage").attr("min", "0");
 	$(".input-percentage").attr("max", "100");
-	
+
 	//Sets a mask for some classes:
-	$("input.numeric-text.no-mask").mask('0#');
+	$("input.numeric-text:not(.account-mask, .vps-account-mask, .org-number-mask, .date-mask, input[type='tel'], .letteral-text)").mask('0#');
 
 	$('input[type="tel"]').mask("+099999 000 00 000 000 00 000 00");
 
