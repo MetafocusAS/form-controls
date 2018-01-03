@@ -9,9 +9,9 @@ Demo:
 https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo\
 
 ## Checkboxer og radioknapper
-* Groupbox må ha klassen control-container
-* div rundt checkbox og label må ha klassene: control checkbox
-* div rundt radioknapper og label må ha klassene: control radio
+* Groupbox må ha klassen **control-container**
+* div rundt checkbox og label må ha klassene: **control** **checkbox**
+* div rundt radioknapper og label må ha klassene: **control** **radio**
 
 * Klassene styler checkboxene/radioknappene sånn at de blir litt penere, og ser like ut i alla browsere
 * De er har også en større "click area" som gjør det litt lettere å treffe de med musepekeren
