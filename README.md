@@ -5,8 +5,7 @@ Samt for å formattere og begrense hvilke tegn som skal tillates inputfelter.
 
 Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Plugin [jQuery Mask Plugin](https://igorescobar.github.io/jQuery-Mask-Plugin/)
 
-Demo:
-https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo\
+[Demo](https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo)
 
 ## Checkboxer og radioknapper
 * Groupbox må ha klassen **control-container**
