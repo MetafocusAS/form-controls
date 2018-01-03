@@ -6,7 +6,7 @@ Samt for å formattere og begrense hvilke tegn som skal tillates inputfelter.
 Demo:
 https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo\
 
-Checkboxer og radioknapper:
+## Checkboxer og radioknapper
 * Groupbox må ha klassen control-container
 * div rundt checkbox og label må ha klassene: control checkbox
 * div rundt radioknapper og label må ha klassene: control radio
@@ -15,11 +15,23 @@ Checkboxer og radioknapper:
 * De er har også en større "klikk-area" som gjør det litt lettere å treffe de med musepekeren
 
 
-Inputfelter:
+## Inputfelter
 * Bruk klassen input-field (både for select og input)
 * select (dropdown) må ligge inne i en div med klassen: select-container
 * Bruk forskjellige klasser og kombinasjoner av klasser for å styre formatteringen og hvilke tegn som skal tillates (se demo)
 
-Klasser:
-
-* Unordered list can use asterisks
+## Klasser
+* account-mask
+* checkbox
+* control
+* control-container
+* date-mask
+* input-field
+* letteral-text
+* numeric-decimal
+* numeric-text
+* org-number-mask
+* percentage
+* prevent-select-on-tab
+* radio
+* vps-account-mask
