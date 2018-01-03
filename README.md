@@ -22,7 +22,7 @@ https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo\
 
 ## Klasser
 * **account-mask** - gir et inputfelt formatet XXXX XX XXXXX, f.eks. 1234 56 78901
-* **checkbox** - brukes i kombinasjon med .control for å style checkboxer. Må ligge i en groupbox som har klassen .control-container
+* **checkbox** - brukes i kombinasjon med **control** for å style checkboxer. Må ligge i en groupbox som har klassen **control-container**
 * **control** - brukes for å style checkboxer og radio-knapper
 * **control-container** - brukes på groupbox for å style checkboxer og radio-knapper inne i groupboxen
 * **date-mask** - gir et inputfelt formatet DD.MM.YYYY, f.eks. 01.03.2018
@@ -33,5 +33,5 @@ https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo\
 * **org-number-mask** - gir et inputfelt formatet XXX XXX XXX, f.eks. 123 456 789
 * **percentage** - setter max="100" og min="0" for inputfeltet. Type må være satt til "number"
 * **prevent-select-on-tab** - hindrer at data i input-feltet markeres ved tab inn i feltet. Funker ikke i firefox.
-* **radio** - brukes i kombinasjon med .control for å style radioknapper. Må ligge i en groupbox som har klassen .control-container
+* **radio** - brukes i kombinasjon med **control** for å style radioknapper. Må ligge i en groupbox som har klassen **control-container**
 * **vps-account-mask** - gir et inputfelt formatet XXXXX XXXXXXX, f.eks. 12345 6789012
