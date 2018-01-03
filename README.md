@@ -5,7 +5,7 @@ Samt for å formattere og begrense hvilke tegn som skal tillates i inputfelter.
 
 Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Plugin [jQuery Mask Plugin](https://igorescobar.github.io/jQuery-Mask-Plugin/)
 
-<a href="www.w3schools.com">TEST</a>
+<a href="https://www.w3schools.com/" target="_blank">TEST</a>
 
 ## Demo
 [https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo](https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo)
