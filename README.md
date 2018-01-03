@@ -42,19 +42,19 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 ### Endre farge på border på element som har fokus
 Endre farge på border-color i klassen **focused** (f.eks. checkboxer):
 <br>
-.focused {
+**.focused** {
   <br>
-  border-color: #f35b1c !important;
+  &#9;border-color: #f35b1c !important;
   <br>
 }
 <br>
 
 Og på **.input-field:focus** (inputfelter/dropdowns):
 <br>
-.input-field:focus {
+**.input-field:focus** {
   <br>
-	padding: 11px !important;
+	&#9;padding: 11px !important;
   <br>
-	border: 2px solid #f35b1c !important;
+	&#9;border: 2px solid #f35b1c !important;
   <br>
 }
