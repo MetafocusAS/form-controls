@@ -21,17 +21,17 @@ https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo\
 * Bruk forskjellige klasser og kombinasjoner av klasser for å styre formatteringen og hvilke tegn som skal tillates (se demo)
 
 ## Klasser
-* .account-mask - gir et inputfelt formatet XXXX XX XXXXX, f.eks. 1234 56 78901
-* .checkbox - brukes i kombinasjon med .control for å style checkboxer. Må ligge i en groupbox som har klassen .control-container
-* .control - brukes for å style checkboxer og radio-knapper
-* .control-container - brukes på groupbox for å style checkboxer og radio-knapper inne i groupboxen
-* .date-mask - gir et inputfelt formatet DD.MM.YYYY, f.eks. 01.03.2018
-* .input-field - brukes for å style inputfelter og dropdowns (input og select)
-* .letteral-text - gjør at det kun er mulig å skrive inn tekst i inputfeltet
-* .numeric-decimal - gjør at det kun er mulig å skrive tall i inputfeltet, desimaler er tillatt. Type må være satt til "number"
-* .numeric-text - gjør at det kun går å skrive inn tall i input-feltet, og at numerisk keypad vises på iOS mobile
-* .org-number-mask - gir et inputfelt formatet XXX XXX XXX, f.eks. 123 456 789
-* .percentage - setter max="100" og min="0" for inputfeltet. Type må være satt til "number"
-* .prevent-select-on-tab - hindrer at data i input-feltet markeres ved tab inn i feltet. Funker ikke i firefox.
-* .radio - brukes i kombinasjon med .control for å style radioknapper. Må ligge i en groupbox som har klassen .control-container
-* .vps-account-mask - gir et inputfelt formatet XXXXX XXXXXXX, f.eks. 12345 6789012
+* **account-mask** - gir et inputfelt formatet XXXX XX XXXXX, f.eks. 1234 56 78901
+* **checkbox** - brukes i kombinasjon med .control for å style checkboxer. Må ligge i en groupbox som har klassen .control-container
+* **control** - brukes for å style checkboxer og radio-knapper
+* **control-container** - brukes på groupbox for å style checkboxer og radio-knapper inne i groupboxen
+* **date-mask** - gir et inputfelt formatet DD.MM.YYYY, f.eks. 01.03.2018
+* **input-field** - brukes for å style inputfelter og dropdowns (input og select)
+* **letteral-text** - gjør at det kun er mulig å skrive inn tekst i inputfeltet
+* **numeric-decimal** - gjør at det kun er mulig å skrive tall i inputfeltet, desimaler er tillatt. Type må være satt til "number"
+* **numeric-text** - gjør at det kun går å skrive inn tall i input-feltet, og at numerisk keypad vises på iOS mobile
+* **org-number-mask** - gir et inputfelt formatet XXX XXX XXX, f.eks. 123 456 789
+* **percentage** - setter max="100" og min="0" for inputfeltet. Type må være satt til "number"
+* **prevent-select-on-tab** - hindrer at data i input-feltet markeres ved tab inn i feltet. Funker ikke i firefox.
+* **radio** - brukes i kombinasjon med .control for å style radioknapper. Må ligge i en groupbox som har klassen .control-container
+* **vps-account-mask** - gir et inputfelt formatet XXXXX XXXXXXX, f.eks. 12345 6789012
