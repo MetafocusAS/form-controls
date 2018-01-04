@@ -5,10 +5,10 @@
 
 /********** Inputs and selects **********/
 .input-field {
-    padding: 12px !important;
-    width: 100% !important;
+    padding: 12px;
+    width: 100%;
     border: solid 1px #c3b5a7;
-    font-size: 1.2em !important;
+    font-size: 1.2em;
     font-family: inherit !important;
     outline: none; /*Chrome override*/
     border-radius: 2px;
@@ -48,6 +48,7 @@ input[type=number]::-webkit-outer-spin-button {
     border-top: solid #257886 2px;
     margin-top: 13px;
     margin-left: 13px;
+    /*background-color: red;*/
     animation: spin 1s linear infinite;
     -moz-animation: spin 1s linear infinite;
     -webkit-animation: spin 1s linear infinite;
@@ -82,9 +83,10 @@ select, option {
 
 select {
 	cursor: pointer;
-    text-indent: 1px;
-    text-overflow: '';
-    background-color: white !important;
+	text-indent: 1px;
+	text-overflow: '';
+	background-color: white !important;
+	padding-right: calc(1em + 32px) !important;
 }
 
 /*Remove browser default arrow in IE*/
