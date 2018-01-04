@@ -10,6 +10,7 @@ var tabDown;
 $(document).ready(function() {
 	initCheckBoxesAndRadios();
 	initInputs();
+	observeMutations();
 });
 
 
@@ -122,32 +123,24 @@ function initCheckBoxesAndRadios() {
 		}
 	});
 
-	//To ensure that all selected customized checkboxes and radio buttons
-	//are marked as checked when re-visiting a page / or DOM is changed
-	var initCheckedInputs = function() {
-		var $checkboxes = $(".control input:checkbox:checked");
-		$.each($checkboxes, function() {
-			toggleCheck($(this));
-		});
-
-		var $radios = $("input:radio");
-		$.each($radios, function() {
-		  toggleCheck($(this));
-		});
-	}
-
 	initCheckedInputs();
-
-	// Create an observer instance linked to the callback function
-	var observer = new MutationObserver(initCheckedInputs);
-
-	var config = { subtree: true, childList: true };
-
-	// Start observing the target node for configured mutations
-	observer.observe(document.getElementById("frm"), config);
 }
 
-function initInputs() {
+//To ensure that all selected customized checkboxes and radio buttons
+//are marked as checked when re-visiting a page / or DOM is changed
+function initCheckedInputs() {
+	var $checkboxes = $(".control input:checkbox:checked");
+	$.each($checkboxes, function() {
+		toggleCheck($(this));
+	});
+
+	var $radios = $("input:radio");
+	$.each($radios, function() {
+		toggleCheck($(this));
+	});
+}
+
+function addHTMLAttributes() {
 	//Bring up the numeric keypad for iOS and Android
 	$("input.numeric-text").attr("inputmode", "numeric"); //Android
 	$("input.numeric-text").attr("pattern", "[0-9]*"); //iOS
@@ -156,6 +149,11 @@ function initInputs() {
 	$(".numeric-decimal").attr("step", "0.01");
 	$(".percentage").attr("min", "0");
 	$(".percentage").attr("max", "100");
+}
+
+//Inits inputs with masks, HTML attributes and event listeners
+function initInputs() {
+	addHTMLAttributes();
 
 	//Sets a mask for some classes:
 	$("input.numeric-text:not(.account-mask, .vps-account-mask, .org-number-mask, .date-mask, input[type='tel'], .letteral-text)").mask('0#');
@@ -255,4 +253,20 @@ function initInputs() {
 			$(this).prop("selectionStart", $(this).prop("selectionEnd"));
 		}
  	});
+}
+
+//Observes changes on the #frm (main form)
+function observeMutations() {
+	var callback = function() {
+		initCheckedInputs();
+		addHTMLAttributes();
+	}
+
+	// Create an observer instance linked to the callback function
+	var observer = new MutationObserver(callback);
+
+	var config = { subtree: true, childList: true };
+
+	// Start observing the target node for configured mutations
+	observer.observe(document.getElementById("frm"), config);
 }
