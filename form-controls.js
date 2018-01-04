@@ -81,17 +81,6 @@ function initCheckBoxesAndRadios() {
 	    }
 	});
 
-	//Toggles class for checked/unchecked
-	//customized checkboxes (styled with pseudo elements)
-	var toggleCheck = function($input) {
-		if ($input.is(":checked")) {
-	        $input.parent().siblings(".label_text").addClass("checked");
-	    }
-	    else {
-	    	$input.parent().siblings(".label_text").removeClass("checked");
-	    }
-	};
-
 	//Toggle class "checked" for customized checkboxes
 	$("#frm").on("change", ".control input:checkbox", function() {
 		toggleCheck($(this));
@@ -125,6 +114,17 @@ function initCheckBoxesAndRadios() {
 
 	initCheckedInputs();
 }
+
+//Toggles class for checked/unchecked
+//customized checkboxes (styled with pseudo elements)
+function toggleCheck($input) {
+	if ($input.is(":checked")) {
+				$input.parent().siblings(".label_text").addClass("checked");
+		}
+		else {
+			$input.parent().siblings(".label_text").removeClass("checked");
+		}
+};
 
 //To ensure that all selected customized checkboxes and radio buttons
 //are marked as checked when re-visiting a page / or DOM is changed
