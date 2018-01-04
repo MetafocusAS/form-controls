@@ -70,7 +70,7 @@ function initCheckBoxesAndRadios() {
 
 	//Event listener added to extend the clickable
 	//area for checkboxes and radio buttons
-	$(".label_text").on("click", function(e) {
+	$("form").on("click", ".label_text", function(e) {
 	    if (e.target.localName != "label") {
 	    	var $checkbox = $(this).parent().find("input:checkbox");
 	    	$checkbox.trigger("click");
@@ -92,7 +92,7 @@ function initCheckBoxesAndRadios() {
 	};
 
 	//Toggle class "checked" for customized checkboxes
-	$(".control input:checkbox").on("change", function() {
+	$("form").on("change", ".control input:checkbox", function() {
 		toggleCheck($(this));
 	});
 
@@ -104,7 +104,7 @@ function initCheckBoxesAndRadios() {
 	});
 
 	//Toggle class "checked" for customized radio buttons
-	$(".control input:radio").on("change", function() {
+	$("form").on("change", ".control input:radio", function() {
 		var $allRadiosInFieldset = $(this).closest("fieldset").find("input:radio");
 		$.each($allRadiosInFieldset, function() {
 			toggleCheck($(this));
@@ -119,18 +119,18 @@ function initCheckBoxesAndRadios() {
 	});
 
 	//Focus - adds class (for accessibility)
-	$(".control input").on("focus", function() {
+	$("form").on("focus", ".control input", function() {
 		$(this).parent().parent().addClass("focused");
 	});
 
 	//Blur - removes class (for accessibility)
-	$(".control input").on("blur", function() {
+	$("form").on("blur", ".control input", function() {
 		$(this).parent().parent().removeClass("focused");
 	});
 
 	//Removes error message when a radio buttons
 	//or checkbox is selected
-	$(".control input").on("change", function() {
+	$("form").on("change", ".control input", function() {
 		if($(this).is(":checked")) {
 			$(this).closest(".control-container").find(".digiforms_validation_message:not(.file-error):first").hide();
 		}
@@ -203,7 +203,7 @@ function initInputs() {
 
 	//Prevents user from entering non-numeric in
 	//numeric inputs (possible in several browsers, e.g safari, firefox)
-	$("input.numeric-decimal").on("keydown", function(event) {
+	$("form").on("keydown", "input.numeric-decimal", function(event) {
 		var key = event.which || event.keyCode;
 		//Prevent non numeric characters
 		//Don't remove characters: "," and ".", don't allow SHIFT key
@@ -218,7 +218,7 @@ function initInputs() {
 	//Those are added added dynamically using AJAX which means
 	//that this parent function (initInputs) must be called again
 	//when a benifital owner is added
-  $(".percentage").on("change paste", function() {
+  $("form").on("change paste", "input.percentage", function() {
   	var val = parseFloat($(this).val());
   	var max = $(this).attr("max");
   	var min = $(this).attr("min");
@@ -234,13 +234,13 @@ function initInputs() {
 
 	//Used to set the marker at the end of the prefilled input
 	//e.i country code for phone numbers
-	$(".prevent-select-on-tab").on("keyup", function(event)  {
+	$("form").on("keyup", "input.prevent-select-on-tab", function(event)  {
  		var key = event.which || event.keyCode;
  		if (key == 9) {
  			$(this).prop("selectionStart", $(this).prop("selectionEnd"));
  		}
  	});
-	$(".prevent-select-on-tab").on("focus", function(event)  {
+	$("form").on("focus", "input.prevent-select-on-tab", function(event)  {
 		if (tabDown || $(this).prop("selectionStart") != $(this).prop("selectionEnd")) {
 			$(this).prop("selectionStart", $(this).prop("selectionEnd"));
 		}
