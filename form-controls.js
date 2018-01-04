@@ -96,26 +96,12 @@ function initCheckBoxesAndRadios() {
 		toggleCheck($(this));
 	});
 
-	//To ensure that all customized checkboxes
-	//are marked as checked when re-visiting a page
-	var $checkboxes = $(".control input:checkbox:checked");
-	$.each($checkboxes, function() {
-		toggleCheck($(this));
-	});
-
 	//Toggle class "checked" for customized radio buttons
 	$("#frm").on("change", ".control input:radio", function() {
 		var $allRadiosInFieldset = $(this).closest("fieldset").find("input:radio");
 		$.each($allRadiosInFieldset, function() {
 			toggleCheck($(this));
 		});
-	});
-
-	//To ensure that all customized radio buttons
-	//are marked as checked when re-visiting a page
-	var $radios = $("input:radio");
-	$.each($radios, function() {
-	  toggleCheck($(this));
 	});
 
 	//Focus - adds class (for accessibility)
@@ -135,6 +121,30 @@ function initCheckBoxesAndRadios() {
 			$(this).closest(".control-container").find(".digiforms_validation_message:not(.file-error):first").hide();
 		}
 	});
+
+	//To ensure that all selected customized checkboxes and radio buttons
+	//are marked as checked when re-visiting a page / or DOM is changed
+	var initCheckedInputs = function() {
+		var $checkboxes = $(".control input:checkbox:checked");
+		$.each($checkboxes, function() {
+			toggleCheck($(this));
+		});
+
+		var $radios = $("input:radio");
+		$.each($radios, function() {
+		  toggleCheck($(this));
+		});
+	}
+
+	initCheckedInputs();
+
+	// Create an observer instance linked to the callback function
+	var observer = new MutationObserver(initCheckedInputs);
+
+	var config = { subtree: true, childList: true };
+
+	// Start observing the target node for configured mutations
+	observer.observe(document.getElementById("frm"), config);
 }
 
 function initInputs() {
