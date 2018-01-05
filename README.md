@@ -17,7 +17,7 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 * div rundt checkbox og label må ha klassene: **control** **checkbox**
 
 #### Hvordan plassere klassene
-![Figur som viser hvordan klassene for checkboxer skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-checkboxer.svg)
+![Figur som viser hvordan klassene for checkboxer skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-checkboxer2.svg)
 
 #### HTML
 ```html
@@ -88,7 +88,7 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 ![Figur som viser hvordan inputfelter blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-input-regular.PNG)
 
 ### Hvordan plassere klasser på en dropdown (select)
-![Figur som viser hvordan klassene for inputfelter skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-select2.svg)
+![Figur som viser hvordan klassene for inputfelter skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-select.svg)
 
 ### HTML
 ``` html
