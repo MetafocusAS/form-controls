@@ -10,7 +10,7 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 
 ## Checkboxer og radioknapper
 * Groupboxen (fieldset) rundt må ha klassen **control-container**
-* Klassene styler checkboxene/radioknappene sånn at de blir litt penere, og ser like ut i alla browsere
+* Klassene styler checkboxene/radioknappene sånn at de blir litt penere, og ser like ut i alle browsere
 * De er har også en større "click area" som gjør det litt lettere å treffe de med musepekeren
 
 ### Checkboxer
