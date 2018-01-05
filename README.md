@@ -100,7 +100,7 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 
 ### Input-elementer (input)
 * Bruk klassen **input-field**
-* Bruk forskjellige klasser og kombinasjoner av klasser for å styre formatteringen og hvilke tegn som skal tillates (se demo)
+* Bruk forskjellige klasser og kombinasjoner av klasser for å styre formatteringen og hvilke tegn som skal tillates (se [demo](https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo))
 
 #### Hvordan plassere klasser på en input
 ![Figur som viser hvordan klassene for inputfelter skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-input-plain.svg)
