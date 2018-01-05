@@ -72,25 +72,15 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 ![Figur som viser hvordan radioknapper blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-radios.PNG)
 
 ## Inputfelter
-* Bruk klassen input-field (både for select og input)
-* dropdown (select) må ligge inne i en div med klassen: **select-container**. Det er kun dropdownen som må ligge inne i **select-container**, den må heller ikke ha noen margin eller padding.
-* Bruk forskjellige klasser og kombinasjoner av klasser for å styre formatteringen og hvilke tegn som skal tillates (se demo)
 
-### Hvordan plassere klasser på en input
-![Figur som viser hvordan klassene for inputfelter skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-input-plain.svg)
+### Dropdowns (select)
+* Må ligge inne i en div med klassen: **select-container**. Det er kun dropdownen som må ligge inne i **select-container**. Den må heller ikke ha noen margin eller padding.
+* Bruk klassen **input-field** på selve input-feltet.
 
-### HTML
-``` html
-<input type="text" id="id-5d93ad80-02c0cc20" class="input-field" name="85a33aad006a46376f7f49375f2cbfd3" placeholder="Hvilke som helst tegn ..." value="">
-```
-
-### Screen shot
-![Figur som viser hvordan inputfelter blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-input-regular.PNG)
-
-### Hvordan plassere klasser på en dropdown (select)
+#### Hvordan plassere klasser på en dropdown (select)
 ![Figur som viser hvordan klassene for inputfelter skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-select.svg)
 
-### HTML
+#### HTML
 ``` html
 <div id="id-5dfa6e11-08afa040" class="select-container">
 	<div id="id-5df3910c-07042470">
@@ -104,30 +94,46 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 </div>
 ```
 
-### Screen shot
+#### Screen shot
 ![Figur som viser hvordan dropdowns blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-select.PNG)
 
-### Hvordan plassere klasser for en input som kun aksepterer visse tegn
+
+### Input-elementer (input)
+* Bruk klassen **input-field**
+* Bruk forskjellige klasser og kombinasjoner av klasser for å styre formatteringen og hvilke tegn som skal tillates (se demo)
+
+#### Hvordan plassere klasser på en input
+![Figur som viser hvordan klassene for inputfelter skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-input-plain.svg)
+
+#### HTML
+``` html
+<input type="text" id="id-5d93ad80-02c0cc20" class="input-field" name="85a33aad006a46376f7f49375f2cbfd3" placeholder="Hvilke som helst tegn ..." value="">
+```
+
+#### Screen shot
+![Figur som viser hvordan inputfelter blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-input-regular.PNG)
+
+#### Hvordan plassere klasser for en input som kun aksepterer siffer.
 ![Figur som viser hvordan klassene for inputfelter som kun aksepterer visse tegn skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-input-numeric.svg)
 
-### HTML
+#### HTML
 ``` html
 <input type="text" id="id-5d972d02-02c0cfb0" class="input-field numeric-text" name="85a33aad006a46376f7f49375f2cbfd3" placeholder="kun siffer, ingen formattering" value="" inputmode="numeric" pattern="[0-9]*">
 ```
 
-### Screen shot
+#### Screen shot
 ![Figur som viser hvordan inputfelter som kun aksepterer visse tegn blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-input-numeric.PNG)
 
 
-### Hvordan plassere klasser for en input med formattering
+#### Hvordan plassere klasser for en input med formattering, f.eks. organisasjonsnummer.
 ![Figur som viser hvordan klassene for inputfelter med formattering skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-input-formatted.svg)
 
-### HTML
+#### HTML
 ``` html
 <input type="text" id="id-5d982482-02c0cfb0" class="input-field numeric-text org-number-mask" name="85a33aad006a46376f7f49375f2cbfd3" placeholder="xxx xxx xxx" value="" inputmode="numeric" pattern="[0-9]*" maxlength="11">
 ```
 
-### Screen shot
+#### Screen shot
 ![Figur som viser hvordan  med formattering blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-input-formatted.PNG)
 
 ## Klasser
