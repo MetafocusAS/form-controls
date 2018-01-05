@@ -49,8 +49,8 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 #### HTML
 ``` html
 <div id="id-5d6d5d94-02c4c360" class="control-container">
- <fieldset>
-    <legend id="id-5d6d5d94-02c4c360_legend" class="control-container_legend">Radioknapper</legend>
+	<fieldset>
+	 <legend id="id-5d6d5d94-02c4c360_legend" class="control-container_legend">Radioknapper</legend>
 		<div id="id-5d6d5d94-02c4c360_content" class="control-container_content">
 			<div id="id-5d6d6cf6-02c22b10" class="control radio">
 				<div id="id-5d6d6cf6-02c22b10_control" class="label_control">
