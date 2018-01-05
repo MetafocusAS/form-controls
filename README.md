@@ -9,17 +9,19 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 [https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo](https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo)
 
 ## Checkboxer og radioknapper
-* Groupbox må ha klassen **control-container**
-* div rundt checkbox og label må ha klassene: **control** **checkbox**
-* div rundt radioknapper og label må ha klassene: **control** **radio**
-
+* Groupboxen (fieldset) rundt må ha klassen **control-container**
 * Klassene styler checkboxene/radioknappene sånn at de blir litt penere, og ser like ut i alla browsere
 * De er har også en større "click area" som gjør det litt lettere å treffe de med musepekeren
 
+### Checkboxer
+* div rundt checkbox og label må ha klassene: **control** **checkbox**
+
+### Radioknapper
+* div rundt radioknapper og label må ha klassene: **control** **radio**
 
 ## Inputfelter
 * Bruk klassen input-field (både for select og input)
-* select (dropdown) må ligge inne i en div med klassen: select-container
+* dropdown (select) må ligge inne i en div med klassen: **select-container**. Det er kun dropdownen som må ligge inne i **select-container**, den må heller ikke ha noen margin eller padding.
 * Bruk forskjellige klasser og kombinasjoner av klasser for å styre formatteringen og hvilke tegn som skal tillates (se demo)
 
 ## Klasser
