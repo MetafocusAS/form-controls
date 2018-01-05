@@ -108,7 +108,7 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 ![Figur som viser hvordan dropdowns blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-select.PNG)
 
 #### Hvordan plassere klasser for en input som kun aksepterer visse tegn
-![Figur som viser hvordan klassene for inputfelter som kun aksepterer visse tegn skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-input-numeric2.svg)
+![Figur som viser hvordan klassene for inputfelter som kun aksepterer visse tegn skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-input-numeric.svg)
 
 #### HTML
 ``` html
@@ -120,7 +120,7 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 
 
 #### Hvordan plassere klasser for en input med formattering
-![Figur som viser hvordan klassene for inputfelter med formattering skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-input-formatted2.svg)
+![Figur som viser hvordan klassene for inputfelter med formattering skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-input-formatted.svg)
 
 #### HTML
 ``` html
