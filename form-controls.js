@@ -8,11 +8,16 @@ var shiftDown;
 var tabDown;
 
 $(document).ready(function() {
+	preventBrowserFormActions();
 	initCheckBoxesAndRadios();
 	initInputs();
 	observeMutations();
 });
 
+//Adds the attribute for no validation
+function preventBrowserFormActions() {
+	$("#frm").attr("novalidate", "novalidate");
+}
 
 //Initalizes event listeners
 //for the CTRL and TAB keys
