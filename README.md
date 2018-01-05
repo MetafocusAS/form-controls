@@ -24,6 +24,7 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 	<fieldset>
 		<legend id="id-5d6d17f0-02c4be20_legend" class="control-container_legend">Checkboxer</legend>
 		<div id="id-5d6d17f0-02c4be20_content" class="control-container_content">
+			<div id="id-5d6d05b0-02c23990" class="control checkbox"> ... </div>
 			<div id="id-5d6d425c-02c23a10" class="control checkbox">
 				<div id="id-5d6d425c-02c23a10_control" class="label_control">
 					<input type="hidden" name="85a33aad006a46376f7f49375f2cbfd3" value="">
@@ -33,7 +34,6 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 					<label for="id-5d6d425c-02c31cb0">checkbox</label>
 				</div>
 			</div>
-			<div id="id-5d6d05b0-02c23990" class="control checkbox"> ... </div>
 			<div id="id-5d6d3721-02c23a10" class="control checkbox"> ... </div>
 		</div>
 	</fieldset>
