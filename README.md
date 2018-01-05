@@ -74,7 +74,7 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 ## Inputfelter
 
 ### Dropdowns (select)
-* Må ligge inne i en div med klassen: **select-container**. Det er kun dropdownen som må ligge inne i **select-container**. Den må heller ikke ha noen margin eller padding.
+* Må ligge inne i en div med klassen: **select-container**. Det er kun dropdownen som skal ligge inne i **select-container**. Den må heller ikke ha noen margin eller padding.
 * Bruk klassen **input-field** på selve input-feltet.
 
 #### Hvordan plassere klasser på en dropdown (select)
