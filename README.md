@@ -16,10 +16,12 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 ### Checkboxer
 * div rundt checkbox og label må ha klassene: **control** **checkbox**
 
-![alt text](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-checkboxer.svg)
+![Figur som viser hvordan klassene for checkboxer skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-checkboxer.svg)
 
 ### Radioknapper
 * div rundt radioknapper og label må ha klassene: **control** **radio**
+
+![Figur som viser hvordan klassene for radioknapper skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-radios.svg)
 
 ## Inputfelter
 * Bruk klassen input-field (både for select og input)
