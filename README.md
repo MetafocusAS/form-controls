@@ -16,6 +16,7 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 ### Checkboxer
 * div rundt checkbox og label må ha klassene: **control** **checkbox**
 
+#### Hvordan plassere klassene
 ![Figur som viser hvordan klassene for checkboxer skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-checkboxer.svg)
 
 #### HTML
@@ -44,6 +45,7 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 ### Radioknapper
 * div rundt radioknapper og label må ha klassene: **control** **radio**
 
+#### Hvordan plassere klassene
 ![Figur som viser hvordan klassene for radioknapper skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-radios.svg)
 
 #### HTML
@@ -73,6 +75,9 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 * Bruk klassen input-field (både for select og input)
 * dropdown (select) må ligge inne i en div med klassen: **select-container**. Det er kun dropdownen som må ligge inne i **select-container**, den må heller ikke ha noen margin eller padding.
 * Bruk forskjellige klasser og kombinasjoner av klasser for å styre formatteringen og hvilke tegn som skal tillates (se demo)
+
+#### Hvordan plassere klasser
+![Figur som viser hvordan klassene for inputfelter skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-input-plain.svg)
 
 ## Klasser
 * **account-mask** - gir et inputfelt formatet XXXX XX XXXXX, f.eks. 1234 56 78901
