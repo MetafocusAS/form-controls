@@ -76,7 +76,7 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 * dropdown (select) må ligge inne i en div med klassen: **select-container**. Det er kun dropdownen som må ligge inne i **select-container**, den må heller ikke ha noen margin eller padding.
 * Bruk forskjellige klasser og kombinasjoner av klasser for å styre formatteringen og hvilke tegn som skal tillates (se demo)
 
-#### Hvordan plassere klasser
+#### Hvordan plassere klasser på en input
 ![Figur som viser hvordan klassene for inputfelter skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-input-plain.svg)
 
 #### HTML
@@ -86,6 +86,26 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 
 #### Screen shot
 ![Figur som viser hvordan radioknapper blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-input-regular.PNG)
+
+#### Hvordan plassere klasser på en input
+![Figur som viser hvordan klassene for inputfelter skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-select.svg)
+
+#### HTML
+``` html
+<div id="id-5dfa6e11-08afa040" class="select-container">
+	<div id="id-5df3910c-07042470">
+		<div id="id-5df3910c-07042470_text" class="label_text">
+			<label for="id-5df3910c-04ba77e0">Dropdown</label>
+		</div>
+		<div id="id-5df3910c-07042470_control" class="label_control">
+			<select id="id-5df3910c-04ba77e0" class="input-field" name="85a33aad006a46376f7f49375f2cbfd3"></select>
+		</div>
+	</div>
+</div>
+```
+
+#### Screen shot
+![Figur som viser hvordan radioknapper blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-select.PNG)
 
 ## Klasser
 * **account-mask** - gir et inputfelt formatet XXXX XX XXXXX, f.eks. 1234 56 78901
