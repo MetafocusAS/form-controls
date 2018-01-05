@@ -147,6 +147,7 @@ function addHTMLAttributes() {
 
 	//Append attributes
 	$(".numeric-decimal").attr("step", "0.01");
+	$(".numeric-positive").attr("min", "0");
 	$(".percentage").attr("min", "0");
 	$(".percentage").attr("max", "100");
 }

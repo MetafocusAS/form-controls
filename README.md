@@ -16,6 +16,8 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 ### Checkboxer
 * div rundt checkbox og label må ha klassene: **control** **checkbox**
 
+![alt text](https://raw.githubusercontent.com/MetafocusAS/form-controls/master/images/drawing-checkboxer.svg)
+
 ### Radioknapper
 * div rundt radioknapper og label må ha klassene: **control** **radio**
 
@@ -33,6 +35,7 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 * **input-field** - brukes for å style inputfelter og dropdowns (input og select)
 * **letteral-text** - gjør at det kun er mulig å skrive inn tekst i inputfeltet
 * **numeric-decimal** - gjør at det kun er mulig å skrive tall i inputfeltet, desimaler er tillatt. Type må være satt til "number"
+* **numeric-positive** - gjør at det kun går å skrive inn positive tall i input-feltet. Type må være satt til "number".
 * **numeric-text** - gjør at det kun går å skrive inn tall i input-feltet, og at numerisk keypad vises på iOS mobile
 * **org-number-mask** - gir et inputfelt formatet XXX XXX XXX, f.eks. 123 456 789
 * **percentage** - setter max="100" og min="0" for inputfeltet. Type må være satt til "number"
