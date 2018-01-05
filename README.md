@@ -54,7 +54,8 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
     <div id="id-5d6d5d94-02c4c360_content" class="control-container_content">
        <div id="id-5d6d6cf6-02c22b10" class="control radio">
           <div id="id-5d6d6cf6-02c22b10_control" class="label_control">
-						<input type="radio" id="id-5d6d6cf6-02c321b0" name="05ec796a9303eae972e7cf170de72aeb" value="'first'"></div>
+						<input type="radio" id="id-5d6d6cf6-02c321b0" name="05ec796a9303eae972e7cf170de72aeb" value="'first'">
+					</div>
           <div id="id-5d6d6cf6-02c22b10_text" class="label_text checked">
 						<label for="id-5d6d6cf6-02c321b0">radiobutton</label>
 					</div>
