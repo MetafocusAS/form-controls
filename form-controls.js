@@ -226,26 +226,6 @@ function initInputs() {
 		}
 	});
 
-	//Validates percentage according to min/max attributes.
-	//This one is added here and not in the validation() function
-	//because it is the only validation needed for benifital owners.
-	//Those are added added dynamically using AJAX which means
-	//that this parent function (initInputs) must be called again
-	//when a benifital owner is added
-  $("#frm").on("change paste", "input.percentage", function() {
-  	var val = parseFloat($(this).val());
-  	var max = $(this).attr("max");
-  	var min = $(this).attr("min");
-
-  	if(val <= max && val >= min) {
-  		$(this).parent().parent().siblings("input[type=hidden]").val("true");
-  	}
-  	else {
-  		$(this).parent().parent().siblings("input[type=hidden]").val("false");
-  	}
-  	$(this).val(val.toString());
-  });
-
 	//Used to set the marker at the end of the prefilled input
 	//e.i country code for phone numbers
 	$("#frm").on("keyup", "input.prevent-select-on-tab", function(event)  {
