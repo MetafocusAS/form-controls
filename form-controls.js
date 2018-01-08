@@ -11,7 +11,7 @@ $(document).ready(function() {
 	preventBrowserFormActions();
 	initCheckBoxesAndRadios();
 	initInputs();
-	observeMutations();
+	checkForDOMChanges();
 });
 
 //Adds the attribute for no validation
@@ -261,18 +261,31 @@ function initInputs() {
  	});
 }
 
-//Observes changes on the #frm (main form)
-function observeMutations() {
-	var callback = function() {
-		initCheckedInputs();
-		addHTMLAttributes();
-	}
+function checkForDOMChanges() {
+	var observeDOM = (function() {
+			var MutationObserver = window.MutationObserver || window.WebKitMutationObserver,
+					eventListenerSupported = window.addEventListener;
 
-	// Create an observer instance linked to the callback function
-	var observer = new MutationObserver(callback);
+			return function(obj, callback){
+					if( MutationObserver ) { //If browser supports mutation observers
+							// define a new observer
+							var obs = new MutationObserver(function(mutations, observer){
+									if( mutations[0].addedNodes.length || mutations[0].removedNodes.length )
+											callback();
+							});
+							// have the observer observe foo for changes in children
+							obs.observe( obj, { childList:true, subtree:true });
+					}
+					else if( eventListenerSupported ) { //If browser supports mutation events
+							obj.addEventListener('DOMNodeInserted', callback, false);
+							obj.addEventListener('DOMNodeRemoved', callback, false);
+					}
+			};
+	})();
 
-	var config = { subtree: true, childList: true };
-
-	// Start observing the target node for configured mutations
-	observer.observe(document.getElementById("frm"), config);
+	// Observe a specific DOM element:
+	observeDOM( document.getElementById("frm") ,function(){
+			initCheckedInputs();
+			addHTMLAttributes();
+	});
 }
