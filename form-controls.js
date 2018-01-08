@@ -261,31 +261,38 @@ function initInputs() {
  	});
 }
 
+//Checks for changes in the DOM
+//And adds HTML attributes and inits customized checkboxes
+//Whenever changes are made to the frm-element (main form) in the DOM
 function checkForDOMChanges() {
-	var observeDOM = (function() {
-			var MutationObserver = window.MutationObserver || window.WebKitMutationObserver,
-					eventListenerSupported = window.addEventListener;
-
-			return function(obj, callback){
-					if( MutationObserver ) { //If browser supports mutation observers
-							// define a new observer
-							var obs = new MutationObserver(function(mutations, observer){
-									if( mutations[0].addedNodes.length || mutations[0].removedNodes.length )
-											callback();
-							});
-							// have the observer observe foo for changes in children
-							obs.observe( obj, { childList:true, subtree:true });
-					}
-					else if( eventListenerSupported ) { //If browser supports mutation events
-							obj.addEventListener('DOMNodeInserted', callback, false);
-							obj.addEventListener('DOMNodeRemoved', callback, false);
-					}
-			};
-	})();
-
 	// Observe a specific DOM element:
 	observeDOM( document.getElementById("frm") ,function(){
 			initCheckedInputs();
 			addHTMLAttributes();
 	});
 }
+
+//Observes the DOM for changes
+//Uses MutationObserver if the browser supports it
+//Otherwise it uses mutation events (if the browser supports it)
+var observeDOM = (function() {
+		var MutationObserver = window.MutationObserver || window.WebKitMutationObserver,
+				eventListenerSupported = window.addEventListener;
+
+		return function(obj, callback){
+				if( MutationObserver ) { //If browser supports mutation observers
+						// define a new observer
+						var obs = new MutationObserver(function(mutations, observer){
+								if( mutations[0].addedNodes.length || mutations[0].removedNodes.length )
+										callback();
+						});
+						// have the observer observe for changes in children
+						obs.observe( obj, { childList:true, subtree:true });
+				}
+				else if( eventListenerSupported ) { //If browser supports mutation events
+						//Add mutation event listeners
+						obj.addEventListener('DOMNodeInserted', callback, false);
+						obj.addEventListener('DOMNodeRemoved', callback, false);
+				}
+		};
+})();
