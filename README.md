@@ -75,7 +75,7 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 
 ### Dropdowns (select)
 * Må ligge inne i en div med klassen: **select-container**. Pass på at det ikke ligger noen andre elementer inne i **select-container** enn selve dropdownen (+ tilhørende label og containeren rundt disse). Den må heller ikke ha noen margin eller padding.
-* Bruk klassen **input-field** på selve input-feltet.
+* Bruk klassen **input-field** på selve input-feltet. Det gir en *grunnleggende styling* som gör den ser lik ut i forskjellige browsere.
 
 #### Hvordan plassere klasser på en dropdown (select)
 ![Figur som viser hvordan klassene for inputfelter skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-select.svg)
@@ -99,8 +99,8 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 
 
 ### Input-elementer (input)
-* Bruk klassen **input-field**
-* Bruk forskjellige klasser og kombinasjoner av klasser for å styre formatteringen og hvilke tegn som skal tillates (se [demo](https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo))
+* Bruk klassen **input-field** for *grunnleggende styling* av inputfelter.
+* Bruk forskjellige andre klasser (f.eks. **numeric-text**) og kombinasjoner av ![klasser](), for å styre formatteringen og hvilke tegn som skal tillates (se [demo](https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo))
 
 #### Hvordan plassere klasser på en input
 ![Figur som viser hvordan klassene for inputfelter skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-input-plain.svg)
