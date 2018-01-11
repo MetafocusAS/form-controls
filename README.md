@@ -9,33 +9,33 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 [https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo](https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo)
 
 ## Checkboxer og radioknapper
-* Groupboxen (fieldset) rundt må ha klassen **control-container**
 * Klassene styler checkboxene/radioknappene sånn at de blir litt penere, og ser like ut i alle browsere
 * De er har også en større "click area" som gjør det litt lettere å treffe de med musepekeren
 
 ### Checkboxer
-* div rundt checkbox og label må ha klassene: **control** **checkbox**
+* Groupboxen (div rundt fieldset) rundt må ha klassen **checkbox-container**
+* div rundt checkbox og label må ha klassen **control-row**
 
 #### Hvordan plassere klassene
 ![Figur som viser hvordan klassene for checkboxer skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-checkboxer2.svg)
 
 #### HTML
 ```html
-<div id="id-5d6d17f0-02c4be20" class="control-container">
+<div id="id-5d6d17f0-02c4be20" class="checkbox-container">
 	<fieldset>
-		<legend id="id-5d6d17f0-02c4be20_legend" class="control-container_legend">Checkboxer</legend>
-		<div id="id-5d6d17f0-02c4be20_content" class="control-container_content">
-			<div id="id-5d6d425c-02c23a10" class="control checkbox">
-				<div id="id-5d6d425c-02c23a10_control" class="label_control">
+		<legend id="id-5d6d17f0-02c4be20_legend" class="checkbox-container_legend">Checkboxer</legend>
+		<div id="id-5d6d17f0-02c4be20_content" class="checkbox-container_content">
+			<div id="id-5d6d425c-02c23a10" class="control-row">
+				<div id="id-5d6d425c-02c23a10_control" class="label_control checked">
 					<input type="hidden" name="85a33aad006a46376f7f49375f2cbfd3" value="">
-					<input type="checkbox" id="id-5d6d425c-02c31cb0" name="85a33aad006a46376f7f49375f2cbfd3" value="true">
+					<input type="checkbox" id="id-5d6d425c-02c31cb0" name="85a33aad006a46376f7f49375f2cbfd3" value="yes">
 				</div>
 				<div id="id-5d6d425c-02c23a10_text" class="label_text">
 					<label for="id-5d6d425c-02c31cb0">checkbox</label>
 				</div>
 			</div>
-			<div id="id-5d6d05b0-02c23990" class="control checkbox"> ... </div>
-			<div id="id-5d6d3721-02c23a10" class="control checkbox"> ... </div>
+			<div id="id-5d6d05b0-02c23990" class="control-row checkbox"> ... </div>
+			<div id="id-5d6d3721-02c23a10" class="control-row checkbox"> ... </div>
 		</div>
 	</fieldset>
 </div>
@@ -43,27 +43,28 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 ![Figur som viser hvordan checkboxer blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-checkboxes.PNG)
 
 ### Radioknapper
-* div rundt radioknapper og label må ha klassene: **control** **radio**
+* Groupboxen (div rundt fieldset) rundt må ha klassen **radio-container**
+* div rundt radioknapp og label må ha klassen **control-row**
 
 #### Hvordan plassere klassene
 ![Figur som viser hvordan klassene for radioknapper skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-radios.svg)
 
 #### HTML
 ``` html
-<div id="id-5d6d5d94-02c4c360" class="control-container">
+<div id="id-5d6d5d94-02c4c360" class="radio-container">
 	<fieldset>
-	 <legend id="id-5d6d5d94-02c4c360_legend" class="control-container_legend">Radioknapper</legend>
-		<div id="id-5d6d5d94-02c4c360_content" class="control-container_content">
-			<div id="id-5d6d7320-02c23a10" class="control radio"> ... </div>
-			<div id="id-5d6d6cf6-02c22b10" class="control radio">
-				<div id="id-5d6d6cf6-02c22b10_control" class="label_control">
+	 <legend id="id-5d6d5d94-02c4c360_legend" class="radio-container_legend">Radioknapper</legend>
+		<div id="id-5d6d5d94-02c4c360_content" class="radio-container_content">
+			<div id="id-5d6d7320-02c23a10" class="control-row"> ... </div>
+			<div id="id-5d6d6cf6-02c22b10" class="control-row">
+				<div id="id-5d6d6cf6-02c22b10_control" class="label_control checked">
 					<input type="radio" id="id-5d6d6cf6-02c321b0" name="05ec796a9303eae972e7cf170de72aeb" value="'first'">
 				</div>
-				<div id="id-5d6d6cf6-02c22b10_text" class="label_text checked">
+				<div id="id-5d6d6cf6-02c22b10_text" class="label_text">
 					<label for="id-5d6d6cf6-02c321b0">radiobutton</label>
 				</div>
 			</div>
-			<div id="id-5d6d7320-02c23a10" class="control radio"> ... </div>
+			<div id="id-5d6d7320-02c23a10" class="control-row radio"> ... </div>
 		</div>
 	</fieldset>
 </div>
