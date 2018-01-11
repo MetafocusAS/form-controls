@@ -9,8 +9,8 @@ var tabDown;
 
 $(document).ready(function() {
 	preventBrowserFormActions();
-	initCheckBoxesAndRadios();
 	initInputs();
+	initCheckBoxesAndRadios();
 	checkForDOMChanges();
 });
 
@@ -66,82 +66,6 @@ function initGlobalKeyEventListener() {
 		if (key == 9) {
 			tabDown = false;
 		}
-	});
-}
-
-
-//Adds event listneres for checkboxes And
-//radio buttons
-function initCheckBoxesAndRadios() {
-
-	//Event listener added to extend the clickable
-	//area for checkboxes and radio buttons
-	$("#frm").on("click", ".label_text", function(e) {
-	    if (e.target.localName != "label") {
-	    	var $checkbox = $(this).parent().find("input:checkbox");
-	    	$checkbox.trigger("click");
-
-	    	var $radio = $(this).parent().find("input:radio");
-	    	$radio.trigger("click");
-	    }
-	});
-
-	//Toggle class "checked" for customized checkboxes
-	$("#frm").on("change", ".control input:checkbox", function() {
-		toggleCheck($(this));
-	});
-
-	//Toggle class "checked" for customized radio buttons
-	$("#frm").on("change", ".control input:radio", function() {
-		var $allRadiosInFieldset = $(this).closest("fieldset").find("input:radio");
-		$.each($allRadiosInFieldset, function() {
-			toggleCheck($(this));
-		});
-	});
-
-	//Focus - adds class (for accessibility)
-	$("#frm").on("focus", ".control input", function() {
-		$(this).parent().parent().addClass("focused");
-	});
-
-	//Blur - removes class (for accessibility)
-	$("#frm").on("blur", ".control input", function() {
-		$(this).parent().parent().removeClass("focused");
-	});
-
-	//Removes error message when a radio buttons
-	//or checkbox is selected
-	$("#frm").on("change", ".control input", function() {
-		if($(this).is(":checked")) {
-			$(this).closest(".control-container").find(".digiforms_validation_message:not(.file-error):first").hide();
-		}
-	});
-
-	initCheckedInputs();
-}
-
-//Toggles class for checked/unchecked
-//customized checkboxes (styled with pseudo elements)
-function toggleCheck($input) {
-	if ($input.is(":checked")) {
-				$input.parent().siblings(".label_text").addClass("checked");
-		}
-		else {
-			$input.parent().siblings(".label_text").removeClass("checked");
-		}
-};
-
-//To ensure that all selected customized checkboxes and radio buttons
-//are marked as checked when re-visiting a page / or DOM is changed
-function initCheckedInputs() {
-	var $checkboxes = $(".control input:checkbox:checked");
-	$.each($checkboxes, function() {
-		toggleCheck($(this));
-	});
-
-	var $radios = $("input:radio");
-	$.each($radios, function() {
-		toggleCheck($(this));
 	});
 }
 
@@ -241,6 +165,87 @@ function initInputs() {
  	});
 }
 
+//Adds event listneres for checkboxes And
+//radio buttons
+function initCheckBoxesAndRadios() {
+
+	//Toggle class "checked" for customized checkboxes
+	$("#frm").on("change", ".label_control input:checkbox", function() {
+		toggleCheck($(this));
+	});
+
+	//Toggle class "checked" for customized radio buttons
+	$("#frm").on("change", ".label_control input:radio", function() {
+		var $allRadiosInFieldset = $(this).closest("fieldset").find("input:radio");
+		$.each($allRadiosInFieldset, function() {
+			toggleCheck($(this));
+		});
+	});
+
+	//Focus - adds class (for accessibility)
+	$("#frm").on("focus", ".label_control input", function() {
+		$(this).parent().parent().addClass("focused");
+	});
+
+	//Blur - removes class (for accessibility)
+	$("#frm").on("blur", ".label_control input", function() {
+		$(this).parent().parent().removeClass("focused");
+	});
+
+	//Removes error message when a radio buttons
+	//or checkbox is selected
+	$("#frm").on("change", ".label_control input", function() {
+		if($(this).is(":checked")) {
+			$(this).closest("fieldset").parent().find(".digiforms_validation_message:not(.file-error):first").hide();
+		}
+	});
+
+	initCheckedInputs();
+  calcCheckAndRadioPlacment();
+
+  $(window).resize(function() {
+    calcCheckAndRadioPlacment();
+  });
+}
+
+//Toggles class for checked/unchecked
+//customized checkboxes (styled with pseudo elements)
+function toggleCheck($input) {
+	if ($input.is(":checked")) {
+		$input.closest(".label_control").addClass("checked");
+	}
+	else {
+		$input.closest(".label_control").removeClass("checked");
+	}
+};
+
+//To ensure that all selected customized checkboxes and radio buttons
+//are marked as checked when re-visiting a page / or DOM is changed
+function initCheckedInputs() {
+	var $checkboxes = $(".label_control input:checkbox:checked");
+	$.each($checkboxes, function() {
+		toggleCheck($(this));
+	});
+
+	var $radios = $(".label_control input:radio");
+	$.each($radios, function() {
+		toggleCheck($(this));
+	});
+}
+
+function calcCheckAndRadioPlacment() {
+  $.each($(".label_control input"), function() {
+    var $control = $(this).parent();
+    var $labelContainer = $control.siblings(".label_text");
+    if($control.height() <= $labelContainer.height()) {
+      $control.parent().addClass("align-top");
+    }
+    else if ($control.parent().hasClass("align-top")) {
+      $control.parent().removeClass("align-top");
+    }
+  });
+}
+
 //Checks for changes in the DOM
 //And adds HTML attributes and inits customized checkboxes
 //Whenever changes are made to the frm-element (main form) in the DOM
@@ -249,6 +254,7 @@ function checkForDOMChanges() {
 	observeDOM( document.getElementById("frm") ,function(){
 			initCheckedInputs();
 			addHTMLAttributes();
+      calcCheckAndRadioPlacment();
 	});
 }
 

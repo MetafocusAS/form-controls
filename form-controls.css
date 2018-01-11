@@ -112,127 +112,85 @@ select::-ms-expand {
     margin-top: 5px !important;
 }
 
-
 /********** Checkboxes and radio-buttons **********/
-.control-sub-section > fieldset > legend {
-	margin-bottom: 21px !important;
+.control-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  border: solid 2px transparent;
+  padding: 0.8em;
 }
 
-.control-container {
-	font-family: inherit;
+.control-row.align-top {
+  align-items: flex-start !important;
 }
 
-.control-container-tight > fieldset {
-    width: calc(100% - 3em) !important;
+.control-row .label_control {
+  width: 22px !important;
+  height: 22px;
+  border: solid #ab9f94 1px;
+  border-radius: 2px;
+  margin-right: 0.5em;
+  cursor: pointer;
+  display: block !important;
 }
 
-.control-container-tight .control .label_text {
-    width: 2em !important;
+.radio-container .label_control {
+  border-radius: 50% !important;
 }
 
-.control input[type="checkbox"], .control input[type="radio"] {
-  cursor: pointer !important;
+.control-row .label_control.checked {
+  border-color: #257886 !important;
+  background-color: #257886;
+  /*transition: background-color 0.5s ease-in-out, border-color 0.5s ease-in-out;*/
+}
+
+.control-row .label_control.checked::after {
+  content: "";
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.checkbox-container .label_control.checked::after {
+  width: 4px;
+  height: 12px;
+  border-style: solid;
+  border-width: 0 5px 5px 0;
+  transform: rotate(45deg);
+  -moz-transform: rotate(45deg) translate3d( 0, 0, 1px);
+  -webkit-transform: rotate(45deg) translate3d( 0, 0, 1px);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  border-color: white !important;
+}
+
+.radio-container .label_control.checked::after {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-top: 5px;
+  border: none;
+  background-color: white;
+}
+
+.control-row input[type="checkbox"], input[type="radio"] {
   position: absolute;
-  left: -9999px;
+  left: -999999999px;
 }
 
-.control {
-	position: relative;
-	padding-top: 12px;
-	margin-top: 2px;
-	margin-bottom: 2px;
-	border: solid 2px transparent;
+.control-row .label_text {
+  width: calc(100% - 24px - 0.5em) !important;
+  display: block !important;
 }
 
-.control .label_control {
-	vertical-align: top !important;
-}
-
-/*control text - digiforms*/
-.control .label_text {
-    width: 80% !important;
-    cursor: pointer !important;
-    margin-left: 1.5em;
-    margin-bottom: 1.2em;
-
-    /*Prevent user from accidentally selecting the text*/
-    -moz-user-select: none;
-    khtml-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
-    font-family: inherit !important;
-}
-
-.control .label_text label {
-    cursor: pointer !important;
-    font-family: inherit !important;
-}
-
-/*Checkboxes and radio-buttons*/
-.control .label_text label::before {
-    width: 22px;
-    height: 22px;
-    content: "";
-    position: absolute;
-    left: 12px;
-    top: 12px;
-    border: solid #ab9f94 1px;
-    border-radius: 2px;
-}
-
-/*Checkbox/Radio checked*/
-/*Change these colors to change the look
-of a checked checkbox/radio*/
-.control .label_text.checked label::before {
-	border-color: #257886 !important;
-	background-color: #257886 !important;
-}
-
-.control .label_text.checked label::after {
-	content: "";
-	position: absolute;
-}
-
-/*Checkbox checked*/
-.checkbox .label_text.checked label::after {
-    width: 4px;
-    height: 12px;
-    border-style: solid;
-    border-width: 0 5px 5px 0;
-    transform: rotate(45deg);
-    -moz-transform: rotate(45deg) translate3d( 0, 0, 1px); /*Firefox boxing border*/
-	-webkit-transform: rotate(45deg) translate3d( 0, 0, 1px); /*Firefox boxing border*/
-	-ms-transform: rotate(45deg);
-	-o-transform: rotate(45deg);
-    left: 19.5px;
-    top: 13px;
-    border-color: white !important;
-}
-
-/*Radio*/
-.radio .label_text label::before {
-	border-radius: 50%;
-}
-
-/*Radio checked*/
-.radio .label_text.checked label:after {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    left: 18px;
-    top: 18px;
-    border: none;
-    background-color: white;
-}
-
-.specify {
-	margin-left: 12px;
-	font-family: inherit !important;
-}
-
-.specify textarea {
-	font-family: inherit !important;
-	max-width: calc(100% - 24px) !important
+.control-row .label_text label {
+  display: block;
+  cursor: pointer;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 100%;
 }
