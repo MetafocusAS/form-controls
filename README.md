@@ -17,7 +17,7 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 * div rundt checkbox og label må ha klassen **control-row**
 
 #### Hvordan plassere klassene
-![Figur som viser hvordan klassene for checkboxer skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/new-drawing-checkboxes.svg)
+![Figur som viser hvordan klassene for checkboxer skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/new-drawing-checkbox.svg)
 
 #### HTML
 ```html
