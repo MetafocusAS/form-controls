@@ -171,12 +171,14 @@ function initCheckBoxesAndRadios() {
 
 	//Event listener added to extend the clickable
 	//area for checkboxes and radio buttons
-	$("#frm").on("click", ".control-row .label_control", function() {
-			var $checkbox = $(this).find("input:checkbox");
-			$checkbox.trigger("click");
-
-			var $radio = $(this).find("input:radio");
-			$radio.trigger("click");
+	$("#frm").on("click", ".control-row .label_control", function(e) {
+		if (e.target.localName != "input") {
+			var $input = $(this).find("input");
+			if ($input.length) {
+				$input.click();
+				$input.focus();
+			}
+		}
 	});
 
 	//Toggle class "checked" for customized checkboxes
