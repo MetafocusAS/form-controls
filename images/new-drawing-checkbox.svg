@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 515 309" style="enable-background:new 0 0 515 309;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{font-family:'SegoeUI';}
+	.st2{font-size:21px;}
+	.st3{font-size:18px;}
+</style>
+<g>
+	<rect x="2.2" y="17.5" class="st0" width="510.5" height="289"/>
+	<path d="M512.3,18v288H2.7V18H512.3 M513.3,17H1.7v290h511.5V17L513.3,17z"/>
+</g>
+<g>
+	<rect x="45.3" y="60.9" class="st0" width="425.5" height="55.4"/>
+	<path d="M470.3,61.4v54.4H45.8V61.4H470.3 M471.3,60.4H44.8v56.4h426.5V60.4L471.3,60.4z"/>
+</g>
+<g>
+	<rect x="45.3" y="138.4" class="st0" width="425.5" height="55.4"/>
+	<path d="M470.3,138.9v54.4H45.8v-54.4H470.3 M471.3,137.9H44.8v56.4h426.5V137.9L471.3,137.9z"/>
+</g>
+<g>
+	<rect x="44.2" y="215.9" class="st0" width="425.5" height="55.4"/>
+	<path d="M469.2,216.4v54.4H44.7v-54.4H469.2 M470.2,215.4H43.7v56.4h426.5V215.4L470.2,215.4z"/>
+</g>
+<g>
+	<rect x="116.5" y="74.5" class="st0" width="269" height="26"/>
+	<path d="M385,75v25H117V75H385 M386,74H116v27h270V74L386,74z"/>
+</g>
+<g>
+	<rect x="116.5" y="152.5" class="st0" width="269" height="26"/>
+	<path d="M385,153v25H117v-25H385 M386,152H116v27h270V152L386,152z"/>
+</g>
+<g>
+	<rect x="116.5" y="229.5" class="st0" width="269" height="26"/>
+	<path d="M385,230v25H117v-25H385 M386,229H116v27h270V229L386,229z"/>
+</g>
+<g>
+	<rect x="60.5" y="72.5" class="st0" width="32" height="32"/>
+	<path d="M92,73v31H61V73H92 M93,72H60v33h33V72L93,72z"/>
+</g>
+<g>
+	<rect x="60.5" y="150.5" class="st0" width="32" height="32"/>
+	<path d="M92,151v31H61v-31H92 M93,150H60v33h33V150L93,150z"/>
+</g>
+<g>
+	<rect x="60.5" y="226.5" class="st0" width="32" height="32"/>
+	<path d="M92,227v31H61v-31H92 M93,226H60v33h33V226L93,226z"/>
+</g>
+<g>
+	<rect x="24" y="2" class="st0" width="212" height="29"/>
+</g>
+<text transform="matrix(1 0 0 1 36 20)" class="st1 st2">.checkbox-container</text>
+<rect x="61" y="46" class="st0" width="115" height="19"/>
+<text transform="matrix(1 0 0 1 69 62)" class="st1 st3">.control-row </text>
+</svg>

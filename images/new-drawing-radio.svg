@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 515 309" style="enable-background:new 0 0 515 309;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{font-family:'SegoeUI';}
+	.st2{font-size:21px;}
+	.st3{font-size:18px;}
+</style>
+<g>
+	<rect x="2.2" y="17.5" class="st0" width="510.5" height="289"/>
+	<path d="M512.3,18v288H2.7V18H512.3 M513.3,17H1.7v290h511.5V17L513.3,17z"/>
+</g>
+<g>
+	<rect x="45.3" y="60.9" class="st0" width="425.5" height="55.4"/>
+	<path d="M470.3,61.4v54.4H45.8V61.4H470.3 M471.3,60.4H44.8v56.4h426.5V60.4L471.3,60.4z"/>
+</g>
+<g>
+	<rect x="45.3" y="138.4" class="st0" width="425.5" height="55.4"/>
+	<path d="M470.3,138.9v54.4H45.8v-54.4H470.3 M471.3,137.9H44.8v56.4h426.5V137.9L471.3,137.9z"/>
+</g>
+<g>
+	<rect x="44.2" y="215.9" class="st0" width="425.5" height="55.4"/>
+	<path d="M469.2,216.4v54.4H44.7v-54.4H469.2 M470.2,215.4H43.7v56.4h426.5V215.4L470.2,215.4z"/>
+</g>
+<g>
+	<circle class="st0" cx="75.5" cy="88.5" r="16"/>
+	<path d="M75.5,73C84,73,91,80,91,88.5S84,104,75.5,104S60,97,60,88.5S67,73,75.5,73 M75.5,72C66.4,72,59,79.4,59,88.5
+		S66.4,105,75.5,105S92,97.6,92,88.5S84.6,72,75.5,72L75.5,72z"/>
+</g>
+<g>
+	<circle class="st0" cx="75.5" cy="166.5" r="16"/>
+	<path d="M75.5,151c8.5,0,15.5,7,15.5,15.5S84,182,75.5,182S60,175,60,166.5S67,151,75.5,151 M75.5,150c-9.1,0-16.5,7.4-16.5,16.5
+		S66.4,183,75.5,183S92,175.6,92,166.5S84.6,150,75.5,150L75.5,150z"/>
+</g>
+<g>
+	<circle class="st0" cx="75.5" cy="242.5" r="16"/>
+	<path d="M75.5,227c8.5,0,15.5,7,15.5,15.5S84,258,75.5,258S60,251,60,242.5S67,227,75.5,227 M75.5,226c-9.1,0-16.5,7.4-16.5,16.5
+		S66.4,259,75.5,259S92,251.6,92,242.5S84.6,226,75.5,226L75.5,226z"/>
+</g>
+<g>
+	<rect x="112.5" y="75.5" class="st0" width="269" height="26"/>
+	<path d="M381,76v25H113V76H381 M382,75H112v27h270V75L382,75z"/>
+</g>
+<g>
+	<rect x="112.5" y="153.5" class="st0" width="269" height="26"/>
+	<path d="M381,154v25H113v-25H381 M382,153H112v27h270V153L382,153z"/>
+</g>
+<g>
+	<rect x="112.5" y="230.5" class="st0" width="269" height="26"/>
+	<path d="M381,231v25H113v-25H381 M382,230H112v27h270V230L382,230z"/>
+</g>
+<g>
+	<rect x="23" y="2" class="st0" width="195" height="29"/>
+</g>
+<text transform="matrix(1 0 0 1 36 20)" class="st1 st2">.radio-container</text>
+<rect x="59" y="53" class="st0" width="125" height="14"/>
+<text transform="matrix(1 0 0 1 67 64)" class="st1 st3">.control-row</text>
+</svg>
