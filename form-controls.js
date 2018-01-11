@@ -169,13 +169,23 @@ function initInputs() {
 //radio buttons
 function initCheckBoxesAndRadios() {
 
+	//Event listener added to extend the clickable
+	//area for checkboxes and radio buttons
+	$("#frm").on("click", ".control-row .label_control", function() {
+			var $checkbox = $(this).find("input:checkbox");
+			$checkbox.trigger("click");
+
+			var $radio = $(this).find("input:radio");
+			$radio.trigger("click");
+	});
+
 	//Toggle class "checked" for customized checkboxes
-	$("#frm").on("change", ".label_control input:checkbox", function() {
+	$("#frm").on("change", ".control-row .label_control input:checkbox", function() {
 		toggleCheck($(this));
 	});
 
 	//Toggle class "checked" for customized radio buttons
-	$("#frm").on("change", ".label_control input:radio", function() {
+	$("#frm").on("change", ".control-row .label_control input:radio", function() {
 		var $allRadiosInFieldset = $(this).closest("fieldset").find("input:radio");
 		$.each($allRadiosInFieldset, function() {
 			toggleCheck($(this));
@@ -183,18 +193,18 @@ function initCheckBoxesAndRadios() {
 	});
 
 	//Focus - adds class (for accessibility)
-	$("#frm").on("focus", ".label_control input", function() {
+	$("#frm").on("focus", ".control-row .label_control input", function() {
 		$(this).parent().parent().addClass("focused");
 	});
 
 	//Blur - removes class (for accessibility)
-	$("#frm").on("blur", ".label_control input", function() {
+	$("#frm").on("blur", ".control-row .label_control input", function() {
 		$(this).parent().parent().removeClass("focused");
 	});
 
 	//Removes error message when a radio buttons
 	//or checkbox is selected
-	$("#frm").on("change", ".label_control input", function() {
+	$("#frm").on("change", ".control-row .label_control input", function() {
 		if($(this).is(":checked")) {
 			$(this).closest("fieldset").parent().find(".digiforms_validation_message:not(.file-error):first").hide();
 		}
@@ -234,7 +244,7 @@ function initCheckedInputs() {
 }
 
 function calcCheckAndRadioPlacment() {
-  $.each($(".label_control input"), function() {
+  $.each($(".control-row .label_control input"), function() {
     var $control = $(this).parent();
     var $labelContainer = $control.siblings(".label_text");
     if($control.height() <= $labelContainer.height()) {
