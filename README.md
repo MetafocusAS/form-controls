@@ -17,7 +17,7 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 * div rundt checkbox og label må ha klassen **control-row**
 
 #### Hvordan plassere klassene
-![Figur som viser hvordan klassene for checkboxer skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-checkbox-new.PNG)
+![Figur som viser hvordan klassene for checkboxer skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-checkbox-new.png)
 
 #### HTML
 ```html
@@ -40,7 +40,7 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 	</fieldset>
 </div>
 ```
-![Figur som viser hvordan checkboxer blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-checkboxes.PNG)
+![Figur som viser hvordan checkboxer blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-checkboxes.png)
 
 ### Radioknapper
 * Groupboxen (div rundt fieldset) rundt må ha klassen **radio-container**
