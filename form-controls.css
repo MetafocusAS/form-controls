@@ -202,3 +202,7 @@ select::-ms-expand {
 .control-row .label_control:not(.checked):hover {
 	background-color: #ab9f94;
 }
+
+.control-row .label_control.hovered {
+	background-color: #ab9f94;
+}
