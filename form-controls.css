@@ -192,7 +192,6 @@ select::-ms-expand {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  line-height: 100%;
 }
 
 /******* HOVER *******/
