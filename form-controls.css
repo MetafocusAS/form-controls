@@ -79,6 +79,18 @@ select, option {
 	position: absolute;
 	right: 24px;
 	bottom: calc(12px + 0.6em);
+	pointer-events: none;
+}
+
+.select-container .label_control::before {
+	content: "";
+	position: absolute;
+	width: calc(0.7em + 24px);
+	height: calc(0.7em + 24px);
+	background-color: white;
+	right: 0.7em;
+	bottom: 6px;
+	pointer-events: none;
 }
 
 select {
