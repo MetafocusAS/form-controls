@@ -40,14 +40,14 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 	</fieldset>
 </div>
 ```
-![Figur som viser hvordan checkboxer blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-checkboxes.png)
+![Figur som viser hvordan checkboxer blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-checkboxes.PNG)
 
 ### Radioknapper
 * Groupboxen (div rundt fieldset) rundt må ha klassen **radio-container**
 * div rundt radioknapp og label må ha klassen **control-row**
 
 #### Hvordan plassere klassene
-![Figur som viser hvordan klassene for radioknapper skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-radio-new.PNG)
+![Figur som viser hvordan klassene for radioknapper skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-radio-new.png)
 
 #### HTML
 ``` html
