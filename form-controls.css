@@ -85,10 +85,10 @@ select, option {
 .select-container .label_control::before {
 	content: "";
 	position: absolute;
-	width: calc(0.7em + 24px);
-	height: calc(0.7em + 24px);
+	width: calc(1em + 32px);
+	height: calc(1em + 24px);
 	background-color: white;
-	right: 0.7em;
+	right: 12px;
 	bottom: 6px;
 	pointer-events: none;
 }
