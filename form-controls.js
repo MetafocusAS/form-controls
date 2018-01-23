@@ -273,6 +273,8 @@ function calcCheckAndRadioPlacment() {
 //Adds event listeners to the floating labels
 //And ensures that labels are displayed correctly when the page is loaded
 function initFloatingLabels() {
+	initFloatingLabelsLoaded();
+
 	$("#frm").on("input", ".label-float input", function() {
 		showLabel($(this));
 	});
