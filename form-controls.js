@@ -267,7 +267,6 @@ function calcCheckAndRadioPlacment() {
     else if ($control.parent().hasClass("align-top")) {
       $control.parent().removeClass("align-top");
     }
-		console.log(fontSize);
   });
 }
 
