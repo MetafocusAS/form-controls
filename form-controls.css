@@ -218,3 +218,49 @@ select::-ms-expand {
 .control-row .label_control.hovered {
 	background-color: #ab9f94;
 }
+
+/******* FLOATING LABELS *******/
+.label-float {
+  position: relative;
+}
+
+.label-float label {
+  position: absolute;
+  margin-left: 1.2rem;
+  padding-top: 1.2rem;
+}
+
+.label-float.hidden label {
+  display: none;
+}
+
+.label-float input {
+  padding: calc(1.2rem + 3px) 1.2rem 1.2rem 1.2rem;
+  width: 100%;
+  font-size: 1.2em;
+  border: none;
+  outline: none;
+  border-bottom: 3px solid transparent;
+  border-radius: 0;
+}
+
+.label-float input:focus {
+  border-bottom-color: #4E6378;
+}
+
+.label-float:not(.hidden) input {
+  padding-top: calc(2.4rem + 3px) !important;
+}
+
+/* Mozilla Firefox 19+ */
+.label-float:not(.hidden) ::-moz-placeholder {
+  color: transparent;
+}
+/* IE10+ */
+.label-float:not(.hidden) :-ms-input-placeholder {
+  color: transparent;
+}
+/* web-kit */
+.label-float:not(.hidden) ::-webkit-input-placeholder {
+  color: transparent;
+}

@@ -11,6 +11,7 @@ $(document).ready(function() {
 	preventBrowserFormActions();
 	initInputs();
 	initCheckBoxesAndRadios();
+	initFloatingLabels();
 	checkForDOMChanges();
 });
 
@@ -270,6 +271,50 @@ function calcCheckAndRadioPlacment() {
   });
 }
 
+//Adds event listeners to the floating labels
+//And ensures that labels are displayed correctly when the page is loaded
+function initFloatingLabels() {
+	$("#frm").on("input", ".label-float input", function() {
+		showLabel($(this));
+	});
+	$("#frm").on("keyup", ".label-float input", function() {
+		hideLabel($(this));
+	});
+}
+
+//Inits the floating labels when loaded in to the DOM
+function initFloatingLabelsLoaded() {
+	var toggleLabel = function($input) {
+		if (!showLabel($input)) hideLabel($input);
+	}
+
+	$.each($(".label-float input"), function() {
+		toggleLabel($(this));
+	});
+}
+
+//Shows a floating label IF it should be shown
+function showLabel($input) {
+	var $myLabel = $input.parent().parent();
+
+	if ($input.val().length && $myLabel.hasClass("hidden")) {
+		$myLabel.removeClass("hidden");
+		return true;
+	}
+	return false;
+}
+
+//Hides a floating label IF it should be hidden
+function hideLabel($input) {
+	var $myLabel = $input.parent().parent();
+
+	if ($input.val().length == 0 && !$myLabel.hasClass("hidden")) {
+		$myLabel.addClass("hidden");
+		return true;
+	}
+	return false;
+}
+
 //Checks for changes in the DOM
 //And adds HTML attributes and inits customized checkboxes
 //Whenever changes are made to the frm-element (main form) in the DOM
@@ -279,6 +324,7 @@ function checkForDOMChanges() {
 			initCheckedInputs();
 			addHTMLAttributes();
       calcCheckAndRadioPlacment();
+			initFloatingLabelsLoaded();
 	});
 }
 
