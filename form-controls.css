@@ -234,20 +234,6 @@ select::-ms-expand {
   display: none;
 }
 
-.label-float input {
-  padding: calc(1.2rem + 3px) 1.2rem 1.2rem 1.2rem;
-  width: 100%;
-  font-size: 1.2em;
-  border: none;
-  outline: none;
-  border-bottom: 3px solid transparent;
-  border-radius: 0;
-}
-
-.label-float input:focus {
-  border-bottom-color: #4E6378;
-}
-
 .label-float:not(.hidden) input {
   padding-top: calc(2.4rem + 3px) !important;
 }
