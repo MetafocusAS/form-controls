@@ -9,7 +9,7 @@ var tabDown;
 
 $(document).ready(function() {
 	webshims.polyfill("forms");
-	
+
 	preventBrowserFormActions();
 	initInputs();
 	initCheckBoxesAndRadios();
@@ -89,9 +89,9 @@ function initInputs() {
 	addHTMLAttributes();
 
 	//Sets a mask for some classes:
-	$("input.numeric-text:not(.account-mask, .vps-account-mask, .org-number-mask, .date-mask, input[type='tel'], .letteral-text)").mask('0#');
+	$("input.numeric-text:not(.account-mask, .vps-account-mask, .org-number-mask, .date-mask, .phone, .letteral-text)").mask('0#');
 
-	$('input[type="tel"]').mask("+099999 000 00 000 000 00 000 00");
+	$("input.phone").mask("+099999 000 00 000 000 00 000 00");
 
 	$("input.account-mask").mask("0000 00 00000");
 
