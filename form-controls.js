@@ -8,6 +8,8 @@ var shiftDown;
 var tabDown;
 
 $(document).ready(function() {
+	webshims.polyfill("forms");
+	
 	preventBrowserFormActions();
 	initInputs();
 	initCheckBoxesAndRadios();
