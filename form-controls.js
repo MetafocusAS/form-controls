@@ -182,15 +182,6 @@ function initCheckBoxesAndRadios() {
 		}
 	});
 
-	$("#frm").on("mouseover", ".control-row .label_text label", function() {
-		var $control = $(this).parent().siblings(".label_control:not(.checked)");
-		$control.addClass("hovered");
-	});
-	$("#frm").on("mouseout click", ".control-row .label_text label", function() {
-		var $control = $(this).parent().siblings(".label_control");
-		$control.removeClass("hovered");
-	});
-
 	//Toggle class "checked" for customized checkboxes
 	$("#frm").on("change", ".control-row .label_control input:checkbox", function() {
 		toggleCheck($(this));
@@ -235,7 +226,6 @@ function initCheckBoxesAndRadios() {
 function toggleCheck($input) {
 	if ($input.is(":checked")) {
 		$input.closest(".label_control").addClass("checked");
-		$input.closest(".label_control").removeClass("hovered");
 	}
 	else {
 		$input.closest(".label_control").removeClass("checked");

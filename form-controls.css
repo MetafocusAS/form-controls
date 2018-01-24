@@ -206,19 +206,6 @@ select::-ms-expand {
 	padding-left: 0.5em;
 }
 
-/******* HOVER *******/
-.control-row .label_text:hover ~ .label_control:not(.checked) {
-	background-color: #ab9f94;
-}
-
-.control-row .label_control:not(.checked):hover {
-	background-color: #ab9f94;
-}
-
-.control-row .label_control.hovered {
-	background-color: #ab9f94;
-}
-
 /******* FLOATING LABELS *******/
 .label-float {
   position: relative;
