@@ -160,7 +160,8 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 ```
 
 #### Screen shot
-![Figur som viser hvordan inputfelter blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-floating-labels.PNG)
+![Figur som viser hvordan inputfelter med floating labels blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-floating-labels.PNG)
+![Figur som viser hvordan inputfelter med floating labels blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-floating-labels2.PNG)
 
 ## Klasser
 * **account-mask** - gir et inputfelt formatet XXXX XX XXXXX, f.eks. 1234 56 78901
