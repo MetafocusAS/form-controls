@@ -228,6 +228,7 @@ select::-ms-expand {
   position: absolute;
   margin-left: 1.2rem;
   padding-top: 1.2rem;
+  font-size:  1rem;
 }
 
 .label-float.hidden label {
@@ -237,7 +238,7 @@ select::-ms-expand {
 .label-float input {
   padding: calc(1.2rem + 3px) 1.2rem 1.2rem 1.2rem;
   width: 100%;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   border: none;
   outline: none;
   border-bottom: 3px solid transparent;
