@@ -176,6 +176,7 @@ Biblioteket bruker [jQuery](https://jquery.com/), Igor Escobars jQuery Mask Plug
 * **numeric-text** - gjør at det kun går å skrive inn tall i input-feltet, og at numerisk keypad vises på iOS mobile
 * **org-number-mask** - gir et inputfelt formatet XXX XXX XXX, f.eks. 123 456 789
 * **percentage** - setter max="100" og min="0" for inputfeltet. Type må være satt til "number"
+* **phone** - gir et format som passer for alle generelle telefonnummer med landkode. F.eks. +47 123 45 678
 * **prevent-select-on-tab** - hindrer at data i input-feltet markeres ved tab inn i feltet. Funker ikke i firefox.
 * **radio** - brukes i kombinasjon med **control** for å style radioknapper. Må ligge i en groupbox som har klassen **control-container**
 * **vps-account-mask** - gir et inputfelt formatet XXXXX XXXXXXX, f.eks. 12345 6789012
