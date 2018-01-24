@@ -137,6 +137,31 @@ Biblioteket bruker [jQuery](https://jquery.com/) og Igor Escobars jQuery Mask Pl
 #### Screen shot
 ![Figur som viser hvordan  med formattering blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-input-formatted.PNG)
 
+#### Hvordan plassere klasser for en input som kun aksepterer siffer.
+![Figur som viser hvordan klassene for inputfelter som kun aksepterer visse tegn skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-input-numeric.svg)
+
+### Floating labels
+* Bruk klassene **label-float** og **hidden** på containeren rundt label og input.
+* Bruk klassen **input-field-alt** på input-elementet for å fjerne *default digiforms styling*.
+
+#### Hvordan plassere klasser på en input
+![Figur som viser hvordan klassene for inputfelter skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-floating-labels.svg)
+
+#### HTML
+``` html
+<div id="id-054e784f-02ba5590" class="label-float">
+	<div id="id-054e784f-02ba5590_text" class="label_text">
+		<label for="id-054e784f-02b8d6d0">Floating label</label>
+	</div>
+	<div id="id-054e784f-02ba5590_control" class="label_control">
+		<input type="text" id="id-054e784f-02b8d6d0" class="input-field-alt" name="85a33aad006a46376f7f49375f2cbfd3" placeholder="Floating label" value="">
+	</div>
+</div>
+```
+
+#### Screen shot
+![Figur som viser hvordan inputfelter blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-floating-labels.PNG)
+
 ## Klasser
 * **account-mask** - gir et inputfelt formatet XXXX XX XXXXX, f.eks. 1234 56 78901
 * **checkbox** - brukes i kombinasjon med **control** for å style checkboxer. Må ligge i en groupbox som har klassen **control-container**
