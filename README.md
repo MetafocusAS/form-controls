@@ -3,7 +3,7 @@
 Dette er et CSS/JS bibliotek for styling av checkboxer, radioknapper og inputfelter.
 Samt for å formattere og begrense hvilke tegn som skal tillates i inputfelter.
 
-Biblioteket bruker [jQuery](https://jquery.com/), Igor Escobars jQuery Mask Plugin [jQuery Mask Plugin](https://igorescobar.github.io/jQuery-Mask-Plugin/) og webshims polyfill [webshims polyfill](https://afarkas.github.io/webshim/demos/)
+Biblioteket bruker [jQuery](https://jquery.com/), Igor Escobars jQuery Mask Plugin [jQuery Mask Plugin](https://igorescobar.github.io/jQuery-Mask-Plugin/) og webshims polyfill [webshims polyfill](https://afarkas.github.io/webshim/demos/) (HUSK å at disse også må inkluderes HTML-headeren!)
 
 ## Demo
 [https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo](https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo)
