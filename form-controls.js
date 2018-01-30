@@ -8,6 +8,8 @@ var shiftDown;
 var tabDown;
 
 $(document).ready(function() {
+	addFiles();
+
 	webshims.polyfill("forms");
 
 	preventBrowserFormActions();
@@ -16,6 +18,24 @@ $(document).ready(function() {
 	initFloatingLabels();
 	checkForDOMChanges();
 });
+
+function addFiles() {
+	var sytlesheet = document.createElement("link");
+	sytlesheet.type = "text/css";
+	sytlesheet.rel = "stylesheet";
+	sytlesheet.href = "scripts/form-controls/form-controls.css";
+	$("head").append(sytlesheet);
+
+	var webshims = document.createElement("script");
+	webshims.type = "text/javascript";
+	webshims.src = "scripts/form-controls/js-webshim/minified/polyfiller.js";
+	$("head").append(webshims);
+
+	var masks = document.createElement("script");
+	masks.type = "text/javascript";
+	masks.src = "scripts/form-controls/jquery.mask.min.js";
+	$("head").append(masks);
+}
 
 //Adds the attribute for no validation
 function preventBrowserFormActions() {
