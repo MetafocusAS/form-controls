@@ -20,6 +20,8 @@ For å kunne bruke det i digiforms må du deretter inkludere (Document settings 
 * **form-controls/form-controls.js**
 * **form-controls/form-controls.css**
 
+JQuery må også være inkludert.
+
 ## Demo
 [https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo](https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo)
 
