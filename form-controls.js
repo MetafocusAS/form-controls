@@ -9,7 +9,6 @@ var tabDown;
 
 $(document).ready(function() {
 	addJSFiles();
-	webshims.polyfill("forms");
 	preventBrowserFormActions();
 	initInputs();
 	initCheckBoxesAndRadios();
@@ -30,6 +29,10 @@ function addJSFiles() {
 	masks.type = "text/javascript";
 	masks.src = "form-controls/jquery.mask.min.js";
 	$("head").append(masks);
+}
+
+function initWebshims() {
+	webshims.polyfill("forms");
 }
 
 //Adds the attribute for no validation
