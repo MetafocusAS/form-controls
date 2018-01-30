@@ -207,11 +207,18 @@ Endre farge på border-color her (checkboxer/radioknapper):
 }
 ```
 
-Og her (inputfelter/dropdowns):
+Her (inputfelter/dropdowns):
 ```css
 .input-field:focus {
 	padding: 11px !important;
 	border: 2px solid #f35b1c !important;
+}
+```
+
+Og her (floating labels)
+```css
+.label-float input:focus {
+  border-bottom-color: #4E6378;
 }
 ```
 
