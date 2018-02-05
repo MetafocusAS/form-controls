@@ -115,6 +115,33 @@ For å kunne bruke det i digiforms må du deretter inkludere (Document settings 
 #### Screen shot
 ![Figur som viser hvordan dropdowns blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-select.PNG)
 
+### Combobox - autocomplete
+* Må ligge inne i en div med klassen: **combobox-container**. Pass på at det ikke ligger noen andre elementer inne i **combobox-container** enn selve input-elementet (+ tilhørende label og containeren rundt disse).
+* Bruk klassen **combobox** på selve input-feltet.
+* Legg til klassen **combobox-countries** hvis du ønsker en liste med land.
+* Klassen **input-field** kan også brukes på selve input-feltet. Det gir en *grunnleggende styling*.
+
+#### Hvordan plassere klasser på en dropdown (select)
+TODO
+![Figur som viser hvordan klassene for inputfelter skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-select.svg)
+
+#### HTML
+``` html
+<div id="id-5dfa6e11-08afa040" class="combobox-container">
+	<div id="id-5df3910c-07042470">
+		<div id="id-5df3910c-07042470_text" class="label_text">
+			<label for="id-5df3910c-04ba77e0">Land</label>
+		</div>
+		<div id="id-5df3910c-07042470_control" class="label_control">
+			<input id="id-5df3910c-04ba77e0" class="input-field combobox combobox-countries" name="85a33aad006a46376f7f49375f2cbfd3"></input>
+		</div>
+	</div>
+</div>
+```
+
+#### Screen shot
+TODO
+![Figur som viser hvordan dropdowns blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-select.PNG)
 
 ### Input-elementer (input)
 * Bruk klassen **input-field** for *grunnleggende styling* av inputfelter.
@@ -183,6 +210,9 @@ For å kunne bruke det i digiforms må du deretter inkludere (Document settings 
 ## Klasser
 * **account-mask** - gir et inputfelt formatet XXXX XX XXXXX, f.eks. 1234 56 78901
 * **checkbox** - brukes i kombinasjon med **control** for å style checkboxer. Må ligge i en groupbox som har klassen **control-container**
+* **combobox** - brukes for å skape autocomplete-felter (comboboxer). Må ligge i en groupbox som har klassen **control-container**
+* **combobox-container** - brukes for å skape autocomplete-felter (comboboxer). Brukes på groupboxen rundt inputfeltet.
+* **combobox-coutries** - brukes i kombinasjon med **combobox** for å gi en liste med land (autocomplete for land).
 * **control** - brukes for å style checkboxer og radio-knapper
 * **control-container** - brukes på groupbox for å style checkboxer og radio-knapper inne i groupboxen
 * **date-mask** - gir et inputfelt formatet DD.MM.YYYY, f.eks. 01.03.2018
@@ -196,6 +226,7 @@ For å kunne bruke det i digiforms må du deretter inkludere (Document settings 
 * **phone** - gir et format som passer for alle generelle telefonnummer med landkode. F.eks. +47 123 45 678
 * **prevent-select-on-tab** - hindrer at data i input-feltet markeres ved tab inn i feltet. Funker ikke i firefox.
 * **radio** - brukes i kombinasjon med **control** for å style radioknapper. Må ligge i en groupbox som har klassen **control-container**
+* **select-container** - brukes for å skape dropdowns som ser like ut i forskjellige browsere. Brukes på groupboxen rundt selecten.
 * **vps-account-mask** - gir et inputfelt formatet XXXXX XXXXXXX, f.eks. 12345 6789012
 
 ## Tilpasse CSS
