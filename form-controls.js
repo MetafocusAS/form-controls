@@ -336,6 +336,10 @@ function initComboboxes() {
 
 	var custom = [ "Banan", "Eple", "Plomme" ];
 
+	function getList($input) {
+		return $input.hasClass("combobox-countries") ? countries : custom;
+	}
+
 	buildComboboxes();
 
 	function getCorrespondingResults($input) {
@@ -356,7 +360,7 @@ function initComboboxes() {
 		$searchResults.empty();
 
 		if (searchVal.length) {
-			var match = $(this).hasClass("countries") ? countries : custom;
+			var match = getList($(this));
 			var secondaryMatches = [];
 
 			var highlightMatch = function(val, startIndex, endIndex) {
@@ -542,7 +546,7 @@ function initComboboxes() {
 		}
 		//Show all results when user presses down arrow IF the search string is empty
 		else if (isDownArrow(e) && $(this).val() == "") {
-			var match = $(this).hasClass("countries") ? countries : custom;
+			var match = getList($(this));
 			$.each(match, function(index, value) {
 				$searchResults.append(getResultItemMarkup(value, (index + 1)));
 			});
