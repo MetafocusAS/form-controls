@@ -252,3 +252,58 @@ select::-ms-expand {
 .label-float:not(.hidden) ::-webkit-input-placeholder {
   color: transparent;
 }
+
+.hidden:not(.label-float) {
+	display: none;
+}
+
+/*Combobox*/
+.combobox-results-container {
+	position: relative;
+	width: 100%;
+}
+
+.combobox-container {
+	margin-bottom: 4px;
+}
+
+.combobox-container input.combobox {
+	width: 100%;
+}
+
+.combobox-results {
+	/*Remove list style*/
+	list-style: none;
+	padding: 0;
+
+	position: absolute;
+	z-index: 9999;
+	width: calc(100% - 2px);
+	max-height: 300px;
+	overflow: auto;
+	margin: 4px 0px 0px 0px;
+	background-color: white;
+}
+
+.combobox-results,  input.combobox {
+	border: solid 1px #d6d1d1;
+}
+
+.combobox-container input.combobox, .combobox-result {
+	padding: 12px;
+}
+
+.combobox-result {
+	cursor: pointer;
+	/*Remove list style*/
+	display: block;
+}
+
+.combobox-result.highlighted {
+	background-color: lightgray;
+}
+
+.combobox-result  .case-match {
+	font-weight: bold;
+	color: #0158e4;
+}

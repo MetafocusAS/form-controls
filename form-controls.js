@@ -13,6 +13,7 @@ $(document).ready(function() {
 	initInputs();
 	initCheckBoxesAndRadios();
 	initFloatingLabels();
+	initComboboxes();
 	checkForDOMChanges();
 });
 
@@ -326,6 +327,310 @@ function hideLabel($input) {
 	return false;
 }
 
+//Combobox
+function initComboboxes() {
+	var countries = [
+	"Afghanistan", "Albania", "Algerie", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua og Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Aserbajdsjan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belgia", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia og Herzegovina", "Botswana", "Bouvetøya", "Brasil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Canada", "Cayman Islands", "Chad", "Chile", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Cookøyene", "Costa Rica", "Cote D'Ivoire", "Cuba", "Danmark", "De forente arabiske emirater", "Den dominikanske republikk", "Den demokratiske republikken Kongo", "Den sentralafrikanske republikk", "Djibouti", "Dominica", "Ecuador", "Egypt", "El Salvador", "Ekvatorial-Guinea", "Eritrea", "Estonia", "Etiopia", "Falklandsøyene (Malvinas)", "Færøyene", "Fiji", "Filippinene", "Finland", "France", "Fransk Guyana", "Fransk Polynesia", "Franske sørlige territorier", "Gabon", "Gambia", "Georgia", "Ghana", "Gibraltar", "Hellas", "Hviterussland", "Grønland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island og Mcdonald Islands", "Honduras", "Hong Kong", "Island", "India", "Indonesia", "Iran", "Irak", "Irland", "Israel", "Italia", "Jamaica", "Japan", "Jemen", "Jomfruøyene (britisk)", "Jomfruøyene (amerikanske)", "Jordan", "Kambodsja", "Kamerun", "Kapp Verde", "Kasakhstan", "Kenya", "Kina", "Kirgisistan", "Kiribati", "Komorene", "Kongo", "Korea", "Kroatia", "Kuwait", "Kypros", "Laos", "Latvia", "Libanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Litauen", "Luxembourg", "Macao", "Madagaskar", "Makedonia", "Malawi", "Malaysia", "Maldivene", "Mali", "Malta", "Marshalløyene", "Martinique", "Mauretania", "Mauritius", "Mayotte", "Mexico", "Mikronesiaføderasjonen", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Marokko", "Mosambik", "Myanmar", "Namibia", "Nauru", "Nepal", "Nederland", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Norge", "Nord-Korea", "Nord-Marianene", "Ny-Caledonia", "Oman", "Pakistan", "Palau", "Panama", "Papua Ny-Guinea", "Paraguay", "Peru", "Pitcairn", "Polen", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russland", "Rwanda", "Saint Helena", "Saint Kitts og Nevis", "Saint Lucia", "Saint Pierre og Miquelon", "Saint Vincent og Grenadinene", "Samoa", "San Marino", "São Tomé og Príncipe", "Saudi-Arabia", "Senegal", "Serbia", "Seychellene", "Sierra Leone", "Singapore", "Slovakia (Slovakiske Republikk)", "Slovenia", "Salomonøyene", "Somalia", "Spania", "Sri Lanka", "Storbritannia", "Sudan", "Surinam", "Svalbard og Jan Mayen", "Sverige", "Swaziland", "Sveits", "Syria", "Sør-Afrika", "Tadsjikistan", "Taiwan", "Tanzania", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad og Tobago", "Tsjekkia", "Tunisia", "Turkmenistan", "Turks- og Caicosøyene", "Tuvalu", "Tyrkia", "Tyskland", "Uganda", "Ukraina", "USAs ytre småøyer", "Ungarn", "USA (Amerikas forente stater)", "Uruguay", "Usbekistan", "Vanuatu", "Vatikanstaten (Holy See)", "Venezuela", "Vest-Sahara", "Vietnam", "Wallis og Futuna", "Zambia", "Zimbabwe", "Østerrike", "Øst-Timor"
+	];
+
+
+	var custom = [ "Banan", "Eple", "Plomme" ];
+
+	buildComboboxes();
+
+	function getCorrespondingResults($input) {
+		return $input.parent().siblings(".combobox-results-container").children(".combobox-results");
+	}
+
+	function getResultItemMarkup(content, number) {
+		return "<li role=\"option\" aira-selected=\"false\" class=\"combobox-result\" id=\"combobox-result-" + number +"\">" +
+							content +
+						"</li>";
+	}
+
+	//Builds the drop down of combobox results
+	$("#frm").on("input", "input.combobox", function() {
+		var searchVal = $(this).val().toLowerCase();
+		var $searchResults = getCorrespondingResults($(this));
+
+		$searchResults.empty();
+
+		if (searchVal.length) {
+			var match = $(this).hasClass("countries") ? countries : custom;
+			var secondaryMatches = [];
+
+			var highlightMatch = function(val, startIndex, endIndex) {
+				return val.substring(0, startIndex) + "<span class=\"case-match\">" + val.substring(startIndex, endIndex) + "</span>" + val.substring(endIndex, val.length);
+			}
+
+			var count = 0;
+
+			$.each(match, function(index, value) {
+				var indexOfSearchVal = value.toLowerCase().indexOf(searchVal);
+				if (indexOfSearchVal == 0) {
+					$searchResults.append(getResultItemMarkup(highlightMatch(value, 0, searchVal.length), ++count));
+				}
+				else if (indexOfSearchVal > 0) {
+					secondaryMatches.push(highlightMatch(value, indexOfSearchVal, indexOfSearchVal + searchVal.length));
+				}
+			});
+
+			if (!$searchResults.children().length) {
+				$.each(secondaryMatches, function(index, value) {
+					$searchResults.append(getResultItemMarkup(value, ++count));
+				});
+			}
+		}
+		toggleSearchResults($searchResults);
+	});
+
+	function hideSearchResults($searchResults) {
+		if (!$searchResults.hasClass("hidden")) {
+			$searchResults.scrollTop(0);
+			$searchResults.addClass("hidden");
+			$searchResults.parent().siblings(".combobox-wrap").attr("aria-expanded", "false");
+			deselectHighlightedItem($searchResults);
+			return true;
+		}
+		return false;
+	}
+	function showSearchResults($searchResults) {
+		if ($searchResults.children().length) {
+			$searchResults.parent().siblings(".combobox-wrap").attr("aria-expanded", "true");
+			$searchResults.removeClass("hidden");
+			return true;
+		}
+		return false;
+	}
+	function toggleSearchResults($searchResults) {
+		if (!showSearchResults($searchResults)) hideSearchResults($searchResults);
+	}
+
+	//Hides search results when input loses focus
+	$("#frm").on("blur", "input.combobox", function() {
+		hideSearchResults(getCorrespondingResults($(this)))
+	});
+
+	//Shows search results when input receives focus
+	$("#frm").on("focus", "input.combobox", function() {
+		showSearchResults(getCorrespondingResults($(this)));
+	});
+
+	function unHighlightItem($item) {
+		if ($item && $item.length) {
+			$item.attr("aria-selected", "false");
+			$item.removeClass("highlighted");
+			$item.closest(".combobox-container").find(".combobox").attr("aria-activedescendant", "");
+			return true;
+		}
+		return false;
+	}
+
+	function highlightItem($item) {
+		unHighlightItem($item.siblings(".highlighted"));
+		if ($item && $item.length) {
+			$item.attr("aria-selected", "true");
+			$item.addClass("highlighted");
+			$item.closest(".combobox-container").find(".combobox").attr("aria-activedescendant", $item.attr("id"));
+			return true;
+		}
+		return false;
+	}
+
+	//Removes highlight from search item related to the given input
+	function deselectHighlightedItem($searchResults) {
+		if (!unHighlightItem($searchResults.children(".highlighted"))) {
+			$searchResults.closest(".combobox-container").find(".combobox").attr("aria-activedescendant", "");
+		}
+	}
+	//Removes highlight from search item when input is clicked
+	$("#frm").on("click", "input.combobox", function() {
+		deselectHighlightedItem(getCorrespondingResults($(this)));
+	});
+
+	//Enables navigation in the search results (using keys: arrow up, arrow down and enter)
+	$("#frm").on("keydown", "input.combobox", function(e) {
+		var $searchResults = getCorrespondingResults($(this));
+
+		if (!$searchResults.hasClass("hidden")) {
+			if (isDownArrow(e)) {
+				var $resultItems = $searchResults.children(".combobox-result");
+				var $highlightedItem = $resultItems.filter(".highlighted");
+
+				if ($highlightedItem.length) {
+					var $next = $highlightedItem.next();
+					if (highlightItem($next)) {
+						//Variables used to calculate and set the scroll position
+						var searchResultsContainerTopOffset = $searchResults.offset().top;
+						var searchResultsContainerBottomOffset = $searchResults.offset().top + parseFloat($searchResults.css("max-height").replace("px", ""));
+						var resultItemTopOffset = $next.offset().top;
+						var resultItemBottomOffset = $next.offset().top + $next.outerHeight();
+						var scrollTop = $searchResults.scrollTop();
+
+						//Check if the selected item is scrolled out of view
+						if (resultItemTopOffset > searchResultsContainerBottomOffset || resultItemTopOffset < searchResultsContainerTopOffset) {
+							$searchResults.scrollTop(scrollTop + resultItemTopOffset - searchResultsContainerTopOffset);
+						}
+						//Check if a normal step should be performed (scroll down by one item)
+						else if (resultItemBottomOffset > searchResultsContainerBottomOffset) {
+							$searchResults.scrollTop(scrollTop + $next.outerHeight());
+						}
+					}
+					else {
+						//Scroll to top
+						unHighlightItem($highlightedItem);
+						$searchResults.scrollTop(0);
+					}
+				}
+				else {
+					var $firstItem = $resultItems.first();
+					highlightItem($firstItem);
+
+					//Set scrollTop
+					if ($searchResults.scrollTop() > 0) {
+						$searchResults.scrollTop($firstItem.offset().top);
+					}
+				}
+				e.preventDefault();
+			}
+			else if (isUpArrow(e)) {
+				var $resultItems = $searchResults.children(".combobox-result");
+				var $highlightedItem = $resultItems.filter(".highlighted");
+
+				if ($highlightedItem.length) {
+					var $prev = $highlightedItem.prev();
+					if (highlightItem($prev)) {
+						//Variables used to calculate and set the scroll position
+						var searchResultsContainerTopOffset = $searchResults.offset().top;
+						var searchResultsContainerBottomOffset = $searchResults.offset().top + parseFloat($searchResults.css("max-height").replace("px", ""));
+						var resultItemTopOffset = $prev.offset().top;
+						var resultItemBottomOffset = $prev.offset().top + $prev.outerHeight();
+						var scrollTop = $searchResults.scrollTop();
+
+						//Check if the selected item is scrolled out of view
+						if (resultItemTopOffset < 0 || resultItemBottomOffset > searchResultsContainerBottomOffset) {
+							$searchResults.scrollTop(scrollTop + resultItemTopOffset - searchResultsContainerTopOffset);
+						}
+						//Check if a normal step should be performed (scroll down by one item)
+						else if (resultItemTopOffset < searchResultsContainerTopOffset) {
+							$searchResults.scrollTop(scrollTop - $prev.outerHeight());
+						}
+					}
+					else {
+						//Scroll to top
+						unHighlightItem($highlightedItem);
+						$searchResults.scrollTop(0);
+					}
+				}
+				else {
+					var $lastItem = $resultItems.last();
+					highlightItem($lastItem);
+
+					//Set scrollTop
+					var lastItemBottomOffset = $lastItem.offset().top + $lastItem.outerHeight();
+					$searchResults.scrollTop($searchResults.scrollTop() + lastItemBottomOffset);
+				}
+				e.preventDefault();
+			}
+			else if (isEnterKey(e) && $searchResults.children(".highlighted").length) {
+				selectItem($searchResults.children(".highlighted"));
+				e.preventDefault();
+			}
+			else if (isEscKey(e)) {
+				hideSearchResults($searchResults);
+			}
+		}
+		//Show all results when user presses down arrow IF the search string is empty
+		else if (isDownArrow(e) && $(this).val() == "") {
+			var match = $(this).hasClass("countries") ? countries : custom;
+			$.each(match, function(index, value) {
+				$searchResults.append(getResultItemMarkup(value, (index + 1)));
+			});
+			showSearchResults($searchResults);
+		}
+	});
+
+	//Functions used to detect keys
+	function isDownArrow(e) {
+		return e.which == 40;
+	}
+	function isUpArrow(e) {
+		return e.which == 38;
+	}
+	function isEnterKey(e) {
+		return e.which == 13;
+	}
+	function isEscKey(e) {
+		return e.which == 27;
+	}
+
+	//Select search result when clicked
+	$("#frm").on("mousedown", ".combobox-result", function(e) {
+		selectItem($(this));
+		e.preventDefault();
+	});
+
+	//Selects an item from the search results
+	function selectItem($searchItem) {
+		var $searchInput = $searchItem.closest(".combobox-container").find("input.combobox");
+		$searchInput.val($searchItem.text());
+
+		var $searchResults = $searchItem.parent();
+		hideSearchResults($searchResults);
+
+		//Set scrollTop (entire page) if input out of view
+		var $searchInputLabel = $searchItem.closest(".combobox-container").find("label");
+		if (!$searchInput.isInViewport()) {
+			$("html, body").animate({
+					scrollTop: $searchInputLabel.offset().top
+			}, 100);
+			//$("html, body").scrollTop($searchInputLabel.offset().top);
+		}
+	}
+
+	$.fn.isInViewport = function() {
+		var elementTop = $(this).offset().top;
+		var viewportTop = $(window).scrollTop();
+		var viewportBottom = viewportTop + $(window).height();
+		return elementTop > viewportTop && elementTop < viewportBottom;
+	};
+
+	//Highlight search result when hovered
+	$("#frm").on("mouseenter", ".combobox-result", function() {
+		highlightItem($(this));
+	});
+}
+
+function buildComboboxes() {
+	$.each($(".combobox-container"), function(index) {
+		var $input = $(this).find(".combobox");
+		$input.attr("spellcheck", "false");
+		$input.attr("autocomplete", "off");
+
+		$input.parent().addClass("combobox-wrap");
+
+		//Set ARI attributes on parent
+		$input.parent().attr("role", "combobox");
+		$input.parent().attr("aria-haspopup", "combobox");
+		$input.attr("aria-owns", "combobox-results-" + (index + 1));
+		$input.parent().attr("aria-expanded", "false");
+
+		//Set ARI attributes on input
+		$input.attr("aria-autocomplete", "list");
+		$input.attr("aria-controls", "combobox-results-" + (index + 1));
+		$input.attr("aria-activedescendant", ""); //Is this right?
+
+		if (!$(this).children(".combobox-results-container").length) {
+			var labelID = $(this).find("label").attr("id");
+			$(this).append(
+				"<div class=\"combobox-results-container\">" +
+					"<ul role=\"listbox\" aria-labeledby=\"" + labelID + "\" class=\"combobox-results hidden\" id=\"combobox-results-" + (index + 1) + "\"></ul>" +
+				"</div>"
+			);
+		}
+	});
+}
+
 //Checks for changes in the DOM
 //And adds HTML attributes and inits customized checkboxes
 //Whenever changes are made to the frm-element (main form) in the DOM
@@ -336,6 +641,7 @@ function checkForDOMChanges() {
 			addHTMLAttributes();
       calcCheckAndRadioPlacment();
 			initFloatingLabelsLoaded();
+			buildComboboxes();
 	});
 }
 
