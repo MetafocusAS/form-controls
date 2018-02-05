@@ -121,7 +121,7 @@ For å kunne bruke det i digiforms må du deretter inkludere (Document settings 
 * Legg til klassen **combobox-countries** hvis du ønsker en liste med land.
 * Klassen **input-field** kan også brukes på selve input-feltet. Det gir en *grunnleggende styling*.
 
-#### Hvordan plassere klasser på en dropdown (select)
+#### Hvordan plassere klasser på en combobox (autocomplete)
 ![Figur som viser hvordan klassene for inputfelter skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-combobox.svg)
 
 #### HTML
