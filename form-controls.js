@@ -581,6 +581,7 @@ function initComboboxes() {
 
 		var $searchResults = $searchItem.parent();
 		hideSearchResults($searchResults);
+		$searchResults.empty();
 
 		//Set scrollTop (entire page) if input out of view
 		var $searchInputLabel = $searchItem.closest(".combobox-container").find("label");
