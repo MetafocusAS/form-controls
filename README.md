@@ -115,7 +115,7 @@ For å kunne bruke det i digiforms må du deretter inkludere (Document settings 
 #### Screen shot
 ![Figur som viser hvordan dropdowns blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-select.PNG)
 
-### Combobox - autocomplete
+### Combobox (autocomplete)
 * Må ligge inne i en div med klassen: **combobox-container**. Pass på at det ikke ligger noen andre elementer inne i **combobox-container** enn selve input-elementet (+ tilhørende label og containeren rundt disse).
 * Bruk klassen **combobox** på selve input-feltet.
 * Legg til klassen **combobox-countries** hvis du ønsker en liste med land.
