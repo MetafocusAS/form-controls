@@ -140,8 +140,7 @@ TODO
 ```
 
 #### Screen shot
-TODO
-![Figur som viser hvordan dropdowns blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-select.PNG)
+![Figur som viser hvordan dropdowns blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-combobox.png)
 
 ### Input-elementer (input)
 * Bruk klassen **input-field** for *grunnleggende styling* av inputfelter.
