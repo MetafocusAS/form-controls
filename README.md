@@ -123,7 +123,7 @@ For å kunne bruke det i digiforms må du deretter inkludere (Document settings 
 
 #### Hvordan plassere klasser på en dropdown (select)
 TODO
-![Figur som viser hvordan klassene for inputfelter skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-select.svg)
+![Figur som viser hvordan klassene for inputfelter skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-combobox.svg)
 
 #### HTML
 ``` html
