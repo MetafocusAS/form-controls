@@ -581,7 +581,6 @@ function initComboboxes() {
 
 		var $searchResults = $searchItem.parent();
 		hideSearchResults($searchResults);
-		$searchResults.empty();
 
 		//Set scrollTop (entire page) if input out of view
 		var $searchInputLabel = $searchItem.closest(".combobox-container").find("label");
@@ -589,8 +588,9 @@ function initComboboxes() {
 			$("html, body").animate({
 					scrollTop: $searchInputLabel.offset().top
 			}, 100);
-			//$("html, body").scrollTop($searchInputLabel.offset().top);
 		}
+
+		$searchResults.empty();
 	}
 
 	$.fn.isInViewport = function() {
