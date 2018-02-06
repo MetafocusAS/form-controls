@@ -25,6 +25,17 @@ For å kunne bruke det i digiforms må du deretter inkludere (Document settings 
 ## Demo
 [https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo](https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo)
 
+## Browser support
+Biblioteket er testet og fungerer i følgende nettlesere:
+* Chrome
+* Firefox
+* Opera
+* Edge
+* IE 11
+* Safari
+
+Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Android)
+
 ## Checkboxer og radioknapper
 * Klassene styler checkboxene/radioknappene sånn at de blir litt penere, og ser like ut i alle browsere
 * De er har også en større "click area" som gjør det litt lettere å treffe de med musepekeren
