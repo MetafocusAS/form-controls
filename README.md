@@ -259,3 +259,12 @@ Endre farge på border-color og background-color her:
 	background-color: #257886 !important;
 }
 ```
+
+### Endre farge på matchet tekst i combobox
+Endre farge på color her:
+```css
+.combobox-result  .case-match {
+	font-weight: bold;
+	color: #0059b3;
+}
+```
