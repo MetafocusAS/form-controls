@@ -1,14 +1,14 @@
 /****container-elements that has focus*****/
 .focused {
-	border-color: #f35b1c !important;
+	border-color: #4E6378 !important;
 }
 
 /********** Inputs and selects **********/
 .input-field {
-    padding: 12px;
+    padding: 1em;
     width: 100%;
     border: solid 1px #c3b5a7;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     font-family: inherit !important;
     outline: none; /*Chrome override*/
     border-radius: 2px;
@@ -20,8 +20,8 @@
 }
 
 .input-field:focus {
-	padding: 11px !important;
-	border: 2px solid #f35b1c !important;
+	padding: calc(1em - 1px) !important;
+	border: 2px solid #4E6378 !important;
 }
 
 .input-field:disabled {
@@ -46,8 +46,8 @@ input[type=number]::-webkit-outer-spin-button {
     width: 1.2em;
     border-radius: 50%;
     border-top: solid #257886 2px;
-    margin-top: 13px;
-    margin-left: 13px;
+    margin-top: calc(1em - 1px);
+    margin-left: calc(1em - 1px);
     /*background-color: red;*/
     animation: spin 1s linear infinite;
     -moz-animation: spin 1s linear infinite;
@@ -77,19 +77,19 @@ select, option {
 	-ms-transform: rotate(45deg);
 	-o-transform: rotate(45deg);
 	position: absolute;
-	right: 24px;
-	bottom: calc(12px + 0.6em);
+	right: 2em;
+	bottom: 1.5em;
 	pointer-events: none;
 }
 
 .select-container .label_control::before {
 	content: "";
 	position: absolute;
-	width: calc(1em + 32px);
-	height: calc(1em + 24px);
+	width: 4em;
+	height: 3em;
 	background-color: white;
-	right: 12px;
-	bottom: 6px;
+	right: 1em;
+	bottom: 0.2em;
 	pointer-events: none;
 }
 
@@ -98,7 +98,7 @@ select {
 	text-indent: 1px;
 	text-overflow: '';
 	background-color: white !important;
-	padding-right: calc(1em + 32px) !important;
+	padding-right: 5em !important;
 }
 
 /*Remove browser default arrow in IE*/
@@ -152,8 +152,8 @@ select::-ms-expand {
 }
 
 .control-row .label_control.checked {
-  border-color: #257886 !important;
-  background-color: #257886;
+  border-color: #0059b3 !important;
+  background-color: #0059b3;
   /*transition: background-color 0.5s ease-in-out, border-color 0.5s ease-in-out;*/
 }
 
@@ -216,6 +216,8 @@ select::-ms-expand {
   margin-left: 1.2rem;
   padding-top: 1.2rem;
   font-size:  1rem;
+	font-weight: bold;
+	color: #0059b3;
 }
 
 .label-float.hidden label {
@@ -257,7 +259,7 @@ select::-ms-expand {
 	display: none;
 }
 
-/*Combobox*/
+/******* COMBOBOX *******/
 .combobox-results-container {
 	position: relative;
 	width: 100%;
@@ -290,7 +292,7 @@ select::-ms-expand {
 }
 
 .combobox-container input.combobox, .combobox-result {
-	padding: 12px;
+	padding: 1em;
 }
 
 .combobox-result {
@@ -305,5 +307,6 @@ select::-ms-expand {
 
 .combobox-result  .case-match {
 	font-weight: bold;
-	color: #0158e4;
+	color: #0059b3;
+	/*color: #0073e6; /*Blue*/*/
 }
