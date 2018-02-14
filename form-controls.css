@@ -125,6 +125,10 @@ select::-ms-expand {
 }
 
 /********** Checkboxes and radio-buttons **********/
+.control-container-tight > fieldset {
+    width: calc(100% - 3em) !important;
+}
+
 .control-row {
   display: flex;
   flex-direction: row;
