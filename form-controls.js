@@ -116,7 +116,7 @@ function initInputs() {
 
 	$("input.vps-account-mask").mask("00000 0000000");
 
-	$("input.money").mask("099 999 999 999 999 999 999 999 kr");
+	$("input.money").mask("099 999 999 999 999 999 999 999 999 999 999 999 999 999 999 999 999 999");
 
 	$("input.org-number-mask").mask("000 000 000");
 
