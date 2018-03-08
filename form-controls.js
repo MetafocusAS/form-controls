@@ -548,11 +548,7 @@ function initComboboxes() {
 		}
 		//Show all results when user presses down arrow IF the search string is empty
 		else if (isDownArrow(e) && $(this).val() == "") {
-			var match = getList($(this));
-			$.each(match, function(index, value) {
-				$searchResults.append(getResultItemMarkup(value, (index + 1)));
-			});
-			showSearchResults($searchResults);
+			 showAllResults($(this));
 		}
 	});
 
@@ -568,6 +564,16 @@ function initComboboxes() {
 	}
 	function isEscKey(e) {
 		return e.which == 27;
+	}
+
+	//Function used to show all search results in the list
+	function showAllResults($input) {
+		var match = getList($input);
+		var $searchResults = getCorrespondingResults($input);
+		$.each(match, function(index, value) {
+			$searchResults.append(getResultItemMarkup(value, (index + 1)));
+		});
+		showSearchResults($searchResults);
 	}
 
 	//Select search result when clicked
@@ -605,6 +611,11 @@ function initComboboxes() {
 	//Highlight search result when hovered
 	$("#frm").on("mouseenter", ".combobox-result", function() {
 		highlightItem($(this));
+	});
+
+	//Opens the dropdown (combobox-dropdown)
+	$("#frm").on("click", "input.combobox-dropdown", function() {
+		showAllResults($(this));
 	});
 }
 
