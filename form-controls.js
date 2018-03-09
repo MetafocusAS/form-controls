@@ -302,14 +302,19 @@ function initFloatingLabelsLoaded() {
 		if (!showLabel($input)) hideLabel($input);
 	}
 
+	var setPlaceholder = function($input) {
+		$input.attr("placeholder", getLabel($input).find("label").text());
+	}
+
 	$.each($(".label-float input"), function() {
 		toggleLabel($(this));
+		setPlaceholder($(this));
 	});
 }
 
 //Shows a floating label IF it should be shown
 function showLabel($input) {
-	var $myLabel = $input.parent().parent();
+	var $myLabel = getLabel($input);
 
 	if ($input.val().length && $myLabel.hasClass("hidden")) {
 		$myLabel.removeClass("hidden");
@@ -320,7 +325,7 @@ function showLabel($input) {
 
 //Hides a floating label IF it should be hidden
 function hideLabel($input) {
-	var $myLabel = $input.parent().parent();
+	var $myLabel = getLabel($input);
 
 	if ($input.val().length == 0 && !$myLabel.hasClass("hidden")) {
 		$myLabel.addClass("hidden");
@@ -329,12 +334,15 @@ function hideLabel($input) {
 	return false;
 }
 
+function getLabel($input) {
+	return $input.parent().parent();
+}
+
 //Combobox
 function initComboboxes() {
 	var countries = [
 	"Afghanistan", "Albania", "Algerie", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua og Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Aserbajdsjan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belgia", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia og Herzegovina", "Botswana", "Bouvetøya", "Brasil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Canada", "Cayman Islands", "Chad", "Chile", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Cookøyene", "Costa Rica", "Cote D'Ivoire", "Cuba", "Danmark", "De forente arabiske emirater", "Den dominikanske republikk", "Den demokratiske republikken Kongo", "Den sentralafrikanske republikk", "Djibouti", "Dominica", "Ecuador", "Egypt", "El Salvador", "Ekvatorial-Guinea", "Eritrea", "Estonia", "Etiopia", "Falklandsøyene (Malvinas)", "Færøyene", "Fiji", "Filippinene", "Finland", "France", "Fransk Guyana", "Fransk Polynesia", "Franske sørlige territorier", "Gabon", "Gambia", "Georgia", "Ghana", "Gibraltar", "Hellas", "Hviterussland", "Grønland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island og Mcdonald Islands", "Honduras", "Hong Kong", "Island", "India", "Indonesia", "Iran", "Irak", "Irland", "Israel", "Italia", "Jamaica", "Japan", "Jemen", "Jomfruøyene (britisk)", "Jomfruøyene (amerikanske)", "Jordan", "Kambodsja", "Kamerun", "Kapp Verde", "Kasakhstan", "Kenya", "Kina", "Kirgisistan", "Kiribati", "Komorene", "Kongo", "Korea", "Kroatia", "Kuwait", "Kypros", "Laos", "Latvia", "Libanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Litauen", "Luxembourg", "Macao", "Madagaskar", "Makedonia", "Malawi", "Malaysia", "Maldivene", "Mali", "Malta", "Marshalløyene", "Martinique", "Mauretania", "Mauritius", "Mayotte", "Mexico", "Mikronesiaføderasjonen", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Marokko", "Mosambik", "Myanmar", "Namibia", "Nauru", "Nepal", "Nederland", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Norge", "Nord-Korea", "Nord-Marianene", "Ny-Caledonia", "Oman", "Pakistan", "Palau", "Panama", "Papua Ny-Guinea", "Paraguay", "Peru", "Pitcairn", "Polen", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russland", "Rwanda", "Saint Helena", "Saint Kitts og Nevis", "Saint Lucia", "Saint Pierre og Miquelon", "Saint Vincent og Grenadinene", "Samoa", "San Marino", "São Tomé og Príncipe", "Saudi-Arabia", "Senegal", "Serbia", "Seychellene", "Sierra Leone", "Singapore", "Slovakia (Slovakiske Republikk)", "Slovenia", "Salomonøyene", "Somalia", "Spania", "Sri Lanka", "Storbritannia", "Sudan", "Surinam", "Svalbard og Jan Mayen", "Sverige", "Swaziland", "Sveits", "Syria", "Sør-Afrika", "Tadsjikistan", "Taiwan", "Tanzania", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad og Tobago", "Tsjekkia", "Tunisia", "Turkmenistan", "Turks- og Caicosøyene", "Tuvalu", "Tyrkia", "Tyskland", "Uganda", "Ukraina", "USAs ytre småøyer", "Ungarn", "USA (Amerikas forente stater)", "Uruguay", "Usbekistan", "Vanuatu", "Vatikanstaten (Holy See)", "Venezuela", "Vest-Sahara", "Vietnam", "Wallis og Futuna", "Zambia", "Zimbabwe", "Østerrike", "Øst-Timor"
 	];
-
 
 	var custom = [ "Banan", "Eple", "Plomme" ];
 
@@ -386,6 +394,12 @@ function initComboboxes() {
 					$searchResults.append(getResultItemMarkup(value, ++count));
 				});
 			}
+			if ($(this).hasClass("combobox-strict")) {
+				highlightItem(getCorrespondingResults($(this)).children().first());
+			}
+		}
+		else if ($(this).hasClass("combobox-strict")) {
+			addAllResultsToComboboxList($(this));
 		}
 		toggleSearchResults($searchResults);
 	});
@@ -414,7 +428,17 @@ function initComboboxes() {
 
 	//Hides search results when input loses focus
 	$("#frm").on("blur", "input.combobox", function() {
-		hideSearchResults(getCorrespondingResults($(this)))
+		var $searchResults = getCorrespondingResults($(this));
+		if ($(this).hasClass("combobox-strict")) {
+			var $highlightedItem = $searchResults.children(".highlighted").first();
+			if ($highlightedItem.length) {
+				selectItem($highlightedItem);
+			}
+			else if ($.inArray($(this).val(), getList($(this))) < 0) {
+				$(this).val("");
+			}
+		}
+		hideSearchResults($searchResults);
 	});
 
 	//Shows search results when input receives focus
@@ -548,7 +572,8 @@ function initComboboxes() {
 		}
 		//Show all results when user presses down arrow IF the search string is empty
 		else if (isDownArrow(e) && $(this).val() == "") {
-			 showAllResults($(this));
+			 addAllResultsToComboboxList($(this));
+			 showSearchResults($searchResults);
 		}
 	});
 
@@ -567,13 +592,12 @@ function initComboboxes() {
 	}
 
 	//Function used to show all search results in the list
-	function showAllResults($input) {
+	function addAllResultsToComboboxList($input) {
 		var match = getList($input);
 		var $searchResults = getCorrespondingResults($input);
 		$.each(match, function(index, value) {
 			$searchResults.append(getResultItemMarkup(value, (index + 1)));
 		});
-		showSearchResults($searchResults);
 	}
 
 	//Select search result when clicked
@@ -613,10 +637,20 @@ function initComboboxes() {
 		highlightItem($(this));
 	});
 
-	//Opens the dropdown (combobox-dropdown)
-	$("#frm").on("click", "input.combobox-dropdown", function() {
-		showAllResults($(this));
-	});
+	initStrictComboboxes();
+
+	function initStrictComboboxes() {
+		var $comboboxes = $("input.combobox-strict");
+
+		$.each($comboboxes, function() {
+			addAllResultsToComboboxList($(this));
+		});
+
+		//Opens the dropdown (combobox-strict)
+		$("#frm").on("click", $comboboxes, function(e) {
+			showSearchResults(getCorrespondingResults($(this)));
+		});
+	}
 }
 
 function buildComboboxes() {
@@ -626,6 +660,9 @@ function buildComboboxes() {
 		$input.attr("autocomplete", "off");
 
 		$input.parent().addClass("combobox-wrap");
+		if ($input.hasClass("combobox-strict")) {
+			$input.parent().addClass("combobox-strict-wrap");
+		}
 
 		//Set ARI attributes on parent
 		$input.parent().attr("role", "combobox");

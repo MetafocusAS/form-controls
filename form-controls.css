@@ -292,11 +292,11 @@ select::-ms-expand {
 	background-color: white;
 }
 
-.combobox-results,  input.combobox {
+.combobox-results,  input:not(.input-field-alt).combobox {
 	border: solid 1px #d6d1d1;
 }
 
-.combobox-container input.combobox, .combobox-result {
+.combobox-container input:not(.input-field-alt).combobox, .combobox-result {
 	padding: 1em;
 }
 
