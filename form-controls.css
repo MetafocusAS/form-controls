@@ -229,7 +229,7 @@ select::-ms-expand {
   display: none;
 }
 
-.label-float input {
+.label-float input, .label-float textarea {
   padding: calc(1.2rem + 3px) 1.2rem 1.2rem 1.2rem;
   width: 100%;
   font-size: 1.2rem;
@@ -239,11 +239,11 @@ select::-ms-expand {
   border-radius: 0;
 }
 
-.label-float input:focus {
+.label-float input:focus, .label-float textarea {
   border-bottom-color: #4E6378;
 }
 
-.label-float:not(.hidden) input {
+.label-float:not(.hidden) input, .label-float:not(.hidden) textarea {
   padding-top: calc(2.4rem + 3px) !important;
 }
 

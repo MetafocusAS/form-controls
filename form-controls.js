@@ -288,10 +288,10 @@ function calcCheckAndRadioPlacment() {
 function initFloatingLabels() {
 	initFloatingLabelsLoaded();
 
-	$("#frm").on("input", ".label-float input", function() {
+	$("#frm").on("input", ".label-float input, .label-float textarea", function() {
 		showLabel($(this));
 	});
-	$("#frm").on("keyup", ".label-float input", function() {
+	$("#frm").on("keyup", ".label-float input, .label-float textarea", function() {
 		hideLabel($(this));
 	});
 }
@@ -306,7 +306,7 @@ function initFloatingLabelsLoaded() {
 		$input.attr("placeholder", getLabel($input).find("label").text());
 	}
 
-	$.each($(".label-float input"), function() {
+	$.each($(".label-float input, .label-float textarea"), function() {
 		toggleLabel($(this));
 		setPlaceholder($(this));
 	});
@@ -346,8 +346,14 @@ function initComboboxes() {
 
 	var custom = [ "Banan", "Eple", "Plomme" ];
 
+	var sector = [ "Offentlig myndighet", "Bank, finans og forsikring", "Juridiske tjenester", "IT og telekommunikasjon", "Eiendom", "Media, avis, markedsføring og salgstjenester",
+	"Butikk og varehandel", "Reiseliv / hotell", "Industri", "Bygg og anlegg", "Import og eksport av varer og tjenester", "Håndverkertjenester", "Kunst- og antikvitetshandel", "Transport og logistikk",
+	"Restauranter, mat og uteliv", "Urmaker / gullsmed", "Bil, kjøretøy og verkstedstjenester", "Tro og religiøse-, frivillige-, veldedige-, humanitære- og ideelle organisasjoner",
+	"Helse / omsorg / medisin og biologi / dyrehelse", "Jord- / skogbruk, fiske og matproduksjon", "Kultur og idrett", "Service og sikkerhet", "Skole, fritid, undervisning og forskning",
+	"Arkitektur og interiør", "Økonomi og regnskap" ];
+
 	function getList($input) {
-		return $input.hasClass("combobox-countries") ? countries : custom;
+		return $input.hasClass("combobox-countries") ? countries : ($input.hasClass("combobox-sector") ? sector : custom);
 	}
 
 	buildComboboxes();
