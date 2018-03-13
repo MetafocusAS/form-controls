@@ -64,7 +64,7 @@ select, option {
 	position: relative;
 }
 
-.select-container .label_control::after {
+.select-container :not(.label-float) .label_control::after {
 	content: "";
 	display: block;
 	width: .7em;
@@ -82,7 +82,7 @@ select, option {
 	pointer-events: none;
 }
 
-.select-container .label_control::before {
+.select-container :not(.label-float) .label_control::before {
 	content: "";
 	position: absolute;
 	width: 4em;
@@ -277,10 +277,10 @@ select::-ms-expand {
     pointer-events: none;
 
     transform: rotate(45deg);
-	 -moz-transform: rotate(45deg);
-	 -webkit-transform: rotate(45deg);
-	 -ms-transform: rotate(45deg);
-	 -o-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
 }
 
 /* Mozilla Firefox 19+ */

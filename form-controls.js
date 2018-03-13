@@ -120,6 +120,8 @@ function initInputs() {
 
 	$("input.org-number-mask").mask("000 000 000");
 
+	$("input.ssn-no-mask").mask("000000 00000");
+
 	$("input.date-mask").mask("00.00.0000");
 
 	$("input.letteral-text").mask("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
@@ -338,12 +340,65 @@ function getLabel($input) {
 	return $input.parent().parent();
 }
 
-//Combobox
-function initComboboxes() {
-	var countries = [
-	"Afghanistan", "Albania", "Algerie", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua og Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Aserbajdsjan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belgia", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia og Herzegovina", "Botswana", "Bouvetøya", "Brasil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Canada", "Cayman Islands", "Chad", "Chile", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Cookøyene", "Costa Rica", "Cote D'Ivoire", "Cuba", "Danmark", "De forente arabiske emirater", "Den dominikanske republikk", "Den demokratiske republikken Kongo", "Den sentralafrikanske republikk", "Djibouti", "Dominica", "Ecuador", "Egypt", "El Salvador", "Ekvatorial-Guinea", "Eritrea", "Estonia", "Etiopia", "Falklandsøyene (Malvinas)", "Færøyene", "Fiji", "Filippinene", "Finland", "France", "Fransk Guyana", "Fransk Polynesia", "Franske sørlige territorier", "Gabon", "Gambia", "Georgia", "Ghana", "Gibraltar", "Hellas", "Hviterussland", "Grønland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island og Mcdonald Islands", "Honduras", "Hong Kong", "Island", "India", "Indonesia", "Iran", "Irak", "Irland", "Israel", "Italia", "Jamaica", "Japan", "Jemen", "Jomfruøyene (britisk)", "Jomfruøyene (amerikanske)", "Jordan", "Kambodsja", "Kamerun", "Kapp Verde", "Kasakhstan", "Kenya", "Kina", "Kirgisistan", "Kiribati", "Komorene", "Kongo", "Korea", "Kroatia", "Kuwait", "Kypros", "Laos", "Latvia", "Libanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Litauen", "Luxembourg", "Macao", "Madagaskar", "Makedonia", "Malawi", "Malaysia", "Maldivene", "Mali", "Malta", "Marshalløyene", "Martinique", "Mauretania", "Mauritius", "Mayotte", "Mexico", "Mikronesiaføderasjonen", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Marokko", "Mosambik", "Myanmar", "Namibia", "Nauru", "Nepal", "Nederland", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Norge", "Nord-Korea", "Nord-Marianene", "Ny-Caledonia", "Oman", "Pakistan", "Palau", "Panama", "Papua Ny-Guinea", "Paraguay", "Peru", "Pitcairn", "Polen", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russland", "Rwanda", "Saint Helena", "Saint Kitts og Nevis", "Saint Lucia", "Saint Pierre og Miquelon", "Saint Vincent og Grenadinene", "Samoa", "San Marino", "São Tomé og Príncipe", "Saudi-Arabia", "Senegal", "Serbia", "Seychellene", "Sierra Leone", "Singapore", "Slovakia (Slovakiske Republikk)", "Slovenia", "Salomonøyene", "Somalia", "Spania", "Sri Lanka", "Storbritannia", "Sudan", "Surinam", "Svalbard og Jan Mayen", "Sverige", "Swaziland", "Sveits", "Syria", "Sør-Afrika", "Tadsjikistan", "Taiwan", "Tanzania", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad og Tobago", "Tsjekkia", "Tunisia", "Turkmenistan", "Turks- og Caicosøyene", "Tuvalu", "Tyrkia", "Tyskland", "Uganda", "Ukraina", "USAs ytre småøyer", "Ungarn", "USA (Amerikas forente stater)", "Uruguay", "Usbekistan", "Vanuatu", "Vatikanstaten (Holy See)", "Venezuela", "Vest-Sahara", "Vietnam", "Wallis og Futuna", "Zambia", "Zimbabwe", "Østerrike", "Øst-Timor"
-	];
+function getXMLData(getXMLUrl, onSuccess) {
+	//Gets the xml data from the server
+	//The dataType is set to "text" in order for
+	//it to work in Internet Explorer (at least IE11)
+	//The data can later parsed as xml, which works fine.
+	//Note that "cache" is set to "false"
+	//Otherwise IE will cache the data returned from this request
+	$.ajax({
+		type: "GET",
+		url: getXMLUrl,
+		dataType: "text", //IE
+		cache : false, //IE
+		xhr: function() {
+			return window.ActiveXObject ? new ActiveXObject("Microsoft.XMLHTTP") : new XMLHttpRequest();
+		},
+		success: function(response) {
+			onSuccess(response);
+		}
+	});
+}
 
+//Comboboxes
+var countries = [
+"Afghanistan", "Albania", "Algerie", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua og Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Aserbajdsjan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belgia", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia og Herzegovina", "Botswana", "Bouvetøya", "Brasil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Canada", "Cayman Islands", "Chad", "Chile", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Cookøyene", "Costa Rica", "Cote D'Ivoire", "Cuba", "Danmark", "De forente arabiske emirater", "Den dominikanske republikk", "Den demokratiske republikken Kongo", "Den sentralafrikanske republikk", "Djibouti", "Dominica", "Ecuador", "Egypt", "El Salvador", "Ekvatorial-Guinea", "Eritrea", "Estonia", "Etiopia", "Falklandsøyene (Malvinas)", "Færøyene", "Fiji", "Filippinene", "Finland", "France", "Fransk Guyana", "Fransk Polynesia", "Franske sørlige territorier", "Gabon", "Gambia", "Georgia", "Ghana", "Gibraltar", "Hellas", "Hviterussland", "Grønland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island og Mcdonald Islands", "Honduras", "Hong Kong", "Island", "India", "Indonesia", "Iran", "Irak", "Irland", "Israel", "Italia", "Jamaica", "Japan", "Jemen", "Jomfruøyene (britisk)", "Jomfruøyene (amerikanske)", "Jordan", "Kambodsja", "Kamerun", "Kapp Verde", "Kasakhstan", "Kenya", "Kina", "Kirgisistan", "Kiribati", "Komorene", "Kongo", "Korea", "Kroatia", "Kuwait", "Kypros", "Laos", "Latvia", "Libanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Litauen", "Luxembourg", "Macao", "Madagaskar", "Makedonia", "Malawi", "Malaysia", "Maldivene", "Mali", "Malta", "Marshalløyene", "Martinique", "Mauretania", "Mauritius", "Mayotte", "Mexico", "Mikronesiaføderasjonen", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Marokko", "Mosambik", "Myanmar", "Namibia", "Nauru", "Nepal", "Nederland", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Norge", "Nord-Korea", "Nord-Marianene", "Ny-Caledonia", "Oman", "Pakistan", "Palau", "Panama", "Papua Ny-Guinea", "Paraguay", "Peru", "Pitcairn", "Polen", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russland", "Rwanda", "Saint Helena", "Saint Kitts og Nevis", "Saint Lucia", "Saint Pierre og Miquelon", "Saint Vincent og Grenadinene", "Samoa", "San Marino", "São Tomé og Príncipe", "Saudi-Arabia", "Senegal", "Serbia", "Seychellene", "Sierra Leone", "Singapore", "Slovakia (Slovakiske Republikk)", "Slovenia", "Salomonøyene", "Somalia", "Spania", "Sri Lanka", "Storbritannia", "Sudan", "Surinam", "Svalbard og Jan Mayen", "Sverige", "Swaziland", "Sveits", "Syria", "Sør-Afrika", "Tadsjikistan", "Taiwan", "Tanzania", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad og Tobago", "Tsjekkia", "Tunisia", "Turkmenistan", "Turks- og Caicosøyene", "Tuvalu", "Tyrkia", "Tyskland", "Uganda", "Ukraina", "USAs ytre småøyer", "Ungarn", "USA (Amerikas forente stater)", "Uruguay", "Usbekistan", "Vanuatu", "Vatikanstaten (Holy See)", "Venezuela", "Vest-Sahara", "Vietnam", "Wallis og Futuna", "Zambia", "Zimbabwe", "Østerrike", "Øst-Timor"
+];
+
+var getXMLUrlCurrentLocale = window.location.href.replace("htmlViewer", "formAttributes");
+var onSuccessCurrentLocale = function (data) {
+	var xmlData = $.parseXML(data);
+	var xmlNode = xmlData.getElementsByTagName("document_locale")[0];
+
+	var currentLocale = xmlNode ? xmlNode.getAttribute("current_locale") : undefined;
+
+	var getXMLUrlCountries;
+	if (currentLocale) {
+		//TODO
+	}
+	else {
+		getXMLUrlCountries = "https://stf.digiforms.no/Datasources/Countries/countries_nb_NO.xml";
+	}
+	var onSuccessCountries = function(data2) {
+		var xmlData = $.parseXML(data2);
+		var countryNodes = xmlData.getElementsByTagName("country");
+
+		if (countryNodes.length) {
+			countries = [];
+		}
+
+		for (var i=0; i < countryNodes.length; i++) {
+			var country = countryNodes[i].getAttribute("name");
+			countries.push(country);
+		}
+	}
+	getXMLData(getXMLUrlCountries, onSuccessCountries);
+}
+
+getXMLData(getXMLUrlCurrentLocale, onSuccessCurrentLocale);
+
+function getComboboxList($input) {
 	var custom = [ "Banan", "Eple", "Plomme" ];
 
 	var sector = [ "Offentlig myndighet", "Bank, finans og forsikring", "Juridiske tjenester", "IT og telekommunikasjon", "Eiendom", "Media, avis, markedsføring og salgstjenester",
@@ -352,21 +407,21 @@ function initComboboxes() {
 	"Helse / omsorg / medisin og biologi / dyrehelse", "Jord- / skogbruk, fiske og matproduksjon", "Kultur og idrett", "Service og sikkerhet", "Skole, fritid, undervisning og forskning",
 	"Arkitektur og interiør", "Økonomi og regnskap" ];
 
-	function getList($input) {
-		return $input.hasClass("combobox-countries") ? countries : ($input.hasClass("combobox-sector") ? sector : custom);
-	}
+	return $input.hasClass("combobox-countries") ? countries : ($input.hasClass("combobox-sector") ? sector : custom);
+}
 
+function getCorrespondingResults($input) {
+	return $input.parent().siblings(".combobox-results-container").children(".combobox-results");
+}
+
+function getResultItemMarkup(content, number) {
+	return "<li role=\"option\" aira-selected=\"false\" class=\"combobox-result\" id=\"combobox-result-" + number +"\">" +
+						content +
+					"</li>";
+}
+
+function initComboboxes() {
 	buildComboboxes();
-
-	function getCorrespondingResults($input) {
-		return $input.parent().siblings(".combobox-results-container").children(".combobox-results");
-	}
-
-	function getResultItemMarkup(content, number) {
-		return "<li role=\"option\" aira-selected=\"false\" class=\"combobox-result\" id=\"combobox-result-" + number +"\">" +
-							content +
-						"</li>";
-	}
 
 	//Builds the drop down of combobox results
 	$("#frm").on("input", "input.combobox", function() {
@@ -376,7 +431,7 @@ function initComboboxes() {
 		$searchResults.empty();
 
 		if (searchVal.length) {
-			var match = getList($(this));
+			var match = getComboboxList($(this));
 			var secondaryMatches = [];
 
 			var highlightMatch = function(val, startIndex, endIndex) {
@@ -440,8 +495,9 @@ function initComboboxes() {
 			if ($highlightedItem.length) {
 				selectItem($highlightedItem);
 			}
-			else if ($.inArray($(this).val(), getList($(this))) < 0) {
+			else if ($.inArray($(this).val(), getComboboxList($(this))) < 0) {
 				$(this).val("");
+				addAllResultsToComboboxList($(this));
 			}
 		}
 		hideSearchResults($searchResults);
@@ -597,15 +653,6 @@ function initComboboxes() {
 		return e.which == 27;
 	}
 
-	//Function used to show all search results in the list
-	function addAllResultsToComboboxList($input) {
-		var match = getList($input);
-		var $searchResults = getCorrespondingResults($input);
-		$.each(match, function(index, value) {
-			$searchResults.append(getResultItemMarkup(value, (index + 1)));
-		});
-	}
-
 	//Select search result when clicked
 	$("#frm").on("mousedown", ".combobox-result", function(e) {
 		selectItem($(this));
@@ -643,20 +690,10 @@ function initComboboxes() {
 		highlightItem($(this));
 	});
 
-	initStrictComboboxes();
-
-	function initStrictComboboxes() {
-		var $comboboxes = $("input.combobox-strict");
-
-		$.each($comboboxes, function() {
-			addAllResultsToComboboxList($(this));
-		});
-
-		//Opens the dropdown (combobox-strict)
-		$("#frm").on("click", $comboboxes, function(e) {
-			showSearchResults(getCorrespondingResults($(this)));
-		});
-	}
+	//Opens the dropdown (combobox-strict)
+	$("#frm").on("click", "input.combobox-strict", function(e) {
+		showSearchResults(getCorrespondingResults($(this)));
+	});
 }
 
 function buildComboboxes() {
@@ -688,7 +725,22 @@ function buildComboboxes() {
 					"<ul role=\"listbox\" aria-labeledby=\"" + labelID + "\" class=\"combobox-results hidden\" id=\"combobox-results-" + (index + 1) + "\"></ul>" +
 				"</div>"
 			);
+
+			var $comboBox = $(this).find(".combobox");
+
+			if ($comboBox.hasClass("combobox-strict")) {
+				addAllResultsToComboboxList($comboBox);
+			}
 		}
+	});
+}
+
+//Function used to show all search results in the list
+function addAllResultsToComboboxList($input) {
+	var match = getComboboxList($input);
+	var $searchResults = getCorrespondingResults($input);
+	$.each(match, function(index, value) {
+		$searchResults.append(getResultItemMarkup(value, (index + 1)));
 	});
 }
 
