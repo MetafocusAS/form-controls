@@ -239,7 +239,7 @@ select::-ms-expand {
   border-radius: 0;
 }
 
-.label-float input:focus, .label-float textarea {
+.label-float input:focus, .label-float textarea:focus {
   border-bottom-color: #4E6378;
 }
 
