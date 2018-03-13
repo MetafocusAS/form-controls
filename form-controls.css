@@ -229,7 +229,7 @@ select::-ms-expand {
   display: none;
 }
 
-.label-float input, .label-float textarea {
+.label-float .input-field-alt {
   padding: calc(1.2rem + 3px) 1.2rem 1.2rem 1.2rem;
   width: 100%;
   font-size: 1.2rem;
@@ -237,14 +237,50 @@ select::-ms-expand {
   outline: none;
   border-bottom: 3px solid transparent;
   border-radius: 0;
+
+	/*Remove browser default style*/
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 
-.label-float input:focus, .label-float textarea:focus {
+.label-float .input-field-alt:focus {
   border-bottom-color: #4E6378;
 }
 
-.label-float:not(.hidden) input, .label-float:not(.hidden) textarea {
+.label-float:not(.hidden) .input-field-alt {
   padding-top: calc(2.4rem + 3px) !important;
+}
+
+.select-container .label-float .label_control::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 4rem;
+		top: 0;
+    right: 0;
+    height: calc(100% - 4px);
+    pointer-events: none;
+}
+
+.select-container .label-float .label_control::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    right: calc(1.2rem + 3px);
+    top: calc(50% - 0.75rem - 2px);
+    border: solid #4E6378;
+ 		border-width: 0 3px 3px 0;
+
+    pointer-events: none;
+
+    transform: rotate(45deg);
+	 -moz-transform: rotate(45deg);
+	 -webkit-transform: rotate(45deg);
+	 -ms-transform: rotate(45deg);
+	 -o-transform: rotate(45deg);
 }
 
 /* Mozilla Firefox 19+ */
