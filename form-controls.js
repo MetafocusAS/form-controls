@@ -290,10 +290,11 @@ function calcCheckAndRadioPlacment() {
 function initFloatingLabels() {
 	initFloatingLabelsLoaded();
 
-	$("#frm").on("input", ".label-float input, .label-float textarea", function() {
+	$("#frm").on("input", ".label-float .input-field-alt", function() {
 		showLabel($(this));
 	});
-	$("#frm").on("keyup", ".label-float input, .label-float textarea", function() {
+
+	$("#frm").on("keyup", ".label-float .input-field-alt", function() {
 		hideLabel($(this));
 	});
 }
@@ -305,10 +306,13 @@ function initFloatingLabelsLoaded() {
 	}
 
 	var setPlaceholder = function($input) {
-		$input.attr("placeholder", getLabel($input).find("label").text());
+		var labelText = getLabel($input).find("label").text();
+		if ($input.attr("placeholder") != labelText) {
+			$input.attr("placeholder", labelText);
+		}
 	}
 
-	$.each($(".label-float input, .label-float textarea"), function() {
+	$.each($(".label-float .input-field-alt"), function() {
 		toggleLabel($(this));
 		setPlaceholder($(this));
 	});
@@ -367,6 +371,8 @@ var countries = [
 ];
 
 var getXMLUrlCurrentLocale = window.location.href.replace("htmlViewer", "formAttributes");
+console.log("get url 1: " + getXMLUrlCurrentLocale);
+
 var onSuccessCurrentLocale = function (data) {
 	var xmlData = $.parseXML(data);
 	var xmlNode = xmlData.getElementsByTagName("document_locale")[0];
@@ -375,7 +381,8 @@ var onSuccessCurrentLocale = function (data) {
 
 	var getXMLUrlCountries;
 	if (currentLocale) {
-		//TODO
+		console.log(currentLocale);
+		//getXMLUrlCountries = "https://stf.digiforms.no/Datasources/Countries/countries_" + currentLocale + ".xml";
 	}
 	else {
 		getXMLUrlCountries = "https://stf.digiforms.no/Datasources/Countries/countries_nb_NO.xml";
