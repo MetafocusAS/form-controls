@@ -297,6 +297,12 @@ function initFloatingLabels() {
 	$("#frm").on("keyup", ".label-float .input-field-alt", function() {
 		hideLabel($(this));
 	});
+
+	$(window).resize(function() {
+		$.each($(".label-float .input-field-alt"), function() {
+			togglePaddingTop($(this));
+		});
+	});
 }
 
 //Inits the floating labels when loaded in to the DOM
@@ -315,6 +321,7 @@ function initFloatingLabelsLoaded() {
 	$.each($(".label-float .input-field-alt"), function() {
 		toggleLabel($(this));
 		setPlaceholder($(this));
+		togglePaddingTop($(this));
 	});
 }
 
@@ -324,6 +331,7 @@ function showLabel($input) {
 
 	if ($input.val().length && $myLabel.hasClass("hidden")) {
 		$myLabel.removeClass("hidden");
+		togglePaddingTop($input);
 		return true;
 	}
 	return false;
@@ -335,6 +343,7 @@ function hideLabel($input) {
 
 	if ($input.val().length == 0 && !$myLabel.hasClass("hidden")) {
 		$myLabel.addClass("hidden");
+		togglePaddingTop($input);
 		return true;
 	}
 	return false;
@@ -342,6 +351,18 @@ function hideLabel($input) {
 
 function getLabel($input) {
 	return $input.parent().parent();
+}
+
+function togglePaddingTop($input) {
+	var $myLabel = getLabel($input);
+
+	if ($myLabel.hasClass("hidden")) {
+		$input.attr("style", "padding-top: calc(1.2rem + 3px) !important");
+	}
+	else {
+		var labelHeight = $myLabel.find("label").outerHeight();
+		$($input).attr("style", "padding-top: calc(" + labelHeight + "px + 3px) !important");
+	}
 }
 
 function getXMLData(getXMLUrl, onSuccess) {
@@ -370,7 +391,11 @@ var countries = [
 "Afghanistan", "Albania", "Algerie", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua og Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Aserbajdsjan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belgia", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia og Herzegovina", "Botswana", "Bouvetøya", "Brasil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Canada", "Cayman Islands", "Chad", "Chile", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Cookøyene", "Costa Rica", "Cote D'Ivoire", "Cuba", "Danmark", "De forente arabiske emirater", "Den dominikanske republikk", "Den demokratiske republikken Kongo", "Den sentralafrikanske republikk", "Djibouti", "Dominica", "Ecuador", "Egypt", "El Salvador", "Ekvatorial-Guinea", "Eritrea", "Estonia", "Etiopia", "Falklandsøyene (Malvinas)", "Færøyene", "Fiji", "Filippinene", "Finland", "France", "Fransk Guyana", "Fransk Polynesia", "Franske sørlige territorier", "Gabon", "Gambia", "Georgia", "Ghana", "Gibraltar", "Hellas", "Hviterussland", "Grønland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island og Mcdonald Islands", "Honduras", "Hong Kong", "Island", "India", "Indonesia", "Iran", "Irak", "Irland", "Israel", "Italia", "Jamaica", "Japan", "Jemen", "Jomfruøyene (britisk)", "Jomfruøyene (amerikanske)", "Jordan", "Kambodsja", "Kamerun", "Kapp Verde", "Kasakhstan", "Kenya", "Kina", "Kirgisistan", "Kiribati", "Komorene", "Kongo", "Korea", "Kroatia", "Kuwait", "Kypros", "Laos", "Latvia", "Libanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Litauen", "Luxembourg", "Macao", "Madagaskar", "Makedonia", "Malawi", "Malaysia", "Maldivene", "Mali", "Malta", "Marshalløyene", "Martinique", "Mauretania", "Mauritius", "Mayotte", "Mexico", "Mikronesiaføderasjonen", "Moldova", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Marokko", "Mosambik", "Myanmar", "Namibia", "Nauru", "Nepal", "Nederland", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Norge", "Nord-Korea", "Nord-Marianene", "Ny-Caledonia", "Oman", "Pakistan", "Palau", "Panama", "Papua Ny-Guinea", "Paraguay", "Peru", "Pitcairn", "Polen", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russland", "Rwanda", "Saint Helena", "Saint Kitts og Nevis", "Saint Lucia", "Saint Pierre og Miquelon", "Saint Vincent og Grenadinene", "Samoa", "San Marino", "São Tomé og Príncipe", "Saudi-Arabia", "Senegal", "Serbia", "Seychellene", "Sierra Leone", "Singapore", "Slovakia (Slovakiske Republikk)", "Slovenia", "Salomonøyene", "Somalia", "Spania", "Sri Lanka", "Storbritannia", "Sudan", "Surinam", "Svalbard og Jan Mayen", "Sverige", "Swaziland", "Sveits", "Syria", "Sør-Afrika", "Tadsjikistan", "Taiwan", "Tanzania", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad og Tobago", "Tsjekkia", "Tunisia", "Turkmenistan", "Turks- og Caicosøyene", "Tuvalu", "Tyrkia", "Tyskland", "Uganda", "Ukraina", "USAs ytre småøyer", "Ungarn", "USA (Amerikas forente stater)", "Uruguay", "Usbekistan", "Vanuatu", "Vatikanstaten (Holy See)", "Venezuela", "Vest-Sahara", "Vietnam", "Wallis og Futuna", "Zambia", "Zimbabwe", "Østerrike", "Øst-Timor"
 ];
 
-var getXMLUrlCurrentLocale = window.location.href.replace("htmlViewer", "formAttributes");
+var countryCodeLookup = {};
+var countryNameLookup = {};
+
+var currentURL = window.location.href;
+var getXMLUrlCurrentLocale = currentURL.replace("htmlViewer", "formAttributes");
 console.log("get url 1: " + getXMLUrlCurrentLocale);
 
 var onSuccessCurrentLocale = function (data) {
@@ -382,11 +407,12 @@ var onSuccessCurrentLocale = function (data) {
 	var getXMLUrlCountries;
 	if (currentLocale) {
 		console.log(currentLocale);
-		//getXMLUrlCountries = "https://stf.digiforms.no/Datasources/Countries/countries_" + currentLocale + ".xml";
+		getXMLUrlCountries = currentURL.split("/digiforms")[0] + "/Datasources/Countries/countries_" + currentLocale + ".xml";
 	}
 	else {
-		getXMLUrlCountries = "https://stf.digiforms.no/Datasources/Countries/countries_nb_NO.xml";
+		getXMLUrlCountries = currentURL.split("/digiforms")[0] + "/Datasources/Countries/countries_nb_NO.xml";
 	}
+
 	var onSuccessCountries = function(data2) {
 		var xmlData = $.parseXML(data2);
 		var countryNodes = xmlData.getElementsByTagName("country");
@@ -396,8 +422,12 @@ var onSuccessCurrentLocale = function (data) {
 		}
 
 		for (var i=0; i < countryNodes.length; i++) {
-			var country = countryNodes[i].getAttribute("name");
-			countries.push(country);
+			var countryName = countryNodes[i].getAttribute("name");
+			var countryCode = countryNodes[i].getAttribute("code");
+			countries.push(countryName);
+
+			countryNameLookup[countryCode] = countryName;
+			countryCodeLookup[countryName] = countryCode;
 		}
 	}
 	getXMLData(getXMLUrlCountries, onSuccessCountries);
@@ -432,6 +462,10 @@ function initComboboxes() {
 
 	//Builds the drop down of combobox results
 	$("#frm").on("input", "input.combobox", function() {
+		//Work around for bug in IE
+		//(IE triggers oninput when an input receives or loses focus)
+		if (!$(this).is(":focus")) return;
+
 		var searchVal = $(this).val().toLowerCase();
 		var $searchResults = getCorrespondingResults($(this));
 
@@ -503,8 +537,7 @@ function initComboboxes() {
 				selectItem($highlightedItem);
 			}
 			else if ($.inArray($(this).val(), getComboboxList($(this))) < 0) {
-				$(this).val("");
-				addAllResultsToComboboxList($(this));
+				clearComboboxInput($(this));
 			}
 		}
 		hideSearchResults($searchResults);
@@ -671,6 +704,10 @@ function initComboboxes() {
 		var $searchInput = $searchItem.closest(".combobox-container").find("input.combobox");
 		$searchInput.val($searchItem.text());
 
+		if ($searchInput.hasClass("combobox-countries")) {
+			$searchInput.attr("data-value", countryCodeLookup[$searchInput.val()]);
+		}
+
 		var $searchResults = $searchItem.parent();
 		hideSearchResults($searchResults);
 
@@ -683,6 +720,17 @@ function initComboboxes() {
 		}
 
 		$searchResults.empty();
+
+		$searchInput.change();
+	}
+
+	function clearComboboxInput($input) {
+		$input.val("");
+		$input.removeAttr("data-value");
+		if ($input.hasClass("combobox-strict")) {
+			addAllResultsToComboboxList($input);
+		}
+		$input.change();
 	}
 
 	$.fn.isInViewport = function() {
@@ -698,9 +746,10 @@ function initComboboxes() {
 	});
 
 	//Opens the dropdown (combobox-strict)
-	$("#frm").on("click", "input.combobox-strict", function(e) {
+	//TODO: Fjerne?
+	/*$("#frm").on("click", "input.combobox-strict", function(e) {
 		showSearchResults(getCorrespondingResults($(this)));
-	});
+	});*/
 }
 
 function buildComboboxes() {

@@ -248,10 +248,6 @@ select::-ms-expand {
   border-bottom-color: #4E6378;
 }
 
-.label-float:not(.hidden) .input-field-alt {
-  padding-top: calc(2.4rem + 3px) !important;
-}
-
 .select-container .label-float .label_control::before {
     content: "";
     position: absolute;
