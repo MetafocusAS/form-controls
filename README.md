@@ -42,10 +42,10 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 
 ### Checkboxer
 * Groupboxen (div rundt fieldset) rundt må ha klassen **checkbox-container**
-* div rundt checkbox og label må ha klassen **control-row**
+* div rundt checkbox og label må ha klassen **control-row** og **checkbox-row**
 
 #### Hvordan plassere klassene
-![Figur som viser hvordan klassene for checkboxer skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-checkbox-new.png)
+![Figur som viser hvordan klassene for checkboxer skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-checkbox-new2.0.svg)
 
 #### HTML
 ```html
@@ -72,10 +72,10 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 
 ### Radioknapper
 * Groupboxen (div rundt fieldset) rundt må ha klassen **radio-container**
-* div rundt radioknapp og label må ha klassen **control-row**
+* div rundt radioknapp og label må ha klassen **control-row** og **checkbox-row**
 
 #### Hvordan plassere klassene
-![Figur som viser hvordan klassene for radioknapper skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-radio-new.png)
+![Figur som viser hvordan klassene for radioknapper skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-radio-new2.0.svg)
 
 #### HTML
 ``` html

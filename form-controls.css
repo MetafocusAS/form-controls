@@ -151,7 +151,7 @@ select::-ms-expand {
   display: block !important;
 }
 
-.radio-container > fieldset > div > .control-row .label_control {
+.control-row.radio-row .label_control {
   border-radius: 50% !important;
 }
 
@@ -168,7 +168,7 @@ select::-ms-expand {
   margin-right: auto;
 }
 
-.checkbox-container > fieldset > div > .control-row .label_control.checked::after {
+.control-row.checkbox-row .label_control.checked::after {
   width: 4px;
   height: 12px;
   border-style: solid;
@@ -182,7 +182,7 @@ select::-ms-expand {
   border-color: white !important;
 }
 
-.radio-container  > fieldset > div > .control-row .label_control.checked::after {
+.control-row.radio-row .label_control.checked::after {
   width: 12px;
   height: 12px;
   border-radius: 50%;
