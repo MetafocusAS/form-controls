@@ -45,7 +45,7 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 * div rundt checkbox og label må ha klassen **control-row** og **checkbox-row**
 
 #### Hvordan plassere klassene
-![Figur som viser hvordan klassene for checkboxer skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-checkbox-new2.0.svg)
+![Figur som viser hvordan klassene for checkboxer skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-checkbox-new-2.0.svg)
 
 #### HTML
 ```html
