@@ -108,7 +108,7 @@ function initInputs() {
 	addHTMLAttributes();
 
 	//Sets a mask for some classes:
-	$("input.numeric-text:not(.account-mask, .vps-account-mask, .money, .org-number-mask, .date-mask, .phone, .letteral-text)").mask('0#');
+	$("input.numeric-text:not(.account-mask, .vps-account-mask, .money, .org-number-mask, .date-mask, .phone, .letteral-text, .ssn-no-mask)").mask('0#');
 
 	$("input.phone").mask("+099999 000 00 000 000 00 000 00");
 
