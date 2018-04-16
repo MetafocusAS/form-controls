@@ -136,6 +136,7 @@ select::-ms-expand {
 
   border: solid 2px transparent;
   padding: 0.8em;
+	width: calc(100% - 1.6em - 4px);
 }
 
 .control-row.align-top {
