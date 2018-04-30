@@ -1,0 +1,372 @@
+//Mixins
+@mixin user-select($val) {
+    -webkit-user-select: $val; /* Safari 3.1+ */
+    -moz-user-select: $val; /* Firefox 2+ */
+    -ms-user-select: $val; /* IE 10+ */
+    user-select: $val; /* Standard syntax */
+}
+
+@mixin appearance($val) {
+	-webkit-appearance: $val; /* Safari & Chrome */
+	-moz-appearance: $val;/* Firefox */
+	appearance: $val;
+}
+
+@mixin animation($name, $duration, $timingFunction, $iterationCount) {
+	animation: $name $duration $timingFunction $iterationCount;
+	-moz-animation: $name $duration $timingFunction $iterationCount;
+	-webkit-animation: $name $duration $timingFunction $iterationCount;
+	-o-animation: $name $duration $timingFunction $iterationCount;
+	-ms-animation: $name $duration $timingFunction $iterationCount;
+}
+
+@mixin transform($functions...) {
+	transform: $functions;
+	-moz-transform: $functions;
+	-webkit-transform: $functions;
+	-ms-transform: $functions;
+	-o-transform: $functions;
+}
+
+/********** Animations **********/
+@keyframes spin {
+    0% { @include transform(rotate(0deg)); }
+    100% { @include transform(rotate(360deg)); }
+}
+
+//Colors
+$primaryColor: #0059b3;
+$borderColorHighlight: #4E6378;
+$defualtBorderColor: #c3b5a7;
+
+//Classes
+%noListStyle {
+	list-style: none;
+	padding: 0;
+}
+
+/********** Container elements that has focus **********/
+.focused {
+	border-color: $defualtBorderColor !important;
+}
+
+/********** Hidden elements **********/
+.hidden {
+	&:not(.label-float), &.label-float label {
+			display: none;
+	}
+}
+
+/********** Inputs and selects **********/
+.input-field {
+    padding: 1em;
+    width: 100%;
+    border: solid 1px $defualtBorderColor;
+    font-size: 1.2rem;
+    font-family: inherit !important;
+    outline: none; /*Chrome override*/
+    border-radius: 2px;
+
+    /*Remove browser default style*/
+		@include appearance(none);
+}
+
+.input-field:focus {
+	padding: calc(1em - 1px) !important;
+	border: 2px solid $borderColorHighlight !important;
+}
+
+.input-field:disabled {
+    background-color: white;
+    color: transparent !important;
+    border-color: #c3b5a787;
+}
+
+/*Removes the spinner arrows in webkit browsers and firefox*/
+input[type=number] {
+	-moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/********** Animation for input that is loading data **********/
+.label_control.loading:before {
+    content: "";
+    position: absolute;
+    height: 1.2em;
+    width: 1.2em;
+    border-radius: 50%;
+    border-top: solid $primaryColor 2px;
+    margin-top: calc(1em - 1px);
+    margin-left: calc(1em - 1px);
+
+    @include animation(spin, 1s, linear, infinite);
+}
+
+select, option {
+	 font-family: inherit !important;
+}
+
+.select-container {
+	position: relative;
+}
+
+.select-container :not(.label-float) .label_control::after {
+	content: "";
+	display: block;
+	width: .7em;
+	height: 0.7em;
+	border: solid #512b2b;
+	border-width: 0 0.1em 0.1em 0;
+	position: absolute;
+	right: 2em;
+	bottom: 1.5em;
+	pointer-events: none;
+
+	@include transform(rotate(45deg));
+}
+
+.select-container :not(.label-float) .label_control::before {
+	content: "";
+	position: absolute;
+	width: 4em;
+	height: 3em;
+	background-color: white;
+	right: 1em;
+	bottom: 0.2em;
+	pointer-events: none;
+}
+
+select {
+	cursor: pointer;
+	text-indent: 1px;
+	text-overflow: '';
+	background-color: white !important;
+	padding-right: 5em !important;
+}
+
+/*Remove browser default arrow in IE*/
+select::-ms-expand {
+    display: none;
+}
+
+/********** Attachments **********/
+.attachment {
+	label.btn-primary {
+	    margin-top: 21px;
+	}
+
+	> div {
+	    font-size: inherit !important;
+	}
+	input[type="file"], #button_upload_updatexml {
+			position: absolute !important;
+			left: -999999999px !important;
+	}
+
+	.file-errors {
+	    margin-top: 5px !important;
+	}
+}
+
+/********** Checkboxes and radio-buttons **********/
+.control-container-tight > fieldset {
+    width: calc(100% - 1.6rem - 4px) !important;
+}
+
+.control-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  border: solid 2px transparent;
+  padding: 0.8em;
+	width: calc(100% - 1.6em - 4px);
+
+	&.align-top {
+	  align-items: flex-start !important;
+	}
+
+	&.radio-row {
+		.label_control {
+			border-radius: 50% !important;
+
+			&.checked::after {
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				margin-top: 5px;
+				border: none;
+				background-color: white;
+			}
+		}
+	}
+
+	&.checkbox-row .label_control.checked::after {
+	  width: 4px;
+	  height: 12px;
+	  border-style: solid;
+	  border-width: 0 4px 4px 0;
+	  margin-top: 1px;
+	  border-color: white !important;
+
+		@include transform(rotate(45deg));
+		-moz-transform: translate3d( 0, 0, 1px);
+		-webkit-transform: translate3d( 0, 0, 1px);
+	}
+
+	input[type="checkbox"], input[type="radio"] {
+		position: absolute;
+		left: -999999999px;
+	}
+
+	.label_text {
+		width: calc(100% - 24px - 0.5em) !important;
+		display: block !important;
+
+		label {
+		  display: block;
+		  cursor: pointer;
+			padding-left: 0.5em;
+
+			@include user-select(none);
+		}
+	}
+
+	.label_control {
+	  width: 22px !important;
+	  height: 22px;
+	  border: solid #ab9f94 1px;
+	  border-radius: 2px;
+	  cursor: pointer;
+	  display: block !important;
+
+		&.checked {
+		  border-color: $primaryColor !important;
+		  background-color: $primaryColor;
+
+			&.checked::after {
+			  content: "";
+			  display: block;
+			  margin-left: auto;
+			  margin-right: auto;
+			}
+		}
+	}
+}
+
+/******* FLOATING LABELS *******/
+.label-float {
+  position: relative;
+
+	/* Remove placeholder style from Mozilla Firefox 19+, IE10+ and web-kit */
+	&:not(.hidden) {
+		::-moz-placeholder, :-ms-input-placeholder, ::-webkit-input-placeholder {
+			color: transparent;
+		}
+	}
+
+	label {
+	  position: absolute;
+	  margin-left: 1.2rem;
+	  padding-top: 1.2rem;
+	  font-size:  1rem;
+		font-weight: bold;
+		color: $primaryColor;
+	}
+
+	.input-field-alt {
+	  padding: calc(1.2rem + 3px) 1.2rem 1.2rem 1.2rem;
+	  width: 100%;
+	  font-size: 1.2rem;
+	  border: none;
+	  outline: none;
+	  border-bottom: 3px solid transparent;
+	  border-radius: 0;
+
+		/*Remove browser default style*/
+		@include appearance(none);
+
+		&:focus {
+		  border-bottom-color: $borderColorHighlight;
+		}
+	}
+}
+
+.select-container .label-float .label_control {
+	&::before {
+	    content: "";
+	    position: absolute;
+	    display: block;
+	    width: 4rem;
+			top: 0;
+	    right: 0;
+	    height: calc(100% - 4px);
+	    pointer-events: none;
+	}
+	&::after {
+	    content: "";
+	    position: absolute;
+	    display: block;
+	    width: 1rem;
+	    height: 1rem;
+	    right: calc(1.2rem + 3px);
+	    top: calc(50% - 0.75rem - 2px);
+	    border: solid $borderColorHighlight;
+	 		border-width: 0 3px 3px 0;
+	    pointer-events: none;
+
+	    @include transform(rotate(45deg));
+	}
+}
+
+/******* COMBOBOX *******/
+.combobox-results-container {
+	position: relative;
+	width: 100%;
+}
+
+.combobox-container {
+	margin-bottom: 4px;
+
+	input.combobox {
+		width: 100%;
+	}
+
+	input:not(.input-field-alt).combobox, .combobox-result {
+		padding: 1em;
+	}
+
+	.combobox-results {
+		@extend %noListStyle;
+
+		position: absolute;
+		z-index: 9999;
+		width: calc(100% - 2px);
+		max-height: 300px;
+		overflow: auto;
+		margin: 4px 0px 0px 0px;
+		background-color: white;
+
+		input:not(.input-field-alt).combobox {
+			border: solid 1px #d6d1d1;
+		}
+
+		.combobox-result {
+			cursor: pointer;
+			display: block;
+
+			&.highlighted {
+				background-color: lightgray;
+			}
+
+			.case-match {
+				font-weight: bold;
+				color: $primaryColor;
+			}
+		}
+	}
+}

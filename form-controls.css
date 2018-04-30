@@ -1,37 +1,71 @@
-/****container-elements that has focus*****/
+/********** Mixins **********/
+/********** Animations **********/
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+/********** Classes **********/
+.combobox-container .combobox-results {
+  list-style: none;
+  padding: 0;
+}
+
+/********** Container elements that has focus **********/
 .focused {
-	border-color: #4E6378 !important;
+  border-color: #c3b5a7 !important;
+}
+
+/********** Hidden elements **********/
+.hidden:not(.label-float), .hidden.label-float label {
+  display: none;
 }
 
 /********** Inputs and selects **********/
 .input-field {
-    padding: 1em;
-    width: 100%;
-    border: solid 1px #c3b5a7;
-    font-size: 1.2rem;
-    font-family: inherit !important;
-    outline: none; /*Chrome override*/
-    border-radius: 2px;
-
-    /*Remove browser default style*/
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+  padding: 1em;
+  width: 100%;
+  border: solid 1px #c3b5a7;
+  font-size: 1.2rem;
+  font-family: inherit !important;
+  outline: none;
+  /*Chrome override*/
+  border-radius: 2px;
+  /*Remove browser default style*/
+  -webkit-appearance: none;
+  /* Safari & Chrome */
+  -moz-appearance: none;
+  /* Firefox */
+  appearance: none;
 }
 
 .input-field:focus {
-	padding: calc(1em - 1px) !important;
-	border: 2px solid #4E6378 !important;
+  padding: calc(1em - 1px) !important;
+  border: 2px solid #4E6378 !important;
 }
 
 .input-field:disabled {
-    background-color: white;
-    color: transparent !important;
-    border-color: #c3b5a787;
+  background-color: white;
+  color: transparent !important;
+  border-color: #c3b5a787;
 }
 
 /*Removes the spinner arrows in webkit browsers and firefox*/
-input[type=number] {-moz-appearance: textfield;}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -40,149 +74,105 @@ input[type=number]::-webkit-outer-spin-button {
 
 /********** Animation for input that is loading data **********/
 .label_control.loading:before {
-    content: "";
-    position: absolute;
-    height: 1.2em;
-    width: 1.2em;
-    border-radius: 50%;
-    border-top: solid #257886 2px;
-    margin-top: calc(1em - 1px);
-    margin-left: calc(1em - 1px);
-    /*background-color: red;*/
-    animation: spin 1s linear infinite;
-    -moz-animation: spin 1s linear infinite;
-    -webkit-animation: spin 1s linear infinite;
-    -o-animation: spin 1s linear infinite;
-    -ms-animation: spin 1s linear infinite;
+  content: "";
+  position: absolute;
+  height: 1.2em;
+  width: 1.2em;
+  border-radius: 50%;
+  border-top: solid #0059b3 2px;
+  margin-top: calc(1em - 1px);
+  margin-left: calc(1em - 1px);
+  animation: spin 1s linear infinite;
+  -moz-animation: spin 1s linear infinite;
+  -webkit-animation: spin 1s linear infinite;
+  -o-animation: spin 1s linear infinite;
+  -ms-animation: spin 1s linear infinite;
 }
 
 select, option {
-	 font-family: inherit !important;
+  font-family: inherit !important;
 }
 
 .select-container {
-	position: relative;
+  position: relative;
 }
 
 .select-container :not(.label-float) .label_control::after {
-	content: "";
-	display: block;
-	width: .7em;
-	height: 0.7em;
-	border: solid #512b2b;
-	border-width: 0 0.1em 0.1em 0;
-	transform: rotate(45deg);
-	-moz-transform: rotate(45deg);
-	-webkit-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	-o-transform: rotate(45deg);
-	position: absolute;
-	right: 2em;
-	bottom: 1.5em;
-	pointer-events: none;
+  content: "";
+  display: block;
+  width: 0.7em;
+  height: 0.7em;
+  border: solid #512b2b;
+  border-width: 0 0.1em 0.1em 0;
+  position: absolute;
+  right: 2em;
+  bottom: 1.5em;
+  pointer-events: none;
+  transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
 }
 
 .select-container :not(.label-float) .label_control::before {
-	content: "";
-	position: absolute;
-	width: 4em;
-	height: 3em;
-	background-color: white;
-	right: 1em;
-	bottom: 0.2em;
-	pointer-events: none;
+  content: "";
+  position: absolute;
+  width: 4em;
+  height: 3em;
+  background-color: white;
+  right: 1em;
+  bottom: 0.2em;
+  pointer-events: none;
 }
 
 select {
-	cursor: pointer;
-	text-indent: 1px;
-	text-overflow: '';
-	background-color: white !important;
-	padding-right: 5em !important;
+  cursor: pointer;
+  text-indent: 1px;
+  text-overflow: "";
+  background-color: white !important;
+  padding-right: 5em !important;
 }
 
 /*Remove browser default arrow in IE*/
 select::-ms-expand {
-    display: none;
+  display: none;
 }
 
 /********** Attachments **********/
 .attachment label.btn-primary {
-    margin-top: 21px;
+  margin-top: 21px;
 }
-
 .attachment > div {
-    font-size: inherit !important;
+  font-size: inherit !important;
 }
-
-.attachment input[type="file"], .attachment #button_upload_updatexml {
-    position: absolute !important;
-    left: -999999999px !important;
+.attachment input[type=file], .attachment #button_upload_updatexml {
+  position: absolute !important;
+  left: -999999999px !important;
 }
-
 .attachment .file-errors {
-    margin-top: 5px !important;
+  margin-top: 5px !important;
 }
 
 /********** Checkboxes and radio-buttons **********/
 .control-container-tight > fieldset {
-    width: calc(100% - 1.6rem - 4px) !important;
+  width: calc(100% - 1.6rem - 4px) !important;
 }
 
 .control-row {
   display: flex;
   flex-direction: row;
   align-items: center;
-
   border: solid 2px transparent;
   padding: 0.8em;
-	width: calc(100% - 1.6em - 4px);
+  width: calc(100% - 1.6em - 4px);
 }
-
 .control-row.align-top {
   align-items: flex-start !important;
 }
-
-.control-row .label_control {
-  width: 22px !important;
-  height: 22px;
-  border: solid #ab9f94 1px;
-  border-radius: 2px;
-  cursor: pointer;
-  display: block !important;
-}
-
 .control-row.radio-row .label_control {
   border-radius: 50% !important;
 }
-
-.control-row .label_control.checked {
-  border-color: #0059b3 !important;
-  background-color: #0059b3;
-  /*transition: background-color 0.5s ease-in-out, border-color 0.5s ease-in-out;*/
-}
-
-.control-row .label_control.checked::after {
-  content: "";
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.control-row.checkbox-row .label_control.checked::after {
-  width: 4px;
-  height: 12px;
-  border-style: solid;
-  border-width: 0 4px 4px 0;
-  margin-top: 1px;
-  transform: rotate(45deg);
-  -moz-transform: rotate(45deg) translate3d( 0, 0, 1px);
-  -webkit-transform: rotate(45deg) translate3d( 0, 0, 1px);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  border-color: white !important;
-}
-
 .control-row.radio-row .label_control.checked::after {
   width: 12px;
   height: 12px;
@@ -191,45 +181,77 @@ select::-ms-expand {
   border: none;
   background-color: white;
 }
-
-.control-row input[type="checkbox"], input[type="radio"] {
+.control-row.checkbox-row .label_control.checked::after {
+  width: 4px;
+  height: 12px;
+  border-style: solid;
+  border-width: 0 4px 4px 0;
+  margin-top: 1px;
+  border-color: white !important;
+  transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -moz-transform: translate3d(0, 0, 1px);
+  -webkit-transform: translate3d(0, 0, 1px);
+}
+.control-row input[type=checkbox], .control-row input[type=radio] {
   position: absolute;
   left: -999999999px;
 }
-
 .control-row .label_text {
   width: calc(100% - 24px - 0.5em) !important;
   display: block !important;
 }
-
 .control-row .label_text label {
   display: block;
   cursor: pointer;
-  -moz-user-select: none;
+  padding-left: 0.5em;
   -webkit-user-select: none;
+  /* Safari 3.1+ */
+  -moz-user-select: none;
+  /* Firefox 2+ */
   -ms-user-select: none;
+  /* IE 10+ */
   user-select: none;
-	padding-left: 0.5em;
+  /* Standard syntax */
+}
+.control-row .label_control {
+  width: 22px !important;
+  height: 22px;
+  border: solid #ab9f94 1px;
+  border-radius: 2px;
+  cursor: pointer;
+  display: block !important;
+}
+.control-row .label_control.checked {
+  border-color: #0059b3 !important;
+  background-color: #0059b3;
+}
+.control-row .label_control.checked.checked::after {
+  content: "";
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /******* FLOATING LABELS *******/
 .label-float {
   position: relative;
+  /* Remove placeholder style from Mozilla Firefox 19+, IE10+ and web-kit */
 }
-
+.label-float:not(.hidden) ::-moz-placeholder, .label-float:not(.hidden) :-ms-input-placeholder, .label-float:not(.hidden) ::-webkit-input-placeholder {
+  color: transparent;
+}
 .label-float label {
   position: absolute;
   margin-left: 1.2rem;
   padding-top: 1.2rem;
-  font-size:  1rem;
-	font-weight: bold;
-	color: #0059b3;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #0059b3;
 }
-
-.label-float.hidden label {
-  display: none;
-}
-
 .label-float .input-field-alt {
   padding: calc(1.2rem + 3px) 1.2rem 1.2rem 1.2rem;
   width: 100%;
@@ -238,112 +260,80 @@ select::-ms-expand {
   outline: none;
   border-bottom: 3px solid transparent;
   border-radius: 0;
-
-	/*Remove browser default style*/
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
+  /*Remove browser default style*/
+  -webkit-appearance: none;
+  /* Safari & Chrome */
+  -moz-appearance: none;
+  /* Firefox */
+  appearance: none;
 }
-
 .label-float .input-field-alt:focus {
   border-bottom-color: #4E6378;
 }
 
 .select-container .label-float .label_control::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 4rem;
-		top: 0;
-    right: 0;
-    height: calc(100% - 4px);
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 4rem;
+  top: 0;
+  right: 0;
+  height: calc(100% - 4px);
+  pointer-events: none;
 }
-
 .select-container .label-float .label_control::after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 1rem;
-    height: 1rem;
-    right: calc(1.2rem + 3px);
-    top: calc(50% - 0.75rem - 2px);
-    border: solid #4E6378;
- 		border-width: 0 3px 3px 0;
-
-    pointer-events: none;
-
-    transform: rotate(45deg);
-		-moz-transform: rotate(45deg);
-		-webkit-transform: rotate(45deg);
-		-ms-transform: rotate(45deg);
-		-o-transform: rotate(45deg);
-}
-
-/* Mozilla Firefox 19+ */
-.label-float:not(.hidden) ::-moz-placeholder {
-  color: transparent;
-}
-/* IE10+ */
-.label-float:not(.hidden) :-ms-input-placeholder {
-  color: transparent;
-}
-/* web-kit */
-.label-float:not(.hidden) ::-webkit-input-placeholder {
-  color: transparent;
-}
-
-.hidden:not(.label-float) {
-	display: none;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  right: calc(1.2rem + 3px);
+  top: calc(50% - 0.75rem - 2px);
+  border: solid #4E6378;
+  border-width: 0 3px 3px 0;
+  pointer-events: none;
+  transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
 }
 
 /******* COMBOBOX *******/
 .combobox-results-container {
-	position: relative;
-	width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .combobox-container {
-	margin-bottom: 4px;
+  margin-bottom: 4px;
 }
-
 .combobox-container input.combobox {
-	width: 100%;
+  width: 100%;
 }
-
-.combobox-results {
-	/*Remove list style*/
-	list-style: none;
-	padding: 0;
-
-	position: absolute;
-	z-index: 9999;
-	width: calc(100% - 2px);
-	max-height: 300px;
-	overflow: auto;
-	margin: 4px 0px 0px 0px;
-	background-color: white;
+.combobox-container input:not(.input-field-alt).combobox, .combobox-container .combobox-result {
+  padding: 1em;
 }
-
-.combobox-results,  input:not(.input-field-alt).combobox {
-	border: solid 1px #d6d1d1;
+.combobox-container .combobox-results {
+  position: absolute;
+  z-index: 9999;
+  width: calc(100% - 2px);
+  max-height: 300px;
+  overflow: auto;
+  margin: 4px 0px 0px 0px;
+  background-color: white;
 }
-
-.combobox-container input:not(.input-field-alt).combobox, .combobox-result {
-	padding: 1em;
+.combobox-container .combobox-results input:not(.input-field-alt).combobox {
+  border: solid 1px #d6d1d1;
 }
-
-.combobox-result {
-	cursor: pointer;
-	/*Remove list style*/
-	display: block;
+.combobox-container .combobox-results .combobox-result {
+  cursor: pointer;
+  display: block;
 }
-
-.combobox-result.highlighted {
-	background-color: lightgray;
+.combobox-container .combobox-results .combobox-result.highlighted {
+  background-color: lightgray;
 }
-
-.combobox-result  .case-match {
-	font-weight: bold;
-	color: #0059b3;
+.combobox-container .combobox-results .combobox-result .case-match {
+  font-weight: bold;
+  color: #0059b3;
 }
