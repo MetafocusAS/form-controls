@@ -7,8 +7,8 @@ Biblioteket bruker [jQuery](https://jquery.com/), Igor Escobars jQuery Mask Plug
 
 ## Bruk
 For å bruke biblioteket må filene:
-* **form-controls.js**
-* **form-controls.css**
+* **form-controls.js** eller **form-controls.min.js**
+* **form-controls.css** eller **form-controls.min.css**
 * **jquery.mask.min.js**
 
 Og mappen
@@ -17,8 +17,8 @@ Og mappen
 Legges inn i en mappe som heter **form-controls** på serveren.
 
 For å kunne bruke det i digiforms må du deretter inkludere (Document settings > Includes):
-* **form-controls/form-controls.js**
-* **form-controls/form-controls.css**
+* **form-controls/form-controls.js** eller **form-controls/form-controls.min.js**
+* **form-controls/form-controls.css** eller **form-controls.min.css/form-controls.css**
 
 (JQuery må også være inkludert men det allerede er inkludert i digiforms)
 
