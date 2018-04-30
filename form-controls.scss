@@ -213,9 +213,7 @@ select::-ms-expand {
 	  margin-top: 1px;
 	  border-color: white !important;
 
-		@include transform(rotate(45deg));
-		-moz-transform: translate3d( 0, 0, 1px);
-		-webkit-transform: translate3d( 0, 0, 1px);
+		@include transform(rotate(45deg) translate3d( 0, 0, 1px));
 	}
 
 	input[type="checkbox"], input[type="radio"] {
