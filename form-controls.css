@@ -15,6 +15,26 @@
     -o-transform: rotate(360deg);
   }
 }
+.attachment label:not(.btn), .btn {
+  padding: 1.2rem;
+  text-decoration: none;
+  text-align: left;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  /*Remove chrome outline*/
+  border: 3px solid transparent;
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  text-decoration: none;
+  /*For links styled as buttons*/
+  color: white;
+  background-color: #6FA19A;
+}
+.attachment label:focus:not(.btn), .btn:focus {
+  border-color: #4E6378;
+}
+
 .combobox-container .combobox-results {
   list-style: none;
   padding: 0;
@@ -31,26 +51,6 @@
 }
 
 /********** Buttons **********/
-.btn {
-  padding: 1.2rem;
-  text-decoration: none;
-  text-align: left;
-  display: inline-block;
-  cursor: pointer;
-  outline: none;
-  /*Remove chrome outline*/
-  border: 3px solid transparent;
-  font-family: sans-serif;
-  font-size: 1.2rem;
-  text-decoration: none;
-  /*For links styled as buttons*/
-  color: white;
-  background-color: #6FA19A;
-}
-.btn:focus {
-  border-color: #4E6378;
-}
-
 /********** Inputs and selects **********/
 .input-field {
   padding: 1em;
@@ -159,7 +159,7 @@ select::-ms-expand {
 }
 
 /********** Attachments **********/
-.attachment label.btn {
+.attachment label {
   margin-top: 21px;
 }
 .attachment > div {

@@ -218,6 +218,8 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 
 ## Klasser
 * **account-mask** - gir et inputfelt formatet XXXX XX XXXXX, f.eks. 1234 56 78901
+* **attachment** - brukes for å wrappe file upload (input og tilhørende label). Gir grunnleggende styling.
+* **btn** - gir grunnleggende styling for elementer som skal fungere som knapper (funker også på linker og labels)
 * **checkbox** - brukes i kombinasjon med **control** for å style checkboxer. Må ligge i en groupbox som har klassen **control-container**
 * **combobox** - brukes for å skape autocomplete-felter (comboboxer). Må ligge i en groupbox som har klassen **control-container**
 * **combobox-container** - brukes for å skape autocomplete-felter (comboboxer). Brukes på groupboxen rundt inputfeltet.
