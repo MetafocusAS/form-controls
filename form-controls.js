@@ -396,7 +396,6 @@ var countryNameLookup = {};
 
 var currentURL = window.location.href;
 var getXMLUrlCurrentLocale = currentURL.replace("htmlViewer", "formAttributes");
-console.log("get url 1: " + getXMLUrlCurrentLocale);
 
 var onSuccessCurrentLocale = function (data) {
 	var xmlData = $.parseXML(data);
