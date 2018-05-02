@@ -216,6 +216,34 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 ![Figur som viser hvordan inputfelter med floating labels blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-floating-labels.PNG)
 ![Figur som viser hvordan inputfelter med floating labels blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-floating-labels2.PNG)
 
+### Knapper
+* Bruk klassene **btn** på knapper, linker eller labels for å få de til å se ut som knapper.
+
+#### Hvordan plassere **btn** på en knapp/lenke/label
+![Figur som viser hvordan klasse for knapper skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-buttons.svg)
+
+#### HTML
+``` html
+
+```
+
+#### Screen shot
+![Figur som viser hvordan knapper blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-buttons.PNG)
+
+### File upload/filopplasting
+* Bruk klassen **attachment** på div rundt label og tilhørende input[type="file"] (da trenger du heller ikke legge til klassen **btn** på labelen for å få den til å se ut som en knapp)
+
+#### Hvordan plassere **btn** på en knapp/lenke/label
+![Figur som viser hvordan klasse for knapper skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-fileupload.svg)
+
+#### HTML
+``` html
+
+```
+
+#### Screen shot
+![Figur som viser hvordan label for file upload blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-fileupload.PNG)
+
 ## Klasser
 * **account-mask** - gir et inputfelt formatet XXXX XX XXXXX, f.eks. 1234 56 78901
 * **attachment** - brukes for å wrappe file upload (input og tilhørende label). Gir grunnleggende styling.
