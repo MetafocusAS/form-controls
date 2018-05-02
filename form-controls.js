@@ -365,13 +365,13 @@ function togglePaddingTop($input) {
 	}
 }
 
+//Gets the xml data from the server
+//The dataType is set to "text" in order for
+//it to work in Internet Explorer (at least IE11)
+//The data can later parsed as xml, which works fine.
+//Note that "cache" is set to "false"
+//Otherwise IE will cache the data returned from this request
 function getXMLData(getXMLUrl, onSuccess) {
-	//Gets the xml data from the server
-	//The dataType is set to "text" in order for
-	//it to work in Internet Explorer (at least IE11)
-	//The data can later parsed as xml, which works fine.
-	//Note that "cache" is set to "false"
-	//Otherwise IE will cache the data returned from this request
 	$.ajax({
 		type: "GET",
 		url: getXMLUrl,
