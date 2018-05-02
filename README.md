@@ -217,14 +217,18 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 ![Figur som viser hvordan inputfelter med floating labels blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-floating-labels2.PNG)
 
 ### Knapper
-* Bruk klassene **btn** på knapper, linker eller labels for å få de til å se ut som knapper.
+* Bruk klassen **btn** på knapper, linker eller labels for å få de til å se ut som knapper.
 
 #### Hvordan plassere **btn** på en knapp/lenke/label
 ![Figur som viser hvordan klasse for knapper skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-buttons.svg)
 
 #### HTML
 ``` html
+<button type="button" class="btn">Normal button</button>
 
+<a href="#" class="btn">Link button</a>
+
+<label class="btn">Label button</label>
 ```
 
 #### Screen shot
@@ -238,7 +242,10 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 
 #### HTML
 ``` html
-
+<div class="attachment">
+	<label for="file-upload">Label (for file upload) button</label>
+	<input type="file" id="file-upload">
+</div>
 ```
 
 #### Screen shot
