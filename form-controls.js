@@ -545,7 +545,9 @@ function initComboboxes() {
 
 	//Shows search results when input receives focus
 	$("#frm").on("focus", "input.combobox", function() {
-		showSearchResults(getCorrespondingResults($(this)));
+		if ($(this).hasClass("combobox-strict") || $(this).val().length) {
+			showSearchResults(getCorrespondingResults($(this)));
+		}
 	});
 
 	function unHighlightItem($item) {
@@ -673,9 +675,11 @@ function initComboboxes() {
 			}
 		}
 		//Show all results when user presses down arrow IF the search string is empty
-		else if (isDownArrow(e) && $(this).val() == "") {
-			 addAllResultsToComboboxList($(this));
-			 showSearchResults($searchResults);
+		else if (isDownArrow(e)) {
+			if ($(this).val() == "") {
+					addAllResultsToComboboxList($(this));
+			}
+			showSearchResults($searchResults);
 		}
 	});
 
@@ -744,12 +748,6 @@ function initComboboxes() {
 	$("#frm").on("mouseenter", ".combobox-result", function() {
 		highlightItem($(this));
 	});
-
-	//Opens the dropdown (combobox-strict)
-	//TODO: Fjerne?
-	/*$("#frm").on("click", "input.combobox-strict", function(e) {
-		showSearchResults(getCorrespondingResults($(this)));
-	});*/
 }
 
 function buildComboboxes() {

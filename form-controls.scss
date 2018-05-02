@@ -47,7 +47,7 @@ $defualtBorderColor: #c3b5a7;
 
 /********** Container elements that has focus **********/
 .focused {
-	border-color: $defualtBorderColor !important;
+	border-color: $borderColorHighlight !important;
 }
 
 /********** Hidden elements **********/

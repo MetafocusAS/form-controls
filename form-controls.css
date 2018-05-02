@@ -1,4 +1,3 @@
-/********** Mixins **********/
 /********** Animations **********/
 @keyframes spin {
   0% {
@@ -16,7 +15,6 @@
     -o-transform: rotate(360deg);
   }
 }
-/********** Classes **********/
 .combobox-container .combobox-results {
   list-style: none;
   padding: 0;
@@ -24,7 +22,7 @@
 
 /********** Container elements that has focus **********/
 .focused {
-  border-color: #c3b5a7 !important;
+  border-color: #4E6378 !important;
 }
 
 /********** Hidden elements **********/
@@ -188,13 +186,11 @@ select::-ms-expand {
   border-width: 0 4px 4px 0;
   margin-top: 1px;
   border-color: white !important;
-  transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  -moz-transform: translate3d(0, 0, 1px);
-  -webkit-transform: translate3d(0, 0, 1px);
+  transform: rotate(45deg) translate3d(0, 0, 1px);
+  -moz-transform: rotate(45deg) translate3d(0, 0, 1px);
+  -webkit-transform: rotate(45deg) translate3d(0, 0, 1px);
+  -ms-transform: rotate(45deg) translate3d(0, 0, 1px);
+  -o-transform: rotate(45deg) translate3d(0, 0, 1px);
 }
 .control-row input[type=checkbox], .control-row input[type=radio] {
   position: absolute;
