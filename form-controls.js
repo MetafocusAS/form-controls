@@ -14,6 +14,7 @@ $(document).ready(function() {
 	initCheckBoxesAndRadios();
 	initFloatingLabels();
 	initComboboxes();
+	initFileUploads();
 	checkForDOMChanges();
 });
 
@@ -794,6 +795,15 @@ function addAllResultsToComboboxList($input) {
 	var $searchResults = getCorrespondingResults($input);
 	$.each(match, function(index, value) {
 		$searchResults.append(getResultItemMarkup(value, (index + 1)));
+	});
+}
+
+function initFileUploads() {
+	$("#frm").on("focus", ".attachment input:file", function() {
+		$("label[for='" + $(this).attr("id") + "']").addClass("focused");
+	});
+	$("#frm").on("blur", ".attachment input:file", function() {
+		$("label[for='" + $(this).attr("id") + "']").removeClass("focused");
 	});
 }
 

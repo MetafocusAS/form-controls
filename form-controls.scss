@@ -1,9 +1,9 @@
 //Mixins
 @mixin user-select($val) {
-    -webkit-user-select: $val; /* Safari 3.1+ */
-    -moz-user-select: $val; /* Firefox 2+ */
-    -ms-user-select: $val; /* IE 10+ */
-    user-select: $val; /* Standard syntax */
+  -webkit-user-select: $val; /* Safari 3.1+ */
+  -moz-user-select: $val; /* Firefox 2+ */
+  -ms-user-select: $val; /* IE 10+ */
+  user-select: $val; /* Standard syntax */
 }
 
 @mixin appearance($val) {
@@ -35,11 +35,20 @@
 }
 
 //Colors
-$primaryColor: #0059b3;
+$primaryColor: #354A5D;
+$primaryColorDarkened: #24323f;
+
+$secondaryColor: #0059b3;
+$secondaryColorDarkened: #0059b3;
+
+$tertiaryColor: #6FA19A;
+
 $borderColorHighlight: #4E6378;
 $defualtBorderColor: #c3b5a7;
 
-//Classes
+$lightText: white;
+
+//Super classes
 %noListStyle {
 	list-style: none;
 	padding: 0;
@@ -55,6 +64,26 @@ $defualtBorderColor: #c3b5a7;
 	&:not(.label-float), &.label-float label {
 			display: none;
 	}
+}
+
+/********** Buttons **********/
+.btn {
+  padding: 1.2rem;
+  text-decoration: none;
+  text-align: left;
+  display: inline-block;
+  cursor: pointer;
+  outline: none; /*Remove chrome outline*/
+  border: 3px solid transparent;
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  text-decoration: none; /*For links styled as buttons*/
+  color: white;
+  background-color: $tertiaryColor;
+
+  &:focus {
+    border-color: $borderColorHighlight;
+  }
 }
 
 /********** Inputs and selects **********/
@@ -99,7 +128,7 @@ input[type=number]::-webkit-outer-spin-button {
     height: 1.2em;
     width: 1.2em;
     border-radius: 50%;
-    border-top: solid $primaryColor 2px;
+    border-top: solid $secondaryColorDarkened 2px;
     margin-top: calc(1em - 1px);
     margin-left: calc(1em - 1px);
 
@@ -155,7 +184,7 @@ select::-ms-expand {
 
 /********** Attachments **********/
 .attachment {
-	label.btn-primary {
+	label.btn {
 	    margin-top: 21px;
 	}
 
@@ -273,7 +302,7 @@ select::-ms-expand {
 	  padding-top: 1.2rem;
 	  font-size:  1rem;
 		font-weight: bold;
-		color: $primaryColor;
+		color: $secondaryColorDarkened;
 	}
 
 	.input-field-alt {
@@ -363,7 +392,7 @@ select::-ms-expand {
 
 			.case-match {
 				font-weight: bold;
-				color: $primaryColor;
+				color: $secondaryColorDarkened;
 			}
 		}
 	}
