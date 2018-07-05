@@ -120,6 +120,7 @@ function initInputs() {
 	$("input.money").mask("000 000 000 000 000 000 000 000 000 000", {reverse: true});
 
 	$("input.org-number-mask").mask("000 000 000");
+	$("input.org-number-mask-se").mask("000000-0000");
 
 	$("input.ssn-no-mask").mask("000000 00000");
 

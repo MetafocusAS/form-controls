@@ -114,6 +114,17 @@ select, option {
 
 .select-container {
   position: relative;
+  /*Remove browser default arrow in IE*/
+}
+.select-container select {
+  cursor: pointer;
+  text-indent: 1px;
+  text-overflow: "";
+  background-color: white !important;
+  padding-right: 5em !important;
+}
+.select-container select::-ms-expand {
+  display: none;
 }
 
 .select-container :not(.label-float) .label_control::after {
@@ -143,19 +154,6 @@ select, option {
   right: 1em;
   bottom: 0.2em;
   pointer-events: none;
-}
-
-select {
-  cursor: pointer;
-  text-indent: 1px;
-  text-overflow: "";
-  background-color: white !important;
-  padding-right: 5em !important;
-}
-
-/*Remove browser default arrow in IE*/
-select::-ms-expand {
-  display: none;
 }
 
 /********** Attachments **********/
