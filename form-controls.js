@@ -757,7 +757,7 @@ function buildComboboxes() {
 	$.each($(".combobox-container"), function(index) {
 		var $input = $(this).find(".combobox");
 		$input.attr("spellcheck", "false");
-		$input.attr("autocomplete", "off");
+		$input.attr("autocomplete", "false");
 
 		$input.parent().addClass("combobox-wrap");
 		if ($input.hasClass("combobox-strict")) {
