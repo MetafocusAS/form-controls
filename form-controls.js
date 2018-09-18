@@ -23,13 +23,13 @@ function addJSFiles() {
 	//Adds the webshims polyfills
 	var webshims = document.createElement("script");
 	webshims.type = "text/javascript";
-	webshims.src = "form-controls/js-webshim/minified/polyfiller.js";
+	webshims.src = "../form-controls/js-webshim/minified/polyfiller.js";
 	$("head").append(webshims);
 
 	//Adds the mask plugin
 	var masks = document.createElement("script");
 	masks.type = "text/javascript";
-	masks.src = "form-controls/jquery.mask.min.js";
+	masks.src = "../form-controls/jquery.mask.min.js";
 	$("head").append(masks);
 }
 
