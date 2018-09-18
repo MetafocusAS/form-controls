@@ -7,8 +7,9 @@ var shiftDown;
 //Used to detect when the TAB key is pressed
 var tabDown;
 
+addJSFiles();
+
 $(document).ready(function() {
-	addJSFiles();
 	preventBrowserFormActions();
 	initInputs();
 	initCheckBoxesAndRadios();
