@@ -123,7 +123,7 @@ select, option {
   text-indent: 1px;
   text-overflow: "";
   background-color: white !important;
-  padding-right: calc(4em + (1px * 2)) !important;
+  padding-right: calc(4rem + (1px * 2)) !important;
 }
 .select-container select::-ms-expand {
   display: none;
@@ -150,7 +150,7 @@ select, option {
 .select-container :not(.label-float) .label_control::before {
   content: "";
   position: absolute;
-  width: 4em;
+  width: 4rem;
   height: 90%;
   background-color: white;
   right: calc(1px * 2);
