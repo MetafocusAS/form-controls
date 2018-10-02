@@ -91,10 +91,11 @@ $lightText: white;
 }
 
 /********** Inputs and selects **********/
+$inputBorderSize: 1px;
 .input-field {
     padding: 1em;
     width: 100%;
-    border: solid 1px $defualtBorderColor;
+    border: solid $inputBorderSize $defualtBorderColor;
     font-size: 1.2rem;
     font-family: inherit !important;
     outline: none; /*Chrome override*/
@@ -105,7 +106,7 @@ $lightText: white;
 }
 
 .input-field:focus {
-	padding: calc(1em - 1px) !important;
+	padding: calc(1em - $inputBorderSize) !important;
 	border: 2px solid $borderColorHighlight !important;
 }
 
@@ -144,7 +145,9 @@ select, option {
 }
 
 .select-container {
-	position: relative;
+  .label_control {
+    position: relative;
+  }
 
   select {
   	cursor: pointer;
@@ -169,7 +172,7 @@ select, option {
 	border-width: 0 0.1em 0.1em 0;
 	position: absolute;
 	right: 2em;
-	bottom: 1.5em;
+	bottom: 45%;
 	pointer-events: none;
 
 	@include transform(rotate(45deg));
@@ -179,10 +182,10 @@ select, option {
 	content: "";
 	position: absolute;
 	width: 4em;
-	height: 50%;
+	height: 90%;
 	background-color: white;
-	right: 1em;
-	bottom: 0.2em;
+	right: calc(#{$inputBorderSize} * 2);
+	bottom: 5%;
 	pointer-events: none;
 }
 

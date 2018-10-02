@@ -70,7 +70,7 @@
 }
 
 .input-field:focus {
-  padding: calc(1em - 1px) !important;
+  padding: calc(1em - $inputBorderSize) !important;
   border: 2px solid #4E6378 !important;
 }
 
@@ -113,8 +113,10 @@ select, option {
 }
 
 .select-container {
-  position: relative;
   /*Remove browser default arrow in IE*/
+}
+.select-container .label_control {
+  position: relative;
 }
 .select-container select {
   cursor: pointer;
@@ -136,7 +138,7 @@ select, option {
   border-width: 0 0.1em 0.1em 0;
   position: absolute;
   right: 2em;
-  bottom: 1.5em;
+  bottom: 45%;
   pointer-events: none;
   transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -149,10 +151,10 @@ select, option {
   content: "";
   position: absolute;
   width: 4em;
-  height: 3em;
+  height: 90%;
   background-color: white;
-  right: 1em;
-  bottom: 0.2em;
+  right: calc(1px * 2);
+  bottom: 5%;
   pointer-events: none;
 }
 
