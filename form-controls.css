@@ -123,7 +123,7 @@ select, option {
   text-indent: 1px;
   text-overflow: "";
   background-color: white !important;
-  padding-right: 5em !important;
+  padding-right: calc(4em + (1px * 2)) !important;
 }
 .select-container select::-ms-expand {
   display: none;

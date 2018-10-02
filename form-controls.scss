@@ -144,6 +144,8 @@ select, option {
 	 font-family: inherit !important;
 }
 
+$selectArrowBackgroundWidth: 4em;
+
 .select-container {
   .label_control {
     position: relative;
@@ -154,7 +156,7 @@ select, option {
   	text-indent: 1px;
   	text-overflow: '';
   	background-color: white !important;
-  	padding-right: 5em !important;
+  	padding-right: calc(#{$selectArrowBackgroundWidth} + (#{$inputBorderSize} * 2)) !important;
   }
 
   /*Remove browser default arrow in IE*/
@@ -181,7 +183,7 @@ select, option {
 .select-container :not(.label-float) .label_control::before {
 	content: "";
 	position: absolute;
-	width: 4em;
+	width: $selectArrowBackgroundWidth;
 	height: 90%;
 	background-color: white;
 	right: calc(#{$inputBorderSize} * 2);
