@@ -101,8 +101,6 @@ function addHTMLAttributes() {
 	//Append attributes
 	$(".numeric-decimal").attr("step", "0.01");
 	$(".numeric-positive").attr("min", "0");
-	$(".percentage").attr("min", "0");
-	$(".percentage").attr("max", "100");
 }
 
 //Inits inputs with masks, HTML attributes and event listeners
@@ -110,7 +108,7 @@ function initInputs() {
 	addHTMLAttributes();
 
 	//Sets a mask for some classes:
-	$("input.numeric-text:not(.account-mask, .vps-account-mask, .money, .org-number-mask, org-number-mask-se, org-number-mask-dk, .date-mask, .phone, .phone-no, .letteral-text, .ssn-no-mask)").mask('0#');
+	$("input.numeric-text:not(.account-mask, .vps-account-mask, .money, .org-number-mask, org-number-mask-se, org-number-mask-dk, .cpr-mask, .date-mask, .phone, .phone-no, .letteral-text, .ssn-no-mask, .percentage)").mask('0#');
 
 	$("input.phone").mask("+099999 000 00 000 000 00 000 00");
 	$("input.phone-no").mask("+47 000 00 000");
@@ -119,10 +117,13 @@ function initInputs() {
 
 	$("input.vps-account-mask").mask("00000 0000000");
 
-	$("input.money").mask("000 000 000 000 000 000 000 000 000 000", {reverse: true});
+	$("input.money").mask("000 000 000 000 000", {
+													reverse: true,
+        									watchDataMask: true
+												});
 
 	$("input.org-number-mask").mask("000 000 000");
-	$("input.org-number-mask-se").mask("000000-0000");
+	$("input.org-number-mask-se input.cpr-mask").mask("000000-0000");
 	$("input.org-number-mask-dk").mask("00000000");
 
 	$("input.ssn-no-mask").mask("000000 00000");
@@ -131,6 +132,73 @@ function initInputs() {
 
 	$("input.letteral-text").mask("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
 		{translation: {"Z": {pattern: /[a-zA-Z ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏàáâãäåæçèéêëìíîïÐÑÒÓÔÕÖØÙÚÛÜÝÞßðñòóôõöøùúûüýþÿ-]/}}});
+
+	$.each($("input.website-mask"), function() {
+		if ($(this).val() === "") {
+			$(this).val("www.");
+		}
+	});
+	$("input.website-mask").mask("A", {
+		translation: {
+			"A": { pattern: /[\w@\-.+]/, recursive: true }
+		}
+	});
+
+	$("input.percentage").mask('HT9,00', {
+																translation: {
+															    'H': {pattern: /[1]/, optional: true},
+															    'T': {pattern: /[0-9]/, optional: true}
+															  },
+			        									watchDataMask: true
+															});
+
+	$("#frm").on("input", ".percentage", function() {
+		if (parseFloat($(this).val()) > 100) {
+			$(this).val(100);
+		}
+		else if ($(this).val().indexOf("0") === 0 && $(this).val().indexOf(",") === 2) {
+			$(this).val($(this).val().substring(1));
+		}
+	});
+
+	$("#frm").on("keydown", ".percentage, .money" ,function(event) {
+		var key = event.which || event.keyCode;
+
+		var val = parseFloat($(this).val().replace(",", "."));  //default (percentage)
+
+		var step = 0.01; //default (percentage)
+		var min = "0,00"; //default (percentage)
+		var max = 100; //default (percentage)
+		var nDecimals = 2;
+		if ($(this).hasClass("money")) {
+			step = 1;
+			min = "0";
+			max = 999999999999999;
+			nDecimals = 0;
+			val = parseFloat($(this).cleanVal());
+		}
+
+		if (key === 38 && ($(this).val() === "" || val < max)) { //Key UP
+			if ($(this).val() === "") {
+				$(this).val($(this).masked(min));
+			}
+			else {
+				$(this).val($(this).masked((val + step).toFixed(nDecimals)));
+			}
+			event.preventDefault();
+			$(this).trigger("input"); //Persist mask
+		}
+		else if (key === 40 && ($(this).val() === "" || val > 0)) { //Key DOWN
+			if ($(this).val() === "") {
+				$(this).val($(this).masked(min));
+			}
+			else {
+				$(this).val($(this).masked((val - step).toFixed(nDecimals)));
+			}
+			event.preventDefault();
+			$(this).trigger("input"); //Persist mask
+		}
+	});
 
 	//Checks if keyCode is numeric
 	//Allows keycodes are defined by the array "exceptionKeyCodes"
@@ -162,12 +230,20 @@ function initInputs() {
 		return false;
 	}
 
+	var isDeleteOrBackSpace = function(event) {
+		return isBackspaceKey(event) || isDeleteKey(event);
+	}
+
 	//Checks if key was delete, backspace, arrows, shift, ctrl, tab, home or end key
 	var isEditKeyEvent = function(event) {
 		if (ctrlDown) return true;
 		var key = event.which || event.keyCode;
-		if(!isBackspaceKey(event) && key != 9 && !isDeleteKey(event) && key != 13 && key != 16 && key != 17 && key != 19 && (key < 35 || key > 40)) return false;
+		if(!isDeleteOrBackSpace(event) && key != 9 && key != 13 && key != 16 && key != 17 && key != 19 && (key < 35 || key > 40)) return false;
 		return true;
+	}
+
+	var inputHasSelection = function($input) {
+		return $input.prop("selectionEnd") > $input.prop("selectionStart");
 	}
 
 	//Prevents user from entering non-numeric in
