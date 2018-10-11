@@ -152,8 +152,12 @@ function initInputs() {
 			        									watchDataMask: true
 															});
 
+	var parsePercentageVal = function(val) {
+		return parseFloat(val.toString().replace(",", "."));
+	};
+
 	$("#frm").on("input", ".percentage", function() {
-		if (parseFloat($(this).val()) > 100) {
+		if (parsePercentageVal($(this).val()) > 100) {
 			$(this).val(100);
 		}
 		else if ($(this).val().indexOf("0") === 0 && $(this).val().indexOf(",") === 2) {
@@ -164,7 +168,7 @@ function initInputs() {
 	$("#frm").on("keydown", ".percentage, .money" ,function(event) {
 		var key = event.which || event.keyCode;
 
-		var val = parseFloat($(this).val().replace(",", "."));  //default (percentage)
+		var val = parsePercentageVal($(this).val());  //default (percentage)
 
 		var step = 0.01; //default (percentage)
 		var min = "0,00"; //default (percentage)
