@@ -138,9 +138,9 @@ function initInputs() {
 			$(this).val("www.");
 		}
 	});
-	$("input.website-mask").mask("A", {
+	$("input.website-mask").mask("www.ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ", {
 		translation: {
-			"A": { pattern: /[\w@\-.+]/, recursive: true }
+			"Z": { pattern: /[\w@\-.+/]/, recursive: true }
 		}
 	});
 
@@ -490,7 +490,6 @@ var onSuccessCurrentLocale = function (data) {
 
 	var getXMLUrlCountries;
 	if (currentLocale) {
-		console.log(currentLocale);
 		getXMLUrlCountries = currentURL.split("/digiforms")[0] + "/Datasources/Countries/countries_" + currentLocale + ".xml";
 	}
 	else {
