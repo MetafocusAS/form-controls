@@ -165,6 +165,13 @@ function initInputs() {
 		}
 	});
 
+	$("#frm").on("change", ".percentage", function() {
+		var v = $(this).val();
+		if (v.charAt(v.length -1) === ',') {
+			$(this).val(v.substring(0, v.length - 1));
+		}
+	});
+
 	$("#frm").on("keydown", ".percentage, .money" ,function(event) {
 		var key = event.which || event.keyCode;
 
