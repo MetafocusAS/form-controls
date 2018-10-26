@@ -135,12 +135,13 @@ function initInputs() {
 
 	$.each($("input.website-mask"), function() {
 		if ($(this).val() === "") {
-			$(this).val("www.");
+			$(this).val("http://www.");
 		}
 	});
-	$("input.website-mask").mask("www.ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ", {
+	$("input.website-mask").mask("httpS://www.ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ", {
 		translation: {
-			"Z": { pattern: /[\w@\-.+/]/, recursive: true }
+			"Z": { pattern: /[\w@\-.+/]/, recursive: true },
+			"S": { pattern: /[s]/, optional: true}
 		}
 	});
 
