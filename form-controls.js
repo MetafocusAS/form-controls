@@ -527,7 +527,7 @@ var onSuccessCurrentLocale = function (data) {
 getXMLData(getXMLUrlCurrentLocale, onSuccessCurrentLocale);
 
 function getComboboxList($input) {
-	var custom = [ "Banan", "Eple", "Plomme" ];
+	var dummyList = [ "Banan", "Eple", "Plomme" ];
 
 	var sector = [ "Offentlig myndighet", "Bank, finans og forsikring", "Juridiske tjenester", "IT og telekommunikasjon", "Eiendom", "Media, avis, markedsføring og salgstjenester",
 	"Butikk og varehandel", "Reiseliv / hotell", "Industri", "Bygg og anlegg", "Import og eksport av varer og tjenester", "Håndverkertjenester", "Kunst- og antikvitetshandel", "Transport og logistikk",
@@ -535,7 +535,12 @@ function getComboboxList($input) {
 	"Helse / omsorg / medisin og biologi / dyrehelse", "Jord- / skogbruk, fiske og matproduksjon", "Kultur og idrett", "Service og sikkerhet", "Skole, fritid, undervisning og forskning",
 	"Arkitektur og interiør", "Økonomi og regnskap" ];
 
-	return $input.hasClass("combobox-countries") ? countries : ($input.hasClass("combobox-sector") ? sector : custom);
+	var listName = $input.attr("class").substring($input.attr("class").indexOf("combobox-") + "combobox-".length).split(" ")[0];
+
+	return $input.hasClass("combobox-countries") ?
+					countries : ($input.hasClass("combobox-sector") ?
+						sector : customComboBoxlists && customComboBoxlists[listName] ?
+							customComboBoxlists[listName] : dummyList);
 }
 
 function getCorrespondingResults($input) {
@@ -719,6 +724,7 @@ function initComboboxes() {
 				e.preventDefault();
 			}
 			else if (isUpArrow(e)) {
+				e.preventDefault();
 				var $resultItems = $searchResults.children(".combobox-result");
 				var $highlightedItem = $resultItems.filter(".highlighted");
 
@@ -845,7 +851,10 @@ function buildComboboxes() {
 	$.each($(".combobox-container"), function(index) {
 		var $input = $(this).find(".combobox");
 		$input.attr("spellcheck", "false");
-		$input.attr("autocomplete", "false");
+
+		//Must be set to an invalid value e.g.
+		//"nope" ("off" is valid so it will not work in, for example, chrome)
+		$input.attr("autocomplete", "nope");
 
 		$input.parent().addClass("combobox-wrap");
 		if ($input.hasClass("combobox-strict")) {
@@ -884,6 +893,7 @@ function buildComboboxes() {
 function addAllResultsToComboboxList($input) {
 	var match = getComboboxList($input);
 	var $searchResults = getCorrespondingResults($input);
+	$searchResults.empty();
 	$.each(match, function(index, value) {
 		$searchResults.append(getResultItemMarkup(value, (index + 1)));
 	});
