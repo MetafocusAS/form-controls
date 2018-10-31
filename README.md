@@ -264,6 +264,7 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 * **date-mask** - gir et inputfelt formatet DD.MM.YYYY, f.eks. 01.03.2018
 * **input-field** - brukes for å style inputfelter og dropdowns (input og select)
 * **letteral-text** - gjør at det kun er mulig å skrive inn tekst i inputfeltet
+* **money** - tusenskille for tall
 * **numeric-decimal** - gjør at det kun er mulig å skrive tall i inputfeltet, desimaler er tillatt. Type må være satt til "number"
 * **numeric-positive** - gjør at det kun går å skrive inn positive tall i input-feltet. Type må være satt til "number".
 * **numeric-text** - gjør at det kun går å skrive inn tall i input-feltet, og at numerisk keypad vises på iOS mobile
