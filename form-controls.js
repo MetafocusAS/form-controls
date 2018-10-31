@@ -596,7 +596,7 @@ function initComboboxes() {
 				highlightItem(getCorrespondingResults($(this)).children().first());
 			}
 		}
-		else if ($(this).hasClass("combobox-strict")) {
+		else {
 			addAllResultsToComboboxList($(this));
 		}
 		toggleSearchResults($searchResults);
@@ -641,9 +641,7 @@ function initComboboxes() {
 
 	//Shows search results when input receives focus
 	$("#frm").on("focus", "input.combobox", function() {
-		if ($(this).hasClass("combobox-strict") || $(this).val().length) {
 			showSearchResults(getCorrespondingResults($(this)));
-		}
 	});
 
 	function unHighlightItem($item) {
@@ -828,9 +826,7 @@ function initComboboxes() {
 	function clearComboboxInput($input) {
 		$input.val("");
 		$input.removeAttr("data-value");
-		if ($input.hasClass("combobox-strict")) {
-			addAllResultsToComboboxList($input);
-		}
+		addAllResultsToComboboxList($input);
 		$input.change();
 	}
 
@@ -882,9 +878,7 @@ function buildComboboxes() {
 
 			var $comboBox = $(this).find(".combobox");
 
-			if ($comboBox.hasClass("combobox-strict")) {
-				addAllResultsToComboboxList($comboBox);
-			}
+			addAllResultsToComboboxList($comboBox);
 		}
 	});
 }
