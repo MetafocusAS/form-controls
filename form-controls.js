@@ -103,6 +103,11 @@ function addHTMLAttributes() {
 	$(".numeric-positive").attr("min", "0");
 }
 
+//Parses percentage value
+var parsePercentageVal = function(val) {
+	return parseFloat(val.toString().replace(",", "."));
+};
+
 //Inits inputs with masks, HTML attributes and event listeners
 function initInputs() {
 	addHTMLAttributes();
@@ -152,10 +157,6 @@ function initInputs() {
 															  },
 			        									watchDataMask: true
 															});
-
-	var parsePercentageVal = function(val) {
-		return parseFloat(val.toString().replace(",", "."));
-	};
 
 	$("#frm").on("input", ".percentage", function() {
 		if (parsePercentageVal($(this).val()) > 100) {
