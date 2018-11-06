@@ -213,6 +213,33 @@ function initInputs() {
 		}
 	});
 
+	//Prevent leading zeros in money
+	$("#frm").on("keydown", ".money" ,function(event) {
+		if ($(this).val().length > 0) {
+			if (event.which === 48 || event.which === 96 && $(this).prop("selectionEnd") != $(this).val().length) {
+				if ($(this).prop("selectionStart") == 0 ||
+						($(this).val().charAt(0) === " " && $(this).prop("selectionStart") == 1)) {
+							event.preventDefault();
+				}
+			}
+		}
+	});
+	$("#frm").on("input change", ".money" ,function(event) {
+		if ($(this).val() !== "0") {
+			var startIndex = 0;
+			for (var i = 0; i < $(this).val().length; i++) {
+				if ($(this).val().charAt(i) == 0 || $(this).val().charAt(i) == " ") {
+					startIndex++;
+				}
+				else {
+					break;
+				}
+			}
+			var trimmedFromLeadingZeros = $(this).val().substring(startIndex);
+			$(this).val(trimmedFromLeadingZeros);
+		}
+	});
+
 	//Checks if keyCode is numeric
 	//Allows keycodes are defined by the array "exceptionKeyCodes"
 	//allowShift makes an exception to allow the SHIFT key to be pressed (e.i for phone numbers)
