@@ -334,7 +334,8 @@ select, option {
 .combobox-container .combobox-results {
   position: absolute;
   z-index: 9999;
-  width: calc(100% - 2px);
+  box-sizing: border-box;
+  width: 100%;
   max-height: 300px;
   overflow: auto;
   margin: 4px 0px 0px 0px;
