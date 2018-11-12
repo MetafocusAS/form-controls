@@ -184,10 +184,11 @@ $selectArrowBackgroundWidth: 4rem;
 	content: "";
 	position: absolute;
 	width: $selectArrowBackgroundWidth;
-	height: 90%;
+	height: 80%;
 	background-color: white;
 	right: calc(#{$inputBorderSize} * 2);
-	bottom: 5%;
+	bottom: 10%;
+  top: 10%;
 	pointer-events: none;
 }
 

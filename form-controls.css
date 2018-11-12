@@ -151,10 +151,11 @@ select, option {
   content: "";
   position: absolute;
   width: 4rem;
-  height: 90%;
+  height: 80%;
   background-color: white;
   right: calc(1px * 2);
-  bottom: 5%;
+  bottom: 10%;
+  top: 10%;
   pointer-events: none;
 }
 
