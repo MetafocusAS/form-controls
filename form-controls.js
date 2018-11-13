@@ -876,9 +876,9 @@ function buildComboboxes() {
 		var $input = $(this).find(".combobox");
 		$input.attr("spellcheck", "false");
 
-		//Must be set to an invalid value e.g.
-		//"nope" ("off" is valid so it will not work in, for example, chrome)
-		$input.attr("autocomplete", "nope");
+		//Disable autofill in all modern browsers
+		$input.attr("autocomplete", "off");
+		$input.attr("list", "autocompleteOff");
 
 		$input.parent().addClass("combobox-wrap");
 		if ($input.hasClass("combobox-strict")) {
