@@ -113,7 +113,7 @@ function initInputs() {
 	addHTMLAttributes();
 
 	//Sets a mask for some classes:
-	$("input.numeric-text:not(.account-mask, .vps-account-mask, .money, .org-number-mask, org-number-mask-se, org-number-mask-dk, .cpr-mask, .date-mask, .phone, .phone-no, .letteral-text, .ssn-no-mask, .percentage)").mask('0#');
+	$("input.numeric-text:not(.account-mask, .vps-account-mask, .money, .org-number-mask, org-number-mask-se, org-number-mask-dk, .cpr-mask, .date-mask, .phone, .phone-no, .letteral-text, .ssn-no-mask, .ssn-se-mask, .percentage)").mask('0#');
 
 	$("input.phone").mask("+099999 00 00 00 00 00 00 00");
 	$("input.phone-no").mask("+47 000 00 000");
@@ -132,6 +132,7 @@ function initInputs() {
 	$("input.org-number-mask-dk").mask("00000000");
 
 	$("input.ssn-no-mask").mask("000000 00000");
+	$("input.ssn-se-mask").mask("00000000-0000");
 
 	$("input.date-mask").mask("00.00.0000");
 
