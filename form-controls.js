@@ -108,15 +108,34 @@ var parsePercentageVal = function(val) {
 	return parseFloat(val.toString().replace(",", "."));
 };
 
+function initPhoneMasking() {
+	$("input.phone:not(.phone-no, .phone-dk, .phone-se, .phone-nordic)").mask("+099999 00 00 00 00 00 00 00");
+	$("input.phone:not(.phone-no, .phone-dk, .phone-se, .phone-nordic)").attr("placeholder", "+099999 00 00 00 00 00 00 00");
+
+	$("input.phone-no").mask("+47 000 00 000");
+	$("input.phone-no").attr("placeholder", "+47 000 00 000");
+
+	$("input.phone-se").mask("+46(0) 00-000 00 00");
+	$("input.phone-se").attr("placeholder", "+46(0) 00-000 00 00");
+
+	$("input.phone-dk").mask("+45 00 00 00 00");
+	$("input.phone-dk").attr("placeholder", "+45 00 00 00 00");
+
+	$("input.phone-nordic").mask("+00 00 00 00 00 00");
+	$("input.phone-nordic").attr("placeholder", "+00 00 00 00 00 00");
+}
+
 //Inits inputs with masks, HTML attributes and event listeners
 function initInputs() {
 	addHTMLAttributes();
 
 	//Sets a mask for some classes:
-	$("input.numeric-text:not(.account-mask, .vps-account-mask, .money, .org-number-mask, .org-number-mask-se, org-number-mask-dk, .cpr-mask, .date-mask, .phone, .phone-no, .letteral-text, .ssn-no-mask, .ssn-se-mask, .percentage)").mask('0#');
-
-	$("input.phone").mask("+099999 00 00 00 00 00 00 00");
-	$("input.phone-no").mask("+47 000 00 000");
+	$("input.numeric-text:not(.account-mask, .vps-account-mask, .money, " +
+														".org-number-mask, .org-number-mask-se, org-number-mask-dk, " +
+														".phone, .phone-no, .phone-se, .phone-dk, .phone-nordic" +
+														".cpr-mask, .ssn-no-mask, .ssn-se-mask, " +
+														".percentage, .date-mask)")
+														.mask('0#');
 
 	$("input.account-mask").mask("0000 00 00000");
 
