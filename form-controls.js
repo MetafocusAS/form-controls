@@ -970,6 +970,24 @@ function initModalARIA() {
 		var $modalContainer = $("#modal-container-" + n);
 		$(this).attr("aria-controls", $modalContainer.attr("id"));
 	});
+
+	$.each($(".modal-container"), function(index) {
+		var $closeBtns = $(this).find(".btn-close");
+		$closeBtns.attr("aria-controls", $(this).attr("id"));
+
+		if ($("html").attr("lang").toLowerCase() == "se") {
+			$closeBtns.attr("aria-label", "Stäng");
+		}
+		else if ($("html").attr("lang").toLowerCase() == "en") {
+			$closeBtns.attr("aria-label", "Close");
+		}
+		else if ($("html").attr("lang").toLowerCase() == "da") {
+			$closeBtns.attr("aria-label", "Luk");
+		}
+		else {
+			$closeBtns.attr("aria-label", "Lukk");
+		}
+	});
 }
 
 function initModalEvents() {
@@ -1021,7 +1039,6 @@ function initModalEvents() {
 	//Bind events to close modals
 	$("#frm").on("click", ".modal-container .btn-close", function() {
 		closeModal($(this).closest(".modal-container"));
-
 	});
 
 	//Bind events to open modals
