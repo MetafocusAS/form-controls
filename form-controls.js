@@ -16,6 +16,7 @@ $(document).ready(function() {
 	initFloatingLabels();
 	initComboboxes();
 	initFileUploads();
+	initModals();
 	checkForDOMChanges();
 });
 
@@ -950,6 +951,125 @@ function initFileUploads() {
 	});
 }
 
+function initModals() {
+	initModalARIA();
+	initModalEvents();
+}
+
+function initModalARIA() {
+	$(".modal-container.hidden").attr("aria-expanded", "false");
+
+	var $visibleModals = $(".modal-container:not(.hidden)");
+	$visibleModals.attr("aria-expanded", "true");
+	if ($visibleModals.length > 0) {
+		setScrollBarOffset();
+	}
+
+	$.each($("button.open-modal-btn"), function(index) {
+		var n = index + 1;
+		var $modalContainer = $("#modal-container-" + n);
+		$(this).attr("aria-controls", $modalContainer.attr("id"));
+	});
+}
+
+function initModalEvents() {
+	$(".modal-container.hidden").attr("aria-expanded", "false");
+	$.each($("button.open-modal-btn"), function(index) {
+		var n = index + 1;
+		var $modalContainer = $("#modal-container-" + n);
+		$(this).attr("aria-controls", $modalContainer.attr("id"));
+	});
+
+	$("#frm").on("keydown", ".modal-container button:last", function (e) {
+		var $modalContainer = $(this).closest(".modal-container");
+		if (!$modalContainer.hasClass("hidden") && (e.which === 9 && !e.shiftKey)) {
+		   e.preventDefault();
+		   $modalContainer.find("button:first").focus();
+		}
+	});
+
+	$("#frm").on("keydown", ".modal-container button:first", function (e) {
+		var $modalContainer = $(this).closest(".modal-container");
+		if (!$modalContainer.hasClass("hidden") && (e.which === 9 && !e.shiftKey)) {
+		   e.preventDefault();
+		   $modalContainer.find("button:last").focus();
+		}
+	});
+
+	//When focus is outside modal on opening
+	$(document).on("keydown", function(e) {
+		var $openModalContainer = $(".modal-container:not(.hidden)");
+		if ($openModalContainer.length) {
+			if (e.which === 9 && !$openModalContainer.find("button:focus").length) {
+				$openModalContainer.find("button").first().focus();
+			}
+			else if (e.which === 27) { //If user press esc key
+				closeModal($openModalContainer);
+			}
+		}
+	});
+
+	var closeModal = function($modalContainer) {
+		$modalContainer.attr("aria-expanded", "false");
+		$modalContainer.attr("aria-hidden", "true");
+		$modalContainer.addClass("hidden");
+
+		$("body").css("overflow-y", "scroll");
+		$("body").css("padding-right", "0");
+	}
+
+	//Bind events to close modals
+	$("#frm").on("click", ".modal-container .btn-close", function() {
+		closeModal($(this).closest(".modal-container"));
+
+	});
+
+	//Bind events to open modals
+	$("#frm").on("click", "button.open-modal-btn", function () {
+		e.stopPropagation();
+		e.preventDefault();
+
+		var $modalContainer = $("#" + $(this).attr("aria-controls"));
+		$modalContainer.removeClass("hidden");
+		$modalContainer.attr("aria-expanded", "true");
+		$modalContainer.attr("aria-hidden", "false");
+		$modalContainer.scrollTop(0);
+
+		setScrollBarOffset();
+	});
+}
+
+//Set scrollbar offset
+function setScrollBarOffset() {
+	var scrollBarWidth = getScrollbarWidth();
+	$("body").css("padding-right", scrollBarWidth + "px");
+	$("body").css("overflow", "hidden");
+}
+
+function getScrollbarWidth() {
+    var outer = document.createElement("div");
+    outer.style.visibility = "hidden";
+    outer.style.width = "100px";
+
+    document.body.appendChild(outer);
+
+    var widthNoScroll = outer.offsetWidth;
+    // force scrollbars
+    outer.style.overflow = "scroll";
+
+    // add innerdiv
+    var inner = document.createElement("div");
+    inner.style.width = "100%";
+    outer.appendChild(inner);
+
+    var widthWithScroll = inner.offsetWidth;
+
+    // remove divs
+    outer.parentNode.removeChild(outer);
+
+    return widthNoScroll - widthWithScroll;
+}
+
 //Checks for changes in the DOM
 //And adds HTML attributes and inits customized checkboxes
 //Whenever changes are made to the frm-element (main form) in the DOM
@@ -961,6 +1081,7 @@ function checkForDOMChanges() {
       calcCheckAndRadioPlacment();
 			initFloatingLabelsLoaded();
 			buildComboboxes();
+			initModalARIA();
 	});
 }
 
