@@ -1087,6 +1087,15 @@ function getScrollbarWidth() {
     return widthNoScroll - widthWithScroll;
 }
 
+function preventScrollOnWhenLoading() {
+	if ($("#digiforms_progress").length > 0) {
+		$("body").css("overflow", "hidden");
+	}
+	else {
+		$("body").css("overflow", "scroll");
+	}
+}
+
 //Checks for changes in the DOM
 //And adds HTML attributes and inits customized checkboxes
 //Whenever changes are made to the frm-element (main form) in the DOM
@@ -1099,6 +1108,7 @@ function checkForDOMChanges() {
 			initFloatingLabelsLoaded();
 			buildComboboxes();
 			initModalARIA();
+			preventScrollOnWhenLoading();
 	});
 }
 
