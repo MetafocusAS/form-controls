@@ -7,6 +7,9 @@ var shiftDown;
 //Used to detect when the TAB key is pressed
 var tabDown;
 
+//Used to calculate scrollbar offset
+var bodyPadding;
+
 addJSFiles();
 
 $(document).ready(function() {
@@ -952,6 +955,8 @@ function initFileUploads() {
 }
 
 function initModals() {
+	bodyPadding = $("body").css("padding");
+	bodyPadding = bodyPadding.substring(0, bodyPadding.length - 2);
 	initModalARIA();
 	initModalEvents();
 }
@@ -1032,8 +1037,8 @@ function initModalEvents() {
 		$modalContainer.attr("aria-hidden", "true");
 		$modalContainer.addClass("hidden");
 
-		$("body").css("overflow-y", "scroll");
-		$("body").css("padding-right", "0");
+		$("body").css("overflow", "scroll");
+		$("body").css("padding-right", bodyPadding + "px");
 	}
 
 	//Bind events to close modals
@@ -1070,7 +1075,7 @@ $.fn.hasScrollBar = function(direction) {
 //Set scrollbar offset
 function setScrollBarOffset() {
 	if ($(".modal-container:not(.hidden):first").hasScrollBar("vertical")) {
-		var scrollBarWidth = getScrollbarWidth();
+		var scrollBarWidth = getScrollbarWidth() + parseInt(bodyPadding);
 		$("body").css("padding-right", scrollBarWidth + "px");
 	}
 	$("body").css("overflow", "hidden");
