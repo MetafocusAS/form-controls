@@ -1056,10 +1056,23 @@ function initModalEvents() {
 	});
 }
 
+$.fn.hasScrollBar = function(direction) {
+	if (direction == 'vertical') {
+		console.log(this.get(0).scrollHeight + " > " + this.innerHeight());
+	  return this.get(0) ? this.get(0).scrollHeight > this.innerHeight() : false;
+	}
+	else if (direction == 'horizontal') {
+	  return this.get(0).scrollWidth > this.get(0).clientHeight;
+	}
+	return false;
+}
+
 //Set scrollbar offset
 function setScrollBarOffset() {
-	var scrollBarWidth = getScrollbarWidth();
-	$("body").css("padding-right", scrollBarWidth + "px");
+	if ($(".modal-container:not(.hidden):first").hasScrollBar("vertical")) {
+		var scrollBarWidth = getScrollbarWidth();
+		$("body").css("padding-right", scrollBarWidth + "px");
+	}
 	$("body").css("overflow", "hidden");
 }
 
@@ -1087,15 +1100,6 @@ function getScrollbarWidth() {
     return widthNoScroll - widthWithScroll;
 }
 
-function preventScrollOnWhenLoading() {
-	if ($("#digiforms_progress").length > 0) {
-		$("body").css("overflow", "hidden");
-	}
-	else {
-		$("body").css("overflow", "scroll");
-	}
-}
-
 //Checks for changes in the DOM
 //And adds HTML attributes and inits customized checkboxes
 //Whenever changes are made to the frm-element (main form) in the DOM
@@ -1108,7 +1112,6 @@ function checkForDOMChanges() {
 			initFloatingLabelsLoaded();
 			buildComboboxes();
 			initModalARIA();
-			preventScrollOnWhenLoading();
 	});
 }
 
