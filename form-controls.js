@@ -1061,23 +1061,10 @@ function initModalEvents() {
 	});
 }
 
-$.fn.hasScrollBar = function(direction) {
-	if (direction == 'vertical') {
-		console.log(this.get(0).scrollHeight + " > " + this.innerHeight());
-	  return this.get(0) ? this.get(0).scrollHeight > this.innerHeight() : false;
-	}
-	else if (direction == 'horizontal') {
-	  return this.get(0).scrollWidth > this.get(0).clientHeight;
-	}
-	return false;
-}
-
 //Set scrollbar offset
 function setScrollBarOffset() {
-	if ($(".modal-container:not(.hidden):first").hasScrollBar("vertical")) {
-		var scrollBarWidth = getScrollbarWidth() + parseInt(bodyPadding);
-		$("body").css("padding-right", scrollBarWidth + "px");
-	}
+	var scrollBarWidth = getScrollbarWidth() + parseInt(bodyPadding);
+	$("body").css("padding-right", scrollBarWidth + "px");
 	$("body").css("overflow", "hidden");
 }
 
