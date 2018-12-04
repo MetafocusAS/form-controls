@@ -255,12 +255,17 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 * **account-mask** - gir et inputfelt formatet XXXX XX XXXXX, f.eks. 1234 56 78901
 * **attachment** - brukes for å wrappe file upload (input og tilhørende label). Gir grunnleggende styling.
 * **btn** - gir grunnleggende styling for elementer som skal fungere som knapper (funker også på linker og labels)
-* **checkbox** - brukes i kombinasjon med **control** for å style checkboxer. Må ligge i en groupbox som har klassen **control-container**
+* **checkbox-row** - brukes i kombinasjon med **control-row** for å style checkboxer. Må ligge i en groupbox som har klassen **checkbox-container**
 * **combobox** - brukes for å skape autocomplete-felter (comboboxer). Må ligge i en groupbox som har klassen **control-container**
 * **combobox-container** - brukes for å skape autocomplete-felter (comboboxer). Brukes på groupboxen rundt inputfeltet.
 * **combobox-coutries** - brukes i kombinasjon med **combobox** for å gi en liste med land (autocomplete for land).
+* **combobox-{whatever}** - brukes i kombinasjon med **combobox** for å gi en liste med *{whatever}*. Listen må være deklarert som en array i et globalt JS-objekt kalt *customComboBoxlists*. Den må være verdien til property *{whatever}*. F.eks. hvis vi bruker combobox-brus. Da må vi ha et globalt JS-objekt:
+``` javascript
+var customComboBoxlists = { brus: ["Cola", "Fanta", "Solo", "Sprite"] };
+```
 * **control** - brukes for å style checkboxer og radio-knapper
 * **control-container** - brukes på groupbox for å style checkboxer og radio-knapper inne i groupboxen
+* **cpr-mask** - danske fødselsnummer. Gir et inputfelt formatet XXXXXX-XXXX, f.eks. 990102-1234
 * **date-mask** - gir et inputfelt formatet DD.MM.YYYY, f.eks. 01.03.2018
 * **input-field** - brukes for å style inputfelter og dropdowns (input og select)
 * **letteral-text** - gjør at det kun er mulig å skrive inn tekst i inputfeltet
@@ -268,14 +273,21 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 * **numeric-decimal** - gjør at det kun er mulig å skrive tall i inputfeltet, desimaler er tillatt. Type må være satt til "number"
 * **numeric-positive** - gjør at det kun går å skrive inn positive tall i input-feltet. Type må være satt til "number".
 * **numeric-text** - gjør at det kun går å skrive inn tall i input-feltet, og at numerisk keypad vises på mobil
-* **org-number-mask** - gir et inputfelt formatet XXX XXX XXX, f.eks. 123 456 789
+* **org-number-mask** - norske organisasjoner. Gir et inputfelt formatet XXX XXX XXX, f.eks. 123 456 789
+* **org-number-mask-se** - svenske organisasjoner. Gir et inputfelt formatet XXXXXX-XXXX, f.eks. 990102-1234
 * **percentage** - setter max verdi til 100 og min til 0
-* **phone** - gir et format som passer for alle generelle telefonnummer med landkode. F.eks. +47 123 45 678
-* **phone** - gir et format som passer for alle generelle telefonnummer med landkode. F.eks. +47 123 45 678
+* **phone** - gir et format som passer for alle generelle telefonnummer med landkode. F.eks. +999 12 45 67 12
+* **phone-no** - gir et format som passer for norske telefonnummer med landkode. F.eks. +47 123 45 678
+* **phone-se** - gir et format som passer for svenske telefonnummer med landkode. F.eks. +46(0) 73-123 45 67
+* **phone-dk** - gir et format som passer for danske telefonnummer med landkode. F.eks. +45 12 45 67 12
+* **phone-nordic** - gir et format som passer for nordiske landkoder. F.eks. +45 12 45 67 12
 * **prevent-select-on-tab** - hindrer at data i input-feltet markeres ved tab inn i feltet. Funker ikke i firefox.
-* **radio** - brukes i kombinasjon med **control** for å style radioknapper. Må ligge i en groupbox som har klassen **control-container**
+* **radio-row** - brukes i kombinasjon med **control-row** for å style radioknapper. Må ligge i en groupbox som har klassen **radio-container**
 * **select-container** - brukes for å skape dropdowns som ser like ut i forskjellige browsere. Brukes på groupboxen rundt selecten.
+* **ssn-no-mask** - norske fødselsnummer. Gir et inputfelt formatet DDMMÅÅNNNNN, f.eks. 08105127198
+* **ssn-se-mask** - svenske fødselsnummer. Gir et inputfelt formatet ÅÅÅÅMMDD-NNNN, f.eks. 19990102-1234
 * **vps-account-mask** - gir et inputfelt formatet XXXXX XXXXXXX, f.eks. 12345 6789012
+* **website-mask** - gir inputfelt http://www. preutfylt, men aksepterer også https://www. Tillater kun tegn som er gyldige for en domene på internet.
 
 ## Tilpasse CSS
 ### Endre farge på border på element som har fokus
