@@ -255,24 +255,29 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 * **account-mask** - gir et inputfelt formatet XXXX XX XXXXX, f.eks. 1234 56 78901
 * **attachment** - brukes for å wrappe file upload (input og tilhørende label). Gir grunnleggende styling.
 * **btn** - gir grunnleggende styling for elementer som skal fungere som knapper (funker også på linker og labels)
+* **btn-close** - brukes for å lukke modal (dialog)
+* **btn-x** - brukes for i kombinasjon med **btn-close** for å lukke modal (dialog). Lager et knapp i høyre hjørnet på modalen som kan brukes som "x"-knapp.
 * **checkbox-row** - brukes i kombinasjon med **control-row** for å style checkboxer. Må ligge i en groupbox som har klassen **checkbox-container**
 * **combobox** - brukes for å skape autocomplete-felter (comboboxer). Må ligge i en groupbox som har klassen **control-container**
 * **combobox-container** - brukes for å skape autocomplete-felter (comboboxer). Brukes på groupboxen rundt inputfeltet.
 * **combobox-coutries** - brukes i kombinasjon med **combobox** for å gi en liste med land (autocomplete for land).
-* **combobox-{whatever}** - brukes i kombinasjon med **combobox** for å gi en liste med *{whatever}*. Listen må være deklarert som en array i et globalt JS-objekt kalt *customComboBoxlists*. Den må være verdien til property *{whatever}*. F.eks. hvis vi bruker combobox-brus. Da må vi ha et globalt JS-objekt:
+* **combobox-{whatever}** - brukes i kombinasjon med **combobox** for å gi en liste med *{whatever}*. Listen må være deklarert som en array i et globalt JS-objekt kalt *customComboBoxlists*. Den må være verdien til property *{whatever}*. F.eks. hvis vi bruker **combobox-brus**. Da må vi ha et globalt JS-objekt:
 ``` javascript
 var customComboBoxlists = { brus: ["Cola", "Fanta", "Solo", "Sprite"] };
 ```
-* **control** - brukes for å style checkboxer og radio-knapper
 * **control-container** - brukes på groupbox for å style checkboxer og radio-knapper inne i groupboxen
+* **control-row** - brukes for å style checkboxer og radio-knapper
 * **cpr-mask** - danske fødselsnummer. Gir et inputfelt formatet XXXXXX-XXXX, f.eks. 990102-1234
 * **date-mask** - gir et inputfelt formatet DD.MM.YYYY, f.eks. 01.03.2018
 * **input-field** - brukes for å style inputfelter og dropdowns (input og select)
 * **letteral-text** - gjør at det kun er mulig å skrive inn tekst i inputfeltet
+* **modal** - lager en modal (dialog) som legger seg forran hele siden
+* **modal-container** - må wrappe en **.modal** (dialog)
 * **money** - tusenskille for tall
 * **numeric-decimal** - gjør at det kun er mulig å skrive tall i inputfeltet, desimaler er tillatt. Type må være satt til "number"
 * **numeric-positive** - gjør at det kun går å skrive inn positive tall i input-feltet. Type må være satt til "number".
 * **numeric-text** - gjør at det kun går å skrive inn tall i input-feltet, og at numerisk keypad vises på mobil
+* **open-modal-btn** - åpner modal (dialog)
 * **org-number-mask** - norske organisasjoner. Gir et inputfelt formatet XXX XXX XXX, f.eks. 123 456 789
 * **org-number-mask-se** - svenske organisasjoner. Gir et inputfelt formatet XXXXXX-XXXX, f.eks. 990102-1234
 * **percentage** - setter max verdi til 100 og min til 0
@@ -289,7 +294,7 @@ var customComboBoxlists = { brus: ["Cola", "Fanta", "Solo", "Sprite"] };
 * **vps-account-mask** - gir et inputfelt formatet XXXXX XXXXXXX, f.eks. 12345 6789012
 * **website-mask** - gir inputfelt http://www. preutfylt, men aksepterer også https://www. Tillater kun tegn som er gyldige for en domene på internet.
 
-## Tilpasse CSS
+## Eksempler på hvordan tilpasse CSS
 ### Endre farge på border på element som har fokus
 Endre farge på border-color her (checkboxer/radioknapper):
 ```css
