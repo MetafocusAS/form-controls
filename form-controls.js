@@ -1047,7 +1047,7 @@ function initModalEvents() {
 	});
 
 	//Bind events to open modals
-	$("#frm").on("click", "button.open-modal-btn", function () {
+	$("#frm").on("click", "button.open-modal-btn", function (e) {
 		e.stopPropagation();
 		e.preventDefault();
 

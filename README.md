@@ -267,7 +267,7 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 * **money** - tusenskille for tall
 * **numeric-decimal** - gjør at det kun er mulig å skrive tall i inputfeltet, desimaler er tillatt. Type må være satt til "number"
 * **numeric-positive** - gjør at det kun går å skrive inn positive tall i input-feltet. Type må være satt til "number".
-* **numeric-text** - gjør at det kun går å skrive inn tall i input-feltet, og at numerisk keypad vises på iOS mobile
+* **numeric-text** - gjør at det kun går å skrive inn tall i input-feltet, og at numerisk keypad vises på mobil
 * **org-number-mask** - gir et inputfelt formatet XXX XXX XXX, f.eks. 123 456 789
 * **percentage** - setter max="100" og min="0" for inputfeltet. Type må være satt til "number"
 * **phone** - gir et format som passer for alle generelle telefonnummer med landkode. F.eks. +47 123 45 678
