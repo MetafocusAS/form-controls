@@ -1013,7 +1013,7 @@ function initModalEvents() {
 
 	$("#frm").on("keydown", ".modal-container button:first", function (e) {
 		var $modalContainer = $(this).closest(".modal-container");
-		if (!$modalContainer.hasClass("hidden") && (e.which === 9 && !e.shiftKey)) {
+		if (!$modalContainer.hasClass("hidden") && (e.which === 9 && e.shiftKey)) {
 		   e.preventDefault();
 		   $modalContainer.find("button:last").focus();
 		}
@@ -1024,7 +1024,8 @@ function initModalEvents() {
 		var $openModalContainer = $(".modal-container:not(.hidden)");
 		if ($openModalContainer.length) {
 			if (e.which === 9 && !$openModalContainer.find("button:focus").length) {
-				$openModalContainer.find("button").first().focus();
+				e.preventDefault();
+				$openModalContainer.find("button:first").focus();
 			}
 			else if (e.which === 27) { //If user press esc key
 				closeModal($openModalContainer);
