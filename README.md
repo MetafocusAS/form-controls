@@ -154,7 +154,7 @@ Objektet kan enten deklareres i en JS-fil (f.eks. helt på toppen). Eller som in
 			<label for="id-5df3910c-04ba77e0">Land</label>
 		</div>
 		<div id="id-5df3910c-07042470_control" class="label_control">
-			<input id="id-5df3910c-04ba77e0" class="input-field combobox combobox-brus" name="85a33aad006a46376f7f49375f2cbfd3"></input>
+			<input id="id-5df3910c-04ba77e0" class="input-field combobox combobox-countries" name="85a33aad006a46376f7f49375f2cbfd3"></input>
 		</div>
 	</div>
 </div>
