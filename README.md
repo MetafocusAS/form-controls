@@ -129,7 +129,18 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 ### Combobox (autocomplete)
 * Må ligge inne i en div med klassen: **combobox-container**. Pass på at det ikke ligger noen andre elementer inne i **combobox-container** enn selve input-elementet (+ tilhørende label og containeren rundt disse).
 * Bruk klassen **combobox** på selve input-feltet.
-* Legg til klassen **combobox-countries** hvis du ønsker en liste med land.
+* Legg til klassen **combobox-countries** på input-feltet hvis du ønsker en liste med land.
+* Hvis du vil bruke en egendefinert liste sløyfer du **combobox-countries** og bruker din egen klasse **combobox-{navnet-på-din-liste-her}**. Listen må være deklarert som en array i et globalt JS-objekt kalt *customComboBoxlists*. Listen må være verdien til property *{navnet-på-din-liste-her}* i JS-objektet. F.eks. hvis vi bruker **combobox-brus**. Da må vi ha et globalt JS-objekt:
+``` javascript
+var customComboBoxlists = { brus: ["Cola", "Fanta", "Solo", "Sprite"] };
+```
+Objektet kan enten deklareres i en JS-fil (f.eks. helt på toppen). Eller som inline JS, slik:
+``` javascript
+<script>
+	var customComboBoxlists = { brus: ["Cola", "Fanta", "Solo", "Sprite"] };
+</script>
+```
+
 * Klassen **input-field** kan også brukes på selve input-feltet. Det gir en *grunnleggende styling*.
 
 #### Hvordan plassere klasser på en combobox (autocomplete)
@@ -143,7 +154,7 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 			<label for="id-5df3910c-04ba77e0">Land</label>
 		</div>
 		<div id="id-5df3910c-07042470_control" class="label_control">
-			<input id="id-5df3910c-04ba77e0" class="input-field combobox combobox-countries" name="85a33aad006a46376f7f49375f2cbfd3"></input>
+			<input id="id-5df3910c-04ba77e0" class="input-field combobox combobox-brus" name="85a33aad006a46376f7f49375f2cbfd3"></input>
 		</div>
 	</div>
 </div>
@@ -261,7 +272,7 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 * **combobox** - brukes for å skape autocomplete-felter (comboboxer). Må ligge i en groupbox som har klassen **control-container**
 * **combobox-container** - brukes for å skape autocomplete-felter (comboboxer). Brukes på groupboxen rundt inputfeltet.
 * **combobox-coutries** - brukes i kombinasjon med **combobox** for å gi en liste med land (autocomplete for land).
-* **combobox-{whatever}** - brukes i kombinasjon med **combobox** for å gi en liste med *{whatever}*. Listen må være deklarert som en array i et globalt JS-objekt kalt *customComboBoxlists*. Den må være verdien til property *{whatever}*. F.eks. hvis vi bruker **combobox-brus**. Da må vi ha et globalt JS-objekt:
+* **combobox-{whatever}** - brukes i kombinasjon med **combobox** for å gi en liste med *{whatever}*. Listen må være deklarert som en array i et globalt JS-objekt kalt *customComboBoxlists*. Listen må være verdien til property *{whatever}*. F.eks. hvis vi bruker **combobox-brus**. Da må vi ha et globalt JS-objekt:
 ``` javascript
 var customComboBoxlists = { brus: ["Cola", "Fanta", "Solo", "Sprite"] };
 ```
