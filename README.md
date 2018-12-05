@@ -262,6 +262,32 @@ Objektet kan enten deklareres i en JS-fil (f.eks. helt på toppen). Eller som in
 #### Screen shot
 ![Figur som viser hvordan label for file upload blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-fileupload.PNG)
 
+### Modals
+* Lag en div og gi den klassen **modal-container**
+* Lag en ny div og gi den klassen **modal**
+* Put **modal** inne i **modal-container**
+* Put en knapp inne i **modal** og gi den klassene **btn-close bnt-x**
+* Fjern teksten på knappen
+* Hvis du ønsker en knapp for å åpne modalen. Lag en knapp rett før (over) **modal-container**  og gi den klassen **open-modal-btn**
+* Du kan også putte enda en knapp inne i **modal** med f.eks. teksten "OK". Gi den da klassene **.btn .btn-close**
+
+#### Hvordan plassere klasser for modals
+TODO
+
+#### HTML
+``` html
+<div id="modal-container-1" class="modal-container" aria-expanded="true">
+	<div id="id-0ed11e35-0c7dcfc0" class="modal">
+		<button type="button" id=" id-0ed11e35-0b3cc690" class="btn-close btn-x" aria-controls="modal-container-1" aria-label="Lukk"></button>
+		<div id="id-0ed11e35-0c7dd0a0">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</div>
+		<button type="button" id="id-0ed11e35-0b3cc7d0" class="btn-close btn btn-primary btn-fixed-md" aria-controls="modal-container-1" aria-label="Lukk">OK</button>
+		</div>
+	</div>
+</div>
+```
+
 ## Klasser
 * **account-mask** - gir et inputfelt formatet XXXX XX XXXXX, f.eks. 1234 56 78901
 * **attachment** - brukes for å wrappe file upload (input og tilhørende label). Gir grunnleggende styling.
