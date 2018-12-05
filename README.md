@@ -130,7 +130,9 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 * Må ligge inne i en div med klassen: **combobox-container**. Pass på at det ikke ligger noen andre elementer inne i **combobox-container** enn selve input-elementet (+ tilhørende label og containeren rundt disse).
 * Bruk klassen **combobox** på selve input-feltet.
 * Legg til klassen **combobox-countries** på input-feltet hvis du ønsker en liste med land.
-* Hvis du vil bruke en egendefinert liste sløyfer du **combobox-countries** og bruker din egen klasse **combobox-{navnet-på-din-liste-her}**. Listen må være deklarert som en array i et globalt JS-objekt kalt *customComboBoxlists*. Listen må være verdien til property *{navnet-på-din-liste-her}* i JS-objektet. F.eks. hvis vi bruker **combobox-brus**. Da må vi ha et globalt JS-objekt:
+* Klassen **input-field** kan også brukes på selve input-feltet. Det gir en *grunnleggende styling*.
+
+Hvis du vil bruke en egendefinert liste sløyfer du **combobox-countries** og bruker din egen klasse **combobox-{navnet-på-din-liste-her}**. Listen må være deklarert som en array i et globalt JS-objekt kalt *customComboBoxlists*. Listen må være verdien til property *{navnet-på-din-liste-her}* i JS-objektet. F.eks. hvis vi bruker **combobox-brus**. Da må vi ha et globalt JS-objekt:
 ``` javascript
 var customComboBoxlists = { brus: ["Cola", "Fanta", "Solo", "Sprite"] };
 ```
@@ -140,8 +142,6 @@ Objektet kan enten deklareres i en JS-fil (f.eks. helt på toppen). Eller som in
 	var customComboBoxlists = { brus: ["Cola", "Fanta", "Solo", "Sprite"] };
 </script>
 ```
-
-* Klassen **input-field** kan også brukes på selve input-feltet. Det gir en *grunnleggende styling*.
 
 #### Hvordan plassere klasser på en combobox (autocomplete)
 ![Figur som viser hvordan klassene for inputfelter skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-combobox.svg)
