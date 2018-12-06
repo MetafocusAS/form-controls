@@ -3,6 +3,8 @@
 Dette er et CSS/JS bibliotek for styling av checkboxer, radioknapper og inputfelter.
 Samt for å formattere og begrense hvilke tegn som skal tillates i inputfelter, og for å vise riktig keypad på mobile enheter.
 
+Hovedformålet med biblioteket er først og fremst funksjonalitet. Derfor er stylingen ganske minimal, siden det visuelle uttrykket ofte skiler seg fra løsning til løsning. Avhengig av kundens grafiske profil mm.
+
 Biblioteket bruker [jQuery](https://jquery.com/), Igor Escobars jQuery Mask Plugin [jQuery Mask Plugin](https://igorescobar.github.io/jQuery-Mask-Plugin/) og webshims polyfill [webshims polyfill](https://afarkas.github.io/webshim/demos/)
 
 ## Bruk
