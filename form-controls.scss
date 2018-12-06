@@ -227,7 +227,8 @@ $selectArrowBackgroundWidth: 4rem;
 
   border: solid 2px transparent;
   padding: 0.8em;
-	width: calc(100% - 1.6em - 4px);
+	box-sizing: border-box;
+  width: 100% !important;
 
 	&.align-top {
 	  align-items: flex-start !important;
