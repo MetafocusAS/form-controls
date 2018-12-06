@@ -289,7 +289,7 @@ Objektet kan enten deklareres i en JS-fil (f.eks. helt på toppen). Eller som in
 ```
 
 #### Screen shot
-
+![Figur som viser hvordan modal blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-modal.PNG)
 
 ## Klasser
 * **account-mask** - gir et inputfelt formatet XXXX XX XXXXX, f.eks. 1234 56 78901
