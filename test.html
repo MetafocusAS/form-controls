@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="jquery.mask.min.js"></script>
+<script src="js-webshim/minified/polyfiller.js"></script>
+<link href="https://dev4.digiforms.no/digiforms/css/dfbase.css" rel="stylesheet">
+<link href="https://dev4.digiforms.no/digiforms/css/dfprogress.css" rel="stylesheet">
+<link href="https://dev4.digiforms.no/digiforms/css/dfresponsive.css" rel="stylesheet">
+<script src="https://dev4.digiforms.no/digiforms/scripts/jquery.autogrowtextarea.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link href="form-controls.min.css" rel="stylesheet">
+<script src="form-controls.min.js"></script>
+<!--<link href="form-controls.css" rel="stylesheet">
+<script src="form-controls.js"></script>-->
+<body>
+	<form id="frm">
+		<div style="padding: 10%; background-color: #D4E2E2;">
+			<div id="id-5dfa6e11-08afa040" class="combobox-container label-float hidden">
+					<div id="id-5df3910c-07042470_text" class="label_text">
+						<label for="id-5df3910c-04ba77e0">Normal (land)</label>
+					</div>
+					<div id="id-5df3910c-07042470_control" class="label_control">
+						<input id="id-5df3910c-04ba77e0" class="input-field-alt combobox combobox-countries">
+					</div>
+			</div>
+			<br>
+			<div id="id-5dfa6e11-08afa041" class="combobox-container label-float hidden">
+					<div id="id-5df3910c-07042471_text" class="label_text">
+						<label for="id-5df3910c-04ba77e1">Strict (land)</label>
+					</div>
+					<div id="id-5df3910c-07042471_control" class="label_control">
+						<input id="id-5df3910c-04ba77e1" class="input-field-alt combobox combobox-strict combobox-countries">
+					</div>
+			</div>
+
+			<br>
+
+			<div id="id-0496638e-02b95310" class="label-float">
+			   <div id="id-0496638e-02b95310_text" class="label_text">
+					 <label for="id-0496638e-02b7d9c8">Textarea</label>
+				 </div>
+			   <div id="id-0496638e-02b95310_control" class="label_control">
+					 <textarea id="id-0496638e-02b7d9c8" class="input-field-alt"></textarea>
+				 </div>
+			</div>
+
+			<br>
+
+			<div id="id-18fa50e2-076d1d90" class="select-container">
+				<div id="id-18fa50e2-02c95590" class="label-float">
+					<div id="id-18fa50e2-02c95590_text" class="label_text">
+						<label for="id-18fa50e2-0691cb20">Dropdown</label>
+					</div><div id="id-18fa50e2-02c95590_control" class="label_control">
+						<select id="id-18fa50e2-0691cb20" class="input-field-alt">
+							<option value="Velg ...">Velg ...</option>
+							<option value="opt1">opt1</option>
+							<option value="opt2">opt2</option>
+							<option value="op3">op3</option>
+							<option value="opt4">opt4</option>
+							<option value="opt5">opt5</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<br>
+
+			<button type="button" class="btn">Normal button</button>
+			<a href="#" class="btn">Link button</a>
+			<label class="btn">Label button</label>
+
+			<br>
+
+			<div class="attachment">
+				<label for="file-upload">Label (for file upload) button</label>
+				<input type="file" id="file-upload">
+			</div>
+		</div>
+	</form>
+	<script>
+		$("textarea").autoGrow();
+	</script>
+</body>
+</html>
