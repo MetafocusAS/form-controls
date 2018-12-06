@@ -972,7 +972,7 @@ function initModalARIA() {
 
 	$.each($("button.open-modal-btn"), function(index) {
 		var n = index + 1;
-		var $modalContainer = $("#modal-container-" + n);
+		var $modalContainer = $(".modal-container:eq("+ (n - 1) + ")");
 		$(this).attr("aria-controls", $modalContainer.attr("id"));
 	});
 
@@ -1048,10 +1048,7 @@ function initModalEvents() {
 	});
 
 	//Bind events to open modals
-	$("#frm").on("click", "button.open-modal-btn", function (e) {
-		e.stopPropagation();
-		e.preventDefault();
-
+	$("#frm").on("click", "button.open-modal-btn", function () {
 		var $modalContainer = $("#" + $(this).attr("aria-controls"));
 		$modalContainer.removeClass("hidden");
 		$modalContainer.attr("aria-expanded", "true");
