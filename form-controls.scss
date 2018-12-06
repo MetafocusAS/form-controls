@@ -147,6 +147,10 @@ select, option {
 $selectArrowBackgroundWidth: 4rem;
 
 .select-container {
+  .label_text > label {
+    z-index: 1;
+  }
+
   .label_control {
     position: relative;
   }
