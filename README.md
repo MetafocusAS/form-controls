@@ -272,7 +272,7 @@ Objektet kan enten deklareres i en JS-fil (f.eks. helt på toppen). Eller som in
 * Du kan også putte enda en knapp inne i **modal** med f.eks. teksten "OK". Gi den da klassene **.btn .btn-close**
 
 #### Hvordan plassere klasser for modals
-TODO
+![Figur som viser hvordan klasse for modal skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-modal.svg)
 
 #### HTML
 ``` html
@@ -287,6 +287,9 @@ TODO
 	</div>
 </div>
 ```
+
+#### Screen shot
+
 
 ## Klasser
 * **account-mask** - gir et inputfelt formatet XXXX XX XXXXX, f.eks. 1234 56 78901
