@@ -17,11 +17,11 @@ For å bruke biblioteket må filene:
 Og mappen
 * **js-webshim**
 
-Legges inn under på **C:\Tomcat\WEBAPPS CONTAINER**. I en mappe som heter **form-controls** på front-end-serveren.
+Legges inn under på *C:\Tomcat\WEBAPPS CONTAINER*. I en mappe som heter **form-controls** på front-end-serveren.
 
 Så må det legges til en deployment descriptor for mappen **form-controls**. Det enkleste er å kopiere en eksisterende.
 Så:
-1. Gå til C:\Tomcat\apache-tomcat-7.0.75\conf\Catalina\localhost (OBS! versjonsnummer på *apache-tomcat-7.0.75* skiller seg sannsynligvis!).
+1. Gå til *C:\Tomcat\apache-tomcat-7.0.75\conf\Catalina\localhost* (OBS! versjonsnummer på *apache-tomcat-7.0.75* skiller seg sannsynligvis!).
 2. Lag en kopi av **digiforms.xml** og døp den til **form-controls.xml**.
 3. Erstatt alt som inneholder *digiforms* med form-controls. F.eks. så skal  det stå *docBase="..\..\WEBAPPS CONTAINER\form-controls"* og *path="/form-controls"*.
 4. Lagre filen **form-controls.xml**
