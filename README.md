@@ -29,6 +29,8 @@ For å kunne bruke det i digiforms må du deretter inkludere (Document settings 
 * **../form-controls/form-controls.min.js**
 * **../form-controls/form-controls.min.css**
 
+Det er ofte best å inkludere disse *før* du inkluderer annen CSS, sånn at styling fra form-controls blir enkel å overstyre.
+
 (JQuery må også være inkludert men det allerede er inkludert i digiforms)
 
 ## Demo
