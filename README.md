@@ -265,11 +265,11 @@ Objektet kan enten deklareres i en JS-fil (f.eks. helt på toppen). Eller som in
 ### Modals
 * Lag en div og gi den klassen **modal-container**
 * Lag en ny div og gi den klassen **modal**
-* Put **modal** inne i **modal-container**
-* Put en knapp inne i **modal** og gi den klassene **btn-close bnt-x**
+* Putt **modal** inne i **modal-container**
+* Putt en knapp inne i **modal** og gi den klassene **btn-close bnt-x**
 * Fjern teksten på knappen
-* Hvis du ønsker en knapp for å åpne modalen. Lag en knapp rett før (over) **modal-container**  og gi den klassen **open-modal-btn**
-* Du kan også putte enda en knapp inne i **modal** med f.eks. teksten "OK". Gi den da klassene **.btn .btn-close**
+* Hvis du ønsker en knapp for å åpne modalen. Lag en knapp rett før (over) **modal-container**  og gi den klassen **btn open-modal-btn**
+* Du kan også putte enda en knapp inne i **modal** med f.eks. teksten "OK". Gi den da klassene **btn btn-close**
 
 #### Hvordan plassere klasser for modals
 ![Figur som viser hvordan klasse for modal skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-modal.svg)
