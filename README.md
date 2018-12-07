@@ -6,16 +6,13 @@ Biblioteket inneholder også funksjonalitet for å lage comboboxer (søk/friteks
 
 Hovedformålet med biblioteket er først og fremst funksjonalitet. Derfor er stylingen ganske minimal, siden det visuelle uttrykket ofte skiler seg fra løsning til løsning. Avhengig av kundens grafiske profil mm.
 
-Biblioteket bruker [jQuery](https://jquery.com/), jQuery Mask Plugin [jQuery Mask Plugin](https://igorescobar.github.io/jQuery-Mask-Plugin/) og webshims polyfill [webshims polyfill](https://afarkas.github.io/webshim/demos/)
+Biblioteket bruker [jQuery](https://jquery.com/) og jQuery Mask Plugin [jQuery Mask Plugin](https://igorescobar.github.io/jQuery-Mask-Plugin/).
 
 ## Bruk
 For å bruke biblioteket må filene:
 * **form-controls.min.js**
 * **form-controls.min.css**
 * **jquery.mask.min.js**
-
-Og mappen
-* **js-webshim**
 
 Legges inn under på *C:\Tomcat\WEBAPPS CONTAINER*. I en mappe som heter **form-controls** på front-end-serveren.
 
