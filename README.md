@@ -32,7 +32,7 @@ Det er ofte best å inkludere disse *før* du inkluderer annen CSS, sånn at sty
 [https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo](https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo)
 
 ## Browser support
-Biblioteket er testet og fungerer i følgende nettlesere:
+Biblioteket er testet og fungerer i siste versjon av følgende nettlesere:
 * Chrome
 * Firefox
 * Opera
