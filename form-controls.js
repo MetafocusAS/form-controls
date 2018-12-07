@@ -25,21 +25,11 @@ $(document).ready(function() {
 
 //Adds polyfills and plugins to the HTML head tag
 function addJSFiles() {
-	//Adds the webshims polyfills
-	var webshims = document.createElement("script");
-	webshims.type = "text/javascript";
-	webshims.src = "../form-controls/js-webshim/minified/polyfiller.js";
-	$("head").append(webshims);
-
 	//Adds the mask plugin
 	var masks = document.createElement("script");
 	masks.type = "text/javascript";
 	masks.src = "../form-controls/jquery.mask.min.js";
 	$("head").append(masks);
-}
-
-function initWebshims() {
-	webshims.polyfill("forms");
 }
 
 //Adds the attribute for no validation
@@ -101,6 +91,7 @@ function addHTMLAttributes() {
 	//Bring up the numeric keypad for iOS and Android
 	$("input.numeric-text").attr("inputmode", "numeric"); //Android
 	$("input.numeric-text").attr("pattern", "[0-9]*"); //iOS
+	$("input.numeric-text").attr("type", "tel") //Fallback
 
 	//Append attributes
 	$(".numeric-decimal").attr("step", "0.01");
