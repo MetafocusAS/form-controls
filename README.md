@@ -17,7 +17,7 @@ For å bruke biblioteket må filene:
 Legges inn under på *C:\Tomcat\WEBAPPS CONTAINER*. I en mappe som heter **form-controls** på frontend-serveren.
 
 Så må det legges til en deployment descriptor for mappen **form-controls**:
-1. Last ned **form-controls.xml** (fra https://github.com/MetafocusAS/form-controls)
+1. Last ned **form-controls.xml** (https://github.com/MetafocusAS/form-controls/blob/master/form-controls.xml)
 2. Putt **form-controls.xml** på *C:\Tomcat\apache-tomcat-7.0.75\conf\Catalina\localhost* (OBS! versjonsnummer på *apache-tomcat-7.0.75* skiller seg sannsynligvis!) på frontend-serveren.
 
 For å kunne bruke det i digiforms må du deretter inkludere (Document settings > Includes):
