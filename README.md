@@ -133,6 +133,8 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 ![Figur som viser hvordan dropdowns blir seendes ut](https://rawgit.com/MetafocusAS/form-controls/master/images/screenshot-select.PNG)
 
 ### Combobox (autocomplete)
+Her er det implementert et ARIA-pattern som skal sørge for accessibility og tilfredstille de krav som er pålagt i forhold til WCAG 2.0.
+
 * Må ligge inne i en div med klassen: **combobox-container**. Pass på at det ikke ligger noen andre elementer inne i **combobox-container** enn selve input-elementet (+ tilhørende label og containeren rundt disse).
 * Bruk klassen **combobox** på selve input-feltet.
 * Legg til klassen **combobox-countries** på input-feltet hvis du ønsker en liste med land.
