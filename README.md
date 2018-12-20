@@ -1,8 +1,8 @@
 # form-controls
 
-Dette er et CSS/JS bibliotek for styling av checkboxer, radioknapper, inputfelter og knapper.
-Samt for å formattere og begrense hvilke tegn som skal tillates i inputfelter, og for å vise riktig keypad på mobile enheter.
-Biblioteket inneholder også funksjonalitet for å lage comboboxer (søk/fritekst i dropdown)  og modals (dialoger).
+Dette er et CSS/JS bibliotek for cross-browser-styling av checkboxer, radioknapper, inputfelter og knapper.
+Samt funksjonalitet for å formattere innhold og begrense hvilke tegn som skal tillates i inputfelter, og for å vise riktig keypad på mobile enheter.
+Biblioteket inneholder også funksjonalitet for å lage comboboxer (søk/fritekst i dropdown) og modals (dialoger).
 
 Hovedformålet med biblioteket er først og fremst funksjonalitet. Derfor er stylingen ganske minimal, siden det visuelle uttrykket ofte skiler seg fra løsning til løsning. Avhengig av kundens grafiske profil mm.
 
