@@ -465,7 +465,7 @@ function initFloatingLabelsLoaded() {
 function showLabel($input) {
 	var $myLabel = getLabel($input);
 
-	if ($input.val().length && $myLabel.hasClass("hidden")) {
+	if ($input.val().length) {
 		$myLabel.removeClass("hidden");
 		togglePaddingTop($input);
 		return true;
@@ -477,8 +477,10 @@ function showLabel($input) {
 function hideLabel($input) {
 	var $myLabel = getLabel($input);
 
-	if ($input.val().length == 0 && !$myLabel.hasClass("hidden")) {
-		$myLabel.addClass("hidden");
+	if ($input.val().length === 0) {
+		if (!$myLabel.hasClass("hidden")) {
+			$myLabel.addClass("hidden");
+		}
 		togglePaddingTop($input);
 		return true;
 	}
@@ -493,11 +495,10 @@ function togglePaddingTop($input) {
 	var $myLabel = getLabel($input);
 
 	if ($myLabel.hasClass("hidden")) {
-		$input.attr("style", "padding-top: calc(1.2rem + 3px) !important");
+		$input.attr("style", "padding-top: calc(" + $input.css('padding-bottom') + " + 3px) !important");
 	}
 	else {
-		var labelHeight = $myLabel.find("label").outerHeight();
-		$($input).attr("style", "padding-top: calc(" + labelHeight + "px + 3px) !important");
+		$input.attr("style", "padding-top: calc(" + $input.css('padding-bottom') + " * 2 + 3px) !important");
 	}
 }
 
