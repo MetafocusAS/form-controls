@@ -45,13 +45,13 @@ function initGlobalKeyEventListener() {
 	ctrlDown = false;
 	$(document).on("keydown", function(event) {
 		var key = event.which || event.keyCode;
-		if (key == 17) {
+		if (key === 17) {
 			ctrlDown = true;
 		}
 	});
 	$(document).on("keyup", function(event) {
 		var key = event.which || event.keyCode;
-		if (key == 17) {
+		if (key === 17) {
 			ctrlDown = false;
 		}
 	});
@@ -60,13 +60,13 @@ function initGlobalKeyEventListener() {
 	shiftDown = false;
 	$(document).on("keydown", function(event) {
 		var key = event.which || event.keyCode;
-		if (key == 16) {
+		if (key === 16) {
 			shiftDown = true;
 		}
 	});
 	$(document).on("keyup", function(event) {
 		var key = event.which || event.keyCode;
-		if (key == 16) {
+		if (key === 16) {
 			shiftDown = false;
 		}
 	});
@@ -75,13 +75,13 @@ function initGlobalKeyEventListener() {
 	tabDown = false;
 	$(document).on("keydown", function(event) {
 		var key = event.which || event.keyCode;
-		if (key == 9) {
+		if (key === 9) {
 			tabDown = true;
 		}
 	});
 	$(document).on("keyup", function(event) {
 		var key = event.which || event.keyCode;
-		if (key == 9) {
+		if (key === 9) {
 			tabDown = false;
 		}
 	});
@@ -243,7 +243,7 @@ function initInputs() {
 		if ($(this).val() !== "0") {
 			var startIndex = 0;
 			for (var i = 0; i < $(this).val().length; i++) {
-				if ($(this).val().charAt(i) == 0 || $(this).val().charAt(i) == " ") {
+				if ($(this).val().charAt(i) === 0 || $(this).val().charAt(i) === " ") {
 					startIndex++;
 				}
 				else {
@@ -270,7 +270,7 @@ function initInputs() {
 	var isDeleteKey = function(event) {
 		var key = event.which || event.keyCode;
 		//Check if key is delete
-		if(key == 46) {
+		if(key === 46) {
 			return true;
 		}
 		return false;
@@ -279,7 +279,7 @@ function initInputs() {
 	var isBackspaceKey = function(event) {
 		var key = event.which || event.keyCode;
 		//Check if key is backspace
-		if(key == 8) {
+		if(key === 8) {
 			return true;
 		}
 		return false;
@@ -316,7 +316,7 @@ function initInputs() {
 	//e.i country code for phone numbers
 	$("#frm").on("keyup", "input.prevent-select-on-tab", function(event)  {
  		var key = event.which || event.keyCode;
- 		if (key == 9) {
+ 		if (key === 9) {
  			$(this).prop("selectionStart", $(this).prop("selectionEnd"));
  		}
  	});
@@ -623,7 +623,7 @@ function initComboboxes() {
 
 			$.each(match, function(index, value) {
 				var indexOfSearchVal = value.toLowerCase().indexOf(searchVal);
-				if (indexOfSearchVal == 0) {
+				if (indexOfSearchVal === 0) {
 					$searchResults.append(getResultItemMarkup(highlightMatch(value, 0, searchVal.length), ++count));
 				}
 				else if (indexOfSearchVal > 0) {
@@ -815,7 +815,7 @@ function initComboboxes() {
 		}
 		//Show all results when user presses down arrow IF the search string is empty
 		else if (isDownArrow(e)) {
-			if ($(this).val() == "") {
+			if ($(this).val() === "") {
 					addAllResultsToComboboxList($(this));
 			}
 			showSearchResults($searchResults);
@@ -824,16 +824,16 @@ function initComboboxes() {
 
 	//Functions used to detect keys
 	function isDownArrow(e) {
-		return e.which == 40;
+		return e.which === 40;
 	}
 	function isUpArrow(e) {
-		return e.which == 38;
+		return e.which === 38;
 	}
 	function isEnterKey(e) {
-		return e.which == 13;
+		return e.which === 13;
 	}
 	function isEscKey(e) {
-		return e.which == 27;
+		return e.which === 27;
 	}
 
 	//Select search result when clicked
@@ -972,13 +972,13 @@ function initModalARIA() {
 		var $closeBtns = $(this).find(".btn-close");
 		$closeBtns.attr("aria-controls", $(this).attr("id"));
 
-		if ($("html").attr("lang").toLowerCase() == "se") {
+		if ($("html").attr("lang").toLowerCase() === "se") {
 			$closeBtns.attr("aria-label", "Stäng");
 		}
-		else if ($("html").attr("lang").toLowerCase() == "en") {
+		else if ($("html").attr("lang").toLowerCase() === "en") {
 			$closeBtns.attr("aria-label", "Close");
 		}
-		else if ($("html").attr("lang").toLowerCase() == "da") {
+		else if ($("html").attr("lang").toLowerCase() === "da") {
 			$closeBtns.attr("aria-label", "Luk");
 		}
 		else {
