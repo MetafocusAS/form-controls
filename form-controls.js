@@ -98,9 +98,14 @@ function addHTMLAttributes() {
 	$(".numeric-positive").attr("min", "0");
 }
 
-//Parses percentage value
-var parsePercentageVal = function(val) {
+//Parses decimal strings (replace "," with ".")
+var parseDecimalStringToFloat = function(val) {
 	return parseFloat(val.toString().replace(",", "."));
+};
+
+//Parses float to decimal string (replace "." with ",")
+var parseFloatToDecimalString = function(val) {
+	return val.toString().replace(".", ",");
 };
 
 function initPhoneMasking() {
@@ -125,6 +130,8 @@ function initInputs() {
 	addHTMLAttributes();
 
 	//Sets a mask for some classes:
+	//Exceptions must be made for classes
+	//that has numeric input with a specific format
 	$("input.numeric-text:not(.account-mask, .vps-account-mask, .money, " +
 														".org-number-mask, .org-number-mask-se, org-number-mask-dk, " +
 														".phone, .phone-no, .phone-se, .phone-dk, .phone-nordic" +
@@ -135,11 +142,6 @@ function initInputs() {
 	$("input.account-mask").mask("0000 00 00000");
 
 	$("input.vps-account-mask").mask("00000 0000000");
-
-	$("input.money").mask("000 000 000 000 000", {
-													reverse: true,
-        									watchDataMask: true
-												});
 
 	$("input.org-number-mask").mask("000 000 000");
 	$("input.org-number-mask-se, input.cpr-mask").mask("000000-0000");
@@ -165,16 +167,34 @@ function initInputs() {
 		}
 	});
 
+	var dynamicMoneyMask = function (val) {
+		var masks = ["0 000 000 000 000d", "0 000 000 000 000d99"];
+  	return (val.indexOf(",") > 0 || val.indexOf(".") > 0) ? masks[1] : masks[0];
+	},
+	moneyOptions = {
+		reverse: true,
+		translation: {
+			//Allow both "," and "." in mask.
+			//"." is replaced with "," at oninput
+			'd': {pattern: /[,.]/, optional: true},
+		},
+	  onKeyPress: function(val, e, field, options) {
+	      field.mask(dynamicMoneyMask.apply({}, arguments), options);
+	    }
+	};
+
+	$('input.money').mask(dynamicMoneyMask, moneyOptions);
+
 	$("input.percentage").mask('HT9,00', {
 																translation: {
 															    'H': {pattern: /[1]/, optional: true},
 															    'T': {pattern: /[0-9]/, optional: true}
 															  },
-			        									watchDataMask: true
 															});
 
+	//Prevent leading zeroes and numbers greater than 100
 	$("#frm").on("input", ".percentage", function() {
-		if (parsePercentageVal($(this).val()) > 100) {
+		if (parseDecimalStringToFloat($(this).val()) > 100) {
 			$(this).val(100);
 		}
 		else if ($(this).val().indexOf("0") === 0 && $(this).val().indexOf(",") === 2) {
@@ -182,6 +202,7 @@ function initInputs() {
 		}
 	});
 
+	//Prevent comma when no decimal numbers are entered (decimals are optional)
 	$("#frm").on("change", ".percentage", function() {
 		var v = $(this).val();
 		if (v.charAt(v.length -1) === ',') {
@@ -189,69 +210,102 @@ function initInputs() {
 		}
 	});
 
+	//Stepping (using UP and DOWN arrow on keyboard)
 	$("#frm").on("keydown", ".percentage, .money" ,function(event) {
 		var key = event.which || event.keyCode;
 
-		var val = parsePercentageVal($(this).val());  //default (percentage)
+		var val = parseDecimalStringToFloat($(this).val());  //default (percentage)
 
-		var step = 0.01; //default (percentage)
-		var min = "0,00"; //default (percentage)
-		var max = 100; //default (percentage)
+		var step = 0.01; //default
+		var min = "0,00"; //default
+		var max = 100; //percentage
 		var nDecimals = 2;
+
+		//Money
 		if ($(this).hasClass("money")) {
-			step = 1;
-			min = "0";
-			max = 999999999999999;
-			nDecimals = 0;
-			val = parseFloat($(this).cleanVal());
+			max = 9999999999999.99;
+			val = parseDecimalStringToFloat($(this).cleanVal());
 		}
 
-		if (key === 38 && ($(this).val() === "" || val < max)) { //Key UP
+		 //Key UP
+		if (key === 38 && ($(this).val() === "" || val < max)) {
 			if ($(this).val() === "") {
-				$(this).val($(this).masked(min));
+				$(this).val($(this).masked(parseFloatToDecimalString(min)));
 			}
 			else {
-				$(this).val($(this).masked((val + step).toFixed(nDecimals)));
+				$(this).val($(this).masked(parseFloatToDecimalString((val + step).toFixed(nDecimals))));
 			}
 			event.preventDefault();
-			$(this).trigger("input"); //Persist mask
 		}
-		else if (key === 40 && ($(this).val() === "" || val > 0)) { //Key DOWN
+		 //Key DOWN
+		else if (key === 40 && ($(this).val() === "" || val > 0)) {
 			if ($(this).val() === "") {
-				$(this).val($(this).masked(min));
+				$(this).val($(this).masked(parseFloatToDecimalString(min)));
 			}
 			else {
-				$(this).val($(this).masked((val - step).toFixed(nDecimals)));
+				$(this).val($(this).masked(parseFloatToDecimalString((val - step).toFixed(nDecimals))));
 			}
 			event.preventDefault();
-			$(this).trigger("input"); //Persist mask
 		}
 	});
 
-	//Prevent leading zeros in money
+	//Allow only two decimals
 	$("#frm").on("keydown", ".money" ,function(event) {
-		if ($(this).val().length > 0) {
-			if (event.which === 48 || event.which === 96 && $(this).prop("selectionEnd") != $(this).val().length) {
-				if ($(this).prop("selectionStart") == 0 ||
-						($(this).val().charAt(0) === " " && $(this).prop("selectionStart") == 1)) {
-							event.preventDefault();
-				}
-			}
+		//Prevent more than 2 decimals
+		if (!isEditKeyEvent(event) &&
+				$(this).val().indexOf(",") > 0 &&
+				$(this).val().indexOf(",") === ($(this).val().length - 3) &&
+				$(this).prop("selectionStart") === $(this).prop("selectionEnd") &&
+				$(this).prop("selectionStart") >= $(this).val().length - 2) {
+					event.preventDefault();
 		}
 	});
+
+	//Prevent leading zeros and replace "." with "," in money
 	$("#frm").on("input change", ".money" ,function(event) {
-		if ($(this).val() !== "0") {
+		//Replace "." with ","
+		$(this).val($(this).val().replace(".", ","));
+
+		//Prevent leading zeros
+		if ($(this).val() !== "0" && $(this).val() !== "0,0" && $(this).val() !== "0,00") {
 			var startIndex = 0;
 			for (var i = 0; i < $(this).val().length; i++) {
-				if ($(this).val().charAt(i) === 0 || $(this).val().charAt(i) === " ") {
+				if ($(this).val().charAt(i) === "0" &&
+						i !== $(this).val().length - 1 &&
+						$(this).val().charAt(i + 1) !== ","
+						|| $(this).val().charAt(i) === " ") {
 					startIndex++;
 				}
 				else {
 					break;
 				}
 			}
-			var trimmedFromLeadingZeros = $(this).val().substring(startIndex);
-			$(this).val(trimmedFromLeadingZeros);
+			if (startIndex > 0) {
+				var trimmedFromLeadingZeros = $(this).val().substring(startIndex);
+				$(this).val(trimmedFromLeadingZeros);
+				if (event.type === "input") {
+						$(this).prop("selectionStart", 1);
+						$(this).prop("selectionEnd", 1);
+				}
+			}
+		}
+	});
+
+	//Add two decimals if not present in money (for consistency)
+	$("#frm").on("change", ".money" ,function(event) {
+		if ($(this).val().length > 0) {
+			if ($(this).val().indexOf(",") < 0) {
+					$(this).val($(this).val() + ",00");
+			}
+			else if ($(this).val().indexOf(",") === $(this).val().length - 1) {
+				$(this).val($(this).val() + "00");
+			}
+			else if ($(this).val().indexOf(",") === $(this).val().length - 2) {
+				$(this).val($(this).val() + "0");
+			}
+		}
+		else {
+			$(this).val("0,00");
 		}
 	});
 

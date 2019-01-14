@@ -4,14 +4,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="jquery.mask.min.js"></script>
-<script src="js-webshim/minified/polyfiller.js"></script>
 <link href="https://dev4.digiforms.no/digiforms/css/dfbase.css" rel="stylesheet">
 <link href="https://dev4.digiforms.no/digiforms/css/dfprogress.css" rel="stylesheet">
 <link href="https://dev4.digiforms.no/digiforms/css/dfresponsive.css" rel="stylesheet">
 <script src="https://dev4.digiforms.no/digiforms/scripts/jquery.autogrowtextarea.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <link href="form-controls.min.css" rel="stylesheet">
-<script src="form-controls.min.js"></script>
+<script src="form-controls.js"></script>
 <!--<link href="form-controls.css" rel="stylesheet">
 <script src="form-controls.js"></script>-->
 <body>
@@ -77,6 +76,13 @@
 				<label for="file-upload">Label (for file upload) button</label>
 				<input type="file" id="file-upload">
 			</div>
+
+			<h2>Money / percentage</h2>
+
+			<input type="tel" class="input-field money numeric-text" value="0,00" inputmode="numeric" pattern="[0-9]*" maxlength="22">
+
+			<input type="tel" class="input-field percentage numeric-text" value="0,00" inputmode="numeric" pattern="[0-9]*" maxlength="6">
+
 		</div>
 	</form>
 	<script>
