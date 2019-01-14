@@ -236,6 +236,7 @@ function initInputs() {
 				$(this).val($(this).masked(parseFloatToDecimalString((val + step).toFixed(nDecimals))));
 			}
 			event.preventDefault();
+			$(this).trigger("input");
 		}
 		 //Key DOWN
 		else if (key === 40 && ($(this).val() === "" || val > 0)) {
@@ -246,6 +247,7 @@ function initInputs() {
 				$(this).val($(this).masked(parseFloatToDecimalString((val - step).toFixed(nDecimals))));
 			}
 			event.preventDefault();
+			$(this).trigger("input");
 		}
 	});
 
