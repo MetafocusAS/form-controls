@@ -110,7 +110,6 @@ var parseFloatToDecimalString = function(val) {
 
 function initPhoneMasking() {
 	$("input.phone:not(.phone-no, .phone-dk, .phone-se, .phone-nordic)").mask("+099999 00 00 00 00 00 00 00");
-	$("input.phone:not(.phone-no, .phone-dk, .phone-se, .phone-nordic)").attr("placeholder", "+099999 00 00 00 00 00 00 00");
 
 	$("input.phone-no").mask("+47 000 00 000");
 	$("input.phone-no").attr("placeholder", "+47 000 00 000");
@@ -122,7 +121,6 @@ function initPhoneMasking() {
 	$("input.phone-dk").attr("placeholder", "+45 00 00 00 00");
 
 	$("input.phone-nordic").mask("+00 00 00 00 00 00");
-	$("input.phone-nordic").attr("placeholder", "+00 00 00 00 00 00");
 }
 
 //Inits inputs with masks, HTML attributes and event listeners
@@ -151,6 +149,8 @@ function initInputs() {
 	$("input.ssn-se-mask").mask("00000000-0000");
 
 	$("input.date-mask").mask("00.00.0000");
+
+	initPhoneMasking();
 
 	$("input.letteral-text").mask("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ",
 		{translation: {"Z": {pattern: /[a-zA-Z ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏàáâãäåæçèéêëìíîïÐÑÒÓÔÕÖØÙÚÛÜÝÞßðñòóôõöøùúûüýþÿ-]/}}});
