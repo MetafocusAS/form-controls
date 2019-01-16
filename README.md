@@ -330,10 +330,11 @@ var customComboBoxlists = { brus: ["Cola", "Fanta", "Solo", "Sprite"] };
 * **org-number-mask-se** - svenske organisasjoner. Gir et inputfelt formatet XXXXXX-XXXX, f.eks. 990102-1234
 * **percentage** - setter max verdi til 100 og min til 0
 * **phone** - gir et format som passer for alle generelle telefonnummer med landkode. F.eks. +999 12 45 67 12
-* **phone-no** - gir et format som passer for norske telefonnummer med landkode. F.eks. +47 123 45 678
-* **phone-se** - gir et format som passer for svenske telefonnummer med landkode. F.eks. +46(0) 73-123 45 67
 * **phone-dk** - gir et format som passer for danske telefonnummer med landkode. F.eks. +45 12 45 67 12
-* **phone-nordic** - gir et format som passer for nordiske landkoder. F.eks. +45 12 45 67 12
+* **phone-no** - gir et format som passer for norske telefonnummer med landkode. F.eks. +47 123 45 678
+* **phone-nordic** - gir et format som passer for nordiske landkoder. F.eks. +354 12 45 67 12
+* **phone-se** - gir et format som passer for svenske telefonnummer med landkode. F.eks. +46(0) 73-123 45 67
+* **phone-scandinavian** - gir et format som passer for skandinaviske (Norge, Sverige og Danmark) telefonnummer med landkode. F.eks. +45 12 45 67 12
 * **prevent-select-on-tab** - hindrer at data i input-feltet markeres ved tab inn i feltet. Funker ikke i firefox.
 * **radio-row** - brukes i kombinasjon med **control-row** for å style radioknapper. Må ligge i en groupbox som har klassen **radio-container**
 * **select-container** - brukes for å skape dropdowns som ser like ut i forskjellige browsere. Brukes på groupboxen rundt selecten.
