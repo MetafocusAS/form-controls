@@ -552,10 +552,25 @@ function togglePaddingTop($input) {
 	var $myLabel = getLabel($input);
 
 	if ($myLabel.hasClass("hidden")) {
-		$input.attr("style", "padding-top: calc(" + $input.css('padding-bottom') + " + 3px) !important");
+			$input.attr("style", "padding-top: calc(" + $input.css('padding-bottom') + " + 3px) !important");
 	}
 	else {
-		$input.attr("style", "padding-top: calc(" + $input.css('padding-bottom') + " * 2 + 3px) !important");
+		var calculatedPaddingTop;
+		if ($myLabel.find("label").height() === 0) { //If the label is inside a container that is hidden
+			var paddingTopFloat = parseFloat($myLabel.find("label").css('padding-top').replace("px", ""));
+			var em1Float = parseFloat($myLabel.find("label").css('font-size').replace("px", ""));
+			calculatedPaddingTop = paddingTopFloat + em1Float + 3;
+			console.log("if: " + calculatedPaddingTop);
+			console.log("if - height: " + $myLabel.find("label").css('height'));
+		}
+		else {
+			calculatedPaddingTop = $myLabel.find("label").outerHeight();
+			console.log("else: " + calculatedPaddingTop);
+		}
+
+		if ($input.css('padding-top') !== calculatedPaddingTop + "px") {
+			$($input).attr("style", "padding-top: " + calculatedPaddingTop + "px !important");
+		}
 	}
 }
 
