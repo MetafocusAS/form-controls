@@ -560,12 +560,9 @@ function togglePaddingTop($input) {
 			var paddingTopFloat = parseFloat($myLabel.find("label").css('padding-top').replace("px", ""));
 			var em1Float = parseFloat($myLabel.find("label").css('font-size').replace("px", ""));
 			calculatedPaddingTop = paddingTopFloat + em1Float + 3;
-			console.log("if: " + calculatedPaddingTop);
-			console.log("if - height: " + $myLabel.find("label").css('height'));
 		}
 		else {
 			calculatedPaddingTop = $myLabel.find("label").outerHeight();
-			console.log("else: " + calculatedPaddingTop);
 		}
 
 		if ($input.css('padding-top') !== calculatedPaddingTop + "px") {

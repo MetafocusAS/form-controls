@@ -78,7 +78,7 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 
 ### Radioknapper
 * Groupboxen (div rundt fieldset) rundt må ha klassen **radio-container**
-* div rundt radioknapp og label må ha klassen **control-row** og **checkbox-row**
+* div rundt radioknapp og label må ha klassen **control-row** og **radio-row**
 
 #### Hvordan plassere klassene
 ![Figur som viser hvordan klassene for radioknapper skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-radio-new2.0.svg)
