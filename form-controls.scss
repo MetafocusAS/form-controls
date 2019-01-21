@@ -340,6 +340,10 @@ $selectArrowBackgroundWidth: 4rem;
 		  border-bottom-color: $borderColorHighlight;
 		}
 	}
+
+  textarea.input-field-alt {
+    overflow-y: hidden; //Prevent scrollbar from flashing on digiforms autogrow
+  }
 }
 
 .select-container .label-float .label_control {
