@@ -131,13 +131,14 @@ function initInputs() {
 	//Sets a mask for some classes:
 	//Exceptions must be made for classes
 	//that has numeric input with a specific format
-	$("input.numeric-text:not(.account-mask, .vps-account-mask, .money, " +
+	$("input.numeric-text:not(.account-mask, .vps-account-mask, .money-integer, .money, " +
 														".org-number-mask, .org-number-mask-se, org-number-mask-dk, " +
 														".phone, .phone-no, .phone-se, .phone-dk, .phone-nordic, " +
 														".cpr-mask, .ssn-no-mask, .ssn-se-mask, " +
 														".percentage, .date-mask)")
 														.mask('0#');
-
+	$("input.money-integer").mask("000 000 000 000 000 000 000 000 000 000", {reverse: true});
+	
 	$("input.account-mask").mask("0000 00 00000");
 
 	$("input.vps-account-mask").mask("00000 0000000");
