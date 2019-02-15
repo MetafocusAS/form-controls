@@ -131,13 +131,18 @@ function initInputs() {
 	//Sets a mask for some classes:
 	//Exceptions must be made for classes
 	//that has numeric input with a specific format
-	$("input.numeric-text:not(.account-mask, .vps-account-mask, .money, " +
-														".org-number-mask, .org-number-mask-se, org-number-mask-dk, " +
+	$("input.numeric-text:not(.account-mask, .vps-account-mask, .money, .money-int, " +
+														".org-number-mask, .org-number-mask-se, .org-number-mask-dk, .giin-number-mask " +
 														".phone, .phone-no, .phone-se, .phone-dk, .phone-nordic, " +
 														".cpr-mask, .ssn-no-mask, .ssn-se-mask, " +
 														".percentage, .date-mask)")
 														.mask('0#');
-	
+
+	$("input.money-int").mask("000 000 000 000 000", {
+			reverse: true,
+      watchDataMask: true
+	});
+
 	$("input.account-mask").mask("0000 00 00000");
 
 	$("input.vps-account-mask").mask("00000 0000000");
@@ -145,6 +150,7 @@ function initInputs() {
 	$("input.org-number-mask").mask("000 000 000");
 	$("input.org-number-mask-se, input.cpr-mask").mask("000000-0000");
 	$("input.org-number-mask-dk").mask("00000000");
+	$("input.giin-number-mask").mask("000000.00000.00.000");
 
 	$("input.ssn-no-mask").mask("000000 00000");
 	$("input.ssn-se-mask").mask("00000000-0000");
