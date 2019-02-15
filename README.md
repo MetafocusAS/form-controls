@@ -321,13 +321,15 @@ var customComboBoxlists = { brus: ["Cola", "Fanta", "Solo", "Sprite"] };
 * **letteral-text** - gjør at det kun er mulig å skrive inn tekst i inputfeltet
 * **modal** - lager en modal (dialog) som legger seg forran hele siden
 * **modal-container** - må wrappe en **.modal** (dialog)
-* **money** - tusenskille for tall
+* **money** - tusenskille for tall inkl. desimaler, feks 100 000,00
+* **money-int** - tusenskille for heltall, feks 5 000 000
 * **numeric-decimal** - gjør at det kun er mulig å skrive tall i inputfeltet, desimaler er tillatt. Type må være satt til "number"
 * **numeric-positive** - gjør at det kun går å skrive inn positive tall i input-feltet. Type må være satt til "number".
 * **numeric-text** - gjør at det kun går å skrive inn tall i input-feltet, og at numerisk keypad vises på mobil
 * **open-modal-btn** - åpner modal (dialog)
-* **org-number-mask** - norske organisasjoner. Gir et inputfelt formatet XXX XXX XXX, f.eks. 123 456 789
-* **org-number-mask-se** - svenske organisasjoner. Gir et inputfelt formatet XXXXXX-XXXX, f.eks. 990102-1234
+* **org-number-mask** - norske organisasjoner. Gir et inputfelt på formatet XXX XXX XXX, f.eks. 123 456 789
+* **org-number-mask-se** - svenske organisasjoner. Gir et inputfelt på formatet XXXXXX-XXXX, f.eks. 990102-1234
+* **giin-number-mask** - amerikansk firmanummer. Gir et inputfelt på formatet XXXXXX.XXXXX.XX.XXX
 * **percentage** - setter max verdi til 100 og min til 0
 * **phone** - gir et format som passer for alle generelle telefonnummer med landkode. F.eks. +999 12 45 67 12
 * **phone-dk** - gir et format som passer for danske telefonnummer med landkode. F.eks. +45 12 45 67 12
