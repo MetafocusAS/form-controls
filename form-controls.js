@@ -132,7 +132,7 @@ function initInputs() {
 	//Exceptions must be made for classes
 	//that has numeric input with a specific format
 	$("input.numeric-text:not(.account-mask, .vps-account-mask, .money, .money-int, " +
-														".org-number-mask, .org-number-mask-se, .org-number-mask-dk, .giin-number-mask " +
+														".org-number-mask, .org-number-mask-se, .org-number-mask-dk, " +
 														".phone, .phone-no, .phone-se, .phone-dk, .phone-nordic, " +
 														".cpr-mask, .ssn-no-mask, .ssn-se-mask, " +
 														".percentage, .date-mask)")
@@ -150,7 +150,8 @@ function initInputs() {
 	$("input.org-number-mask").mask("000 000 000");
 	$("input.org-number-mask-se, input.cpr-mask").mask("000000-0000");
 	$("input.org-number-mask-dk").mask("00000000");
-	$("input.giin-number-mask").mask("000000.00000.00.000");
+	$("input.giin-number-mask").mask("ZZZZZZ.ZZZZZ.ZZ.ZZZ",
+		{translation: {"Z": {pattern: /[a-zA-Z 0123456789]/}}});
 
 	$("input.ssn-no-mask").mask("000000 00000");
 	$("input.ssn-se-mask").mask("00000000-0000");
