@@ -317,6 +317,7 @@ var customComboBoxlists = { brus: ["Cola", "Fanta", "Solo", "Sprite"] };
 * **control-row** - brukes for å style checkboxer og radio-knapper
 * **cpr-mask** - danske fødselsnummer. Gir et inputfelt formatet XXXXXX-XXXX, f.eks. 990102-1234
 * **date-mask** - gir et inputfelt formatet DD.MM.YYYY, f.eks. 01.03.2018
+* **date-se-mask** - gir et inputfelt formatet YYYY.MM.DD, f.eks. 2018.03.01
 * **input-field** - brukes for å style inputfelter og dropdowns (input og select)
 * **letteral-text** - gjør at det kun er mulig å skrive inn tekst i inputfeltet
 * **modal** - lager en modal (dialog) som legger seg forran hele siden
