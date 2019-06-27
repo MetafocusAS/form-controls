@@ -157,7 +157,7 @@ function initInputs() {
 	$("input.ssn-se-mask").mask("00000000-0000");
 
 	$("input.date-mask").mask("00.00.0000");
-	$("input.date-se-mask").mask("0000.00.00");
+	$("input.date-se-mask").mask("0000-00-00");
 
 	initPhoneMasking();
 
