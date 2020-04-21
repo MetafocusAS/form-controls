@@ -14,11 +14,13 @@ For å bruke biblioteket må filene:
 * **form-controls.min.css**
 * **jquery.mask.min.js**
 
-Legges inn under på *C:\Tomcat\WEBAPPS CONTAINER*. I en mappe som heter **form-controls** på frontend-serveren.
+Legges inn under på *C:\Tomcat\WEBAPPS*. I en mappe som heter **form-controls** på frontend-serveren.
+OBS! Dersom det er snakk om en eldre server (før 20.04.2020) skal dette inn under mappen *C:\Tomcat\WEBAPPS_CONTAINER* eller. *C:\Tomcat\WEBAPPS CONTAINER*. Se hva du finner. 
 
 Så må det legges til en deployment descriptor for mappen **form-controls**:
 1. Last ned **form-controls.xml** (https://github.com/MetafocusAS/form-controls/blob/master/form-controls.xml)
 2. Putt **form-controls.xml** på *C:\Tomcat\apache-tomcat-7.0.75\conf\Catalina\localhost* (OBS! versjonsnummer på *apache-tomcat-7.0.75* skiller seg sannsynligvis!) på frontend-serveren.
+OBS! Dersom det er snakk om en eldre server (før 20.04.2020) og filene nevnt over er lagt i mappen *C:\Tomcat\WEBAPPS_CONTAINER* eller *C:\Tomcat\WEBAPPS CONTAINER*. må xml-filen du har lastet ned her åpnes og endres til å peke på samme path.
 
 For å kunne bruke det i digiforms må du deretter inkludere (Document settings > Includes):
 * **../form-controls/form-controls.min.js**
@@ -211,6 +213,30 @@ Objektet kan enten deklareres i en JS-fil (f.eks. helt på toppen). Eller som in
 
 #### Hvordan plassere klasser for en input som kun aksepterer siffer.
 ![Figur som viser hvordan klassene for inputfelter som kun aksepterer visse tegn skal brukes](https://rawgit.com/MetafocusAS/form-controls/master/images/drawing-input-numeric.svg)
+
+### Tegnteller for textarea
+* Viser maks antall tillatte tegn, og hvor mange tegn som til enhver tid er skrevet inn i et tekstfelt.
+* Gjør det enklere for brukeren å holde oversikt over hvor mye som er skrevet og hvor mange tegn som er igjen å skrive. 
+
+#### Pass på lengden på lagringsstedet
+Normalt teller et linjeskift som ett tegn, men funksjonaliteten i denne tegntelleren gjør at linjeskift ikke telles med. Derfor er det viktig å ta høyde for at det stedet som eventuelt skal lagre teksten kan ta imot den faktiske lengden på tekststrengen (maxlength + et ukjent antall linjeskift) 
+
+#### To varianter av telleren
+* Med klassen **counter-fraction** vises antall tegn fylt i / maxlength
+TODO: BILDE!
+* Med klassen **counter-remaining** som vises en tekststreng som teller ned antall tegn fra maxlength til 0, hvor mange tegn feltet har til rådighet etter hvert som det fylles i.
+TODO: Bilde!
+
+#### Slik legger du til tegnteller
+Legg en InputMemo (med label) og en TextBox inn i en div (som i bildene over). 
+Div’en skal ha klassen **char-count-container-_maxlength_**, der **_maxlength_** settes til den tillatte lengden man ønsker på feltet. For eksempel vil **char-count-container-500** gi et inputfelt som godtar 500 tegn. 
+
+I labelen beskriver du på vanlig måte innholdet i feltet og avslutter dette med: <pre>&lt;span class=’hide-label’&gt;Placeholder for maxlength&lt;/span&gt;</pre> Placeholder for maxlength blir da automatisk erstattet av en tekst som oppgir feltets makslengde basert på klassen satt i div’en rundt. Denne vil være skjult med CSS men mulig å lese med skjermleser. 
+
+Selve InputMemo-feltet skal ha følgende verdier, men feilmeldingsbeskjeden (Message) kan du sette fritt til det som måtte passe:
+TODO: Bilde!
+
+Under Label med InputMemo finner vi en TextBox som skal ha klassen **counter-fraction** eller **counter-remaining** avhengig av hvilken type tegnteller du vil vise. 
 
 ### Floating labels
 * Bruk klassene **label-float** og **hidden** på containeren rundt label og input.
