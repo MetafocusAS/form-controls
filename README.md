@@ -1,71 +1,77 @@
 # form-controls
 
-- [form-controls](#form-controls)
-  * [Bruk](#bruk)
-  * [Demo](#demo)
-  * [Browser support](#browser-support)
-  * [Checkboxer og radioknapper](#checkboxer-og-radioknapper)
-    + [Checkboxer](#checkboxer)
-      - [Hvordan plassere klassene](#hvordan-plassere-klassene)
-      - [HTML](#html)
-    + [Radioknapper](#radioknapper)
-      - [Hvordan plassere klassene](#hvordan-plassere-klassene-1)
-      - [HTML](#html-1)
-      - [Screen shot](#screen-shot)
-  * [Inputfelter](#inputfelter)
-    + [Dropdowns (select)](#dropdowns--select-)
-      - [Hvordan plassere klasser på en dropdown (select)](#hvordan-plassere-klasser-p--en-dropdown--select-)
-      - [HTML](#html-2)
-      - [Screen shot](#screen-shot-1)
-    + [Combobox (autocomplete)](#combobox--autocomplete-)
-      - [Hvordan plassere klasser på en combobox (autocomplete)](#hvordan-plassere-klasser-p--en-combobox--autocomplete-)
-      - [HTML](#html-3)
-      - [Screen shot](#screen-shot-2)
-    + [Input-elementer (input)](#input-elementer--input-)
-      - [Hvordan plassere klasser på en input](#hvordan-plassere-klasser-p--en-input)
-      - [HTML](#html-4)
-      - [Screen shot](#screen-shot-3)
-      - [Hvordan plassere klasser for en input som kun aksepterer siffer.](#hvordan-plassere-klasser-for-en-input-som-kun-aksepterer-siffer)
-      - [HTML](#html-5)
-      - [Screen shot](#screen-shot-4)
-      - [Hvordan plassere klasser for en input med formattering, f.eks. organisasjonsnummer.](#hvordan-plassere-klasser-for-en-input-med-formattering--feks-organisasjonsnummer)
-      - [HTML](#html-6)
-      - [Screen shot](#screen-shot-5)
-      - [Hvordan plassere klasser for en input som kun aksepterer siffer](#hvordan-plassere-klasser-for-en-input-som-kun-aksepterer-siffer)
-    + [Tegnteller for textarea](#tegnteller-for-textarea)
-      - [Pass på lengden på lagringsstedet](#pass-p--lengden-p--lagringsstedet)
-      - [Tegnteller variant 1: Counter fraction](#tegnteller-variant-1--counter-fraction)
-      - [HTML](#html-7)
-      - [Screen shot](#screen-shot-6)
-      - [Tegnteller variant 2: Counter remaining](#tegnteller-variant-2--counter-remaining)
-      - [HTML](#html-8)
-      - [Screen shot](#screen-shot-7)
-      - [Hvordan plassere klasser når du tar i bruk tegnteller i textarea](#hvordan-plassere-klasser-n-r-du-tar-i-bruk-tegnteller-i-textarea)
-    + [Floating labels](#floating-labels)
-      - [Hvordan plassere klasser på en input](#hvordan-plassere-klasser-p--en-input-1)
-      - [HTML](#html-9)
-      - [Screen shot](#screen-shot-8)
-    + [Knapper](#knapper)
-      - [Hvordan plassere **btn** på en knapp/lenke/label](#hvordan-plassere---btn---p--en-knapp-lenke-label)
-      - [HTML](#html-10)
-      - [Screen shot](#screen-shot-9)
-    + [File upload/filopplasting](#file-upload-filopplasting)
-      - [Hvordan plassere **btn** på en knapp/lenke/label](#hvordan-plassere---btn---p--en-knapp-lenke-label-1)
-      - [HTML](#html-11)
-      - [Screen shot](#screen-shot-10)
-    + [Modals](#modals)
-      - [Hvordan plassere klasser for modals](#hvordan-plassere-klasser-for-modals)
-      - [HTML](#html-12)
-      - [Screen shot](#screen-shot-11)
-  * [Klasser](#klasser)
-  * [Eksempler på hvordan tilpasse CSS](#eksempler-p--hvordan-tilpasse-css)
-    + [Endre farge på border på element som har fokus](#endre-farge-p--border-p--element-som-har-fokus)
-    + [Endre farge checkboxer/radioknapper som er "checked"](#endre-farge-checkboxer-radioknapper-som-er--checked-)
-    + [Endre farge på matchet tekst i combobox](#endre-farge-p--matchet-tekst-i-combobox)
+- [Hva er Form-controls?](#hva-er-form-controls-)
+- [Bruk](#bruk)
+- [Demo](#demo)
+- [Browser support](#browser-support)
+- [Checkboxer og radioknapper](#checkboxer-og-radioknapper)
+  * [Checkboxer](#checkboxer)
+    + [Hvordan plassere klassene](#hvordan-plassere-klassene)
+    + [HTML](#html)
+    + [Screen shot](#screen-shot)
+  * [Radioknapper](#radioknapper)
+    + [Hvordan plassere klassene](#hvordan-plassere-klassene-1)
+    + [HTML](#html-1)
+    + [Screen shot](#screen-shot-1)
+- [Inputfelter](#inputfelter)
+  * [Dropdowns (select)](#dropdowns--select-)
+    + [Hvordan plassere klasser på en dropdown (select)](#hvordan-plassere-klasser-p--en-dropdown--select-)
+    + [HTML](#html-2)
+    + [Screen shot](#screen-shot-2)
+  * [Combobox (autocomplete)](#combobox--autocomplete-)
+    + [Hvordan plassere klasser på en combobox (autocomplete)](#hvordan-plassere-klasser-p--en-combobox--autocomplete-)
+    + [HTML](#html-3)
+    + [Screen shot](#screen-shot-3)
+  * [Input-elementer (input)](#input-elementer--input-)
+    + [Hvordan plassere klasser på en input](#hvordan-plassere-klasser-p--en-input)
+    + [HTML](#html-4)
+    + [Screen shot](#screen-shot-4)
+    + [Hvordan plassere klasser for en input som kun aksepterer siffer.](#hvordan-plassere-klasser-for-en-input-som-kun-aksepterer-siffer)
+    + [HTML](#html-5)
+    + [Screen shot](#screen-shot-5)
+    + [Hvordan plassere klasser for en input med formattering, f.eks. organisasjonsnummer.](#hvordan-plassere-klasser-for-en-input-med-formattering--feks-organisasjonsnummer)
+    + [HTML](#html-6)
+    + [Screen shot](#screen-shot-6)
+  * [Tegnteller for textarea](#tegnteller-for-textarea)
+    + [Pass på lengden på lagringsstedet](#pass-p--lengden-p--lagringsstedet)
+    + [Tegnteller variant 1: Counter fraction](#tegnteller-variant-1--counter-fraction)
+    + [HTML](#html-7)
+    + [Screen shot](#screen-shot-7)
+    + [Tegnteller variant 2: Counter remaining](#tegnteller-variant-2--counter-remaining)
+    + [HTML](#html-8)
+    + [Screenshot](#screenshot)
+    + [Hvordan plassere klasser når du tar i bruk tegnteller i textarea](#hvordan-plassere-klasser-n-r-du-tar-i-bruk-tegnteller-i-textarea)
+  * [Floating labels](#floating-labels)
+    + [Hvordan plassere klasser på en input med floating label](#hvordan-plassere-klasser-p--en-input-med-floating-label)
+    + [HTML](#html-9)
+    + [Screenshot før input](#screenshot-f-r-input)
+    + [Screenshot etter input](#screenshot-etter-input)
+- [Knapper](#knapper)
+    + [Hvordan plassere **btn** på en knapp](#hvordan-plassere---btn---p--en-knapp)
+    + [Hvordan plassere **btn** på en lenke](#hvordan-plassere---btn---p--en-lenke)
+    + [Hvordan plassere **btn** på en label](#hvordan-plassere---btn---p--en-label)
+    + [HTML](#html-10)
+    + [Screenshot](#screenshot-1)
+- [File upload/filopplasting](#file-upload-filopplasting)
+    + [Hvordan plassere **btn** på en label for filopplasting](#hvordan-plassere---btn---p--en-label-for-filopplasting)
+    + [HTML](#html-11)
+    + [Screenshot](#screenshot-2)
+- [Modals](#modals)
+    + [Hvordan plassere klasser for modals](#hvordan-plassere-klasser-for-modals)
+    + [HTML](#html-12)
+    + [Screenshot](#screenshot-3)
+- [Oversikt over klasser](#oversikt-over-klasser)
+- [Eksempler på hvordan tilpasse CSS](#eksempler-p--hvordan-tilpasse-css)
+  * [Endre farge på border på element som har fokus](#endre-farge-p--border-p--element-som-har-fokus)
+  * [Endre farge checkboxer/radioknapper som er "checked"](#endre-farge-checkboxer-radioknapper-som-er--checked-)
+  * [Endre farge på matchet tekst i combobox](#endre-farge-p--matchet-tekst-i-combobox)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
+## Hva er Form-controls?
 Dette er et CSS/JS bibliotek for cross-browser-styling av checkboxer, radioknapper, inputfelter og knapper.
-Samt funksjonalitet for å formattere innhold og begrense hvilke tegn som skal tillates i inputfelter, og for å vise riktig keypad på mobile enheter.
+Samt funksjonalitet for å formattere innhold og begrense hvilke og hvor mange tegn som skal tillates i inputfelter, og for å vise riktig keypad på mobile enheter.
 Biblioteket inneholder også funksjonalitet for å lage comboboxer (søk/fritekst i dropdown) og modals (dialoger).
 
 Hovedformålet med biblioteket er først og fremst funksjonalitet. Derfor er stylingen ganske minimal, siden det visuelle uttrykket ofte skiler seg fra løsning til løsning. Avhengig av kundens grafiske profil mm.
@@ -145,6 +151,8 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 	</fieldset>
 </div>
 ```
+
+#### Screen shot
 ![Figur som viser hvordan checkboxer blir seendes ut](https://user-images.githubusercontent.com/5544597/79965453-5126b300-848c-11ea-86bd-237e71f385dc.png)
 
 
@@ -241,7 +249,8 @@ Objektet kan enten deklareres i en JS-fil (f.eks. helt på toppen). Eller som in
 			<label for="id-5df3910c-04ba77e0">Land</label>
 		</div>
 		<div id="id-5df3910c-07042470_control" class="label_control">
-			<input id="id-5df3910c-04ba77e0" class="input-field combobox combobox-countries" name="85a33aad006a46376f7f49375f2cbfd3"></input>
+			<input id="id-5df3910c-04ba77e0" class="input-field combobox combobox-countries" name="85a33aad006a46376f7f49375f2cbfd3">
+			</input>
 		</div>
 	</div>
 </div>
@@ -343,7 +352,7 @@ Normalt teller et linjeskift som ett tegn, men funksjonaliteten i denne tegntell
 	<div id="id-157361c3-02b91c50" class="char-count counter-remaining">Du har igjen 500 tegn</div>
 </div>
 ```
-#### Screen shot
+#### Screenshot
 ![Figur som viser eksempel på bruk av Tegnteller av typen Counter remaining](https://user-images.githubusercontent.com/5544597/79956169-1585ec00-8480-11ea-8248-79c6e8603881.png)
 
 
@@ -351,7 +360,7 @@ Normalt teller et linjeskift som ett tegn, men funksjonaliteten i denne tegntell
 Legg en InputMemo (med label) og en TextBox inn i en div (som i bildene over). 
 Div’en skal ha klassen **char-count-container-{ønsket makslengde for tekstfelt her}**. For eksempel vil **char-count-container-500** gi et inputfelt som godtar 500 tegn. 
 
-I labelen beskriver du på vanlig måte innholdet i feltet og avslutter dette med: <pre>&lt;span class=’hide-label’&gt;Placeholder for maxlength&lt;/span&gt;</pre> Placeholder for maxlength blir da automatisk erstattet av en tekst som oppgir feltets makslengde basert på klassen satt i div’en rundt. Denne vil være skjult med CSS men mulig å lese med skjermleser. 
+I labelen beskriver du på vanlig måte innholdet i feltet og avslutter tekststrengendette med: <pre>&lt;span class=’hide-label’&gt;Placeholder for maxlength&lt;/span&gt;</pre> Placeholder for maxlength blir da automatisk erstattet av en tekst som oppgir feltets makslengde basert på klassen satt i div’en rundt. Denne vil være skjult med CSS men mulig å lese med skjermleser. 
 
 Selve InputMemo-feltet skal ha følgende verdier, men feilmeldingsbeskjeden (Message) kan du sette fritt til det som måtte passe:
 ![Figur som viser properties for InputMemo i Digiforms](https://user-images.githubusercontent.com/5544597/79950784-dce21480-8477-11ea-819b-f93b3fe83e3e.png)
@@ -378,10 +387,10 @@ Under Label med InputMemo finner du en TextBox. Denne skal ha klassen **counter-
 </div>
 ```
 
-#### Screen shot før input
+#### Screenshot før input
 ![Figur som viser hvordan inputfelter med floating labels blir seendes ut](https://user-images.githubusercontent.com/5544597/79971371-7d463200-8494-11ea-87b6-144f4bcd856e.png)
 
-#### Screen shot etter input
+#### Screenshot etter input
 ![Figur som viser hvordan inputfelter med floating labels blir seendes ut](https://user-images.githubusercontent.com/5544597/79971421-9222c580-8494-11ea-9160-003241d85ade.png)
 
 
@@ -408,11 +417,11 @@ Under Label med InputMemo finner du en TextBox. Denne skal ha klassen **counter-
 <label class="btn">Label button</label>
 ```
 
-#### Screen shot
+#### Screenshot
 ![Figur som viser hvordan knapper blir seendes ut](https://user-images.githubusercontent.com/5544597/79976278-98b53b00-849c-11ea-9f93-c93b50dc8808.png)
 
 ## File upload/filopplasting
-* For å style dette elementet i Digiforms må du trikse og mikse litt. Ta først en input (som består av label og inputfelt). Erstatt inputfeltet med et attachment-element slik at label wrapper rundt knapp for opplasting. Dette legges deretter inn i en div med klassen **attachment**. (da trenger du ikke legge til klassen **btn** på labelen for å få den til å se ut som en knapp)
+* For å style dette elementet i Digiforms må du trikse litt. Ta en input (som består av label og inputfelt) og erstatt inputfeltet med et attachment-element slik at label wrapper rundt knapp for opplasting. Labelen gir du klassen **attachment** (du trenger ikke legge til klassen **btn** på labelen for å få den til å se ut som en knapp).
 
 #### Hvordan plassere **btn** på en label for filopplasting
 ![Figur som viser hvordan klasse for knapper skal brukes](https://user-images.githubusercontent.com/5544597/79979482-dec0cd80-84a1-11ea-8b4a-9751df45aa48.png)
@@ -429,7 +438,7 @@ Under Label med InputMemo finner du en TextBox. Denne skal ha klassen **counter-
 </div>
 ```
 
-#### Screen shot
+#### Screenshot
 ![Figur som viser hvordan label for file upload blir seendes ut](https://user-images.githubusercontent.com/5544597/79977871-475a7b00-849f-11ea-8faa-b42c152c8526.png)
 
 
@@ -457,7 +466,7 @@ Under Label med InputMemo finner du en TextBox. Denne skal ha klassen **counter-
 </div>
 ```
 
-#### Screen shot
+#### Screenshot
 ![Figur som viser hvordan modal blir seendes ut](https://user-images.githubusercontent.com/5544597/79987166-5b0cde00-84ad-11ea-8628-54a4598b3fe7.png)
 
 
