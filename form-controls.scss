@@ -373,6 +373,34 @@ $selectArrowBackgroundWidth: 4rem;
 	}
 }
 
+/**** TEXTAREA-COUNTER ****/
+
+
+[class^="char-count-container"] {
+  position: relative;
+
+  textarea {
+    padding-bottom: 1.6em;
+    min-height: 6em;
+    line-height: 1.4em;
+  }
+
+  .hide-label {
+      color: transparent;
+      height: 0em;
+      display: block;
+  }
+
+  .char-count {
+      position: absolute;
+      right: 1em;
+      bottom: 1em;
+      color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+
+
 /******* COMBOBOX *******/
 .combobox-results-container {
 	position: relative;

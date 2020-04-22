@@ -20,6 +20,8 @@ $(document).ready(function() {
 	initComboboxes();
 	initFileUploads();
 	initModals();
+	initSetCharCount();
+    initGrowTextarea();
 	checkForDOMChanges();
 });
 
@@ -440,10 +442,10 @@ function initCheckBoxesAndRadios() {
 	});
 
 	initCheckedInputs();
-  calcCheckAndRadioPlacment();
+  calcCheckAndRadioPlacement();
 
   $(window).resize(function() {
-    calcCheckAndRadioPlacment();
+    calcCheckAndRadioPlacement();
   });
 }
 
@@ -472,7 +474,7 @@ function initCheckedInputs() {
 	});
 }
 
-function calcCheckAndRadioPlacment() {
+function calcCheckAndRadioPlacement() {
   $.each($(".control-row .label_control input"), function() {
     var $control = $(this).parent();
     var $labelContainer = $control.siblings(".label_text");
@@ -1159,6 +1161,157 @@ function getScrollbarWidth() {
     return widthNoScroll - widthWithScroll;
 }
 
+// Ensures all textareas inside class ".char-count-container-___" displays the correct character counter
+function initSetCharCount() {
+
+	//  all textareas to set value
+    $.each($("[class^=char-count-container] textarea"), function () {
+        $textareaContainer = $(this).closest('[class^=char-count-container]');
+        var maxLength = $textareaContainer.attr("class").match(/\d+/)[0];
+        var numberOfLineBreaks = $(this).val().split("\n");
+        setSemanticMaxLength($(this), maxLength + numberOfLineBreaks);
+
+		// If yet no input, default values are set
+        if (!getLengthIgnoreLinebreaks($(this)) > 0 ) {
+            $textareaContainer.find("span.hide-label").text(" (Makslengde: " + maxLength + " tegn)"); // for screenreaders
+            $textareaContainer.find(".counter-remaining").text("Du har igjen " + maxLength + " tegn");
+            $textareaContainer.find(".counter-fraction").text(0 + "/" + maxLength);
+        }
+		// If field has input, keep same values as before
+		else {
+            updateCounterFraction($(this), maxLength);
+            updateCounterRemaining($(this), maxLength);
+        }
+    });
+
+	// Counts characters/new line on input, set values for different functions
+	$('#frm').on("input", "[class^=char-count-container] textarea", function () {
+		var inputTextLength = $(this).val().length;
+		var maxLength = getMaxLengthFromClass($(this));
+		var numberOfLineBreaks = getNumberOfLineBreaks($(this));
+		setSemanticMaxLength($(this));
+		updateCounterFraction($(this), maxLength);
+		updateCounterRemaining($(this), maxLength);
+		limitTextLength($(this));
+	});
+}
+
+// Updates textarea with a counter that says: "characters written/maximum characters allowed"
+function updateCounterFraction($textarea, maxLength) {
+    var maxLengthIgnoreLinebreaks = getLengthIgnoreLinebreaks($textarea);
+    $relatedCounter = $textarea.closest('[class^=char-count-container]').find(".counter-fraction");
+    $relatedCounter.text(maxLengthIgnoreLinebreaks + "/" + maxLength);
+}
+
+// Updates textarea with a counter that says how many characters remaining
+function updateCounterRemaining($textarea, maxLength) {
+    var maxLengthIgnoreLinebreaks = getLengthIgnoreLinebreaks($textarea);
+    $relatedCounter = $textarea.closest('[class^=char-count-container]').find(".counter-remaining");
+    $relatedCounter.text("Du har igjen " + (maxLength - maxLengthIgnoreLinebreaks) + " tegn");
+}
+
+// Adding information about maxlength to a label for textarea
+// This text is transparent but provides important information for those with screenreaders
+function setLabelMaxLength($textarea, maxLength) {
+    $textarea.closest('[class^=char-count-container]').find("label").text("Makslengde: " + maxLength + " tegn");
+}
+
+// Sets value for a textareas maxlength in html
+function setSemanticMaxLength($textarea) {
+    var countLineBreaks = getNumberOfLineBreaks($textarea);
+    var maxLength = getMaxLengthFromClass($textarea);
+    var semanticMaxLength = parseInt(maxLength) + parseInt(countLineBreaks);
+    $textarea.attr("maxLength", semanticMaxLength);
+}
+
+// Returns value of a textareas maxLengt in html
+function getSemanticMaxLength($textarea) {
+    return $textarea.attr("maxLength");
+}
+
+// Returns number of characters in a textarea (including all line breaks that counts as one character)
+function getFullLength($textarea) {
+    return $textarea.val().length;
+}
+
+// Returns number of characters in a textarea (after excluding line break as character)
+function getLengthIgnoreLinebreaks($textarea) {
+    var len = $textarea.val().length;
+    var countLineBreaks = getNumberOfLineBreaks($textarea);
+    var maxLengthIgnoreLinebreaks = parseInt(len) - parseInt(countLineBreaks);
+    return maxLengthIgnoreLinebreaks;
+}
+
+// Returns number of line breaks in a textarea
+function getNumberOfLineBreaks($textarea) {
+    var lineBreaks = $textarea.val().match(/\n/g||[]);
+    var countLineBreaks = 0;
+
+    if(lineBreaks != undefined) {
+      countLineBreaks = lineBreaks.length;
+    }
+    return countLineBreaks;
+}
+
+// Returns number from a specific class name (ex. '.char-count-container-100' retrieves '100')
+function getMaxLengthFromClass($textarea){
+    var number = $textarea.closest('[class^=char-count-container]').attr("class").match(/\d+/)[0];
+    return number;
+}
+
+// Cuts away exceeding characters in textarea if input is longer than maxlength
+function limitTextLength($textarea) {
+    var maxLength = getSemanticMaxLength($textarea);
+    var length = $textarea.val().length;
+
+    if (length > maxLength) {
+        var maxLen = getMaxLengthFromClass($textarea);
+        var $reassignSubstring = $textarea.val().substring(0, maxLen);
+        $textarea.val($reassignSubstring);
+        updateCounterFraction($textarea, maxLen);
+        updateCounterRemaining($textarea, maxLen);
+    }
+}
+
+// Autogrow textarea on input
+// (to invoke this after an ajax update include a script snippet
+// inside targeted div in Digiforms Designer)
+function initGrowTextarea() {
+    $.each($("[class^=char-count-container] textarea"), function (){
+
+        if( $(this).css('position')!='absolute') {
+            //Functions
+            var grow = function() {
+                updateHeight(this);
+            }
+
+            var updateHeight = function(obj) {
+
+               var btop = $(obj).css('border-top');
+               if( !btop)
+                  btop = '0' + $(obj).css('border-top-width');
+
+               var bbot = $(obj).css('border-bottom');
+               if( !bbot)
+                  bbot = '0' + $(obj).css('border-bottom-width');
+
+                if( obj.scrollHeight > obj.offsetHeight)
+                    obj.style.height = (obj.scrollHeight + parseFloat(btop) + parseFloat(bbot)) + "px";
+                if( obj.scrollHeight < obj.offsetHeight)
+                    obj.style.height = (obj.scrollHeight + parseFloat(btop) + parseFloat(bbot)) + "px";
+            }
+
+            this.style.overflow = "hidden";
+
+            $(this).unbind('.autoGrow')
+                .bind('keyup.autoGrow', grow)
+                .bind('change.autoGrow', grow)
+                .bind('resize', grow);
+            updateHeight(this);
+        }
+	});
+}
+
 //Checks for changes in the DOM
 //And adds HTML attributes and inits customized checkboxes
 //Whenever changes are made to the frm-element (main form) in the DOM
@@ -1167,7 +1320,7 @@ function checkForDOMChanges() {
 	observeDOM( document.getElementById("frm") ,function(){
 			initCheckedInputs();
 			addHTMLAttributes();
-      calcCheckAndRadioPlacment();
+      calcCheckAndRadioPlacement();
 			initFloatingLabelsLoaded();
 			buildComboboxes();
 			initModalARIA();
