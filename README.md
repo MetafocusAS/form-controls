@@ -66,8 +66,6 @@
   * [Endre farge checkboxer/radioknapper som er "checked"](#endre-farge-checkboxer-radioknapper-som-er--checked-)
   * [Endre farge på matchet tekst i combobox](#endre-farge-p--matchet-tekst-i-combobox)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 
 ## Hva er Form-controls?
 Dette er et CSS/JS bibliotek for cross-browser-styling av checkboxer, radioknapper, inputfelter og knapper.
