@@ -9,38 +9,38 @@
     + [Checkboxer](#checkboxer)
       - [Hvordan plassere klassene](#hvordan-plassere-klassene)
       - [HTML](#html)
-      - [Screen shot](#screen-shot)
+      - [Screenshot](#screenshot)
     + [Radioknapper](#radioknapper)
       - [Hvordan plassere klassene](#hvordan-plassere-klassene-1)
       - [HTML](#html-1)
-      - [Screen shot](#screen-shot-1)
+      - [Screenshot](#screenshot-1)
   * [Inputfelter](#inputfelter)
     + [Dropdowns (select)](#dropdowns--select-)
       - [Hvordan plassere klasser på en dropdown (select)](#hvordan-plassere-klasser-p--en-dropdown--select-)
       - [HTML](#html-2)
-      - [Screen shot](#screen-shot-2)
+      - [Screenshot](#screenshot-2)
     + [Combobox (autocomplete)](#combobox--autocomplete-)
       - [Hvordan plassere klasser på en combobox (autocomplete)](#hvordan-plassere-klasser-p--en-combobox--autocomplete-)
       - [HTML](#html-3)
-      - [Screen shot](#screen-shot-3)
+      - [Screenshot](#screenshot-3)
     + [Input-elementer (input)](#input-elementer--input-)
       - [Hvordan plassere klasser på en input](#hvordan-plassere-klasser-p--en-input)
       - [HTML](#html-4)
-      - [Screen shot](#screen-shot-4)
+      - [Screenshot](#screenshot-4)
       - [Hvordan plassere klasser for en input som kun aksepterer siffer.](#hvordan-plassere-klasser-for-en-input-som-kun-aksepterer-siffer)
       - [HTML](#html-5)
-      - [Screen shot](#screen-shot-5)
+      - [Screenshot](#screenshot-5)
       - [Hvordan plassere klasser for en input med formattering, f.eks. organisasjonsnummer.](#hvordan-plassere-klasser-for-en-input-med-formattering--feks-organisasjonsnummer)
       - [HTML](#html-6)
-      - [Screen shot](#screen-shot-6)
+      - [Screenshot](#screenshot-6)
     + [Tegnteller for textarea](#tegnteller-for-textarea)
       - [Pass på lengden på lagringsstedet](#pass-p--lengden-p--lagringsstedet)
       - [Tegnteller variant 1: Counter fraction](#tegnteller-variant-1--counter-fraction)
       - [HTML](#html-7)
-      - [Screen shot](#screen-shot-7)
+      - [Screenshot](#screenshot-7)
       - [Tegnteller variant 2: Counter remaining](#tegnteller-variant-2--counter-remaining)
       - [HTML](#html-8)
-      - [Screenshot](#screenshot)
+      - [Screenshot](#screenshot-8)
       - [Hvordan plassere klasser når du tar i bruk tegnteller i textarea](#hvordan-plassere-klasser-n-r-du-tar-i-bruk-tegnteller-i-textarea)
     + [Floating labels](#floating-labels)
       - [Hvordan plassere klasser på en input med floating label](#hvordan-plassere-klasser-p--en-input-med-floating-label)
@@ -52,21 +52,21 @@
       - [Hvordan plassere **btn** på en lenke](#hvordan-plassere---btn---p--en-lenke)
       - [Hvordan plassere **btn** på en label](#hvordan-plassere---btn---p--en-label)
       - [HTML](#html-10)
-      - [Screenshot](#screenshot-1)
+      - [Screenshot](#screenshot-9)
   * [File upload/filopplasting](#file-upload-filopplasting)
       - [Hvordan plassere **btn** på en label for filopplasting](#hvordan-plassere---btn---p--en-label-for-filopplasting)
       - [HTML](#html-11)
-      - [Screenshot](#screenshot-2)
+      - [Screenshot](#screenshot-10)
   * [Modals](#modals)
       - [Hvordan plassere klasser for modals](#hvordan-plassere-klasser-for-modals)
       - [HTML](#html-12)
-      - [Screenshot](#screenshot-3)
+      - [Screenshot](#screenshot-11)
   * [Oversikt over klasser](#oversikt-over-klasser)
   * [Eksempler på hvordan tilpasse CSS](#eksempler-p--hvordan-tilpasse-css)
     + [Endre farge på border på element som har fokus](#endre-farge-p--border-p--element-som-har-fokus)
     + [Endre farge checkboxer/radioknapper som er "checked"](#endre-farge-checkboxer-radioknapper-som-er--checked-)
     + [Endre farge på matchet tekst i combobox](#endre-farge-p--matchet-tekst-i-combobox)
-    
+
 
 ## Hva er Form-controls?
 Dette er et CSS/JS bibliotek for cross-browser-styling av checkboxer, radioknapper, inputfelter og knapper.
@@ -152,7 +152,7 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 </div>
 ```
 
-#### Screen shot
+#### Screenshot
 ![Figur som viser hvordan checkboxer blir seendes ut](https://user-images.githubusercontent.com/5544597/79965453-5126b300-848c-11ea-86bd-237e71f385dc.png)
 
 
@@ -185,7 +185,7 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 </div>
 ```
 
-#### Screen shot
+#### Screenshot
 ![Figur som viser hvordan radioknapper blir seendes ut](https://user-images.githubusercontent.com/5544597/79965643-92b75e00-848c-11ea-95be-fb70d02afbe1.png)
 
 
@@ -215,7 +215,7 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 </div>
 ```
 
-#### Screen shot
+#### Screenshot
 ![Figur som viser hvordan dropdowns blir seendes ut](https://user-images.githubusercontent.com/5544597/79966319-926b9280-848d-11ea-9ad3-39e1bee8a927.png)
 
 
@@ -256,7 +256,7 @@ Objektet kan enten deklareres i en JS-fil (f.eks. helt på toppen). Eller som in
 </div>
 ```
 
-#### Screen shot
+#### Screenshot
 ![Figur som viser hvordan dropdowns blir seendes ut](https://user-images.githubusercontent.com/5544597/79968019-e0819580-848f-11ea-90d7-0275a78db2f8.png)
 
 
@@ -273,7 +273,7 @@ Objektet kan enten deklareres i en JS-fil (f.eks. helt på toppen). Eller som in
 <input type="text" id="id-5d93ad80-02c0cc20" class="input-field" name="85a33aad006a46376f7f49375f2cbfd3" placeholder="Hvilke som helst tegn ..." value="">
 ```
 
-#### Screen shot
+#### Screenshot
 ![Figur som viser hvordan inputfelter blir seendes ut](https://user-images.githubusercontent.com/5544597/79968552-8df4a900-8490-11ea-8be0-117b9c8f1c48.png)
 
 
@@ -285,7 +285,7 @@ Objektet kan enten deklareres i en JS-fil (f.eks. helt på toppen). Eller som in
 <input type="text" id="id-5d972d02-02c0cfb0" class="input-field numeric-text" name="85a33aad006a46376f7f49375f2cbfd3" placeholder="kun siffer, ingen formattering" value="" inputmode="numeric" pattern="[0-9]*">
 ```
 
-#### Screen shot
+#### Screenshot
 ![Figur som viser hvordan inputfelter som kun aksepterer siffer blir seendes ut](https://user-images.githubusercontent.com/5544597/79969604-0314ae00-8492-11ea-8a96-8ea05426ebc9.png)
 
 
@@ -297,7 +297,7 @@ Objektet kan enten deklareres i en JS-fil (f.eks. helt på toppen). Eller som in
 <input type="text" id="id-5d982482-02c0cfb0" class="input-field numeric-text org-number-mask" name="85a33aad006a46376f7f49375f2cbfd3" placeholder="xxx xxx xxx" value="" inputmode="numeric" pattern="[0-9]*" maxlength="11">
 ```
 
-#### Screen shot
+#### Screenshot
 ![Figur som viser hvordan inputfelt med formattering for organisasjonsnummer blir seendes ut](https://user-images.githubusercontent.com/5544597/79969977-859d6d80-8492-11ea-8f79-cfba94d7fd75.png)
 
 
@@ -328,7 +328,7 @@ Normalt teller et linjeskift som ett tegn, men funksjonaliteten i denne tegntell
 	<div id="id-157361c3-02b90300" class="char-count counter-fraction">0/500</div>
 </div>
 ```
-#### Screen shot
+#### Screenshot
 ![Figur som viser eksempel på bruk av Tegnteller av typen Counter fraction](https://user-images.githubusercontent.com/5544597/79955818-9c869480-847f-11ea-9aaf-bc4ae61511d0.png)
 
 
@@ -360,7 +360,7 @@ Normalt teller et linjeskift som ett tegn, men funksjonaliteten i denne tegntell
 Legg en InputMemo (med label) og en TextBox inn i en div (som i bildene over). 
 Div’en skal ha klassen **char-count-container-{ønsket makslengde for tekstfelt her}**. For eksempel vil **char-count-container-500** gi et inputfelt som godtar 500 tegn. 
 
-I labelen beskriver du på vanlig måte innholdet i feltet og avslutter tekststrengendette med: <pre>&lt;span class=’hide-label’&gt;Placeholder for maxlength&lt;/span&gt;</pre> Placeholder for maxlength blir da automatisk erstattet av en tekst som oppgir feltets makslengde basert på klassen satt i div’en rundt. Denne vil være skjult med CSS men mulig å lese med skjermleser. 
+I labelen beskriver du på vanlig måte innholdet i feltet og avslutter tekststrengen med: <pre>&lt;span class=’hide-label’&gt;Placeholder for maxlength&lt;/span&gt;</pre> Placeholder for maxlength blir da automatisk erstattet av en tekst som oppgir feltets makslengde basert på klassen satt i div’en rundt. Denne vil være skjult med CSS men mulig å lese med skjermleser. 
 
 Selve InputMemo-feltet skal ha følgende verdier, men feilmeldingsbeskjeden (Message) kan du sette fritt til det som måtte passe:
 ![Figur som viser properties for InputMemo i Digiforms](https://user-images.githubusercontent.com/5544597/79950784-dce21480-8477-11ea-819b-f93b3fe83e3e.png)
