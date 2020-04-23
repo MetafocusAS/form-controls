@@ -92,11 +92,12 @@ Så må det legges til en deployment descriptor for mappen **form-controls**:
 2. Putt **form-controls.xml** på *C:\Tomcat\apache-tomcat-7.0.75\conf\Catalina\localhost* (OBS! versjonsnummer på *apache-tomcat-7.0.75* skiller seg sannsynligvis!) på frontend-serveren.
 OBS! Dersom det er snakk om en eldre server (før 20.04.2020) og filene nevnt over er lagt i mappen *C:\Tomcat\WEBAPPS_CONTAINER* eller *C:\Tomcat\WEBAPPS CONTAINER*. må xml-filen du har lastet ned her åpnes og endres til å peke på samme path.
 
-For å kunne bruke det i digiforms må du deretter inkludere (Document settings > Includes):
+For å ta i bruk biblioteket i digiforms må du inkludere (Document settings > Includes):
 * **../form-controls/form-controls.min.js**
 * **../form-controls/form-controls.min.css**
 
 Det er ofte best å inkludere disse *før* du inkluderer annen CSS, sånn at styling fra form-controls blir enkel å overstyre.
+Lukk og åpne browser på nytt for å sikre at nytt script tas i bruk av tjenesten der den er inkludert (det ikke er nødvendig å restarte Tomcat på server).
 
 (JQuery må også være inkludert men det allerede er inkludert i digiforms)
 
