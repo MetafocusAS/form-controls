@@ -1161,7 +1161,7 @@ function getScrollbarWidth() {
     return widthNoScroll - widthWithScroll;
 }
 
-// Ensures all textareas inside class ".char-count-container-___" displays the correct character counter
+// Ensures all textareas inside class ".char-count-container-*_*_*_*_*" displays the correct character counter
 function initSetCharCount() {
 
 	//  all textareas to set value
@@ -1171,10 +1171,27 @@ function initSetCharCount() {
         var numberOfLineBreaks = $(this).val().split("\n");
         setSemanticMaxLength($(this), maxLength + numberOfLineBreaks);
 
-		// If yet no input, default values are set
+		// If no input yet we set default values on labels
+		var labelText, counterRemainingText;
         if (!getLengthIgnoreLinebreaks($(this)) > 0 ) {
-            $textareaContainer.find("span.hide-label").text(" (Makslengde: " + maxLength + " tegn)"); // for screenreaders
-            $textareaContainer.find(".counter-remaining").text("Du har igjen " + maxLength + " tegn");
+			if($("html").attr("lang").toLowerCase() === "nb") { // norwegian bokmål
+				labelText = " (Maks " + maxLength + " tegn)";
+				counterRemainingText = "Du har igjen " + maxLength + " tegn";
+			} else if($("html").attr("lang").toLowerCase() === "nn") { // norwegian nynorsk
+				labelText = " (Maks " + maxLength + " tegn)";
+				counterRemainingText = "Du har igjen " + maxLength + " tegn";
+			} else if($("html").attr("lang").toLowerCase() === "sv") { // swedish
+				labelText = " (Max " + maxLength + " tecken)";
+				counterRemainingText = maxLength + " tecken kvar";
+			} else if($("html").attr("lang").toLowerCase() === "da") { // danish
+				labelText = " (Højst " + maxLength + " tegn)";
+				counterRemainingText = maxLength + " tegn tilbage";
+			} else if($("html").attr("lang").toLowerCase() === "en") { // english, both US and GB
+				labelText = " (Max " + maxLength + " characters)";
+				counterRemainingText = maxLength + " characters left";
+			}
+            $textareaContainer.find("span.hide-label").text(labelText); // for screenreaders
+            $textareaContainer.find(".counter-remaining").text(counterRemainingText);
             $textareaContainer.find(".counter-fraction").text(0 + "/" + maxLength);
         }
 		// If field has input, keep same values as before
@@ -1207,13 +1224,37 @@ function updateCounterFraction($textarea, maxLength) {
 function updateCounterRemaining($textarea, maxLength) {
     var maxLengthIgnoreLinebreaks = getLengthIgnoreLinebreaks($textarea);
     $relatedCounter = $textarea.closest('[class^=char-count-container]').find(".counter-remaining");
-    $relatedCounter.text("Du har igjen " + (maxLength - maxLengthIgnoreLinebreaks) + " tegn");
+	var counterRemainingText;
+	if($("html").attr("lang").toLowerCase() === "nb") { // norwegian bokmål
+		counterRemainingText = "Du har igjen " + (maxLength - maxLengthIgnoreLinebreaks) + " tegn";
+	} else if($("html").attr("lang").toLowerCase() === "nn") { // norwegian nynorsk
+		counterRemainingText = "Du har igjen " + (maxLength - maxLengthIgnoreLinebreaks) + " tegn";
+	} else if($("html").attr("lang").toLowerCase() === "sv") { // swedish
+		counterRemainingText = (maxLength - maxLengthIgnoreLinebreaks) + " tecken kvar";
+	} else if($("html").attr("lang").toLowerCase() === "da") { // danish
+		counterRemainingText = (maxLength - maxLengthIgnoreLinebreaks) + " tegn tilbage";
+	} else if($("html").attr("lang").toLowerCase() === "en") { // english, both US and GB
+		counterRemainingText = (maxLength - maxLengthIgnoreLinebreaks) + " characters left";
+	}
+    $relatedCounter.text(counterRemainingText);
 }
 
 // Adding information about maxlength to a label for textarea
 // This text is transparent but provides important information for those with screenreaders
 function setLabelMaxLength($textarea, maxLength) {
-    $textarea.closest('[class^=char-count-container]').find("label").text("Makslengde: " + maxLength + " tegn");
+	var labelText;
+	if($("html").attr("lang").toLowerCase() === "nb") { // norwegian bokmål
+		labelText = " (Maks " + maxLength + " tegn)";
+	} else if($("html").attr("lang").toLowerCase() === "nn") { // norwegian nynorsk
+		labelText = " (Maks " + maxLength + " tegn)";
+	} else if($("html").attr("lang").toLowerCase() === "se") { // swedish
+		labelText = " (Max " + maxLength + " tecken)";
+	} else if($("html").attr("lang").toLowerCase() === "da") { // danish
+		labelText = " (Højst " + maxLength + " tegn)";
+	} else if($("html").attr("lang").toLowerCase() === "en") { // english, both US and GB
+		labelText = " (Max " + maxLength + " characters)";
+	}
+    $textarea.closest('[class^=char-count-container]').find("label").text(labelText);
 }
 
 // Sets value for a textareas maxlength in html
