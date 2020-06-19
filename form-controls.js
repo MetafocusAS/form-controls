@@ -374,7 +374,7 @@ function initInputs() {
 		var key = event.which || event.keyCode;
 		//Prevent non numeric characters
 		//Don't remove characters: "," and ".", don't allow SHIFT key
-		if (!isEditKeyEvent(event) && !isNumericKey(key, [188, 190], false)) {
+		if (!isEditKeyEvent(event) && !isNumericKey(key, [110, 188, 190], false)) {
 			event.preventDefault();
 		}
 	});
