@@ -101,6 +101,8 @@ Lukk og åpne browser på nytt for å sikre at nytt script tas i bruk av tjenest
 
 (JQuery må også være inkludert men det allerede er inkludert i digiforms)
 
+Filene i countries.zip bør legges til i filbanen **Datasources/Countries/** i mappen **WEBAPPS/ROOT** for å unngå feilmeldinger. Countries_xx_XX.xml er lister over land som er en dependency for funksjonen combobox countries.
+
 ## Demo
 [https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo](https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo)
 
