@@ -118,12 +118,12 @@ It is also tested on some mobile devices (iPhone and Android).
 * They have a bigger “click area” which makes them easier to hit with the mouse pointer.
 
 
-### Checkboxer
-* Groupboxen (div rundt fieldset) rundt må ha klassen **checkbox-container**
-* div rundt checkbox og label må ha klassen **control-row** og **checkbox-row** (OBS! i Digiforms Designer kalles denne div'en "Label")
+### Checkboxes
+* The groupbox (div) around the checkboxes must have the class **checkbox-container**
+* Apply css-classes **control-row** and **checkbox-row** to the groupbox (div) which is placed around the checkboxes. (PS! in Digiforms Designer this div is called 'a "Label")
 
 
-#### Hvordan plassere klassene
+#### Here is how to apply classes to checkboxes
 ![Figur som viser hvordan klassene for checkboxer skal brukes](https://user-images.githubusercontent.com/5544597/79964786-7cf56900-848b-11ea-92e7-02db7975a6a6.png)
 
 #### HTML
@@ -152,12 +152,12 @@ It is also tested on some mobile devices (iPhone and Android).
 ![Figur som viser hvordan checkboxer blir seendes ut](https://user-images.githubusercontent.com/5544597/79965453-5126b300-848c-11ea-86bd-237e71f385dc.png)
 
 
-### Radioknapper
-* Groupboxen (div rundt fieldset) rundt må ha klassen **radio-container**
-* div rundt radioknapp og label må ha klassen **control-row** og **radio-row**
+### Radio buttons
+* Apply the css-class **radio-container** on the groupbox around the radio buttons.
+* Apply the css-classes **control-row** og **radio-row** to the ‘div’ around the radio buttons. 
 
 
-#### Hvordan plassere klassene
+#### Here is how to apply classes to radio buttons
 ![Figur som viser hvordan klassene for radioknapper skal brukes](https://user-images.githubusercontent.com/5544597/79965317-2b011300-848c-11ea-978d-677b40272ad7.png)
 
 #### HTML
@@ -186,11 +186,12 @@ It is also tested on some mobile devices (iPhone and Android).
 
 
 
-## Inputfelter
+## Input fields
 
 
 ### Dropdowns (select)
-* Må ligge inne i en div med klassen: **select-container**. Pass på at det ikke ligger noen andre elementer inne i **select-container** enn selve dropdownen (+ tilhørende label og containeren rundt disse). Den må heller ikke ha noen margin eller padding.
+* Apply class **select-container** to the groupbox around the dropdown. There should be no other elements inside **select-container** except the dropdown (both label and groupbox around). Furthermore, there should not be added any padding or margin to the container. 
+
 * Bruk klassen **input-field** på selve input-feltet. Det gir en *grunnleggende styling* som gjør at den ser lik ut i forskjellige browsere.
 
 
