@@ -192,10 +192,10 @@ It is also tested on some mobile devices (iPhone and Android).
 ### Dropdowns (select)
 * Apply class **select-container** to the groupbox around the dropdown. There should be no other elements inside **select-container** except the dropdown (both label and groupbox around). Furthermore, there should not be added any padding or margin to the container. 
 
-* Bruk klassen **input-field** på selve input-feltet. Det gir en *grunnleggende styling* som gjør at den ser lik ut i forskjellige browsere.
+* Apply css-class **input-field** on the input field. It gives it a *basic* styling that looks identical in all browsers. 
 
 
-#### Hvordan plassere klasser på en dropdown (select)
+#### Here is how to add classes to a dropdown (select)
 ![Figur som viser hvordan klassene for inputfelter skal brukes](https://user-images.githubusercontent.com/5544597/79987385-a0311000-84ad-11ea-8c61-53765c67b888.png)
 
 #### HTML
@@ -217,25 +217,27 @@ It is also tested on some mobile devices (iPhone and Android).
 
 
 ### Combobox (autocomplete)
-Her er det implementert et ARIA-pattern som skal sørge for accessibility og tilfredstille de krav som er pålagt i forhold til WCAG 2.0.
+ARIA-pattern is implemented to provide for accessibility and satisfy requirements in relation to WCAG 2.0.
 
-* Må ligge inne i en div med klassen: **combobox-container**. Pass på at det ikke ligger noen andre elementer inne i **combobox-container** enn selve input-elementet (+ tilhørende label og containeren rundt disse).
-* Bruk klassen **combobox** på selve input-feltet.
-* Legg til klassen **combobox-countries** på input-feltet hvis du ønsker en liste med land.
-* Klassen **input-field** kan også brukes på selve input-feltet. Det gir en *grunnleggende styling*.
+* Apply class **combobox-container** to the groupbox (div) that is placed around the dropdown. 
+There should be no other elements inside the combox-container except for an input-field. 
+* Add the class**combobox** to the input field. 
+* Apply the css-class **combobox-countries** to an input field if you want to add a list of all countries. 
+* The class **input-field** can also be added to the input field to give it basic styling. 
 
-Hvis du vil bruke en egendefinert liste sløyfer du **combobox-countries** og bruker din egen klasse **combobox-{navnet-på-din-liste-her}**. Listen må være deklarert som en array i et globalt JS-objekt kalt *customComboBoxlists*. Listen må være verdien til property *{navnet-på-din-liste-her}* i JS-objektet. F.eks. hvis vi bruker **combobox-brus**. Da må vi ha et globalt JS-objekt:
+If you want to use your own custom list, you can drop the class **combobox-countries**, and add your own class like this **comboxcountries-{name-of-custom-css-class}**. The list must be declared as an array in a global JS-object called customComboBoxlists. The list must be the value to the property *{the-name-of-the-list-here}* inside the JS-object. For example, if we use **combobox-brus**, then it must have a global JS-object: 
+
 ``` javascript
 var customComboBoxlists = { brus: ["Cola", "Fanta", "Solo", "Sprite"] };
 ```
-Objektet kan enten deklareres i en JS-fil (f.eks. helt på toppen). Eller som inline JS, slik:
+The object can be declared in a JS-file, or inline, like this:
 ``` javascript
 <script>
 	var customComboBoxlists = { brus: ["Cola", "Fanta", "Solo", "Sprite"] };
 </script>
 ```
 
-#### Hvordan plassere klasser på en combobox (autocomplete)
+#### Here is how to add classes to a combobox (autocomplete)
 ![Figur som viser hvordan klassene for inputfelter skal brukes](https://user-images.githubusercontent.com/5544597/79987561-dff7f780-84ad-11ea-803b-36aa4f3e7609.png)
 
 #### HTML
@@ -258,9 +260,9 @@ Objektet kan enten deklareres i en JS-fil (f.eks. helt på toppen). Eller som in
 
 
 
-### Input-elementer (input)
-* Bruk klassen **input-field** for *grunnleggende styling* av inputfelter.
-* Bruk forskjellige andre klasser (f.eks. **numeric-text**) og kombinasjoner av [klasser](#klasser), for å *styre formatteringen og hvilke tegn som skal tillates* (se [demo](https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo))
+### Input elements (input)
+* Use class **input-field** to add *basic styling* to input-fields 
+* In order to control and limit type of content that can be allowed to add into the input, you can apply different types of classes (a list of classes is added further down in the document).(see [demo](https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo))
 
 #### Hvordan plassere klasser på en input
 ![Figur som viser hvordan klassene for inputfelter skal brukes](https://user-images.githubusercontent.com/5544597/79968512-7c130600-8490-11ea-91f5-44e8382d7971.png)
