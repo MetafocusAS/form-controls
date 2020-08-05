@@ -124,7 +124,8 @@ It is also tested on some mobile devices (iPhone and Android).
 
 
 #### Here is how to apply classes to checkboxes
-![Figur som viser hvordan klassene for checkboxer skal brukes](https://user-images.githubusercontent.com/5544597/79964786-7cf56900-848b-11ea-92e7-02db7975a6a6.png)
+![This illustration show how the classes should be applied](https://user-images.githubusercontent.com/5544597/79964786-7cf56900-848b-11ea-92e7-02db7975a6a6.png)
+
 
 #### HTML
 ```html
@@ -153,12 +154,12 @@ It is also tested on some mobile devices (iPhone and Android).
 
 
 ### Radio buttons
-* Apply the css-class **radio-container** on the groupbox around the radio buttons.
+* Apply the css-class **radio-container** to the groupbox around the radio buttons.
 * Apply the css-classes **control-row** og **radio-row** to the ‘div’ around the radio buttons. 
 
 
 #### Here is how to apply classes to radio buttons
-![Figur som viser hvordan klassene for radioknapper skal brukes](https://user-images.githubusercontent.com/5544597/79965317-2b011300-848c-11ea-978d-677b40272ad7.png)
+![The illustration shows where to apply the classes](https://user-images.githubusercontent.com/5544597/79965317-2b011300-848c-11ea-978d-677b40272ad7.png)
 
 #### HTML
 ``` html
@@ -182,8 +183,7 @@ It is also tested on some mobile devices (iPhone and Android).
 ```
 
 #### Screenshot
-![Figur som viser hvordan radioknapper blir seendes ut](https://user-images.githubusercontent.com/5544597/79965643-92b75e00-848c-11ea-95be-fb70d02afbe1.png)
-
+![The screenshot is illustrating how the radiobuttons will look like](https://user-images.githubusercontent.com/5544597/79965643-92b75e00-848c-11ea-95be-fb70d02afbe1.png)
 
 
 ## Input fields
@@ -192,11 +192,11 @@ It is also tested on some mobile devices (iPhone and Android).
 ### Dropdowns (select)
 * Apply class **select-container** to the groupbox around the dropdown. There should be no other elements inside **select-container** except the dropdown (both label and groupbox around). Furthermore, there should not be added any padding or margin to the container. 
 
-* Apply css-class **input-field** on the input field. It gives it a *basic* styling that looks identical in all browsers. 
+* Apply css-class **input-field** to the input field. It gives it a *basic* styling that looks identical in all browsers. 
 
 
 #### Here is how to add classes to a dropdown (select)
-![Figur som viser hvordan klassene for inputfelter skal brukes](https://user-images.githubusercontent.com/5544597/79987385-a0311000-84ad-11ea-8c61-53765c67b888.png)
+![The illustration show how the classes should be applied](https://user-images.githubusercontent.com/5544597/79987385-a0311000-84ad-11ea-8c61-53765c67b888.png)
 
 #### HTML
 ``` html
@@ -213,8 +213,7 @@ It is also tested on some mobile devices (iPhone and Android).
 ```
 
 #### Screenshot
-![Figur som viser hvordan dropdowns blir seendes ut](https://user-images.githubusercontent.com/5544597/79966319-926b9280-848d-11ea-9ad3-39e1bee8a927.png)
-
+![The illustration show how the dropdown will look like](https://user-images.githubusercontent.com/5544597/79966319-926b9280-848d-11ea-9ad3-39e1bee8a927.png)
 
 ### Combobox (autocomplete)
 ARIA-pattern is implemented to provide for accessibility and satisfy requirements in relation to WCAG 2.0.
@@ -238,7 +237,7 @@ The object can be declared in a JS-file, or inline, like this:
 ```
 
 #### Here is how to add classes to a combobox (autocomplete)
-![Figur som viser hvordan klassene for inputfelter skal brukes](https://user-images.githubusercontent.com/5544597/79987561-dff7f780-84ad-11ea-803b-36aa4f3e7609.png)
+![The illustration show how to apply the classes](https://user-images.githubusercontent.com/5544597/79987561-dff7f780-84ad-11ea-803b-36aa4f3e7609.png)
 
 #### HTML
 ``` html
@@ -256,7 +255,7 @@ The object can be declared in a JS-file, or inline, like this:
 ```
 
 #### Screenshot
-![Figur som viser hvordan dropdowns blir seendes ut](https://user-images.githubusercontent.com/5544597/79968019-e0819580-848f-11ea-90d7-0275a78db2f8.png)
+![The illustration show how the dropdown will look like](https://user-images.githubusercontent.com/5544597/79968019-e0819580-848f-11ea-90d7-0275a78db2f8.png)
 
 
 
