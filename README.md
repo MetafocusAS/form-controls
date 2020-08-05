@@ -66,71 +66,64 @@
     + [Endre farge på border på element som har fokus](#endre-farge-p--border-p--element-som-har-fokus)
     + [Endre farge checkboxer/radioknapper som er "checked"](#endre-farge-checkboxer-radioknapper-som-er--checked-)
     + [Endre farge på matchet tekst i combobox](#endre-farge-p--matchet-tekst-i-combobox)
+## What is Form Controls?
+Form Controls is a library for cross-bowser styling of checkboxes, radio buttons, input fields and buttons. The library includes functionality which formats content, limits the amount of characters that should be allowed in an input field, or show the right keypad on mobile devices.  In addition to functionality that can be used to make comboboxes (search fields / text in dropdown) and modals. 
+
+The purpose of this library is mainly to apply various functionality to your form. Styling has not been a priority, because styling differ in various projects depending on customers current graphical profile. 
+
+jQuery[jQuery](https://jquery.com/) and jQuery Mask Plugin [jQuery Mask Plugin](https://igorescobar.github.io/jQuery-Mask-Plugin/) are used in this library. .
 
 
-## Hva er Form-controls?
-Dette er et CSS/JS bibliotek for cross-browser-styling av checkboxer, radioknapper, inputfelter og knapper.
-Samt funksjonalitet for å formattere innhold og begrense hvilke og hvor mange tegn som skal tillates i inputfelter, og for å vise riktig keypad på mobile enheter.
-Biblioteket inneholder også funksjonalitet for å lage comboboxer (søk/fritekst i dropdown) og modals (dialoger).
+## How to use it
 
-Hovedformålet med biblioteket er først og fremst funksjonalitet. Derfor er stylingen ganske minimal, siden det visuelle uttrykket ofte skiler seg fra løsning til løsning. Avhengig av kundens grafiske profil mm.
-
-Biblioteket bruker [jQuery](https://jquery.com/) og jQuery Mask Plugin [jQuery Mask Plugin](https://igorescobar.github.io/jQuery-Mask-Plugin/).
-
-
-## Bruk
-For å bruke biblioteket må filene:
+In order to use this library, you will have to add these files: 
 * **form-controls.min.js**
 * **form-controls.min.css**
 * **jquery.mask.min.js**
 
-Legges inn under på *C:\Tomcat\WEBAPPS*. I en mappe som heter **form-controls** på frontend-serveren.
-OBS! Dersom det er snakk om en eldre server (før 20.04.2020) skal dette inn under mappen *C:\Tomcat\WEBAPPS_CONTAINER* eller. *C:\Tomcat\WEBAPPS CONTAINER*. Se hva du finner. 
+Add it under C:\Tomcat\WEBAPPS in folder **form-controls** on the frontend-server you are using. PS! If this is an older server (before 04/20/2020) place it in the folder C:\Tomcat\WEBAPPS_CONTAINER or C:\Tomcat\WEBAPPS CONTAINER. It is important that files are placed in the right directory. 
 
-Så må det legges til en deployment descriptor for mappen **form-controls**:
-1. Last ned **form-controls.xml** (https://github.com/MetafocusAS/form-controls/blob/master/form-controls.xml)
-2. Putt **form-controls.xml** på *C:\Tomcat\apache-tomcat-7.0.75\conf\Catalina\localhost* (OBS! versjonsnummer på *apache-tomcat-7.0.75* skiller seg sannsynligvis!) på frontend-serveren.
-OBS! Dersom det er snakk om en eldre server (før 20.04.2020) og filene nevnt over er lagt i mappen *C:\Tomcat\WEBAPPS_CONTAINER* eller *C:\Tomcat\WEBAPPS CONTAINER*. må xml-filen du har lastet ned her åpnes og endres til å peke på samme path.
+A deployment descriptor must be added to folder **form-controls**:
+1. Download **form-controls.xml** (https://github.com/MetafocusAS/form-controls/blob/master/form-controls.xml)
+2. Add **form-controls.xml** to *C:\Tomcat\apache-tomcat-7.0.75\conf\Catalina\localhost* (PS! the version number of *apache-tomcat-7.0.75* will vary) on the front-end server. 
 
-For å ta i bruk biblioteket i digiforms må du inkludere (Document settings > Includes):
+It is best to include these files *before* you include other stylesheets, so it does not override other stylesheets. Open and close the browser to see if the script is successfully added (you do not have to restart the Tomcat application on your server). 
+
+To use the library in Digiforms Designer you will have to include it in the document or component you want to add it to. Add it like this: (Document settings > Includes):
 * **../form-controls/form-controls.min.js**
 * **../form-controls/form-controls.min.css**
 
-Det er ofte best å inkludere disse *før* du inkluderer annen CSS, sånn at styling fra form-controls blir enkel å overstyre.
-Lukk og åpne browser på nytt for å sikre at nytt script tas i bruk av tjenesten der den er inkludert (det ikke er nødvendig å restarte Tomcat på server).
+The files in countries.zip should be added to the filepath **Datasource/Countries/** in folder **WEBAPPS/ROOT** to prevent error messages. Countries_xx_XX.xml is a list of countries that is used in the combobox function. 
 
-(JQuery må også være inkludert men det allerede er inkludert i digiforms)
-
-Filene i countries.zip bør legges til i filbanen **Datasources/Countries/** i mappen **WEBAPPS/ROOT** for å unngå feilmeldinger. Countries_xx_XX.xml er lister over land som er en dependency for funksjonen combobox countries.
 
 ## Demo
 [https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo](https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo)
 
 ## Browser support
-Biblioteket er testet og fungerer i siste versjon av følgende nettlesere:
+The library is tested and is working in these browsers: 
 * Chrome
 * Firefox
 * Opera
 * Edge
-* IE 11
+* Internet Explorer 11
 * Safari
 
-Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Android)
+It is also tested on some mobile devices (iPhone and Android). 
 
 
-
-## Checkboxer og radioknapper
-* Klassene styler checkboxene/radioknappene sånn at de blir litt penere, og ser like ut i alle browsere
-* De er har også en større "click area" som gjør det litt lettere å treffe de med musepekeren
-
-
-### Checkboxer
-* Groupboxen (div rundt fieldset) rundt må ha klassen **checkbox-container**
-* div rundt checkbox og label må ha klassen **control-row** og **checkbox-row** (OBS! i Digiforms Designer kalles denne div'en "Label")
+## Checkboxes og radio buttons
+* The css-classes are applied to the radio buttons to make them look appealing, but also to make them look identical in all browsers.
+* They have a bigger “click area” which makes them easier to hit with the mouse pointer.
 
 
-#### Hvordan plassere klassene
-![Figur som viser hvordan klassene for checkboxer skal brukes](https://user-images.githubusercontent.com/5544597/79964786-7cf56900-848b-11ea-92e7-02db7975a6a6.png)
+### Checkboxes
+* The groupbox (div) around the checkboxes must have the class **checkbox-container**
+* Apply css-classes **control-row** and **checkbox-row** to the groupbox (div) which is placed around the checkboxes. (PS! in Digiforms Designer this div is called 'a "Label")
+
+
+#### Here is how to apply classes to checkboxes
+![This illustration show how the classes should be applied](https://user-images.githubusercontent.com/5544597/79964786-7cf56900-848b-11ea-92e7-02db7975a6a6.png)
+
 
 #### HTML
 ```html
@@ -155,16 +148,16 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 ```
 
 #### Screenshot
-![Figur som viser hvordan checkboxer blir seendes ut](https://user-images.githubusercontent.com/5544597/79965453-5126b300-848c-11ea-86bd-237e71f385dc.png)
+![The screenshot show how the checkbox will be displayed](https://user-images.githubusercontent.com/5544597/79965453-5126b300-848c-11ea-86bd-237e71f385dc.png)
 
 
-### Radioknapper
-* Groupboxen (div rundt fieldset) rundt må ha klassen **radio-container**
-* div rundt radioknapp og label må ha klassen **control-row** og **radio-row**
+### Radio buttons
+* Apply the css-class **radio-container** to the groupbox around the radio buttons.
+* Apply the css-classes **control-row** og **radio-row** to the ‘div’ around the radio buttons. 
 
 
-#### Hvordan plassere klassene
-![Figur som viser hvordan klassene for radioknapper skal brukes](https://user-images.githubusercontent.com/5544597/79965317-2b011300-848c-11ea-978d-677b40272ad7.png)
+#### Here is how to apply classes to radio buttons
+![The illustration show how to apply the classes](https://user-images.githubusercontent.com/5544597/79965317-2b011300-848c-11ea-978d-677b40272ad7.png)
 
 #### HTML
 ``` html
@@ -188,20 +181,20 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 ```
 
 #### Screenshot
-![Figur som viser hvordan radioknapper blir seendes ut](https://user-images.githubusercontent.com/5544597/79965643-92b75e00-848c-11ea-95be-fb70d02afbe1.png)
+![The screenshot show how the radio buttons will look like](https://user-images.githubusercontent.com/5544597/79965643-92b75e00-848c-11ea-95be-fb70d02afbe1.png)
 
 
-
-## Inputfelter
+## Input fields
 
 
 ### Dropdowns (select)
-* Må ligge inne i en div med klassen: **select-container**. Pass på at det ikke ligger noen andre elementer inne i **select-container** enn selve dropdownen (+ tilhørende label og containeren rundt disse). Den må heller ikke ha noen margin eller padding.
-* Bruk klassen **input-field** på selve input-feltet. Det gir en *grunnleggende styling* som gjør at den ser lik ut i forskjellige browsere.
+* Apply class **select-container** to the groupbox around the dropdown. There should be no other elements inside **select-container** except the dropdown (both label and groupbox around). Furthermore, there should not be added any padding or margin to the container. 
+
+* Apply css-class **input-field** to the input field. It gives it a *basic* styling that looks identical in all browsers. 
 
 
-#### Hvordan plassere klasser på en dropdown (select)
-![Figur som viser hvordan klassene for inputfelter skal brukes](https://user-images.githubusercontent.com/5544597/79987385-a0311000-84ad-11ea-8c61-53765c67b888.png)
+#### Here is how to add classes to a dropdown (select)
+![The illustration show how the classes should be applied](https://user-images.githubusercontent.com/5544597/79987385-a0311000-84ad-11ea-8c61-53765c67b888.png)
 
 #### HTML
 ``` html
@@ -218,30 +211,31 @@ Biblioteket er også testet på litt forskjellige mobile enheter (iPhone og Andr
 ```
 
 #### Screenshot
-![Figur som viser hvordan dropdowns blir seendes ut](https://user-images.githubusercontent.com/5544597/79966319-926b9280-848d-11ea-9ad3-39e1bee8a927.png)
-
+![The illustration show how the dropdown will look like](https://user-images.githubusercontent.com/5544597/79966319-926b9280-848d-11ea-9ad3-39e1bee8a927.png)
 
 ### Combobox (autocomplete)
-Her er det implementert et ARIA-pattern som skal sørge for accessibility og tilfredstille de krav som er pålagt i forhold til WCAG 2.0.
+ARIA-pattern is implemented to provide for accessibility and satisfy requirements in relation to WCAG 2.0.
 
-* Må ligge inne i en div med klassen: **combobox-container**. Pass på at det ikke ligger noen andre elementer inne i **combobox-container** enn selve input-elementet (+ tilhørende label og containeren rundt disse).
-* Bruk klassen **combobox** på selve input-feltet.
-* Legg til klassen **combobox-countries** på input-feltet hvis du ønsker en liste med land.
-* Klassen **input-field** kan også brukes på selve input-feltet. Det gir en *grunnleggende styling*.
+* Apply class **combobox-container** to the groupbox (div) that is placed around the dropdown. 
+There should be no other elements inside the combox-container except for an input-field. 
+* Add the class**combobox** to the input field. 
+* Apply the css-class **combobox-countries** to an input field if you want to add a list of all countries. 
+* The class **input-field** can also be added to the input field to give it basic styling. 
 
-Hvis du vil bruke en egendefinert liste sløyfer du **combobox-countries** og bruker din egen klasse **combobox-{navnet-på-din-liste-her}**. Listen må være deklarert som en array i et globalt JS-objekt kalt *customComboBoxlists*. Listen må være verdien til property *{navnet-på-din-liste-her}* i JS-objektet. F.eks. hvis vi bruker **combobox-brus**. Da må vi ha et globalt JS-objekt:
+If you want to use your own custom list, you can drop the class **combobox-countries**, and add your own class like this **comboxcountries-{name-of-custom-css-class}**. The list must be declared as an array in a global JS-object called customComboBoxlists. The list must be the value to the property *{the-name-of-the-list-here}* inside the JS-object. For example, if we use **combobox-brus**, then it must have a global JS-object: 
+
 ``` javascript
 var customComboBoxlists = { brus: ["Cola", "Fanta", "Solo", "Sprite"] };
 ```
-Objektet kan enten deklareres i en JS-fil (f.eks. helt på toppen). Eller som inline JS, slik:
+The object can be declared in a JS-file, or inline, like this:
 ``` javascript
 <script>
 	var customComboBoxlists = { brus: ["Cola", "Fanta", "Solo", "Sprite"] };
 </script>
 ```
 
-#### Hvordan plassere klasser på en combobox (autocomplete)
-![Figur som viser hvordan klassene for inputfelter skal brukes](https://user-images.githubusercontent.com/5544597/79987561-dff7f780-84ad-11ea-803b-36aa4f3e7609.png)
+#### Here is how to add classes to a combobox (autocomplete)
+![The illustration show how to apply the classes](https://user-images.githubusercontent.com/5544597/79987561-dff7f780-84ad-11ea-803b-36aa4f3e7609.png)
 
 #### HTML
 ``` html
@@ -259,16 +253,16 @@ Objektet kan enten deklareres i en JS-fil (f.eks. helt på toppen). Eller som in
 ```
 
 #### Screenshot
-![Figur som viser hvordan dropdowns blir seendes ut](https://user-images.githubusercontent.com/5544597/79968019-e0819580-848f-11ea-90d7-0275a78db2f8.png)
+![The illustration show how the dropdown will look like](https://user-images.githubusercontent.com/5544597/79968019-e0819580-848f-11ea-90d7-0275a78db2f8.png)
 
 
 
-### Input-elementer (input)
-* Bruk klassen **input-field** for *grunnleggende styling* av inputfelter.
-* Bruk forskjellige andre klasser (f.eks. **numeric-text**) og kombinasjoner av [klasser](#klasser), for å *styre formatteringen og hvilke tegn som skal tillates* (se [demo](https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo))
+### Input elements (input)
+* Use class **input-field** to add *basic styling* to input-fields 
+* In order to control and limit type of content that can be allowed to add into the input, you can apply different types of classes (a list of classes is added further down in the document).(see [demo](https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo))
 
 #### Hvordan plassere klasser på en input
-![Figur som viser hvordan klassene for inputfelter skal brukes](https://user-images.githubusercontent.com/5544597/79968512-7c130600-8490-11ea-91f5-44e8382d7971.png)
+![The illustration show how to apply the classes](https://user-images.githubusercontent.com/5544597/79968512-7c130600-8490-11ea-91f5-44e8382d7971.png)
 
 #### HTML
 ``` html
@@ -276,11 +270,11 @@ Objektet kan enten deklareres i en JS-fil (f.eks. helt på toppen). Eller som in
 ```
 
 #### Screenshot
-![Figur som viser hvordan inputfelter blir seendes ut](https://user-images.githubusercontent.com/5544597/79968552-8df4a900-8490-11ea-8be0-117b9c8f1c48.png)
+![Show how the radio buttons will look like](https://user-images.githubusercontent.com/5544597/79968552-8df4a900-8490-11ea-8be0-117b9c8f1c48.png)
 
 
-#### Hvordan plassere klasser for en input som kun aksepterer siffer.
-![Figur som viser hvordan klassene for inputfelter som kun aksepterer siffer skal brukes](https://user-images.githubusercontent.com/5544597/79969520-e8dad000-8491-11ea-997b-c3c291ed67f7.png)
+#### Here is how to apply classes to an input that only contains numbers
+![Show how to apply classes to an input field that only contains numbers](https://user-images.githubusercontent.com/5544597/79969520-e8dad000-8491-11ea-997b-c3c291ed67f7.png)
 
 #### HTML
 ``` html
@@ -288,11 +282,11 @@ Objektet kan enten deklareres i en JS-fil (f.eks. helt på toppen). Eller som in
 ```
 
 #### Screenshot
-![Figur som viser hvordan inputfelter som kun aksepterer siffer blir seendes ut](https://user-images.githubusercontent.com/5544597/79969604-0314ae00-8492-11ea-8a96-8ea05426ebc9.png)
+![The illustration show how input fields that only accept digits are displayed](https://user-images.githubusercontent.com/5544597/79969604-0314ae00-8492-11ea-8a96-8ea05426ebc9.png)
 
 
-#### Hvordan plassere klasser for en input med formattering, f.eks. organisasjonsnummer.
-![Figur som viser hvordan klassene for inputfelter med formattering skal brukes](https://user-images.githubusercontent.com/5544597/79969862-5ab31980-8492-11ea-959a-e391fb15b39c.png)
+#### Here is how to add classes to an input with formatting (i.e. organization number)
+![Show how to apply classes to an input with formatting](https://user-images.githubusercontent.com/5544597/79969862-5ab31980-8492-11ea-959a-e391fb15b39c.png)
 
 #### HTML
 ``` html
@@ -300,21 +294,21 @@ Objektet kan enten deklareres i en JS-fil (f.eks. helt på toppen). Eller som in
 ```
 
 #### Screenshot
-![Figur som viser hvordan inputfelt med formattering for organisasjonsnummer blir seendes ut](https://user-images.githubusercontent.com/5544597/79969977-859d6d80-8492-11ea-8f79-cfba94d7fd75.png)
+![The illustration show how input fields that only accept digits are displayed](https://user-images.githubusercontent.com/5544597/79969977-859d6d80-8492-11ea-8f79-cfba94d7fd75.png)
 
 
+### Counter for text area 
+* Show the maximum characters allowed in a field, and current amount of numbers in a text field (i.e. Input or memo field). 
+* It makes it easier for the user to keep track of the remaining characters left to use.
 
-### Tegnteller for textarea
-* Viser maks antall tillatte tegn, og hvor mange tegn som til enhver tid er skrevet inn i et tekstfelt.
-* Gjør det enklere for brukeren å holde oversikt over hvor mye som er skrevet og hvor mange tegn som er igjen å skrive. 
-
-#### Pass på lengden på lagringsstedet
-Normalt teller et linjeskift som ett tegn, men funksjonaliteten i denne tegntelleren gjør at linjeskift ikke telles med. Derfor er det viktig å ta høyde for at det stedet som eventuelt skal lagre teksten kan ta imot den faktiske lengden på tekststrengen (maxlength + et ukjent antall linjeskift) 
+#### Pay attention to the length of the storage location 
+Normally one line break counts as one character. However, this counter prevents line-breaks from counting as characters. If the text is supposed to be stored somewhere else, then check the max length of the field where it is supposed to end up (max length + line breaks). 
 
 
-#### Tegnteller variant 1: Counter fraction
-* Med klassen **counter-fraction** vises en brøk for antall tegn fylt i / maxlength
+#### Counter alternative 1: Counter fraction 
+* If you use the class **counter-fraction** then a fraction of the number of characters filled in / max length is displayed.
 ![Figur som viser hvordan tegntelling i textfelt skal se ut med klassen counter-fraction](https://user-images.githubusercontent.com/5544597/79954865-406f4080-847e-11ea-8799-c87e2b142b01.png)
+
 
 #### HTML
 ``` html
@@ -331,12 +325,13 @@ Normalt teller et linjeskift som ett tegn, men funksjonaliteten i denne tegntell
 </div>
 ```
 #### Screenshot
-![Figur som viser eksempel på bruk av Tegnteller av typen Counter fraction](https://user-images.githubusercontent.com/5544597/79955818-9c869480-847f-11ea-9aaf-bc4ae61511d0.png)
+![The illustration show how the counter is displayed](https://user-images.githubusercontent.com/5544597/79955818-9c869480-847f-11ea-9aaf-bc4ae61511d0.png)
 
 
-#### Tegnteller variant 2: Counter remaining
-* Med klassen **counter-remaining**  vises en tekststreng som teller ned antall tegn fra maxlength til 0, hvor mange tegn feltet har til rådighet etter hvert som det fylles i.
-![Figur som viser hvordan tegntelling i textfelt ser ut med klassen counter-remaining](https://user-images.githubusercontent.com/5544597/79950591-9987a600-8477-11ea-907c-381d028e1ce7.png)
+#### Counter alternative 2: Counter remaining
+* If you use class **counter-remaining** a text string displayed counts down the number of characters from max length to zero. The string show how many characters the field have available as the user fills in information into the field. 
+![Show how a counter with class counter-remaining will be displayed](https://user-images.githubusercontent.com/5544597/79950591-9987a600-8477-11ea-907c-381d028e1ce7.png)
+
 
 #### HTML
 ``` html
@@ -355,12 +350,11 @@ Normalt teller et linjeskift som ett tegn, men funksjonaliteten i denne tegntell
 </div>
 ```
 #### Screenshot
-![Figur som viser eksempel på bruk av Tegnteller av typen Counter remaining](https://user-images.githubusercontent.com/5544597/79956169-1585ec00-8480-11ea-8248-79c6e8603881.png)
+![Show how a counter with class counter-remaining will be displayed](https://user-images.githubusercontent.com/5544597/79956169-1585ec00-8480-11ea-8248-79c6e8603881.png)
 
 
-#### Hvordan plassere klasser når du tar i bruk tegnteller i textarea
-Legg en InputMemo (med label) og en TextBox inn i en div (som i bildene over). 
-Div’en skal ha klassen **char-count-container-{ønsket makslengde for tekstfelt her}**. For eksempel vil **char-count-container-500** gi et inputfelt som godtar 500 tegn. 
+#### Where to place classes when you are using a counter in a text area (input, memo) 
+Add a memo field (with a label) and a textbox inside a groupbox (see the example above). The groupbox (div) should have added class **char-count-container-{your desired maxlength of the textfield}**. If you add char-count-container-500, it will become an input field that accepts 500 characters. 
 
 I labelen beskriver du på vanlig måte innholdet i feltet og avslutter tekststrengen med: <pre>&lt;span class=’hide-label’&gt;Placeholder for maxlength&lt;/span&gt;</pre> Placeholder for maxlength blir da automatisk erstattet av en tekst som oppgir feltets makslengde basert på klassen satt i div’en rundt. Denne vil være skjult med CSS men mulig å lese med skjermleser. 
 
