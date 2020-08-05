@@ -159,7 +159,7 @@ It is also tested on some mobile devices (iPhone and Android).
 
 
 #### Here is how to apply classes to radio buttons
-![The illustration shows where to apply the classes](https://user-images.githubusercontent.com/5544597/79965317-2b011300-848c-11ea-978d-677b40272ad7.png)
+![The illustration show how to apply the classes](https://user-images.githubusercontent.com/5544597/79965317-2b011300-848c-11ea-978d-677b40272ad7.png)
 
 #### HTML
 ``` html
@@ -183,7 +183,7 @@ It is also tested on some mobile devices (iPhone and Android).
 ```
 
 #### Screenshot
-![The screenshot is illustrating how the radiobuttons will look like](https://user-images.githubusercontent.com/5544597/79965643-92b75e00-848c-11ea-95be-fb70d02afbe1.png)
+![The screenshot show how the radio buttons will look like](https://user-images.githubusercontent.com/5544597/79965643-92b75e00-848c-11ea-95be-fb70d02afbe1.png)
 
 
 ## Input fields
@@ -264,7 +264,7 @@ The object can be declared in a JS-file, or inline, like this:
 * In order to control and limit type of content that can be allowed to add into the input, you can apply different types of classes (a list of classes is added further down in the document).(see [demo](https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo))
 
 #### Hvordan plassere klasser på en input
-![Figur som viser hvordan klassene for inputfelter skal brukes](https://user-images.githubusercontent.com/5544597/79968512-7c130600-8490-11ea-91f5-44e8382d7971.png)
+![The illustration show how to apply the classes](https://user-images.githubusercontent.com/5544597/79968512-7c130600-8490-11ea-91f5-44e8382d7971.png)
 
 #### HTML
 ``` html
@@ -272,11 +272,11 @@ The object can be declared in a JS-file, or inline, like this:
 ```
 
 #### Screenshot
-![Figur som viser hvordan inputfelter blir seendes ut](https://user-images.githubusercontent.com/5544597/79968552-8df4a900-8490-11ea-8be0-117b9c8f1c48.png)
+![Show how the radio buttons will look like](https://user-images.githubusercontent.com/5544597/79968552-8df4a900-8490-11ea-8be0-117b9c8f1c48.png)
 
 
-#### Hvordan plassere klasser for en input som kun aksepterer siffer.
-![Figur som viser hvordan klassene for inputfelter som kun aksepterer siffer skal brukes](https://user-images.githubusercontent.com/5544597/79969520-e8dad000-8491-11ea-997b-c3c291ed67f7.png)
+#### Here is how to apply classes to an input that only contains numbers
+![Show how to apply classes to an input field that only contains numbers](https://user-images.githubusercontent.com/5544597/79969520-e8dad000-8491-11ea-997b-c3c291ed67f7.png)
 
 #### HTML
 ``` html
@@ -284,11 +284,11 @@ The object can be declared in a JS-file, or inline, like this:
 ```
 
 #### Screenshot
-![Figur som viser hvordan inputfelter som kun aksepterer siffer blir seendes ut](https://user-images.githubusercontent.com/5544597/79969604-0314ae00-8492-11ea-8a96-8ea05426ebc9.png)
+![The illustration show how input fields that only accept digits are displayed](https://user-images.githubusercontent.com/5544597/79969604-0314ae00-8492-11ea-8a96-8ea05426ebc9.png)
 
 
-#### Hvordan plassere klasser for en input med formattering, f.eks. organisasjonsnummer.
-![Figur som viser hvordan klassene for inputfelter med formattering skal brukes](https://user-images.githubusercontent.com/5544597/79969862-5ab31980-8492-11ea-959a-e391fb15b39c.png)
+#### Here is how to add classes to an input with formatting (i.e. organization number)
+![Show how to apply classes to an input with formatting](https://user-images.githubusercontent.com/5544597/79969862-5ab31980-8492-11ea-959a-e391fb15b39c.png)
 
 #### HTML
 ``` html
@@ -296,8 +296,7 @@ The object can be declared in a JS-file, or inline, like this:
 ```
 
 #### Screenshot
-![Figur som viser hvordan inputfelt med formattering for organisasjonsnummer blir seendes ut](https://user-images.githubusercontent.com/5544597/79969977-859d6d80-8492-11ea-8f79-cfba94d7fd75.png)
-
+![The illustration show how input fields that only accept digits are displayed](https://user-images.githubusercontent.com/5544597/79969977-859d6d80-8492-11ea-8f79-cfba94d7fd75.png)
 
 
 ### Tegnteller for textarea
