@@ -299,17 +299,18 @@ The object can be declared in a JS-file, or inline, like this:
 ![The illustration show how input fields that only accept digits are displayed](https://user-images.githubusercontent.com/5544597/79969977-859d6d80-8492-11ea-8f79-cfba94d7fd75.png)
 
 
-### Tegnteller for textarea
-* Viser maks antall tillatte tegn, og hvor mange tegn som til enhver tid er skrevet inn i et tekstfelt.
-* Gjør det enklere for brukeren å holde oversikt over hvor mye som er skrevet og hvor mange tegn som er igjen å skrive. 
+### Counter for text area 
+* Show the maximum characters allowed in a field, and current amount of numbers in a text field (i.e. Input or memo field). 
+* It makes it easier for the user to keep track of the remaining characters left to use.
 
-#### Pass på lengden på lagringsstedet
-Normalt teller et linjeskift som ett tegn, men funksjonaliteten i denne tegntelleren gjør at linjeskift ikke telles med. Derfor er det viktig å ta høyde for at det stedet som eventuelt skal lagre teksten kan ta imot den faktiske lengden på tekststrengen (maxlength + et ukjent antall linjeskift) 
+#### Pay attention to the length of the storage location 
+Normally one line break counts as one character. However, this counter prevents line-breaks from counting as characters. If the text is supposed to be stored somewhere else, then check the max length of the field where it is supposed to end up (max length + line breaks). 
 
 
-#### Tegnteller variant 1: Counter fraction
-* Med klassen **counter-fraction** vises en brøk for antall tegn fylt i / maxlength
+#### Counter alternative 1: Counter fraction 
+* If you use the class **counter-fraction** then a fraction of the number of characters filled in / max length is displayed.
 ![Figur som viser hvordan tegntelling i textfelt skal se ut med klassen counter-fraction](https://user-images.githubusercontent.com/5544597/79954865-406f4080-847e-11ea-8799-c87e2b142b01.png)
+
 
 #### HTML
 ``` html
@@ -326,12 +327,13 @@ Normalt teller et linjeskift som ett tegn, men funksjonaliteten i denne tegntell
 </div>
 ```
 #### Screenshot
-![Figur som viser eksempel på bruk av Tegnteller av typen Counter fraction](https://user-images.githubusercontent.com/5544597/79955818-9c869480-847f-11ea-9aaf-bc4ae61511d0.png)
+![The illustration show how the counter is displayed](https://user-images.githubusercontent.com/5544597/79955818-9c869480-847f-11ea-9aaf-bc4ae61511d0.png)
 
 
-#### Tegnteller variant 2: Counter remaining
-* Med klassen **counter-remaining**  vises en tekststreng som teller ned antall tegn fra maxlength til 0, hvor mange tegn feltet har til rådighet etter hvert som det fylles i.
-![Figur som viser hvordan tegntelling i textfelt ser ut med klassen counter-remaining](https://user-images.githubusercontent.com/5544597/79950591-9987a600-8477-11ea-907c-381d028e1ce7.png)
+#### Counter alternative 2: Counter remaining
+* If you use class **counter-remaining** a text string displayed counts down the number of characters from max length to zero. The string show how many characters the field have available as the user fills in information into the field. 
+![Show how a counter with class counter-remaining will be displayed](https://user-images.githubusercontent.com/5544597/79950591-9987a600-8477-11ea-907c-381d028e1ce7.png)
+
 
 #### HTML
 ``` html
@@ -350,12 +352,11 @@ Normalt teller et linjeskift som ett tegn, men funksjonaliteten i denne tegntell
 </div>
 ```
 #### Screenshot
-![Figur som viser eksempel på bruk av Tegnteller av typen Counter remaining](https://user-images.githubusercontent.com/5544597/79956169-1585ec00-8480-11ea-8248-79c6e8603881.png)
+![Show how a counter with class counter-remaining will be displayed](https://user-images.githubusercontent.com/5544597/79956169-1585ec00-8480-11ea-8248-79c6e8603881.png)
 
 
-#### Hvordan plassere klasser når du tar i bruk tegnteller i textarea
-Legg en InputMemo (med label) og en TextBox inn i en div (som i bildene over). 
-Div’en skal ha klassen **char-count-container-{ønsket makslengde for tekstfelt her}**. For eksempel vil **char-count-container-500** gi et inputfelt som godtar 500 tegn. 
+#### Where to place classes when you are using a counter in a text area (input, memo) 
+Add a memo field (with a label) and a textbox inside a groupbox (see the example above). The groupbox (div) should have added class **char-count-container-{your desired maxlength of the textfield}**. If you add char-count-container-500, it will become an input field that accepts 500 characters. 
 
 I labelen beskriver du på vanlig måte innholdet i feltet og avslutter tekststrengen med: <pre>&lt;span class=’hide-label’&gt;Placeholder for maxlength&lt;/span&gt;</pre> Placeholder for maxlength blir da automatisk erstattet av en tekst som oppgir feltets makslengde basert på klassen satt i div’en rundt. Denne vil være skjult med CSS men mulig å lese med skjermleser. 
 
