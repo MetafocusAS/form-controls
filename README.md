@@ -150,7 +150,7 @@ It is also tested on some mobile devices (iPhone and Android).
 ```
 
 #### Screenshot
-![Figur som viser hvordan checkboxer blir seendes ut](https://user-images.githubusercontent.com/5544597/79965453-5126b300-848c-11ea-86bd-237e71f385dc.png)
+![The screenshot show how the checkbox will be displayed](https://user-images.githubusercontent.com/5544597/79965453-5126b300-848c-11ea-86bd-237e71f385dc.png)
 
 
 ### Radio buttons
