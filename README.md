@@ -394,7 +394,7 @@ Under the memo-field there is a textbox. This should have the class **counter-fr
 
 
 ## Buttons
-* Use class**btn** on your buttons, URLs, or labels to make them look like buttons. 
+* Use class **btn** on your buttons, URLs, or labels to make them look like buttons. 
 
 #### Here is how to add a css-class **btn** to a button 
 ![The illustration show how to place a **btn** class on a button](https://user-images.githubusercontent.com/5544597/79975773-cc439580-849b-11ea-90b6-a3731f480f58.png)
