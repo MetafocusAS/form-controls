@@ -358,20 +358,21 @@ Normally one line break counts as one character. However, this counter prevents 
 #### Where to place classes when you are using a counter in a text area (input, memo) 
 Add a memo field (with a label) and a textbox inside a groupbox (see the example above). The groupbox (div) should have added class **char-count-container-{your desired maxlength of the textfield}**. If you add char-count-container-500, it will become an input field that accepts 500 characters. 
 
-I labelen beskriver du på vanlig måte innholdet i feltet og avslutter tekststrengen med: <pre>&lt;span class=’hide-label’&gt;Placeholder for maxlength&lt;/span&gt;</pre> Placeholder for maxlength blir da automatisk erstattet av en tekst som oppgir feltets makslengde basert på klassen satt i div’en rundt. Denne vil være skjult med CSS men mulig å lese med skjermleser. 
+Write the text you want to add to the label and then complete the text string with: <pre>&lt;span class=’hide-label’&gt;Placeholder for maxlength&lt;/span&gt;</pre> The placeholder for maxlength will then automatically be replaced with the amount of text being added to it. It will be hidden with css-masking but still be able to read with a screen reader. 
 
-Selve InputMemo-feltet skal ha følgende verdier, men feilmeldingsbeskjeden (Message) kan du sette fritt til det som måtte passe:
+You will have to add these values to the memo-field, but the error message (Message) can be placed wherever you want to place it:
 ![Figur som viser properties for InputMemo i Digiforms](https://user-images.githubusercontent.com/5544597/79950784-dce21480-8477-11ea-819b-f93b3fe83e3e.png)
 
-Under Label med InputMemo finner du en TextBox. Denne skal ha klassen **counter-fraction** eller **counter-remaining** avhengig av hvilken type tegnteller du vil vise. 
+
+Under the memo-field there is a textbox. This should have the class **counter-fraction** or **counter-remaining**, depending on what type of counter you want to add 
 
 
 ### Floating labels
-* Bruk klassene **label-float** og **hidden** på containeren rundt label og input.
-* Bruk klassen **input-field-alt** på input-elementet for å fjerne *default digiforms styling*.
+* Add classes  **label-float** and **hidden** in the container which is placed over the label and input. 
+* Add classes **input-field-alt** on the input-element to remove *default digiforms styling*. 
 
-#### Hvordan plassere klasser på en input med floating label
-![Figur som viser hvordan klassene for inputfelt med floating label skal brukes](https://user-images.githubusercontent.com/5544597/79971190-4a03a300-8494-11ea-9af7-affa4f6c490d.png)
+#### Here is how to add classes to an input with formatting
+![The illustration shows how an input with a floating label is displayed](https://user-images.githubusercontent.com/5544597/79971190-4a03a300-8494-11ea-9af7-affa4f6c490d.png)
 
 #### HTML
 ``` html
@@ -385,19 +386,18 @@ Under Label med InputMemo finner du en TextBox. Denne skal ha klassen **counter-
 </div>
 ```
 
-#### Screenshot før input
-![Figur som viser hvordan inputfelter med floating labels blir seendes ut](https://user-images.githubusercontent.com/5544597/79971371-7d463200-8494-11ea-87b6-144f4bcd856e.png)
+#### Screenshot before input
+![The screenshot show how an input with a floating label will look like](https://user-images.githubusercontent.com/5544597/79971371-7d463200-8494-11ea-87b6-144f4bcd856e.png)
 
-#### Screenshot etter input
-![Figur som viser hvordan inputfelter med floating labels blir seendes ut](https://user-images.githubusercontent.com/5544597/79971421-9222c580-8494-11ea-9160-003241d85ade.png)
+#### Screenshot after input
+![The screenshot show how an input with a floating label will look like](https://user-images.githubusercontent.com/5544597/79971421-9222c580-8494-11ea-9160-003241d85ade.png)
 
 
+## Buttons
+* Use class**btn** on your buttons, URLs, or labels to make them look like buttons. 
 
-## Knapper
-* Bruk klassen **btn** på knapper, linker eller labels for å få de til å se ut som knapper.
-
-#### Hvordan plassere **btn** på en knapp
-![Figur som viser hvordan klasse for knapper skal brukes på button-element](https://user-images.githubusercontent.com/5544597/79975773-cc439580-849b-11ea-90b6-a3731f480f58.png)
+#### Here is how to add a css-class **btn** to a button 
+![The illustration show how to place a **btn** class on a button](https://user-images.githubusercontent.com/5544597/79975773-cc439580-849b-11ea-90b6-a3731f480f58.png)
 
 #### Hvordan plassere **btn** på en lenke
 ![Figur som viser hvordan klasse for knapper skal brukes på lenke](https://user-images.githubusercontent.com/5544597/79976195-80452080-849c-11ea-8264-b32d5dda7ce1.png)
