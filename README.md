@@ -397,13 +397,13 @@ Under the memo-field there is a textbox. This should have the class **counter-fr
 * Use class **btn** on your buttons, URLs, or labels to make them look like buttons. 
 
 #### Here is how to add a css-class **btn** to a button 
-![The illustration show how to place a **btn** class on a button](https://user-images.githubusercontent.com/5544597/79975773-cc439580-849b-11ea-90b6-a3731f480f58.png)
+![The illustration shows where to place a **btn** class on a button](https://user-images.githubusercontent.com/5544597/79975773-cc439580-849b-11ea-90b6-a3731f480f58.png)
 
 #### Hvordan plassere **btn** på en lenke
-![Figur som viser hvordan klasse for knapper skal brukes på lenke](https://user-images.githubusercontent.com/5544597/79976195-80452080-849c-11ea-8264-b32d5dda7ce1.png)
+![The illustration shows how to apply a **btn**-class on a URL](https://user-images.githubusercontent.com/5544597/79976195-80452080-849c-11ea-8264-b32d5dda7ce1.png)
 
 #### Hvordan plassere **btn** på en label
-![Figur som viser hvordan klasse for knapper skal brukes på label-element](https://user-images.githubusercontent.com/5544597/79975879-f1380880-849b-11ea-801b-6560e43706d4.png)
+![The illustration shows how to apply a class on a label element](https://user-images.githubusercontent.com/5544597/79975879-f1380880-849b-11ea-801b-6560e43706d4.png)
 
 
 #### HTML
@@ -416,13 +416,13 @@ Under the memo-field there is a textbox. This should have the class **counter-fr
 ```
 
 #### Screenshot
-![Figur som viser hvordan knapper blir seendes ut](https://user-images.githubusercontent.com/5544597/79976278-98b53b00-849c-11ea-9f93-c93b50dc8808.png)
+![The illustration shows how the button will be displayed](https://user-images.githubusercontent.com/5544597/79976278-98b53b00-849c-11ea-9f93-c93b50dc8808.png)
 
-## File upload/filopplasting
-* For å style dette elementet i Digiforms må du trikse litt. Ta en input (som består av label og inputfelt) og erstatt inputfeltet med et attachment-element slik at label wrapper rundt knapp for opplasting. Labelen gir du klassen **attachment** (du trenger ikke legge til klassen **btn** på labelen for å få den til å se ut som en knapp).
+## File upload
+* To style the attachment elements from Digiforms, you must do some tricks. First, add an input (label and input-field) and then replace the input-field with an attachment element. The label will be wrapped around the attachment-element. Add the css-class **attachment** to the label (you do not need to use the class **btn** to make it look like a button). 
 
-#### Hvordan plassere **btn** på en label for filopplasting
-![Figur som viser hvordan klasse for knapper skal brukes](https://user-images.githubusercontent.com/5544597/79979482-dec0cd80-84a1-11ea-8b4a-9751df45aa48.png)
+#### Here is how you add a button on a label for file upload 
+![The illustration shows how to add a **btn** class on a button for file upload](https://user-images.githubusercontent.com/5544597/79979482-dec0cd80-84a1-11ea-8b4a-9751df45aa48.png)
 
 #### HTML
 ``` html
@@ -437,21 +437,21 @@ Under the memo-field there is a textbox. This should have the class **counter-fr
 ```
 
 #### Screenshot
-![Figur som viser hvordan label for file upload blir seendes ut](https://user-images.githubusercontent.com/5544597/79977871-475a7b00-849f-11ea-8faa-b42c152c8526.png)
+![The illustration show how a label for file upload will be displayed](https://user-images.githubusercontent.com/5544597/79977871-475a7b00-849f-11ea-8faa-b42c152c8526.png)
 
 
 
-## Modals
-* Lag en div og gi den klassen **modal-container**
-* Lag en ny div og gi den klassen **modal**
-* Putt **modal** inne i **modal-container**
-* Putt en knapp inne i **modal** og gi den klassene **btn btn-close btn-x** (alt. kun **btn-close btn-x**)
-* Fjern teksten på knappen
-* Hvis du ønsker en knapp for å åpne modalen. Lag en knapp rett før (over) **modal-container**  og gi den klassen **btn open-modal-btn** (alt. kun **open-modal-btn**)
-* Du kan også putte enda en knapp inne i **modal** med f.eks. teksten "OK". Gi den da klassene **btn btn-close** (alt. kun **btn-close**)
+## Modal
+* Add a groupbox (div) and give it the **modal-container**
+* Add a new div and add the class **modal**
+* Place the **modal** inside the **modal-container**
+* Add a button inside the **modal** and give it the class **btn btn-close btn-x** (alt. except **btn-close btn-x**)
+* Remove the text added to the button
+* If you want a button to open the modal. Add a button before/over the **modal-container** and give it the class **btn open-modal-btn** (alt. except **open-modal-btn**)
+* If you want an additional button you can add it inside the **modal**. Add the class **btn btn-close** (alt. except **btn-close**)
 
-#### Hvordan plassere klasser for modals
-![Figur som viser hvordan klasse for modal skal brukes](https://user-images.githubusercontent.com/5544597/79986716-c904d580-84ac-11ea-8ce8-0abcf76a9003.png)
+#### How to add classes to modals
+![The illustration show how to apply a **modal** class](https://user-images.githubusercontent.com/5544597/79986716-c904d580-84ac-11ea-8ce8-0abcf76a9003.png)
 
 #### HTML
 ``` html
@@ -465,23 +465,23 @@ Under the memo-field there is a textbox. This should have the class **counter-fr
 ```
 
 #### Screenshot
-![Figur som viser hvordan modal blir seendes ut](https://user-images.githubusercontent.com/5544597/79987166-5b0cde00-84ad-11ea-8628-54a4598b3fe7.png)
+![The screenshot show how a modal is displayed](https://user-images.githubusercontent.com/5544597/79987166-5b0cde00-84ad-11ea-8628-54a4598b3fe7.png)
 
 
 
-## Oversikt over klasser
-* **account-mask** - gir et inputfelt formatet XXXX XX XXXXX, f.eks. 1234 56 78901
-* **attachment** - brukes for å wrappe file upload (input og tilhørende label). Gir grunnleggende styling.
-* **btn** - gir grunnleggende styling for elementer som skal fungere som knapper (funker også på linker og labels)
-* **btn-close** - brukes for å lukke modal (dialog)
-* **btn-x** - brukes for i kombinasjon med **btn-close** for å lukke modal (dialog). Lager et knapp i høyre hjørnet på modalen som kan brukes som "x"-knapp.
-* **char-counter** - brukes på TextBox for tegnteller tilknyttet textarea
-* **char-count-container-{ønsket makslengde for tekstfelt her}** - Legges på div rundt textarea for å angi funksjonalitet for telling av tegn i feltet. Krever bruk av flere tilknyttede klasser.
-* **checkbox-row** - brukes i kombinasjon med **control-row** for å style checkboxer. Må ligge i en groupbox som har klassen **checkbox-container**
-* **combobox** - brukes for å skape autocomplete-felter (comboboxer). Må ligge i en groupbox som har klassen **control-container**
-* **combobox-container** - brukes for å skape autocomplete-felter (comboboxer). Brukes på groupboxen rundt inputfeltet.
-* **combobox-coutries** - brukes i kombinasjon med **combobox** for å gi en liste med land (autocomplete for land).
-* **combobox-{whatever}** - brukes i kombinasjon med **combobox** for å gi en liste med *{whatever}*. Listen må være deklarert som en array i et globalt JS-objekt kalt *customComboBoxlists*. Listen må være verdien til property *{whatever}*. F.eks. hvis vi bruker **combobox-brus**. Da må vi ha et globalt JS-objekt:
+## All css-classes listed 
+* **account-mask** - gives an input the format XXXX XX XXXXX, e.g. 1234 56 78901
+* **attachment** - is used to wrap the file-upload (input with attached label). Gives it basic styling. 
+* **btn** - gives the button basic styling as a button (can also be placed on URLs and labels).
+* **btn-close** - is used to close a modal (dialog).
+* **btn-x** - is used in combination with **btn-close** to close an open model (dialog). The button will be placed in the right corner on the modal and can be used as an exit-button.  
+* **char-counter** - can be applied to a textbox when using a counter. 
+* **char-count-container-{ønsket makslengde for tekstfelt her}** - the classes must be applied to a text area to give it the ‘counter’ functionality. 
+* **checkbox-row** - is used in combination with **control-row** to style checkboxes. It must be placed inside a groupbox with the class **checkbox-container** added to it. 
+* **combobox** - is used to create autocomplete fields (comboboxes). Must be placed inside a groupbox with the class **control-container** added to it. 
+* **combobox-container** - is used to create a autocomplete field (comboboxes). Must be added to groupbox around the input field. 
+* **combobox-coutries** - must be used in combination with a **combobox** to apply a list of countries to the field (autocomplete with a countries). 
+* **combobox-{name-of-list}** - is used in combination with **combobox** to create a autocomplete field with a custom list added to it. *{whatever}*. Listen må være deklarert som en array i et globalt JS-objekt kalt *customComboBoxlists*. Listen må være verdien til property *{whatever}*. F.eks. hvis vi bruker **combobox-brus**. Da må vi ha et globalt JS-objekt:
 ``` javascript
 var customComboBoxlists = { brus: ["Cola", "Fanta", "Solo", "Sprite"] };
 ```
