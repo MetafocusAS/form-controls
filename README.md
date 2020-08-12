@@ -513,13 +513,15 @@ var customComboBoxlists = { brus: ["Cola", "Fanta", "Solo", "Sprite"] };
 * **phone-nordic** - gives it a format that suits nordic national codes. E.g. +354 12 45 67 12.
 * **phone-se** - gives it a format that suits sweedish phone numbers with a county code. E.g. +46(0) 73-123 45 67.
 * **phone-scandinavian** - gives it a format that suits all nordic numbers (Norway, Sweeden and Denmark) including the country code. E.g. +45 12 45 67 12.
-* **prevent-select-on-tab** - prevents data inside an input field to be tab. Does not work in firefox.
-* **radio-row** - brukes i kombinasjon med **control-row** for å style radioknapper. Må ligge i en groupbox som har klassen **radio-container**
-* **select-container** - brukes for å skape dropdowns som ser like ut i forskjellige browsere. Brukes på groupboxen rundt selecten.
-* **ssn-no-mask** - norske fødselsnummer. Gir et inputfelt formatet DDMMÅÅNNNNN, f.eks. 08105127198
-* **ssn-se-mask** - svenske fødselsnummer. Gir et inputfelt formatet ÅÅÅÅMMDD-NNNN, f.eks. 19990102-1234
-* **vps-account-mask** - gir et inputfelt formatet XXXXX XXXXXXX, f.eks. 12345 6789012
-* **website-mask** - gir inputfelt http://www. preutfylt, men aksepterer også https://www. Tillater kun tegn som er gyldige for en domene på internet.
+* **prevent-select-on-tab** - prevents data inside an input field to tab. Does not work in firefox.
+* **radio-row** - is used in combination with **control-row** to style radio buttons. It must be placed inside a groupbox that has the class **radio-container**.
+* **select-container** - makes dropdowns look similar in all browsers. It must be added to the groupbox that is placed upon the select field. 
+* **ssn-no-mask** - norwegian birth numbers. Gives the input field the format DDMMÅÅNNNNN, e.g. 08105127198.
+* **ssn-se-mask** - sweedish birth numbers. Gives the input field the format ÅÅÅÅMMDD-NNNN, e.g. 19990102-1234.
+* **vps-account-mask** - gives the input field the format XXXXX XXXXXXX, e.g. 12345 6789012.
+* **website-mask** - gives an input field http://www. prefilled, but accepts also https://www. It only accept characters that are a 
+
+Tillater kun tegn som er gyldige for en domene på internet.
 
 
 
