@@ -506,14 +506,14 @@ var customComboBoxlists = { brus: ["Cola", "Fanta", "Solo", "Sprite"] };
 * **org-number-mask** - for Norwegian organizations. Gives the input field the format XXX XXX XXX, e.g. 123 456 789. 
 * **org-number-mask-se** - Swedish organization number. The field will be formatted into XXXXXX-XXXX, e.g. 990102-1234. 
 * **giin-number-mask** - american corporate number. The input field will be formattet into XXXXXX.XXXXX.XX.XXX. 
-* **percentage** - sets the max value from 100 to 0
-* **phone** - gives it a format that is suitable for all general numbers with different national IDs. E.g. +999 12 45 67 12. 
-* **phone-dk** - gir et format som passer for danske telefonnummer med landkode. F.eks. +45 12 45 67 12
-* **phone-no** - gir et format som passer for norske telefonnummer med landkode. F.eks. +47 123 45 678
-* **phone-nordic** - gir et format som passer for nordiske landkoder. F.eks. +354 12 45 67 12
-* **phone-se** - gir et format som passer for svenske telefonnummer med landkode. F.eks. +46(0) 73-123 45 67
-* **phone-scandinavian** - gir et format som passer for skandinaviske (Norge, Sverige og Danmark) telefonnummer med landkode. F.eks. +45 12 45 67 12
-* **prevent-select-on-tab** - hindrer at data i input-feltet markeres ved tab inn i feltet. Funker ikke i firefox.
+* **percentage** - sets the max value from 100 to 0.
+* **phone** - gives it a format that suits that all general numbers with various country codes. E.g. +999 12 45 67 12. 
+* **phone-dk** - gives it a format suits danish phone numbers. E.g. +45 12 45 67 12.
+* **phone-no** - gives it a format that suits norwegian phone numbers. E.g. +47 123 45 678.
+* **phone-nordic** - gives it a format that suits nordic national codes. E.g. +354 12 45 67 12.
+* **phone-se** - gives it a format that suits sweedish phone numbers with a county code. E.g. +46(0) 73-123 45 67.
+* **phone-scandinavian** - gives it a format that suits all nordic numbers (Norway, Sweeden and Denmark) including the country code. E.g. +45 12 45 67 12.
+* **prevent-select-on-tab** - prevents data inside an input field to be tab. Does not work in firefox.
 * **radio-row** - brukes i kombinasjon med **control-row** for å style radioknapper. Må ligge i en groupbox som har klassen **radio-container**
 * **select-container** - brukes for å skape dropdowns som ser like ut i forskjellige browsere. Brukes på groupboxen rundt selecten.
 * **ssn-no-mask** - norske fødselsnummer. Gir et inputfelt formatet DDMMÅÅNNNNN, f.eks. 08105127198
