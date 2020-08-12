@@ -493,21 +493,21 @@ var customComboBoxlists = { brus: ["Cola", "Fanta", "Solo", "Sprite"] };
 * **date-mask** - the input field will be formatted into DD.MM.YYYY, e.g. 01.03.2018. 
 * **date-se-mask** - the input field will be formatted into YYYY.MM.DD, e.g. 2018.03.01.
 * **hide-label** - is used to hide part of content inside the label of a textarea, a screen reader will be able to read. 
-* **input-field** - brukes for å style inputfelter og dropdowns (input og select)
-* **letteral-text** - gjør at det kun er mulig å skrive inn tekst i inputfeltet
-* **modal** - lager en modal (dialog) som legger seg forran hele siden
-* **modal-container** - må wrappe en **.modal** (dialog)
-* **money** - tusenskille for tall inkl. desimaler, feks 100 000,00
-* **money-int** - tusenskille for heltall, feks 5 000 000
-* **numeric-decimal** - gjør at det kun er mulig å skrive tall i inputfeltet, desimaler er tillatt. Type må være satt til "number"
-* **numeric-positive** - gjør at det kun går å skrive inn positive tall i input-feltet. Type må være satt til "number".
-* **numeric-text** - gjør at det kun går å skrive inn tall i input-feltet, og at numerisk keypad vises på mobil
-* **open-modal-btn** - åpner modal (dialog)
-* **org-number-mask** - norske organisasjoner. Gir et inputfelt på formatet XXX XXX XXX, f.eks. 123 456 789
-* **org-number-mask-se** - svenske organisasjoner. Gir et inputfelt på formatet XXXXXX-XXXX, f.eks. 990102-1234
-* **giin-number-mask** - amerikansk firmanummer. Gir et inputfelt på formatet XXXXXX.XXXXX.XX.XXX
-* **percentage** - setter max verdi til 100 og min til 0
-* **phone** - gir et format som passer for alle generelle telefonnummer med landkode. F.eks. +999 12 45 67 12
+* **input-field** - is used to style input fields and dropdowns (input og select).
+* **letteral-text** - is limiting the input field into only allowing letteral text (not numbers). 
+* **modal** - creates a container into a modal which will be layered over the browser window. 
+* **modal-container** - is wrapping the **modal**(dialog). Must be placed on the groupbox around the modal window. 
+* **money** - a thousand separator for numbers, including decimals. e.g. 100 000,00. 
+* **money-int** - a thousand separator for whole numbers, e.g. 5 000 000. 
+* **numeric-decimal** - formats the input field to allow numbers and decimals. Remember to change the ‘input type’ to number in Digiforms Designer. 
+* **numeric-positive** - formats an input field into approving positive numbers.
+* **numeric-text** - formatting the input to solely allow numbers in an input field. Enables keypad when opened on mobile device. 
+* **open-modal-btn** - opens modal (dialog). 
+* **org-number-mask** - for Norwegian organizations. Gives the input field the format XXX XXX XXX, e.g. 123 456 789. 
+* **org-number-mask-se** - Swedish organization number. The field will be formatted into XXXXXX-XXXX, e.g. 990102-1234. 
+* **giin-number-mask** - american corporate number. The input field will be formattet into XXXXXX.XXXXX.XX.XXX. 
+* **percentage** - sets the max value from 100 to 0
+* **phone** - gives it a format that is suitable for all general numbers with different national IDs. E.g. +999 12 45 67 12. 
 * **phone-dk** - gir et format som passer for danske telefonnummer med landkode. F.eks. +45 12 45 67 12
 * **phone-no** - gir et format som passer for norske telefonnummer med landkode. F.eks. +47 123 45 678
 * **phone-nordic** - gir et format som passer for nordiske landkoder. F.eks. +354 12 45 67 12
