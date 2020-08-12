@@ -481,18 +481,18 @@ Under the memo-field there is a textbox. This should have the class **counter-fr
 * **combobox** - is used to create autocomplete fields (comboboxes). Must be placed inside a groupbox with the class **control-container** added to it. 
 * **combobox-container** - is used to create a autocomplete field (comboboxes). Must be added to groupbox around the input field. 
 * **combobox-coutries** - must be used in combination with a **combobox** to apply a list of countries to the field (autocomplete with a countries). 
-* **combobox-{name-of-list}** - is used in combination with **combobox** to create a autocomplete field with a custom list added to it. *{whatever}*. Listen må være deklarert som en array i et globalt JS-objekt kalt *customComboBoxlists*. Listen må være verdien til property *{whatever}*. F.eks. hvis vi bruker **combobox-brus**. Da må vi ha et globalt JS-objekt:
+* **combobox-{name-of-list}** - is used in combination with **combobox** to create a autocomplete field with a custom list added to it. The list must be declared as an array in a global JS-object called *customComboBoxlists*. The list must be the value to the property *{the-name-of-the-list-here}* inside the JS-object. E.g. if we use the list **comobox-brus**, it must have a global JS-object applied to it. 
 ``` javascript
 var customComboBoxlists = { brus: ["Cola", "Fanta", "Solo", "Sprite"] };
 ```
-* **control-container** - brukes på groupbox for å style checkboxer og radio-knapper inne i groupboxen
-* **control-row** - brukes for å style checkboxer og radio-knapper
-* **counter-fraction** - brukes på TextBox for tegnteller i textarea for å vise en brøkbasert teller
-* **counter-remaining** - brukes på TextBox for tegnteller i textarea for å vise en tekst som indikerer hvor mange tegn som er igjen å skrive av maxlength
-* **cpr-mask** - danske fødselsnummer. Gir et inputfelt formatet XXXXXX-XXXX, f.eks. 990102-1234
-* **date-mask** - gir et inputfelt formatet DD.MM.YYYY, f.eks. 01.03.2018
-* **date-se-mask** - gir et inputfelt formatet YYYY.MM.DD, f.eks. 2018.03.01
-* **hide-label** - brukes for å skjule del av innhold i label i textarea for seende, men viser viktig informasjon for skjermlesere
+* **control-container** - is applied to a groupboxes (div) to style checkboxes and radio buttons inside the groupbox. 
+* **control-row** - is applied to checkboxes and radio buttons to style them. 
+* **counter-fraction** - is applied to a textbox to become a counter. 
+* **counter-remaining** - is used on textboxes to show the remaining characters left to use before reaching max length.
+* **cpr-mask** - Danish social security numbers. The input field will be given XXXXXX-XXXX, e.g. 990102-1234.
+* **date-mask** - the input field will be formatted into DD.MM.YYYY, e.g. 01.03.2018. 
+* **date-se-mask** - the input field will be formatted into YYYY.MM.DD, e.g. 2018.03.01.
+* **hide-label** - is used to hide part of content inside the label of a textarea, a screen reader will be able to read. 
 * **input-field** - brukes for å style inputfelter og dropdowns (input og select)
 * **letteral-text** - gjør at det kun er mulig å skrive inn tekst i inputfeltet
 * **modal** - lager en modal (dialog) som legger seg forran hele siden
