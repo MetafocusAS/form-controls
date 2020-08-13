@@ -1,5 +1,5 @@
 # Form Controls
-- [form-controls](#form-controls)
+- [Form Controls](#form-controls)
   * [What is Form Controls?](#What-is-form-controls)
   * [How to use it](#How-to-use-it)
   * [Demo](#demo)
