@@ -1,16 +1,16 @@
 # Form Controls
 - [form-controls](#form-controls)
   * [What is Form Controls?](#What-is-form-controls)
-  * [Bruk](#bruk)
+  * [How to use it](#How-to-use-it)
   * [Demo](#demo)
   * [Browser support](#browser-support)
-  * [Checkboxer og radioknapper](#checkboxer-og-radioknapper)
-    + [Checkboxer](#checkboxer)
+  * [Checkboxes and radio buttons](#Checkboxes-and-radio-buttons)
+    + [Checkboxes](#Checkboxes)
       - [Hvordan plassere klassene](#hvordan-plassere-klassene)
       - [HTML](#html)
       - [Screenshot](#screenshot)
-    + [Radioknapper](#radioknapper)
-      - [Hvordan plassere klassene](#hvordan-plassere-klassene-1)
+    + [Radio buttons](#radio-buttons)
+      - [Here is how to apply classes to radio buttons](#Here-is-how-to-apply-classes-to-radio-buttons)
       - [HTML](#html-1)
       - [Screenshot](#screenshot-1)
   * [Inputfelter](#inputfelter)
@@ -112,7 +112,7 @@ The library is tested and is working in these browsers:
 It is also tested on some mobile devices (iPhone and Android). 
 
 
-## Checkboxes og radio buttons
+## Checkboxes and radio buttons
 * The css-classes are applied to the radio buttons to make them look appealing, but also to make them look identical in all browsers.
 * They have a bigger “click area” which makes them easier to hit with the mouse pointer.
 
