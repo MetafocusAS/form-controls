@@ -62,7 +62,7 @@
       - [Screenshot](#screenshot-11)
   * [All css-classes listed](#all-css-classes-listed)
   * [Examples-of-how-to-customize-CSS](#eksempler-p--hvordan-tilpasse-css)
-    + [How to change the color of a border that is in focus](#How-to-change-the-color-of-a-border-that-is-in-focus)
+    + [How to change the color of a border that is focused](#How-to-change-the-color-of-a-border-that-is-focused)
     + [Change the color on checkboxes and radio buttons that are "checked"](#change-the-color-on-checkboxes-and-radio-buttons-that-are--checked--)
     + [Change color on matched text inside a combobox](#Change-color-on-matched-text-inside-a-combobox)
 
@@ -523,7 +523,7 @@ var customComboBoxlists = { brus: ["Cola", "Fanta", "Solo", "Sprite"] };
 
 
 ## Examples of how to customize CSS
-### How to change the color of a border that is in focus
+### How to change the color of a border that is focused
 Change the color on border (checkboxes/radio buttons):
 ```css
 .focused {
