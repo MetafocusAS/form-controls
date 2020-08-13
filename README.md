@@ -34,7 +34,7 @@
       - [Screenshot](#screenshot-6)
     + [Counter for text area](#Counter-for-text-area)
       - [Pay attention to the length of the storage location](#pay-attention-to-the-length-of-the-storage-location)
-      - [Counter alternative 1: Counter fraction(#Counter-alternative-1--Counter-fraction)
+      - [Counter alternative 1: Counter fraction](#Counter-alternative-1--Counter-fraction)
       - [HTML](#html-7)
       - [Screenshot](#screenshot-7)
       - [Counter alternative 2: Counter remaining](#Counter-alternative-2--Counter-remaining)
