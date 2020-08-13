@@ -6,7 +6,7 @@
   * [Browser support](#browser-support)
   * [Checkboxes and radio buttons](#Checkboxes-and-radio-buttons)
     + [Checkboxes](#Checkboxes)
-      - [Hvordan plassere klassene](#hvordan-plassere-klassene)
+      - [Here is how to apply classes to checkboxes](#Here-is-how-to-apply-classes-to-checkboxes)
       - [HTML](#html)
       - [Screenshot](#screenshot)
     + [Radio buttons](#radio-buttons)
