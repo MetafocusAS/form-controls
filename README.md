@@ -29,25 +29,25 @@
       - [Here is how to apply classes to an input that only accept numbers](#here-is-how-to-apply-classes-to-an-input-that-only-accept-numbers)
       - [HTML](#html-5)
       - [Screenshot](#screenshot-5)
-      - [Hvordan plassere klasser for en input med formattering, f.eks. organisasjonsnummer.](#hvordan-plassere-klasser-for-en-input-med-formattering--feks-organisasjonsnummer)
+      - [Here is how to add classes to an input with formatting (i.e. organization number)](#Here-is-how-to-add-classes-to-an-input-with-formatting--i.e.-organization-number)
       - [HTML](#html-6)
       - [Screenshot](#screenshot-6)
-    + [Tegnteller for textarea](#tegnteller-for-textarea)
-      - [Pass på lengden på lagringsstedet](#pass-p--lengden-p--lagringsstedet)
-      - [Tegnteller variant 1: Counter fraction](#tegnteller-variant-1--counter-fraction)
+    + [Counter for text area](#Counter-for-text-area)
+      - [Pay attention to the length of the storage location](#pay-attention-to-the-length-of-the-storage-location)
+      - [Counter alternative 1: Counter fraction(#Counter-alternative-1--Counter-fraction)
       - [HTML](#html-7)
       - [Screenshot](#screenshot-7)
-      - [Tegnteller variant 2: Counter remaining](#tegnteller-variant-2--counter-remaining)
+      - [Counter alternative 2: Counter remaining](#counter-alternative-2--counter-remaining)
       - [HTML](#html-8)
       - [Screenshot](#screenshot-8)
-      - [Hvordan plassere klasser når du tar i bruk tegnteller i textarea](#hvordan-plassere-klasser-n-r-du-tar-i-bruk-tegnteller-i-textarea)
+      - [Where to place classes when you are using a counter in a text area](#Where-to-place-classes-when-you-are-using-a-counter-in-a-text-area)
     + [Floating labels](#floating-labels)
-      - [Hvordan plassere klasser på en input med floating label](#hvordan-plassere-klasser-p--en-input-med-floating-label)
+      - [Here is how to add classes to an input with formatting](#Here-is-how-to-add-classes-to-an-input-with-formatting)
       - [HTML](#html-9)
       - [Screenshot før input](#screenshot-f-r-input)
       - [Screenshot etter input](#screenshot-etter-input)
-  * [Knapper](#knapper)
-      - [Hvordan plassere **btn** på en knapp](#hvordan-plassere---btn---p--en-knapp)
+  * [Buttons](#Buttons)
+      - [Here is how to add a class to a button](#Here-is-how-to-add-a-class-to-a-button)
       - [Hvordan plassere **btn** på en lenke](#hvordan-plassere---btn---p--en-lenke)
       - [Hvordan plassere **btn** på en label](#hvordan-plassere---btn---p--en-label)
       - [HTML](#html-10)
@@ -363,11 +363,11 @@ You will have to add these values to the memo-field, but the error message (Mess
 ![Figur som viser properties for InputMemo i Digiforms](https://user-images.githubusercontent.com/5544597/79950784-dce21480-8477-11ea-819b-f93b3fe83e3e.png)
 
 
-Under the memo-field there is a textbox. This should have the class **counter-fraction** or **counter-remaining**, depending on what type of counter you want to add 
+Under the memo-field there is a textbox. This should have the class **counter-fraction** or **counter-remaining**, depending on what type of counter you want to add. 
 
 
 ### Floating labels
-* Add classes  **label-float** and **hidden** in the container which is placed over the label and input. 
+* Add classes **label-float** and **hidden** in the container which is placed over the label and input. 
 * Add classes **input-field-alt** on the input-element to remove *default digiforms styling*. 
 
 #### Here is how to add classes to an input with formatting
@@ -395,13 +395,13 @@ Under the memo-field there is a textbox. This should have the class **counter-fr
 ## Buttons
 * Use class **btn** on your buttons, URLs, or labels to make them look like buttons. 
 
-#### Here is how to add a css-class **btn** to a button 
+#### Here is how to add a class to a button
 ![The illustration shows where to place a **btn** class on a button](https://user-images.githubusercontent.com/5544597/79975773-cc439580-849b-11ea-90b6-a3731f480f58.png)
 
-#### Hvordan plassere **btn** på en lenke
+#### Here is how to apply the **btn**-class to an URL
 ![The illustration shows how to apply a **btn**-class on a URL](https://user-images.githubusercontent.com/5544597/79976195-80452080-849c-11ea-8264-b32d5dda7ce1.png)
 
-#### Hvordan plassere **btn** på en label
+#### How to add a **btn** on a label
 ![The illustration shows how to apply a class on a label element](https://user-images.githubusercontent.com/5544597/79975879-f1380880-849b-11ea-801b-6560e43706d4.png)
 
 
