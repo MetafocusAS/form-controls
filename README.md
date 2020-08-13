@@ -13,17 +13,17 @@
       - [Here is how to apply classes to radio buttons](#Here-is-how-to-apply-classes-to-radio-buttons)
       - [HTML](#html-1)
       - [Screenshot](#screenshot-1)
-  * [Inputfelter](#inputfelter)
+  * [Input fields](#input-fields)
     + [Dropdowns (select)](#dropdowns--select-)
-      - [Hvordan plassere klasser på en dropdown (select)](#hvordan-plassere-klasser-p--en-dropdown--select-)
+      - [Here is how to add classes to a dropdown (select)](#Here-is-how-to-add-classes-to-a-dropdown--select-)
       - [HTML](#html-2)
       - [Screenshot](#screenshot-2)
     + [Combobox (autocomplete)](#combobox--autocomplete-)
-      - [Hvordan plassere klasser på en combobox (autocomplete)](#hvordan-plassere-klasser-p--en-combobox--autocomplete-)
+      - [Here is how to add classes to a combobox (autocomplete)](#here-is-how-to-add-classes-to-a-combobox--autocomplete--)
       - [HTML](#html-3)
       - [Screenshot](#screenshot-3)
-    + [Input-elementer (input)](#input-elementer--input-)
-      - [Hvordan plassere klasser på en input](#hvordan-plassere-klasser-p--en-input)
+    + [Input elements (input)](#input-elements--input--)
+      - [Here is how to apply classes to an input](#Here-is-how-to-apply-classes-to-an-input)
       - [HTML](#html-4)
       - [Screenshot](#screenshot-4)
       - [Hvordan plassere klasser for en input som kun aksepterer siffer.](#hvordan-plassere-klasser-for-en-input-som-kun-aksepterer-siffer)
@@ -262,7 +262,7 @@ The object can be declared in a JS-file, or inline, like this:
 * Use class **input-field** to add *basic styling* to input-fields 
 * In order to control and limit type of content that can be allowed to add into the input, you can apply different types of classes (a list of classes is added further down in the document).(see [demo](https://dev4.digiforms.no/digiforms/htmlViewer?documentName=form-controls-demo))
 
-#### Hvordan plassere klasser på en input
+#### Here is how to apply classes to an input
 ![The illustration show how to apply the classes](https://user-images.githubusercontent.com/5544597/79968512-7c130600-8490-11ea-91f5-44e8382d7971.png)
 
 #### HTML
