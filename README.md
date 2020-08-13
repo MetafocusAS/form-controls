@@ -507,7 +507,7 @@ var customComboBoxlists = { brus: ["Cola", "Fanta", "Solo", "Sprite"] };
 * **org-number-mask-se** - Swedish organization number. The field will be formatted into XXXXXX-XXXX, e.g. 990102-1234. 
 * **giin-number-mask** - american corporate number. The input field will be formattet into XXXXXX.XXXXX.XX.XXX. 
 * **percentage** - sets the max value from 100 to 0.
-* **phone** - gives it a format that suits that all general numbers with various country codes. E.g. +999 12 45 67 12. 
+* **phone** - gives it a format that suits that all general numbers also with various country codes. E.g. +999 12 45 67 12. 
 * **phone-dk** - gives it a format suits danish phone numbers. E.g. +45 12 45 67 12.
 * **phone-no** - gives it a format that suits norwegian phone numbers. E.g. +47 123 45 678.
 * **phone-nordic** - gives it a format that suits nordic national codes. E.g. +354 12 45 67 12.
@@ -519,22 +519,20 @@ var customComboBoxlists = { brus: ["Cola", "Fanta", "Solo", "Sprite"] };
 * **ssn-no-mask** - norwegian birth numbers. Gives the input field the format DDMMÅÅNNNNN, e.g. 08105127198.
 * **ssn-se-mask** - sweedish birth numbers. Gives the input field the format ÅÅÅÅMMDD-NNNN, e.g. 19990102-1234.
 * **vps-account-mask** - gives the input field the format XXXXX XXXXXXX, e.g. 12345 6789012.
-* **website-mask** - gives an input field http://www. prefilled, but accepts also https://www. It only accept characters that are a 
-
-Tillater kun tegn som er gyldige for en domene på internet.
+* **website-mask** - gives an input field http://www. prefilled, it also accepts https://www. It only accept characters that are valid in domains. 
 
 
 
-## Eksempler på hvordan tilpasse CSS
-### Endre farge på border på element som har fokus
-Endre farge på border-color her (checkboxer/radioknapper):
+## Examples of how to customize CSS
+### How to change the color of a border that is in focus
+Change the color on border (checkboxes/radio buttons):
 ```css
 .focused {
 	border-color: #f35b1c !important;
 }
 ```
 
-Her (inputfelter/dropdowns):
+Here (input fields/dropdowns):
 ```css
 .input-field:focus {
 	padding: 11px !important;
@@ -542,15 +540,15 @@ Her (inputfelter/dropdowns):
 }
 ```
 
-Og her (floating labels)
+And here (floating labels)
 ```css
 .label-float input:focus {
   border-bottom-color: #4E6378;
 }
 ```
 
-### Endre farge checkboxer/radioknapper som er "checked"
-Endre farge på border-color og background-color her:
+### Change the color on checkboxes and radio buttons that are "checked"
+Change the color on border and background color: 
 ```css
 .control .label_text.checked label::before {
 	border-color: #257886 !important;
@@ -558,8 +556,8 @@ Endre farge på border-color og background-color her:
 }
 ```
 
-### Endre farge på matchet tekst i combobox
-Endre farge på color her:
+### Change color on matched text in an combobox
+Change color:
 ```css
 .combobox-result  .case-match {
 	font-weight: bold;
