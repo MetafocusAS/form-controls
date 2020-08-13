@@ -26,7 +26,7 @@
       - [Here is how to apply classes to an input](#Here-is-how-to-apply-classes-to-an-input)
       - [HTML](#html-4)
       - [Screenshot](#screenshot-4)
-      - [Hvordan plassere klasser for en input som kun aksepterer siffer.](#hvordan-plassere-klasser-for-en-input-som-kun-aksepterer-siffer)
+      - [Here is how to apply classes to an input that only accept numbers](#here-is-how-to-apply-classes-to-an-input-that-only-accept-numbers)
       - [HTML](#html-5)
       - [Screenshot](#screenshot-5)
       - [Hvordan plassere klasser for en input med formattering, f.eks. organisasjonsnummer.](#hvordan-plassere-klasser-for-en-input-med-formattering--feks-organisasjonsnummer)
@@ -274,7 +274,7 @@ The object can be declared in a JS-file, or inline, like this:
 ![Show how the radio buttons will look like](https://user-images.githubusercontent.com/5544597/79968552-8df4a900-8490-11ea-8be0-117b9c8f1c48.png)
 
 
-#### Here is how to apply classes to an input that only contains numbers
+#### Here is how to apply classes to an input that only accept numbers
 ![Show how to apply classes to an input field that only contains numbers](https://user-images.githubusercontent.com/5544597/79969520-e8dad000-8491-11ea-997b-c3c291ed67f7.png)
 
 #### HTML
