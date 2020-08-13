@@ -37,7 +37,7 @@
       - [Counter alternative 1: Counter fraction(#Counter-alternative-1--Counter-fraction)
       - [HTML](#html-7)
       - [Screenshot](#screenshot-7)
-      - [Counter alternative 2: Counter remaining](#counter-alternative-2--counter-remaining)
+      - [Counter alternative 2: Counter remaining](#Counter-alternative-2--Counter-remaining)
       - [HTML](#html-8)
       - [Screenshot](#screenshot-8)
       - [Where to place classes when you are using a counter in a text area](#Where-to-place-classes-when-you-are-using-a-counter-in-a-text-area)
