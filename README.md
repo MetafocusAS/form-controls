@@ -1,6 +1,6 @@
 # Form Controls
 - [form-controls](#form-controls)
-  * [What is Form Controls?](#What is form controls)
+  * [What is Form Controls?](#What_is_form_controls)
   * [Bruk](#bruk)
   * [Demo](#demo)
   * [Browser support](#browser-support)
