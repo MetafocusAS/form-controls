@@ -48,23 +48,23 @@
       - [Screenshot etter input](#screenshot-etter-input)
   * [Buttons](#Buttons)
       - [Here is how to add a class to a button](#Here-is-how-to-add-a-class-to-a-button)
-      - [Hvordan plassere **btn** på en lenke](#hvordan-plassere---btn---p--en-lenke)
-      - [Hvordan plassere **btn** på en label](#hvordan-plassere---btn---p--en-label)
+      - [Here is how to apply the **btn**-class to a URL](#Here-is-how-to-apply-the-btn-class-to-a-URL)
+      - [How to add a **btn** on a label](#how-to-add-a---btn---on--a-label)
       - [HTML](#html-10)
       - [Screenshot](#screenshot-9)
   * [File upload/filopplasting](#file-upload-filopplasting)
-      - [Hvordan plassere **btn** på en label for filopplasting](#hvordan-plassere---btn---p--en-label-for-filopplasting)
+      - [Here is how you add a button on a label for file upload](#Here-is-how-you-add-a-button-on-a-label-for-file-upload)
       - [HTML](#html-11)
       - [Screenshot](#screenshot-10)
-  * [Modals](#modals)
-      - [Hvordan plassere klasser for modals](#hvordan-plassere-klasser-for-modals)
+  * [Modal](#modals)
+      - [How to add classes to modals](#how-to-add-classes-to-modals)
       - [HTML](#html-12)
       - [Screenshot](#screenshot-11)
-  * [Oversikt over klasser](#oversikt-over-klasser)
-  * [Eksempler på hvordan tilpasse CSS](#eksempler-p--hvordan-tilpasse-css)
-    + [Endre farge på border på element som har fokus](#endre-farge-p--border-p--element-som-har-fokus)
-    + [Endre farge checkboxer/radioknapper som er "checked"](#endre-farge-checkboxer-radioknapper-som-er--checked-)
-    + [Endre farge på matchet tekst i combobox](#endre-farge-p--matchet-tekst-i-combobox)
+  * [All css-classes listed](#all-css-classes-listed)
+  * [Examples-of-how-to-customize-CSS](#eksempler-p--hvordan-tilpasse-css)
+    + [How to change the color of a border that is in focus](#How-to-change-the-color-of-a-border-that-is-in-focus)
+    + [Change the color on checkboxes and radio buttons that are "checked"](#change-the-color-on-checkboxes-and-radio-buttons-that-are--checked--)
+    + [Change color on matched text inside a combobox](#Change-color-on-matched-text-inside-a-combobox)
 
 
 ## What is Form Controls?
@@ -398,7 +398,7 @@ Under the memo-field there is a textbox. This should have the class **counter-fr
 #### Here is how to add a class to a button
 ![The illustration shows where to place a **btn** class on a button](https://user-images.githubusercontent.com/5544597/79975773-cc439580-849b-11ea-90b6-a3731f480f58.png)
 
-#### Here is how to apply the **btn**-class to an URL
+#### Here is how to apply the **btn**-class to a URL
 ![The illustration shows how to apply a **btn**-class on a URL](https://user-images.githubusercontent.com/5544597/79976195-80452080-849c-11ea-8264-b32d5dda7ce1.png)
 
 #### How to add a **btn** on a label
@@ -555,7 +555,7 @@ Change the color on border and background color:
 }
 ```
 
-### Change color on matched text in an combobox
+### Change color on matched text inside a combobox
 Change color:
 ```css
 .combobox-result  .case-match {
