@@ -1261,7 +1261,7 @@ function setLabelMaxLength($textarea, maxLength) {
 function setSemanticMaxLength($textarea) {
     var countLineBreaks = getNumberOfLineBreaks($textarea);
     var maxLength = getMaxLengthFromClass($textarea);
-    var semanticMaxLength = parseInt(maxLength) + parseInt(countLineBreaks);
+    var semanticMaxLength = parseInt(maxLength);
     $textarea.attr("maxLength", semanticMaxLength);
 }
 
@@ -1275,11 +1275,11 @@ function getFullLength($textarea) {
     return $textarea.val().length;
 }
 
-// Returns number of characters in a textarea (after excluding line break as character)
+// Returns number of characters in a textarea (It's currently modified to count linebreaks, the function name is misleading)
 function getLengthIgnoreLinebreaks($textarea) {
     var len = $textarea.val().length;
     var countLineBreaks = getNumberOfLineBreaks($textarea);
-    var maxLengthIgnoreLinebreaks = parseInt(len) - parseInt(countLineBreaks);
+    var maxLengthIgnoreLinebreaks = parseInt(len);
     return maxLengthIgnoreLinebreaks;
 }
 
